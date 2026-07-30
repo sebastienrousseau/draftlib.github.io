@@ -1,0 +1,48 @@
+name: Deploy to GitHub Pages
+
+# Pages is configured with build_type "workflow" (Settings -> Pages -> Source:
+# GitHub Actions), which means nothing is published unless a workflow uploads
+# an artifact and calls deploy-pages. There was no such workflow, so pushes to
+# main stopped reaching draftlib.com entirely — silently, with no failed run to
+# notice, because a deploy that is never triggered leaves no trace.
+#
+# docs/ is committed already-built (build.sh publishes into it), so this only
+# uploads and deploys it. The custom domain comes from the Pages settings, not
+# from docs/CNAME, which is left in place for the branch-source fallback.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time, and never cancel one midway: a half-finished deploy
+# would leave the live site inconsistent.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - name: Upload docs/ as the Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

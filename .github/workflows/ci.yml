@@ -1,11 +1,26 @@
 name: CI
 
-# Every push and PR rebuilds the site and enforces the full quality bar:
-#   1. ssg's 15 audit gates (WCAG, JSON-LD, CSP/SRI, links, metadata,
-#      performance, feeds, AI discovery, ...) — failing on warnings.
-#   2. pa11y-ci at WCAG2AAA across 12 representative pages.
-# The deployed docs/ is regenerated in-job, so a source change that breaks
-# a gate can never merge green.
+# Rebuilds the site from source and runs ssg's audit gates, failing on
+# warnings. The deployed docs/ is regenerated in-job, so a source change that
+# breaks a gate cannot merge green.
+#
+# This file previously carried a step list copied from another project
+# (pain001): node --test over tests/, four i18n table validators, a content
+# integrity check, a link checker, a snippet checker that pip-installed
+# pain001, puppeteer layout and print audits, and pa11y-ci. None of those
+# twelve files or directories exist in this repository — no tests/, no
+# scripts/validate_*.py, no scripts/*_audit.cjs, no .pa11yci — so the job
+# failed at the first of them on every run, and had done since the site was
+# first committed.
+#
+# They are removed rather than stubbed. Re-add any of them alongside the
+# script it runs, not before: a step that references a missing file is not
+# coverage, it is a permanently red build that trains everyone to ignore CI.
+#
+# Accessibility is still gated. ssg's own wcag gate runs below as part of the
+# audit and is what reports "All N page(s) passed checks"; pa11y-ci would have
+# added an independent WCAG2AAA pass over the built pages, which is worth
+# restoring once a .pa11yci config exists here.
 
 on:
   push:
@@ -32,71 +47,17 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cargo/bin/ssg
-          key: ssg-0.0.47-${{ runner.os }}
+          key: ssg-0.0.48-${{ runner.os }}
 
-      - name: Install ssg 0.0.47
+      # Pinned to the version the site is authored and verified against
+      # locally; a mismatch means CI audits a different renderer than the one
+      # that produced the committed docs/.
+      - name: Install ssg 0.0.48
         if: steps.cache-ssg.outputs.cache-hit != 'true'
-        run: cargo install ssg --locked --version 0.0.47
-
-      - name: Set up Node (build samples, tests, pa11y)
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
+        run: cargo install ssg --locked --version 0.0.48
 
       - name: Build site
         run: ./build.sh
 
       - name: Audit gates (fail on warnings)
         run: ssg audit -f ssg.toml -o docs --severity warn --fail-on warn
-
-      - name: Unit tests (demo validation rules)
-        run: node --test tests/*.test.mjs
-
-      - name: Translation table integrity (key/tag/placeholder parity)
-        run: |
-          python3 scripts/validate_try_i18n.py
-          python3 scripts/validate_pages_i18n.py pages_i18n
-          python3 scripts/validate_pages_i18n.py docs_i18n
-          python3 scripts/validate_runtime_i18n.py
-
-      # Parity above only compares locale tables to en.json. This checks
-      # en.json against the built pages, so a key that has drifted out of
-      # the markup fails instead of silently shipping English.
-      - name: Translation keys still match the built pages
-        run: python3 scripts/validate_i18n_keys_live.py
-
-      # Escaping defects produce valid HTML that every other gate
-      # passes, so they need their own structural check.
-      - name: Content integrity (no eaten markup, no double encoding)
-        run: python3 scripts/validate_content_integrity.py
-
-      - name: Link integrity (internal links, anchors, locale consistency)
-        run: python3 scripts/validate_links.py docs
-
-      - name: Documentation snippets reference real API
-        run: |
-          python3 -m pip install --quiet pain001
-          python3 scripts/validate_snippets.py
-
-      # Layout and print defects produce valid, accessible, well-linked
-      # pages — every other gate passes while a table is cropped, a
-      # title is 140px adrift, or every table prints as stacked cards.
-      # Three such regressions were caught only by a human looking at a
-      # screenshot. These assert the invariants instead.
-      - name: Layout and print integrity (real Chrome)
-        run: |
-          mkdir -p .a11y-tools
-          cd .a11y-tools
-          echo '{"name":"pain001-a11y-tools","private":true}' > package.json
-          PUPPETEER_SKIP_DOWNLOAD=1 npm install --silent --no-audit --no-fund puppeteer-core@23
-          cd ..
-          (cd docs && python3 -m http.server 8899 &)
-          sleep 2
-          node scripts/layout_audit.cjs
-          node scripts/print_audit.cjs
-
-      - name: Accessibility scan (pa11y-ci, WCAG2AAA)
-        run: |
-          (cd docs && python3 -m http.server 8899 &)
-          sleep 2
-          npx -y pa11y-ci@4.1.1
