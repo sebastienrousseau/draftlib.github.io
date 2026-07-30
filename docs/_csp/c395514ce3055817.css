@@ -752,7 +752,7 @@
         font-family: var(--type-display); font-size: 1.2rem; font-weight: 700;
         color: var(--ink); text-decoration: none; min-height: 44px; white-space: nowrap;
       }
-      .ap-brand img { width: 26px; height: 26px; }
+      .ap-brand img, .ap-brand .ap-mark { width: 26px; height: 26px; flex: none; }
       .ap-menu {
         justify-self: center; display: flex; align-items: center;
         list-style: none; margin: 0; padding: 0; gap: 0.35rem;

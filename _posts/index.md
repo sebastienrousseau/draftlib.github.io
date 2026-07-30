@@ -1,9 +1,9 @@
 ---
 author: "contact@draftlib.com (Sebastien Rousseau)"
 banner_alt: "A terminal drafting a grounded article from a research paper, each claim checked verbatim against its source."
-banner_height: 500
+banner_height: 630
 banner_width: 1200
-banner: "https://draftlib.com/img/draft.svg"
+banner: "https://draftlib.com/img/og-card.png"
 cdn: "https://draftlib.com"
 changefreq: weekly
 charset: utf-8

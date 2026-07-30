@@ -10,7 +10,8 @@
     <meta name="author" content="contact@draftlib.com (Sebastien Rousseau)">
 <meta name="description" content="Runnable, network-free demos of every capability: the dashboard, grounding, the pipeline, review and article sets.">
 <meta name="keywords" content="draft examples, go run, demo, dashboard, pipeline">
-<meta property="og:image" content="https://draftlib.com/img/draft.svg" />
+<meta property="og:image" content="https://draftlib.com/img/og-card.png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="draft — grounded article drafting from research papers." />
@@ -37,7 +38,7 @@
     <meta name="color-scheme" content="light dark" />
 
     <script src="/_csp/8145aa0ad262565d.js" integrity="sha384-xojGPg1xO/5JD2kzlGSV/j609dNSF7NoW5JDXbMhLV0On6hgrwS9Jd6K+uAidu1K" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/_csp/0b80cadf0d8d030d.css" integrity="sha384-Hw98wM6M4j4U2qGQ11VdKhvb5iCBsQzHvLZg/KWWzpgWwHDFd5iRl8/CaElGNUos" crossorigin="anonymous">
+    <link rel="stylesheet" href="/_csp/c395514ce3055817.css" integrity="sha384-uHzNFOvbMgbgcBoRTPlYIfBOWwa4DHk6VupvwpiVTMkERGyMhp/sTX90x8a0FY+B" crossorigin="anonymous">
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="https://draftlib.com/atom.xml"/>
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://draftlib.com/feed.json"/>
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -49,7 +50,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Examples — draft">
 <meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Examples&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;Every capability has a runnable demo. No model, no session CLI, no API key, no network.">
-<meta name="twitter:image" content="https://draftlib.com/img/draft.svg">
+<meta name="twitter:image" content="https://draftlib.com/img/og-card.png">
 <link rel="canonical" href="https://draftlib.com/examples/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 <link rel="stylesheet" href="/_csp/3ae64e6558e84d20.css" integrity="sha384-f2Z0C5solrQefPCCmZjO/z9IJJNmd4HUMJ7B21K6ilPsXO9ToIfnWd4eZWgycVea" crossorigin="anonymous"></head>
 
@@ -60,7 +61,26 @@
       <input class="ap-toggle" id="ap-menu-toggle" type="checkbox" aria-label="Toggle navigation" />
       <div class="wrap ap-nav-wrap">
         <a class="ap-brand" href="/" aria-label="draft home">
-          <span aria-hidden="true">&#5810;</span>
+          <!-- The nib, inlined so it needs no alt text: the link is named by
+               its aria-label and the wordmark beside it. Same geometry as
+               /img/draft.svg, which serves the favicon and the OG card. -->
+          <svg class="ap-mark" viewBox="0 0 64 64" width="26" height="26" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="ap-nib-ramp" x1="0" y1="11" x2="0" y2="55" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#F87171" />
+                <stop offset="0.5" stop-color="#C93F36" />
+                <stop offset="1" stop-color="#9F1239" />
+              </linearGradient>
+              <mask id="ap-nib-mask">
+                <rect width="64" height="64" fill="#000" />
+                <path d="M15 19 L20 11 L44 11 L49 19 L49 29 L32 55 L15 29 Z" fill="#fff" />
+                <circle cx="32" cy="23.5" r="4.2" fill="#000" />
+                <path d="M30.1 23.5 L33.9 23.5 L32.6 52.5 L31.4 52.5 Z" fill="#000" />
+              </mask>
+            </defs>
+            <rect width="64" height="64" rx="14" fill="#0b0e14" />
+            <rect width="64" height="64" fill="url(#ap-nib-ramp)" mask="url(#ap-nib-mask)" />
+          </svg>
           <span>draft</span>
         </a>
         <nav aria-label="Primary navigation" id="ap-primary-nav">
