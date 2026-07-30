@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta itemprop="datePublished" content="" id="date" />
+    <meta itemprop="dateModified" content="" id="last-modified" />
+    <title>Accessibility — draft</title>
+
+    <meta name="author" content="contact@draftlib.com (Sebastien Rousseau)">
+<meta name="description" content="The accessibility commitments for draftlib.com and the draft command line.">
+<meta name="keywords" content="accessibility, wcag, a11y, keyboard, contrast">
+<meta property="og:image" content="https://draftlib.com/img/draft.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="draft — grounded article drafting from research papers." />
+    <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard" />
+    
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'  'unsafe-hashes'; script-src 'self' ; connect-src 'self'; font-src 'self'; form-action 'self'" />
+    <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    
+    
+
+    <link rel="alternate" href="https://draftlib.com/accessibility/" hreflang="en" />
+    
+    <link rel="icon" type="image/svg+xml" href="/img/draft.svg" sizes="any" />
+    <link rel="apple-touch-icon" href="/img/draft.svg" />
+    <link rel="preload" href="/fonts/source-serif-4-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
+    <meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <script src="/_csp/8145aa0ad262565d.js" integrity="sha384-xojGPg1xO/5JD2kzlGSV/j609dNSF7NoW5JDXbMhLV0On6hgrwS9Jd6K+uAidu1K" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/_csp/0b80cadf0d8d030d.css" integrity="sha384-Hw98wM6M4j4U2qGQ11VdKhvb5iCBsQzHvLZg/KWWzpgWwHDFd5iRl8/CaElGNUos" crossorigin="anonymous">
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="https://draftlib.com/atom.xml"/>
+  <link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://draftlib.com/feed.json"/>
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:title" content="Accessibility — draft">
+<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Accessibility&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;This site&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;draftlib.com is built to meet WCAG 2.2 AA. In">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://draftlib.com/accessibility/">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Accessibility — draft">
+<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Accessibility&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;This site&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;draftlib.com is built to meet WCAG 2.2 AA. In">
+<meta name="twitter:image" content="https://draftlib.com/img/draft.svg">
+<link rel="canonical" href="https://draftlib.com/accessibility/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
+<link rel="stylesheet" href="/_csp/3ae64e6558e84d20.css" integrity="sha384-f2Z0C5solrQefPCCmZjO/z9IJJNmd4HUMJ7B21K6ilPsXO9ToIfnWd4eZWgycVea" crossorigin="anonymous"></head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="ap-nav">
+      <input class="ap-toggle" id="ap-menu-toggle" type="checkbox" aria-label="Toggle navigation" />
+      <div class="wrap ap-nav-wrap">
+        <a class="ap-brand" href="/" aria-label="draft home">
+          <span aria-hidden="true">&#5810;</span>
+          <span>draft</span>
+        </a>
+        <nav aria-label="Primary navigation" id="ap-primary-nav">
+          <ul class="ap-menu">
+            <li><a href="/documentation/">Documentation</a></li>
+            <li><a href="/examples/">Examples</a></li>
+            <li><a href="/grounding/">Grounding</a></li>
+            <li><a href="/security/">Security</a></li>
+            <li><a href="https://github.com/sebastienrousseau/draft" rel="external noopener">GitHub</a></li>
+          </ul>
+        </nav>
+        <label class="ap-burger" for="ap-menu-toggle" aria-hidden="true"><span></span></label>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <div class="wrap">
+        <article class="content-body">
+<div lang="en"><h1>Accessibility</h1>
+<h2>This site</h2>
+<p>draftlib.com is built to meet WCAG 2.2 AA. In practice that means: a skip link
+to the main content, a visible focus ring on every interactive element, colour
+contrast checked in both themes, no motion that cannot be stopped, and a layout
+that reflows to 320 CSS pixels without horizontal scrolling.</p>
+<p>The theme follows your operating system preference unless you override it, and
+the choice persists. Fonts are self-hosted, so no third-party request is needed
+to render a page.</p>
+<h2>The command line</h2>
+<p><code>draft</code> runs headlessly with <code>--print</code> or <code>--json</code> when a full-screen interface
+is unhelpful — including with a screen reader, in a pipeline, or over a slow
+connection. Colour is dropped automatically when output is not a terminal, and
+<code>DRAFT_SHOW_LOGO=0</code> suppresses the banner.</p>
+<p>The dashboard is fully keyboard-driven: arrow keys or <code>j</code>/<code>k</code> scroll, <code>q</code> or
+<code>Esc</code> quits, and the queue can be extended without a mouse.</p>
+<h2>Feedback</h2>
+<p>If something here does not work for you, please
+<a href="https://github.com/sebastienrousseau/draft/issues">open an issue</a>. Accessibility
+defects are treated as ordinary bugs, not enhancements.</p>
+</div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <p class="footer-brand">draft</p>
+            <p class="footer-tagline">Research papers in. Publication-ready Markdown out. Every sentence grounded in a fact it can prove.</p>
+          </div>
+          <div>
+            <h2 class="footer-heading">Documentation</h2>
+            <ul class="footer-links">
+              <li><a href="/documentation/">Command reference</a></li>
+              <li><a href="/grounding/">How grounding works</a></li>
+              <li><a href="/examples/">Runnable examples</a></li>
+              <li><a href="/library/">Go packages</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer-heading">Project</h2>
+            <ul class="footer-links">
+              <li><a href="https://github.com/sebastienrousseau/draft" rel="external noopener">Source on GitHub</a></li>
+              <li><a href="https://pkg.go.dev/github.com/sebastienrousseau/draft" rel="external noopener">Go reference</a></li>
+              <li><a href="https://github.com/sebastienrousseau/draft/releases" rel="external noopener">Releases</a></li>
+              <li><a href="https://github.com/sebastienrousseau/draft/blob/main/CHANGELOG.md" rel="external noopener">Changelog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="footer-heading">Trust</h2>
+            <ul class="footer-links">
+              <li><a href="/security/">Security posture</a></li>
+              <li><a href="https://scorecard.dev/viewer/?uri=github.com/sebastienrousseau/draft" rel="external noopener">OpenSSF Scorecard</a></li>
+              <li><a href="https://github.com/sebastienrousseau/draft/blob/main/SECURITY.md" rel="external noopener">Disclosure policy</a></li>
+              <li><a href="/accessibility/">Accessibility</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-legal">
+          Licensed under either of Apache-2.0 or MIT, at your option.
+          &copy; 2026 Sebastien Rousseau.
+        </p>
+      </div>
+    </footer>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "draft",
+        "url": "https://draftlib.com/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "macOS, Linux, Windows",
+        "description": "A command-line tool that turns research papers into publication-ready Markdown, with every claim verified verbatim against its source.",
+        "license": "https://github.com/sebastienrousseau/draft/blob/main/LICENSE-MIT",
+        "codeRepository": "https://github.com/sebastienrousseau/draft",
+        "programmingLanguage": "Go",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "Sebastien Rousseau" }
+      }
+    </script>
+
+    <script src="/_csp/197fcfccbee69bda.js" integrity="sha384-geygAAYoalTqpA6bIgsGUMRQupyTiF/rCnvMiGE5+G0s0ZOYAhHnkhzyMXN9yNxa" crossorigin="anonymous"></script>
+  
+<!-- SSG Search Widget -->
+<div id="ssg-search-widget">
+
+<!-- Search trigger button -->
+<button id="ssg-search-btn" type="button" aria-label="Search">
+<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<span>Search</span>
+<kbd>K</kbd>
+</button>
+<!-- Search modal -->
+<div id="ssg-search-overlay" role="dialog" aria-label="Search">
+<div id="ssg-search-box">
+<div id="ssg-search-header">
+<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<input id="ssg-search-input" type="search" placeholder="Search documentation..." autocomplete="off" aria-label="Search"/>
+</div>
+<div id="ssg-search-results" aria-live="polite"></div>
+<div id="ssg-sr-status" role="status" aria-live="polite" aria-atomic="true"></div>
+<div class="ssg-search-footer"><span><kbd>Esc</kbd> close</span><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span><span><kbd>Enter</kbd> open</span></div>
+</div>
+</div>
+<script src="/_csp/61bc2fae7f71ccad.js" integrity="sha384-0oRzEmXgr9FJ6ttOmzhFx2dsSPgkO2fWLDzcLRT0sq5M9fYUce/wBPOMY7XmqkLT" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

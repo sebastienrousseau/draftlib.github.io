@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>draft — grounded article drafting from research papers</title>
+    <link>https://draftlib.com/</link>
+    <description>draft turns research papers into publication-ready Markdown. A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Go, no API key, works offline.</description>
+    <atom:link href="https://draftlib.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <copyright>© 2026 Sebastien Rousseau. Dual Apache-2.0 / MIT.</copyright>
+    <item>
+      <title>Accessibility — draft</title>
+      <link>https://draftlib.com/accessibility/</link>
+      <description>The accessibility commitments for draftlib.com and the draft command line.</description>
+      <guid isPermaLink="true">https://draftlib.com/accessibility/</guid>
+      <pubDate></pubDate>
+      <author>contact@draftlib.com (Sebastien Rousseau)</author>
+      <enclosure url="https://draftlib.com/img/draft.svg" type="image/jpeg" length="0"/>
+      <category>draft</category>
+      <category>grounded generation</category>
+      <category>research</category>
+      <category>markdown</category>
+      <category>go</category>
+    </item>
+    <item>
+      <title>Documentation — draft</title>
+      <link>https://draftlib.com/documentation/</link>
+      <description>Command reference for draft: flags, environment variables, engine routing, resume and dry-run.</description>
+      <guid isPermaLink="true">https://draftlib.com/documentation/</guid>
+      <pubDate></pubDate>
+      <author>contact@draftlib.com (Sebastien Rousseau)</author>
+      <enclosure url="https://draftlib.com/img/draft.svg" type="image/jpeg" length="0"/>
+      <category>draft</category>
+      <category>grounded generation</category>
+      <category>research</category>
+      <category>markdown</category>
+      <category>go</category>
+    </item>
+    <item>
+      <title>Examples — draft</title>
+      <link>https://draftlib.com/examples/</link>
+      <description>Runnable, network-free demos of every capability: the dashboard, grounding, the pipeline, review and article sets.</description>
+      <guid isPermaLink="true">https://draftlib.com/examples/</guid>
+      <pubDate></pubDate>
+      <author>contact@draftlib.com (Sebastien Rousseau)</author>
+      <enclosure url="https://draftlib.com/img/draft.svg" type="image/jpeg" length="0"/>
+      <category>draft</category>
+      <category>grounded generation</category>
+      <category>research</category>
+      <category>markdown</category>
+      <category>go</category>
+    </item>
+    <item>
+      <title>Go packages — draft</title>
+      <link>https://draftlib.com/library/</link>
+      <description>draft is a command-line tool first, but every capability is an importable Go package.</description>
+      <guid isPermaLink="true">https://draftlib.com/library/</guid>
+      <pubDate></pubDate>
+      <author>contact@draftlib.com (Sebastien Rousseau)</author>
+      <enclosure url="https://draftlib.com/img/draft.svg" type="image/jpeg" length="0"/>
+      <category>draft</category>
+      <category>grounded generation</category>
+      <category>research</category>
+      <category>markdown</category>
+      <category>go</category>
+    </item>
+    <item>
+      <title>How grounding works — draft</title>
+      <link>https://draftlib.com/grounding/</link>
+      <description>A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is the whole gate.</description>
+      <guid isPermaLink="true">https://draftlib.com/grounding/</guid>
+      <pubDate></pubDate>
+      <author>contact@draftlib.com (Sebastien Rousseau)</author>
+      <enclosure url="https://draftlib.com/img/draft.svg" type="image/jpeg" length="0"/>
+      <category>draft</category>
+      <category>grounded generation</category>
+      <category>research</category>
+      <category>markdown</category>
+      <category>go</category>
+    </item>
+    <item>
+      <title>Page not found — draft</title>
+      <link>https://draftlib.com/404/</link>
+      <description>That page does not exist.</description>
+      <guid isPermaLink="true">https://draftlib.com/404/</guid>
+      <pubDate></pubDate>
+      <author>contact@draftlib.com (Sebastien Rousseau)</author>
+      <enclosure url="https://draftlib.com/img/draft.svg" type="image/jpeg" length="0"/>
+      <category>draft</category>
+      <category>grounded generation</category>
+      <category>research</category>
+      <category>markdown</category>
+      <category>go</category>
+    </item>
+    <item>
+      <title>Security — draft</title>
+      <link>https://draftlib.com/security/</link>
+      <description>No tokens on disk, prompt-injection awareness, bounded external calls, and verifiable releases.</description>
+      <guid isPermaLink="true">https://draftlib.com/security/</guid>
+      <pubDate></pubDate>
+      <author>contact@draftlib.com (Sebastien Rousseau)</author>
+      <enclosure url="https://draftlib.com/img/draft.svg" type="image/jpeg" length="0"/>
+      <category>draft</category>
+      <category>grounded generation</category>
+      <category>research</category>
+      <category>markdown</category>
+      <category>go</category>
+    </item>
+  </channel>
+</rss>

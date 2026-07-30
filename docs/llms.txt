@@ -1,0 +1,5 @@
+# Draftlib
+
+> draft turns research papers into publication-ready Markdown, with every claim verified verbatim against its source. Go, no API key, works offline.
+
+Language: en-GB

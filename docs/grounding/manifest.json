@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is ",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "https://draftlib.com/img/draft.svg",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "draft",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "draft",
+  "start_url": ".",
+  "theme_color": null
+}

@@ -1,0 +1,21 @@
+{
+  "api": "ssg-agent-api",
+  "counts": {
+    "posts": 7,
+    "topics": 8
+  },
+  "links": {
+    "index": "https://draftlib.com/api/agents/index.json",
+    "person": "https://draftlib.com/api/agents/person.json",
+    "posts": "https://draftlib.com/api/agents/posts.json",
+    "topics": "https://draftlib.com/api/agents/topics.json"
+  },
+  "site": {
+    "description": "draft turns research papers into publication-ready Markdown, with every claim verified verbatim against its source. Go, no API key, works offline.",
+    "language": "en-GB",
+    "name": "Draftlib",
+    "title": "draft — grounded article drafting from research papers",
+    "url": "https://draftlib.com"
+  },
+  "version": "0.0.48"
+}

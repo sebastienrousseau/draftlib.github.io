@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "Command reference for draft: flags, environment variables, engine routing, resume and dry-run.",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "https://draftlib.com/img/draft.svg",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "draft",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "draft",
+  "start_url": ".",
+  "theme_color": null
+}

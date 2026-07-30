@@ -1,0 +1,109 @@
+[
+  {
+    "date": "2026-07-30T08:00:00+00:00",
+    "description": "The accessibility commitments for draftlib.com and the draft command line.",
+    "locale": "en_GB",
+    "tags": [
+      "draft",
+      "go",
+      "grounded generation",
+      "markdown",
+      "research"
+    ],
+    "title": "Accessibility — draft",
+    "url": "https://draftlib.com/accessibility/",
+    "wordCount": 176
+  },
+  {
+    "date": "2026-07-30T08:00:00+00:00",
+    "description": "Command reference for draft: flags, environment variables, engine routing, resume and dry-run.",
+    "locale": "en_GB",
+    "tags": [
+      "draft",
+      "go",
+      "grounded generation",
+      "markdown",
+      "research"
+    ],
+    "title": "Documentation — draft",
+    "url": "https://draftlib.com/documentation/",
+    "wordCount": 697
+  },
+  {
+    "date": "2026-07-30T08:00:00+00:00",
+    "description": "Runnable, network-free demos of every capability: the dashboard, grounding, the pipeline, review and article sets.",
+    "locale": "en_GB",
+    "tags": [
+      "draft",
+      "go",
+      "grounded generation",
+      "markdown",
+      "research"
+    ],
+    "title": "Examples — draft",
+    "url": "https://draftlib.com/examples/",
+    "wordCount": 298
+  },
+  {
+    "date": "2026-07-30T08:00:00+00:00",
+    "description": "A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is the whole gate.",
+    "locale": "en_GB",
+    "tags": [
+      "draft",
+      "go",
+      "grounded generation",
+      "markdown",
+      "research"
+    ],
+    "title": "How grounding works — draft",
+    "url": "https://draftlib.com/grounding/",
+    "wordCount": 438
+  },
+  {
+    "date": "2026-07-30T08:00:00+00:00",
+    "description": "draft turns research papers into publication-ready Markdown. A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Go, no API key, works offline.",
+    "locale": "en_GB",
+    "tags": [
+      "cli",
+      "go",
+      "grounded generation",
+      "local-first",
+      "markdown",
+      "ollama",
+      "research"
+    ],
+    "title": "draft — grounded article drafting from research papers",
+    "url": "https://draftlib.com/index.html",
+    "wordCount": 408
+  },
+  {
+    "date": "2026-07-30T08:00:00+00:00",
+    "description": "draft is a command-line tool first, but every capability is an importable Go package.",
+    "locale": "en_GB",
+    "tags": [
+      "draft",
+      "go",
+      "grounded generation",
+      "markdown",
+      "research"
+    ],
+    "title": "Go packages — draft",
+    "url": "https://draftlib.com/library/",
+    "wordCount": 248
+  },
+  {
+    "date": "2026-07-30T08:00:00+00:00",
+    "description": "No tokens on disk, prompt-injection awareness, bounded external calls, and verifiable releases.",
+    "locale": "en_GB",
+    "tags": [
+      "draft",
+      "go",
+      "grounded generation",
+      "markdown",
+      "research"
+    ],
+    "title": "Security — draft",
+    "url": "https://draftlib.com/security/",
+    "wordCount": 377
+  }
+]

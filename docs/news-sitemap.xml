@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<url>
+  <loc>https://draftlib.com/404/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Page not found — draft</news:title>
+    <news:keywords>404, not found</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>https://draftlib.com/accessibility/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Accessibility — draft</news:title>
+    <news:keywords>accessibility, wcag, a11y, keyboard, contrast</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>https://draftlib.com/documentation/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Documentation — draft</news:title>
+    <news:keywords>draft documentation, CLI flags, DRAFT_ENGINE, engine routing, resume, dry-run</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>https://draftlib.com/examples/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Examples — draft</news:title>
+    <news:keywords>draft examples, go run, demo, dashboard, pipeline</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>https://draftlib.com/grounding/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>How grounding works — draft</news:title>
+    <news:keywords>grounded generation, hallucination, claim verification, verbatim quote, provenance</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>https://draftlib.com/library/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Go packages — draft</news:title>
+    <news:keywords>go packages, library, claims, pipeline, engine, frontmatter, validate</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>https://draftlib.com/security/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Security — draft</news:title>
+    <news:keywords>security, supply chain, sigstore, sbom, prompt injection, openssf scorecard</news:keywords>
+  </news:news>
+</url>
+</urlset>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Draftlib</title>
+  <link href="https://draftlib.com/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://draftlib.com"/>
+  <id>https://draftlib.com</id>
+  <updated></updated>
+  <entry>
+    <title>Page not found — draft</title>
+    <link href="https://draftlib.com/404/"/>
+    <id>https://draftlib.com/404/</id>
+    <updated></updated>
+    <published></published>
+    <summary>That page does not exist.</summary>
+    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+  </entry>
+  <entry>
+    <title>Accessibility — draft</title>
+    <link href="https://draftlib.com/accessibility/"/>
+    <id>https://draftlib.com/accessibility/</id>
+    <updated></updated>
+    <published></published>
+    <summary>The accessibility commitments for draftlib.com and the draft command line.</summary>
+    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+  </entry>
+  <entry>
+    <title>Documentation — draft</title>
+    <link href="https://draftlib.com/documentation/"/>
+    <id>https://draftlib.com/documentation/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Command reference for draft: flags, environment variables, engine routing, resume and dry-run.</summary>
+    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+  </entry>
+  <entry>
+    <title>Examples — draft</title>
+    <link href="https://draftlib.com/examples/"/>
+    <id>https://draftlib.com/examples/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Runnable, network-free demos of every capability: the dashboard, grounding, the pipeline, review and article sets.</summary>
+    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+  </entry>
+  <entry>
+    <title>How grounding works — draft</title>
+    <link href="https://draftlib.com/grounding/"/>
+    <id>https://draftlib.com/grounding/</id>
+    <updated></updated>
+    <published></published>
+    <summary>A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is the whole gate.</summary>
+    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+  </entry>
+  <entry>
+    <title>Go packages — draft</title>
+    <link href="https://draftlib.com/library/"/>
+    <id>https://draftlib.com/library/</id>
+    <updated></updated>
+    <published></published>
+    <summary>draft is a command-line tool first, but every capability is an importable Go package.</summary>
+    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+  </entry>
+  <entry>
+    <title>Security — draft</title>
+    <link href="https://draftlib.com/security/"/>
+    <id>https://draftlib.com/security/</id>
+    <updated></updated>
+    <published></published>
+    <summary>No tokens on disk, prompt-injection awareness, bounded external calls, and verifiable releases.</summary>
+    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+  </entry>
+</feed>

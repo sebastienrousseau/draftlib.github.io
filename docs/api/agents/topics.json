@@ -1,0 +1,55 @@
+{
+  "cli": [
+    "https://draftlib.com/index.html"
+  ],
+  "draft": [
+    "https://draftlib.com/accessibility/",
+    "https://draftlib.com/documentation/",
+    "https://draftlib.com/examples/",
+    "https://draftlib.com/grounding/",
+    "https://draftlib.com/library/",
+    "https://draftlib.com/security/"
+  ],
+  "go": [
+    "https://draftlib.com/accessibility/",
+    "https://draftlib.com/documentation/",
+    "https://draftlib.com/examples/",
+    "https://draftlib.com/grounding/",
+    "https://draftlib.com/index.html",
+    "https://draftlib.com/library/",
+    "https://draftlib.com/security/"
+  ],
+  "grounded generation": [
+    "https://draftlib.com/accessibility/",
+    "https://draftlib.com/documentation/",
+    "https://draftlib.com/examples/",
+    "https://draftlib.com/grounding/",
+    "https://draftlib.com/index.html",
+    "https://draftlib.com/library/",
+    "https://draftlib.com/security/"
+  ],
+  "local-first": [
+    "https://draftlib.com/index.html"
+  ],
+  "markdown": [
+    "https://draftlib.com/accessibility/",
+    "https://draftlib.com/documentation/",
+    "https://draftlib.com/examples/",
+    "https://draftlib.com/grounding/",
+    "https://draftlib.com/index.html",
+    "https://draftlib.com/library/",
+    "https://draftlib.com/security/"
+  ],
+  "ollama": [
+    "https://draftlib.com/index.html"
+  ],
+  "research": [
+    "https://draftlib.com/accessibility/",
+    "https://draftlib.com/documentation/",
+    "https://draftlib.com/examples/",
+    "https://draftlib.com/grounding/",
+    "https://draftlib.com/index.html",
+    "https://draftlib.com/library/",
+    "https://draftlib.com/security/"
+  ]
+}

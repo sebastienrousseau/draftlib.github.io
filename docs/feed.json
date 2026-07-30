@@ -1,0 +1,156 @@
+{
+  "feed_url": "https://draftlib.com/feed.json",
+  "home_page_url": "https://draftlib.com/",
+  "items": [
+    {
+      "authors": [
+        {
+          "name": "contact@draftlib.com (Sebastien Rousseau)"
+        }
+      ],
+      "content_html": "That page does not exist.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "https://draftlib.com/404/",
+      "language": "en-GB",
+      "tags": [
+        "draft",
+        "grounded generation",
+        "research",
+        "markdown",
+        "go"
+      ],
+      "title": "Page not found — draft",
+      "url": "https://draftlib.com/404/"
+    },
+    {
+      "authors": [
+        {
+          "name": "contact@draftlib.com (Sebastien Rousseau)"
+        }
+      ],
+      "content_html": "The accessibility commitments for draftlib.com and the draft command line.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "https://draftlib.com/accessibility/",
+      "language": "en-GB",
+      "tags": [
+        "draft",
+        "grounded generation",
+        "research",
+        "markdown",
+        "go"
+      ],
+      "title": "Accessibility — draft",
+      "url": "https://draftlib.com/accessibility/"
+    },
+    {
+      "authors": [
+        {
+          "name": "contact@draftlib.com (Sebastien Rousseau)"
+        }
+      ],
+      "content_html": "Command reference for draft: flags, environment variables, engine routing, resume and dry-run.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "https://draftlib.com/documentation/",
+      "language": "en-GB",
+      "tags": [
+        "draft",
+        "grounded generation",
+        "research",
+        "markdown",
+        "go"
+      ],
+      "title": "Documentation — draft",
+      "url": "https://draftlib.com/documentation/"
+    },
+    {
+      "authors": [
+        {
+          "name": "contact@draftlib.com (Sebastien Rousseau)"
+        }
+      ],
+      "content_html": "Runnable, network-free demos of every capability: the dashboard, grounding, the pipeline, review and article sets.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "https://draftlib.com/examples/",
+      "language": "en-GB",
+      "tags": [
+        "draft",
+        "grounded generation",
+        "research",
+        "markdown",
+        "go"
+      ],
+      "title": "Examples — draft",
+      "url": "https://draftlib.com/examples/"
+    },
+    {
+      "authors": [
+        {
+          "name": "contact@draftlib.com (Sebastien Rousseau)"
+        }
+      ],
+      "content_html": "A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is the whole gate.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "https://draftlib.com/grounding/",
+      "language": "en-GB",
+      "tags": [
+        "draft",
+        "grounded generation",
+        "research",
+        "markdown",
+        "go"
+      ],
+      "title": "How grounding works — draft",
+      "url": "https://draftlib.com/grounding/"
+    },
+    {
+      "authors": [
+        {
+          "name": "contact@draftlib.com (Sebastien Rousseau)"
+        }
+      ],
+      "content_html": "draft is a command-line tool first, but every capability is an importable Go package.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "https://draftlib.com/library/",
+      "language": "en-GB",
+      "tags": [
+        "draft",
+        "grounded generation",
+        "research",
+        "markdown",
+        "go"
+      ],
+      "title": "Go packages — draft",
+      "url": "https://draftlib.com/library/"
+    },
+    {
+      "authors": [
+        {
+          "name": "contact@draftlib.com (Sebastien Rousseau)"
+        }
+      ],
+      "content_html": "No tokens on disk, prompt-injection awareness, bounded external calls, and verifiable releases.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "https://draftlib.com/security/",
+      "language": "en-GB",
+      "tags": [
+        "draft",
+        "grounded generation",
+        "research",
+        "markdown",
+        "go"
+      ],
+      "title": "Security — draft",
+      "url": "https://draftlib.com/security/"
+    }
+  ],
+  "language": "en-GB",
+  "title": "Draftlib",
+  "version": "https://jsonfeed.org/version/1.1"
+}
