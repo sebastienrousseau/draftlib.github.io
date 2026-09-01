@@ -1,109 +1,159 @@
 <!DOCTYPE html>
-<html lang="en-GB">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta itemprop="datePublished" content="" id="date" />
-    <meta itemprop="dateModified" content="" id="last-modified" />
-    <title>Go packages — draft</title>
+<html lang="en-GB" data-theme-mode="system">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Go packages — draft | Draft Lib</title>
+  
+  <meta name="author" content="Sebastien Rousseau">
+  <meta name="description" content="draft is a command-line tool first, but every capability is an importable Go package.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'  https://cdn.jsdelivr.net; connect-src 'self' https://formspree.io; img-src 'self' data: https: https://cloudcdn.pro; style-src 'self'  https://cdn.jsdelivr.net; font-src 'self'; form-action 'self' https://formspree.io;" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Draft Lib">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Go packages — draft | Draft Lib">
+  <meta property="og:description" content="draft is a command-line tool first, but every capability is an importable Go package.">
+  <meta property="og:image" content="https://draftlib.com/img/og-card.png">
+  <meta property="og:url" content="https://draftlib.com/">
 
-    <meta name="author" content="contact@draftlib.com (Sebastien Rousseau)">
-<meta name="description" content="draft is a command-line tool first, but every capability is an importable Go package.">
-<meta name="keywords" content="go packages, library, claims, pipeline, engine, frontmatter, validate">
-<meta property="og:image" content="https://draftlib.com/img/og-card.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="draft — grounded article drafting from research papers." />
-    <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard" />
-    
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Go packages — draft | Draft Lib">
+  <meta name="twitter:description" content="draft is a command-line tool first, but every capability is an importable Go package.">
+  <meta name="twitter:image" content="https://draftlib.com/img/og-card.png">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'  'unsafe-hashes'; script-src 'self' ; connect-src 'self'; font-src 'self'; form-action 'self'" />
-    <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()" />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="alternate" href="https://draftlib.com/" hreflang="en" />
+  
+  <link rel="icon" type="image/svg+xml" href="https://draftlib.com/img/draft.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32" />
+  <link rel="apple-touch-icon" href="https://cloudcdn.pro/cmn/v1/icons/192x192.png" sizes="192x192" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
+  <link rel="stylesheet" href="/styles.css">
 
-    
-    
-
-    <link rel="alternate" href="https://draftlib.com/library/" hreflang="en" />
-    
-    <link rel="icon" type="image/svg+xml" href="/img/draft.svg" sizes="any" />
-    <link rel="apple-touch-icon" href="/img/draft.svg" />
-    <link rel="preload" href="/fonts/source-serif-4-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-    <meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="color-scheme" content="light dark" />
-
-    <script src="/_csp/8145aa0ad262565d.js" integrity="sha384-xojGPg1xO/5JD2kzlGSV/j609dNSF7NoW5JDXbMhLV0On6hgrwS9Jd6K+uAidu1K" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/_csp/c395514ce3055817.css" integrity="sha384-uHzNFOvbMgbgcBoRTPlYIfBOWwa4DHk6VupvwpiVTMkERGyMhp/sTX90x8a0FY+B" crossorigin="anonymous">
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="https://draftlib.com/atom.xml"/>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://draftlib.com/#software",
+      "name": "Draft Lib",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux, macOS, Windows",
+      "license": "https://opensource.org/licenses/Apache-2.0",
+      "author": {
+        "@type": "Person",
+        "name": "Sebastien Rousseau",
+        "url": "https://sebastienrousseau.com"
+      },
+      "url": "https://draftlib.com/",
+      "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
+      "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://draftlib.com/#website",
+      "url": "https://draftlib.com/",
+      "name": "Draft Lib",
+      "publisher": {
+        "@type": "Person",
+        "name": "Sebastien Rousseau",
+        "url": "https://sebastienrousseau.com"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://draftlib.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://draftlib.com/#webpage",
+      "url": "https://draftlib.com/",
+      "name": "Draft Lib | Fast Document Processing & Drafting Engine in Rust",
+      "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations.",
+      "isPartOf": {
+        "@id": "https://draftlib.com/#website"
+      }
+    }
+  ]
+}
+  </script>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="https://draftlib.com/atom.xml"/>
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://draftlib.com/feed.json"/>
-<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="Go packages — draft">
-<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Go packages&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;draft&amp;lt;/code&amp;gt; is a command-line tool first. But every capability is">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://draftlib.com/library/">
-<meta property="og:locale" content="en_GB">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Go packages — draft">
-<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Go packages&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;draft&amp;lt;/code&amp;gt; is a command-line tool first. But every capability is">
-<meta name="twitter:image" content="https://draftlib.com/img/og-card.png">
 <link rel="canonical" href="https://draftlib.com/library/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
-<link rel="stylesheet" href="/_csp/3ae64e6558e84d20.css" integrity="sha384-f2Z0C5solrQefPCCmZjO/z9IJJNmd4HUMJ7B21K6ilPsXO9ToIfnWd4eZWgycVea" crossorigin="anonymous"></head>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <header class="ap-nav">
-      <input class="ap-toggle" id="ap-menu-toggle" type="checkbox" aria-label="Toggle navigation" />
-      <div class="wrap ap-nav-wrap">
-        <a class="ap-brand" href="/" aria-label="draft home">
-          <!-- The nib, inlined so it needs no alt text: the link is named by
-               its aria-label and the wordmark beside it. Same geometry as
-               /img/draft.svg, which serves the favicon and the OG card. -->
-          <svg class="ap-mark" viewBox="0 0 64 64" width="26" height="26" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="ap-nib-ramp" x1="0" y1="11" x2="0" y2="55" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#F87171" />
-                <stop offset="0.5" stop-color="#C93F36" />
-                <stop offset="1" stop-color="#9F1239" />
-              </linearGradient>
-              <mask id="ap-nib-mask">
-                <rect width="64" height="64" fill="#000" />
-                <path d="M15 19 L20 11 L44 11 L49 19 L49 29 L32 55 L15 29 Z" fill="#fff" />
-                <circle cx="32" cy="23.5" r="4.2" fill="#000" />
-                <path d="M30.1 23.5 L33.9 23.5 L32.6 52.5 L31.4 52.5 Z" fill="#000" />
-              </mask>
-            </defs>
-            <rect width="64" height="64" rx="14" fill="#0b0e14" />
-            <rect width="64" height="64" fill="url(#ap-nib-ramp)" mask="url(#ap-nib-mask)" />
-          </svg>
-          <span>draft</span>
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="navbar-container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/" aria-label="Draft Lib Homepage">
+          <img src="https://cloudcdn.pro/cmn/v1/logos/cmn.svg" alt="Draft Lib Logo" width="32" height="32" class="d-inline-block" />
+          <span class="navbar-brand-text">Draft Lib</span>
         </a>
-        <nav aria-label="Primary navigation" id="ap-primary-nav">
-          <ul class="ap-menu">
-            <li><a href="/documentation/">Documentation</a></li>
-            <li><a href="/examples/">Examples</a></li>
-            <li><a href="/grounding/">Grounding</a></li>
-            <li><a href="/security/">Security</a></li>
-            <li><a href="https://github.com/sebastienrousseau/draft" rel="external noopener">GitHub</a></li>
-          </ul>
-        </nav>
-        <label class="ap-burger" for="ap-menu-toggle" aria-hidden="true"><span></span></label>
-      </div>
-    </header>
 
-    <main id="main-content">
-      <div class="wrap">
-        <article class="content-body">
-<div lang="en"><h1>Go packages</h1>
-<p><code>draft</code> is a command-line tool first. But every capability is an importable Go
+        <!-- Mobile actions -->
+        <div class="navbar-actions d-flex d-lg-none">
+          <button type="button" class="btn search-trigger" id="searchTriggerMobile" aria-label="Search">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+
+          <div class="theme-switcher" role="radiogroup" aria-label="Theme mode">
+            <button type="button" class="theme-btn" data-theme-mode="light" aria-label="Light mode">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <button type="button" class="theme-btn" data-theme-mode="dark" aria-label="Dark mode">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button type="button" class="theme-btn active" data-theme-mode="system" aria-label="System mode">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </button>
+          </div>
+
+          <button type="button" class="navbar-toggle" id="navbarToggle" aria-expanded="false" aria-controls="navbarMenu" aria-label="Toggle navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="navbar-menu" id="navbarMenu"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/getting-started/index.html">Getting Started</a></li><li class="nav-item"><a class="nav-link" href="/features/index.html">Features</a></li><li class="nav-item"><a class="nav-link" href="/documentation/index.html">Documentation</a></li><li class="nav-item"><a class="nav-link" href="/examples/index.html">Examples</a></li><li class="nav-item"><a class="nav-link" href="/benchmarks/index.html">Benchmarks</a></li><li class="nav-item"><a class="nav-link" href="/architecture/index.html">Architecture</a></li><li class="nav-item"><a class="nav-link" href="/security/index.html">Security</a></li><li class="nav-item"><a class="nav-link" href="/faqs/index.html">FAQ</a></li><li class="nav-item nav-item-cta"><a class="btn btn-dark ms-lg-2" href="/getting-started/index.html">Install Crate</a></li></ul></div>
+
+      <!-- Desktop actions -->
+      <div class="navbar-actions d-none d-lg-flex">
+        <button type="button" class="btn search-trigger" id="searchTrigger" aria-label="Search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+
+        <div class="theme-switcher" role="radiogroup" aria-label="Theme mode">
+          <button type="button" class="theme-btn" data-theme-mode="light" aria-label="Light mode">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button type="button" class="theme-btn" data-theme-mode="dark" aria-label="Dark mode">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button type="button" class="theme-btn active" data-theme-mode="system" aria-label="System mode">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="content-wrapper" aria-label="Main content">
+    <div lang="en">&lt;h1&gt;Go packages&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;draft&lt;/code&gt; is a command-line tool first. But every capability is an importable Go
 package, and only the PDF extractor, the brand assets and the TUI stay
-internal.</p>
-<pre><code class="language-sh">go get github.com/sebastienrousseau/draft@latest</code></pre>
+internal.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;<span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">go&lt;/span&gt;&lt;/span&gt;<span class="meta function-call arguments shell"> get github.com/sebastienrousseau/draft@latest&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 <div class="table-responsive"><table class="table">
 <thead>
 <tr>
@@ -113,125 +163,85 @@ internal.</p>
 </thead>
 <tbody>
 <tr>
-<td class="text-left"><code>claims</code></td>
+<td class="text-left">&lt;code&gt;claims&lt;/code&gt;</td>
 <td class="text-left">Claim parsing, the verbatim-quote gate, ledger rendering</td>
 </tr>
 <tr>
-<td class="text-left"><code>config</code></td>
+<td class="text-left">&lt;code&gt;config&lt;/code&gt;</td>
 <td class="text-left">Flag, environment and default resolution</td>
 </tr>
 <tr>
-<td class="text-left"><code>engine</code></td>
-<td class="text-left">The <code>Engine</code> seam, provider registry, Ollama, fallback chain</td>
+<td class="text-left">&lt;code&gt;engine&lt;/code&gt;</td>
+<td class="text-left">The &lt;code&gt;Engine&lt;/code&gt; seam, provider registry, Ollama, fallback chain</td>
 </tr>
 <tr>
-<td class="text-left"><code>frontmatter</code></td>
+<td class="text-left">&lt;code&gt;frontmatter&lt;/code&gt;</td>
 <td class="text-left">Metadata, YAML generation, article-set regeneration</td>
 </tr>
 <tr>
-<td class="text-left"><code>pipeline</code></td>
+<td class="text-left">&lt;code&gt;pipeline&lt;/code&gt;</td>
 <td class="text-left">Five-phase orchestration, retries, continuation, events</td>
 </tr>
 <tr>
-<td class="text-left"><code>prompt</code></td>
+<td class="text-left">&lt;code&gt;prompt&lt;/code&gt;</td>
 <td class="text-left">Grounded claim, writing and review prompts</td>
 </tr>
 <tr>
-<td class="text-left"><code>rules</code></td>
+<td class="text-left">&lt;code&gt;rules&lt;/code&gt;</td>
 <td class="text-left">Shared editorial constants</td>
 </tr>
 <tr>
-<td class="text-left"><code>validate</code></td>
+<td class="text-left">&lt;code&gt;validate&lt;/code&gt;</td>
 <td class="text-left">House-rule and faithfulness checks</td>
 </tr>
 </tbody>
 </table></div>
-<p>Each has its own README with a runnable quick start and an API table. Full
-reference on <a href="https://pkg.go.dev/github.com/sebastienrousseau/draft">pkg.go.dev</a>.</p>
+&lt;p&gt;Each has its own README with a runnable quick start and an API table. Full
+reference on &lt;a href=&quot;https://pkg.go.dev/github.com/sebastienrousseau/draft&quot;&gt;pkg.go.dev&lt;/a&gt;.&lt;/p&gt;
 <h2>The seam that matters</h2>
-<p><code>Engine</code> is two methods. The whole test suite and every example run against
-in-process implementations of it, which is why none of them need a network:</p>
-<pre><code class="language-go">type Engine interface {
-	Name() string
-	Generate(ctx context.Context, req Request) (Result, error)
-}</code></pre>
-<p>Return <code>Result{Truncated: true}</code> and the pipeline continues generation rather
-than saving a mid-sentence article.</p>
-<blockquote>
-<p><strong>API stability.</strong> While the module is <code>0.0.x</code>, the exported Go API may
+&lt;p&gt;&lt;code&gt;Engine&lt;/code&gt; is two methods. The whole test suite and every example run against
+in-process implementations of it, which is why none of them need a network:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;<span class="source go"><span class="meta type go"><span class="storage type go">type&lt;/span&gt; <span class="entity name type go">Engine&lt;/span&gt; <span class="storage type go">interface&lt;/span&gt; {&lt;/span&gt;
+	<span class="meta function-call go"><span class="variable function go">Name&lt;/span&gt;<span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group end go">)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; <span class="storage type go">string&lt;/span&gt;
+	<span class="meta function-call go"><span class="variable function go">Generate&lt;/span&gt;<span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta function-call go"><span class="meta group go">ctx context<span class="punctuation accessor go">.&lt;/span&gt;<span class="variable other member go">Context&lt;/span&gt;<span class="punctuation separator go">,&lt;/span&gt; req Request&lt;/span&gt;<span class="meta group go"><span class="punctuation definition group end go">)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; <span class="meta group go"><span class="punctuation definition group begin go">(&lt;/span&gt;Result<span class="punctuation separator go">,&lt;/span&gt; <span class="storage type go">error&lt;/span&gt;<span class="punctuation definition group end go">)&lt;/span&gt;&lt;/span&gt;
+}
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Return &lt;code&gt;Result{Truncated: true}&lt;/code&gt; and the pipeline continues generation rather
+than saving a mid-sentence article.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;API stability.&lt;/strong&gt; While the module is &lt;code&gt;0.0.x&lt;/code&gt;, the exported Go API may
 change between releases without a deprecation cycle. Pin an exact version if
-you depend on it. The CLI's flags and output layout are the stable surface;
-the Go packages are not yet.</p>
-</blockquote>
+you depend on it. The CLI&#x27;s flags and output layout are the stable surface;
+the Go packages are not yet.&lt;/p&gt;
+&lt;/blockquote&gt;
 </div>
-        </article>
+  </main>
+
+  <div class="text-center py-4">
+    <a href="#main" class="btn btn-outline-dark" aria-label="Back to the top">Back to the top ↑</a>
+  </div>
+
+  <footer><div class="container-xxl"><div class="row g-4"><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Core Documentation</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/getting-started/index.html">Getting Started</a></li><li><a href="/features/index.html">AST Compiler & Exporters</a></li><li><a href="/documentation/index.html">API Reference</a></li><li><a href="/examples/index.html">Document Examples</a></li></ul></div><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Architecture & Speed</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/benchmarks/index.html">Parsing Benchmarks</a></li><li><a href="/architecture/index.html">Zero-Allocation Lexer</a></li><li><a href="/security/index.html">Zero Telemetry & Trust</a></li><li><a href="/contact/index.html">Enterprise Support</a></li></ul></div><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Open Source & Author</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/about/index.html">About Sebastien Rousseau</a></li><li><a href="/changelog/index.html">Release Changelog</a></li><li><a href="/contributing/index.html">Contributing Guide</a></li><li><a href="/faqs/index.html">Questions & Answers</a></li><li><a href="/made-with-ssg/index.html">Made with SSG</a></li></ul></div><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Legal & Feeds</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/accessibility/index.html">Accessibility (WCAG AAA)</a></li><li><a href="/terms/index.html">Terms of Use</a></li><li><a href="/privacy/index.html">Privacy Policy</a></li><li><a href="/rss.xml">RSS Feed</a></li><li><a href="/atom.xml">Atom Feed</a></li><li><a href="/feed.json">JSON Feed</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div></div><div class="text-center pt-4 mt-4 border-top text-muted small">© 2026 Draft Lib. High-velocity document compilation engine. All releases Sigstore-signed.</div></div></footer>
+
+  <div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-label="Site Search">
+    <div class="search-backdrop"></div>
+    <div class="search-dialog">
+      <div class="search-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="search" id="searchInput" class="search-input" placeholder="Search AST, parsers, renderers..." aria-label="Search query" autocomplete="off">
+        <button type="button" class="search-close" id="searchClose" aria-label="Close search">✕</button>
       </div>
-    </main>
-
-    <footer class="footer">
-      <div class="wrap">
-        <div class="footer-grid">
-          <div>
-            <p class="footer-brand">draft</p>
-            <p class="footer-tagline">Research papers in. Publication-ready Markdown out. Every sentence grounded in a fact it can prove.</p>
-          </div>
-          <div>
-            <h2 class="footer-heading">Documentation</h2>
-            <ul class="footer-links">
-              <li><a href="/documentation/">Command reference</a></li>
-              <li><a href="/grounding/">How grounding works</a></li>
-              <li><a href="/examples/">Runnable examples</a></li>
-              <li><a href="/library/">Go packages</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="footer-heading">Project</h2>
-            <ul class="footer-links">
-              <li><a href="https://github.com/sebastienrousseau/draft" rel="external noopener">Source on GitHub</a></li>
-              <li><a href="https://pkg.go.dev/github.com/sebastienrousseau/draft" rel="external noopener">Go reference</a></li>
-              <li><a href="https://github.com/sebastienrousseau/draft/releases" rel="external noopener">Releases</a></li>
-              <li><a href="https://github.com/sebastienrousseau/draft/blob/main/CHANGELOG.md" rel="external noopener">Changelog</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="footer-heading">Trust</h2>
-            <ul class="footer-links">
-              <li><a href="/security/">Security posture</a></li>
-              <li><a href="https://scorecard.dev/viewer/?uri=github.com/sebastienrousseau/draft" rel="external noopener">OpenSSF Scorecard</a></li>
-              <li><a href="https://github.com/sebastienrousseau/draft/blob/main/SECURITY.md" rel="external noopener">Disclosure policy</a></li>
-              <li><a href="/accessibility/">Accessibility</a></li>
-            </ul>
-          </div>
-        </div>
-        <p class="footer-legal">
-          Licensed under either of Apache-2.0 or MIT, at your option.
-          &copy; 2026 Sebastien Rousseau.
-        </p>
+      <div id="searchResults" class="search-results" role="listbox">
+        <div class="search-empty">Type to search...</div>
       </div>
-    </footer>
+    </div>
+  </div>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "draft",
-        "url": "https://draftlib.com/",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "macOS, Linux, Windows",
-        "description": "A command-line tool that turns research papers into publication-ready Markdown, with every claim verified verbatim against its source.",
-        "license": "https://github.com/sebastienrousseau/draft/blob/main/LICENSE-MIT",
-        "codeRepository": "https://github.com/sebastienrousseau/draft",
-        "programmingLanguage": "Go",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "author": { "@type": "Person", "name": "Sebastien Rousseau" }
-      }
-    </script>
+  <script src="/main.1dd33063.js" integrity="sha384-PZndwZBSayx7R7I8QNl0hu5d/jreN9qs9MFEGcVkBST/64qQLSgbHYadE36VBHyG" crossorigin="anonymous" defer></script>
 
-    <script src="/_csp/197fcfccbee69bda.js" integrity="sha384-geygAAYoalTqpA6bIgsGUMRQupyTiF/rCnvMiGE5+G0s0ZOYAhHnkhzyMXN9yNxa" crossorigin="anonymous"></script>
-  
 <!-- SSG Search Widget -->
 <div id="ssg-search-widget">
-
+<link rel="stylesheet" href="/_csp/ab0ff800df72e7d4.css" integrity="sha384-5/lyYdum7VUqasmpxZRYN9CrkRVxSizBemRDvsbiNqMKv2LpzAGqYf1RVnJOlg3X" crossorigin="anonymous">
 <!-- Search trigger button -->
 <button id="ssg-search-btn" type="button" aria-label="Search">
 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>

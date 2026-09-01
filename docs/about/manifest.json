@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "Background and credentials of Sebastien Rousseau, creator of Draft Lib and financial systems architect.",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "Draft Lib",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "draftlib",
+  "start_url": ".",
+  "theme_color": null
+}

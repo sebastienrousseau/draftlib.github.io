@@ -1,63 +1,49 @@
 name: CI
 
-# Rebuilds the site from source and runs ssg's audit gates, failing on
-# warnings. The deployed docs/ is regenerated in-job, so a source change that
-# breaks a gate cannot merge green.
-#
-# This file previously carried a step list copied from another project
-# (pain001): node --test over tests/, four i18n table validators, a content
-# integrity check, a link checker, a snippet checker that pip-installed
-# pain001, puppeteer layout and print audits, and pa11y-ci. None of those
-# twelve files or directories exist in this repository — no tests/, no
-# scripts/validate_*.py, no scripts/*_audit.cjs, no .pa11yci — so the job
-# failed at the first of them on every run, and had done since the site was
-# first committed.
-#
-# They are removed rather than stubbed. Re-add any of them alongside the
-# script it runs, not before: a step that references a missing file is not
-# coverage, it is a permanently red build that trains everyone to ignore CI.
-#
-# Accessibility is still gated. ssg's own wcag gate runs below as part of the
-# audit and is what reports "All N page(s) passed checks"; pa11y-ci would have
-# added an independent WCAG2AAA pass over the built pages, which is worth
-# restoring once a .pa11yci config exists here.
-
 on:
   push:
     branches: [main, "feat/**"]
   pull_request:
-    branches: [main]
-  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  build-and-audit:
+  validate:
+    name: Build Docs
     runs-on: ubuntu-latest
-    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Cache ssg binary
-        id: cache-ssg
-        uses: actions/cache@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          path: ~/.cargo/bin/ssg
-          key: ssg-0.0.48-${{ runner.os }}
+          node-version: "20"
 
-      # Pinned to the version the site is authored and verified against
-      # locally; a mismatch means CI audits a different renderer than the one
-      # that produced the committed docs/.
-      - name: Install ssg 0.0.48
-        if: steps.cache-ssg.outputs.cache-hit != 'true'
-        run: cargo install ssg --locked --version 0.0.48
+      - name: HTML validation (recommended + WCAG rules)
+        run: npx --yes html-validate@10 "docs/**/*.html"
 
-      - name: Build site
-        run: ./build.sh
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-      - name: Audit gates (fail on warnings)
-        run: ssg audit -f ssg.toml -o docs --severity warn --fail-on warn
+      - name: WCAG AAA contrast audit
+        run: python3 audit/contrast.py
+
+      - name: Structure & self-hosting guardrails
+        run: |
+          fail=0
+          for f in $(find docs -name '*.html'); do
+            n=$(grep -o '<h1' "$f" | wc -l)
+            [ "$n" -eq 1 ] || { echo "::error file=$f::expected exactly one <h1>, found $n"; fail=1; }
+            grep -q 'rel="canonical"' "$f" || { echo "::error file=$f::missing canonical"; fail=1; }
+            grep -q 'Content-Security-Policy' "$f" || { echo "::error file=$f::missing CSP"; fail=1; }
+            grep -q 'class="skip-link"' "$f" || { echo "::error file=$f::missing skip link"; fail=1; }
+            if grep -qoE 'style="[^"]' "$f"; then echo "::error file=$f::inline style attribute (CSP forbids)"; fail=1; fi
+            if grep -oE '(src|href)="https?://[^"]+\.(css|js|woff2?|png|jpg|jpeg|webp|gif)"' "$f" | grep -v 'cloudcdn.pro'; then
+              echo "::error file=$f::external asset reference (site must be self-hosted or from trusted cdn)"; fail=1
+            fi
+          done
+          if [ "$fail" -eq 0 ]; then echo "All structure & self-hosting guardrails passed."; fi
+          exit $fail

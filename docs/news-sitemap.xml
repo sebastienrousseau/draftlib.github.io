@@ -2,55 +2,163 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 <url>
-  <loc>https://draftlib.com/404/</loc>
+  <loc>http://127.0.0.1:8000/404/</loc>
   <news:news>
     <news:publication>
-      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:name>Sebastien Rousseau</news:name>
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Page not found — draft</news:title>
-    <news:keywords>404, not found</news:keywords>
+    <news:title>Page Not Found (404) | Draft Lib</news:title>
+    <news:keywords>404 not found</news:keywords>
   </news:news>
 </url>
 <url>
-  <loc>https://draftlib.com/accessibility/</loc>
+  <loc>http://127.0.0.1:8000/about/</loc>
   <news:news>
     <news:publication>
-      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:name>Sebastien Rousseau</news:name>
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Accessibility — draft</news:title>
-    <news:keywords>accessibility, wcag, a11y, keyboard, contrast</news:keywords>
+    <news:title>About Sebastien Rousseau & Draft Lib</news:title>
+    <news:keywords>Sebastien Rousseau, Draft Lib creator</news:keywords>
   </news:news>
 </url>
 <url>
-  <loc>https://draftlib.com/documentation/</loc>
+  <loc>http://127.0.0.1:8000/accessibility/</loc>
   <news:news>
     <news:publication>
-      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:name>Sebastien Rousseau</news:name>
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Documentation — draft</news:title>
-    <news:keywords>draft documentation, CLI flags, DRAFT_ENGINE, engine routing, resume, dry-run</news:keywords>
+    <news:title>Accessibility Statement: WCAG 2.2 Level AAA Compliance</news:title>
+    <news:keywords>accessibility statement</news:keywords>
   </news:news>
 </url>
 <url>
-  <loc>https://draftlib.com/examples/</loc>
+  <loc>http://127.0.0.1:8000/architecture/</loc>
   <news:news>
     <news:publication>
-      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:name>Sebastien Rousseau</news:name>
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Examples — draft</news:title>
-    <news:keywords>draft examples, go run, demo, dashboard, pipeline</news:keywords>
+    <news:title>Internal Architecture: Lexer, AST Pipeline & Exporters</news:title>
+    <news:keywords>draftlib architecture, rust AST parser design</news:keywords>
   </news:news>
 </url>
 <url>
-  <loc>https://draftlib.com/grounding/</loc>
+  <loc>http://127.0.0.1:8000/benchmarks/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Performance Benchmarks: Draft Lib vs Pandoc & Comrak</news:title>
+    <news:keywords>draftlib benchmarks, rust markdown benchmark</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/changelog/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Changelog & Version History</news:title>
+    <news:keywords>draftlib changelog, version history</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/contact/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Contact & Enterprise Inquiries</news:title>
+    <news:keywords>contact draftlib</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/contributing/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Contributing to Draft Lib</news:title>
+    <news:keywords>contribute draftlib</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/documentation/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>API Reference & Trait Specifications</news:title>
+    <news:keywords>draftlib API, rust crate documentation</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/examples/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Document Templates & Implementation Examples</news:title>
+    <news:keywords>draftlib examples, rust document templates</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/faqs/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Frequently Asked Questions (FAQ): Draft Lib</news:title>
+    <news:keywords>draftlib FAQ, rust document questions</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/features/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Core Features: AST Compiler, Schema Validation & Multi-Format Exporters</news:title>
+    <news:keywords>draftlib features, markdown AST compiler, rust template engine</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/getting-started/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Getting Started with Draft Lib: Installation & Quickstart</news:title>
+    <news:keywords>install draftlib, cargo draftlib, rust document quickstart</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/grounding/</loc>
   <news:news>
     <news:publication>
       <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
@@ -62,7 +170,7 @@
   </news:news>
 </url>
 <url>
-  <loc>https://draftlib.com/library/</loc>
+  <loc>http://127.0.0.1:8000/library/</loc>
   <news:news>
     <news:publication>
       <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
@@ -74,15 +182,75 @@
   </news:news>
 </url>
 <url>
-  <loc>https://draftlib.com/security/</loc>
+  <loc>http://127.0.0.1:8000/made-with-ssg/</loc>
   <news:news>
     <news:publication>
-      <news:name>contact@draftlib.com (Sebastien Rousseau)</news:name>
+      <news:name>Sebastien Rousseau</news:name>
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Security — draft</news:title>
-    <news:keywords>security, supply chain, sigstore, sbom, prompt injection, openssf scorecard</news:keywords>
+    <news:title>Made with Static Site Generator (SSG)</news:title>
+    <news:keywords>Static Site Generator, SSG</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/offline/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Offline Access: Draft Lib</news:title>
+    <news:keywords>offline draftlib</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/privacy/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Privacy Policy: Zero-Telemetry Architecture</news:title>
+    <news:keywords>draftlib privacy policy</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/security/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Security Architecture: Sovereign Document Processing & Zero Telemetry</news:title>
+    <news:keywords>draftlib security, zero telemetry document parser</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/terms/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Terms of Use & Open Source License</news:title>
+    <news:keywords>terms of use</news:keywords>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/thanks/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Thank You | Draft Lib</news:title>
+    <news:keywords>thank you</news:keywords>
   </news:news>
 </url>
 </urlset>

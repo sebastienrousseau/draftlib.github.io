@@ -1,19 +1,19 @@
 {
   "background_color": "#ffffff",
-  "description": "No tokens on disk, prompt-injection awareness, bounded external calls, and verifiable releases.",
+  "description": "Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.",
   "display": "standalone",
   "icons": [
     {
       "purpose": "any maskable",
       "sizes": "512x512",
-      "src": "https://draftlib.com/img/draft.svg",
+      "src": "",
       "type": "image/svg+xml"
     }
   ],
-  "name": "draft",
+  "name": "Draft Lib",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draft",
+  "short_name": "draftlib",
   "start_url": ".",
   "theme_color": null
 }

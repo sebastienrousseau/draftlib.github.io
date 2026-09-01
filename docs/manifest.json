@@ -1,12 +1,11 @@
 {
-  "name": "draft — grounded article drafting",
-  "short_name": "draft",
-  "description": "Research papers in. Publication-ready Markdown out.",
-  "start_url": "/",
+  "background_color": "#ffffff",
+  "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations.",
   "display": "standalone",
-  "background_color": "#0b0e14",
-  "theme_color": "#0b0e14",
-  "icons": [
-    { "src": "/img/draft.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
-  ]
+  "name": "Draft Lib",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "draftlib",
+  "start_url": ".",
+  "theme_color": null
 }

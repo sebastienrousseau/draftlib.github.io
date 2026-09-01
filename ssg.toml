@@ -1,14 +1,20 @@
-# ssg (Shokunin Static Site Generator) configuration — draftlib.com
-#
-# site_name also names the staging output directory and feeds the JSON-LD
-# publisher and llms.txt title, so it is "Draftlib", not "docs".
-
-site_name = "Draftlib"
-site_description = "draft turns research papers into publication-ready Markdown, with every claim verified verbatim against its source. Go, no API key, works offline."
-language = "en-GB"
-site_title = "draft — grounded article drafting from research papers"
+# Generated site-level configuration for draftlib.github.io
+site_name = "Draft Lib"
+site_title = "Draft Lib | Fast Document Processing & Drafting Engine in Rust"
+site_description = "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts."
 base_url = "https://draftlib.com"
+language = "en-GB"
+
 content_dir = "_posts"
 template_dir = "_layouts"
-output_dir = "output"
-serve_dir = "Draftlib"
+output_dir = "docs"
+
+[agents]
+agents_txt = true
+ai_plugin = true
+
+[agents.mcp]
+enabled = true
+
+[edge_headers]
+targets = ["netlify", "cloudflare", "vercel"]

@@ -1,0 +1,113 @@
+{
+  "_pqc_note": [
+    "PQC posture: TLS 1.3 with the X25519+ML-KEM-768 hybrid",
+    "key-exchange suite (RFC 9420 / draft-ietf-tls-hybrid-design).",
+    "Cloudflare auto-negotiates as of mid-2026; Netlify is",
+    "behind an opt-in in the platform dashboard; Vercel surfaces",
+    "the suite once the upstream CDN (Cloudflare/AWS) enables it.",
+    "Configure at the platform level — this file is documentation",
+    "of the recommended posture, not a runtime knob.",
+    "Cloudflare:    https://developers.cloudflare.com/ssl/post-quantum-cryptography/",
+    "Netlify:       https://docs.netlify.com/edge-functions/overview/",
+    "Vercel:        https://vercel.com/docs/edge-network/headers"
+  ],
+  "headers": [
+    {
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self'; frame-ancestors 'none'"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), geolocation=(), microphone=()"
+        }
+      ],
+      "source": "/(.*)"
+    },
+    {
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-Up9VhEq7KT8b6SqMfADk1YhLApRU0xjDLohvX/BEyoI='; style-src 'self'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self'; frame-ancestors 'none'"
+        }
+      ],
+      "source": "/"
+    },
+    {
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-dG64KW8LpCT13cTfYzi9/UkEb/OKboCNdw6ZaSuZOY4=' 'sha256-tQM5JnUcdCFE0xpJ1yrtH+vkmONwm6U516zHDAu14QQ='; style-src 'self'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self'; frame-ancestors 'none'"
+        }
+      ],
+      "source": "/404/"
+    },
+    {
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-hyCttQcMihfMV55/u/5aFXIkT9yG4aSNEr8hu6RzJVs=' 'sha256-etsL5qwZpwUTY/ZqQD3wzU504D+q2vdMZiH4VlKEqVQ='; style-src 'self'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self'; frame-ancestors 'none'"
+        }
+      ],
+      "source": "/accessibility/"
+    },
+    {
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-1vq5OrwVv060OKPR67W3Qm1RFTML583nCOGAb9YejcA=' 'sha256-vnF56G2PE5na5fsrSovQ4RaV7i8s04V7aPYmBREKBzk='; style-src 'self'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self'; frame-ancestors 'none'"
+        }
+      ],
+      "source": "/documentation/"
+    },
+    {
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-0Q8haEcpOc/+K9eDGb0E9zCgqiDSqYbKbsuqzNN86V0=' 'sha256-vjyg1SswawBXVbdcs7KAObFSRXamtZlsj2izznI26YU='; style-src 'self'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self'; frame-ancestors 'none'"
+        }
+      ],
+      "source": "/examples/"
+    },
+    {
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-c6fX06xi/t0dMidjXpcp8ibhAn9tSTrn8lGdyYf2Wxo=' 'sha256-kPEqy6K0RzL6NPAMeVJncHiCCd2vK//Co0sPQiLvAOg='; style-src 'self'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self'; frame-ancestors 'none'"
+        }
+      ],
+      "source": "/grounding/"
+    },
+    {
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-WgHBXlPLuvsDtXvGrVGfh07JIe2+d+++GME9vUhxN8w=' 'sha256-Pk/cP4ArIq6NBAu+cZXXsdN4lAF1Hw5oMk8As77RsKg='; style-src 'self'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self'; frame-ancestors 'none'"
+        }
+      ],
+      "source": "/library/"
+    },
+    {
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-qqzqV+Z4u5kAG0GDsHVFrhIWJyOgre9vbiaA/bzsLLo=' 'sha256-UhLPi3qIC/5JF4c5RrN9AbP/qMH4ixcYiIJYihhMC1g='; style-src 'self'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self'; frame-ancestors 'none'"
+        }
+      ],
+      "source": "/security/"
+    }
+  ]
+}

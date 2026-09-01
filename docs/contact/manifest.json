@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "Get in touch regarding Draft Lib integration and support.",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "Draft Lib",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "draftlib",
+  "start_url": ".",
+  "theme_color": null
+}
