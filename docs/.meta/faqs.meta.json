@@ -1,0 +1,17 @@
+{
+  "author": "Sebastien Rousseau",
+  "banner": "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp",
+  "banner_alt": "Draft Lib — Fast Document Processing & Drafting Engine in Rust",
+  "date": "2026-09-01",
+  "description": "Common questions about Draft Lib features, licenses, and integrations.",
+  "keywords": "draftlib FAQ, rust document questions",
+  "language": "en-GB",
+  "layout": "faqs",
+  "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
+  "name": "Draft Lib",
+  "permalink": "https://draftlib.com/faqs/index.html",
+  "reading_time": 1,
+  "short_name": "draftlib",
+  "title": "Frequently Asked Questions (FAQ): Draft Lib",
+  "word_count": 148
+}

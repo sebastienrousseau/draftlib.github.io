@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://draftlib.com/thanks/index.html/sitemap.xml

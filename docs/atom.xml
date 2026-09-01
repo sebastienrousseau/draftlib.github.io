@@ -1,50 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Draftlib</title>
-  <link href="https://draftlib.com/atom.xml" rel="self" type="application/atom+xml"/>
-  <link href="https://draftlib.com"/>
-  <id>https://draftlib.com</id>
+  <title>MySsgSite</title>
+  <link href="http://127.0.0.1:8000/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="http://127.0.0.1:8000"/>
+  <id>http://127.0.0.1:8000</id>
   <updated></updated>
   <entry>
-    <title>Page not found — draft</title>
-    <link href="https://draftlib.com/404/"/>
-    <id>https://draftlib.com/404/</id>
+    <title>Page Not Found (404) | Draft Lib</title>
+    <link href="http://127.0.0.1:8000/404/"/>
+    <id>http://127.0.0.1:8000/404/</id>
     <updated></updated>
     <published></published>
-    <summary>That page does not exist.</summary>
-    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+    <summary>The requested documentation page could not be found.</summary>
+    <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Accessibility — draft</title>
-    <link href="https://draftlib.com/accessibility/"/>
-    <id>https://draftlib.com/accessibility/</id>
+    <title>About Sebastien Rousseau &amp; Draft Lib</title>
+    <link href="http://127.0.0.1:8000/about/"/>
+    <id>http://127.0.0.1:8000/about/</id>
     <updated></updated>
     <published></published>
-    <summary>The accessibility commitments for draftlib.com and the draft command line.</summary>
-    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+    <summary>Background and credentials of Sebastien Rousseau, creator of Draft Lib and financial systems architect.</summary>
+    <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Documentation — draft</title>
-    <link href="https://draftlib.com/documentation/"/>
-    <id>https://draftlib.com/documentation/</id>
+    <title>Accessibility Statement: WCAG 2.2 Level AAA Compliance</title>
+    <link href="http://127.0.0.1:8000/accessibility/"/>
+    <id>http://127.0.0.1:8000/accessibility/</id>
     <updated></updated>
     <published></published>
-    <summary>Command reference for draft: flags, environment variables, engine routing, resume and dry-run.</summary>
-    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+    <summary>Accessibility statement declaring WCAG 2.2 Level AAA compliance.</summary>
+    <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Examples — draft</title>
-    <link href="https://draftlib.com/examples/"/>
-    <id>https://draftlib.com/examples/</id>
+    <title>Internal Architecture: Lexer, AST Pipeline &amp; Exporters</title>
+    <link href="http://127.0.0.1:8000/architecture/"/>
+    <id>http://127.0.0.1:8000/architecture/</id>
     <updated></updated>
     <published></published>
-    <summary>Runnable, network-free demos of every capability: the dashboard, grounding, the pipeline, review and article sets.</summary>
-    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+    <summary>Architectural overview of Draft Lib&apos;s token streaming, AST reconciliation, and memory model.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Performance Benchmarks: Draft Lib vs Pandoc &amp; Comrak</title>
+    <link href="http://127.0.0.1:8000/benchmarks/"/>
+    <id>http://127.0.0.1:8000/benchmarks/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Empirical benchmarks parsing and rendering 50-page legal and technical documents.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Changelog &amp; Version History</title>
+    <link href="http://127.0.0.1:8000/changelog/"/>
+    <id>http://127.0.0.1:8000/changelog/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Release notes for Draft Lib starting at v0.0.1.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Contact &amp; Enterprise Inquiries</title>
+    <link href="http://127.0.0.1:8000/contact/"/>
+    <id>http://127.0.0.1:8000/contact/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Get in touch regarding Draft Lib integration and support.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Contributing to Draft Lib</title>
+    <link href="http://127.0.0.1:8000/contributing/"/>
+    <id>http://127.0.0.1:8000/contributing/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Guidelines for contributing to the Draft Lib project.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>API Reference &amp; Trait Specifications</title>
+    <link href="http://127.0.0.1:8000/documentation/"/>
+    <id>http://127.0.0.1:8000/documentation/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Document Templates &amp; Implementation Examples</title>
+    <link href="http://127.0.0.1:8000/examples/"/>
+    <id>http://127.0.0.1:8000/examples/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Real-world code examples using Draft Lib for contractual and technical drafting.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Frequently Asked Questions (FAQ): Draft Lib</title>
+    <link href="http://127.0.0.1:8000/faqs/"/>
+    <id>http://127.0.0.1:8000/faqs/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Common questions about Draft Lib features, licenses, and integrations.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Core Features: AST Compiler, Schema Validation &amp; Multi-Format Exporters</title>
+    <link href="http://127.0.0.1:8000/features/"/>
+    <id>http://127.0.0.1:8000/features/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Detailed breakdown of Draft Lib&apos;s AST generation, template expansion, and rendering pipelines.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Getting Started with Draft Lib: Installation &amp; Quickstart</title>
+    <link href="http://127.0.0.1:8000/getting-started/"/>
+    <id>http://127.0.0.1:8000/getting-started/</id>
+    <updated></updated>
+    <published></published>
+    <summary>How to install Draft Lib via Cargo and begin compiling structured documents.</summary>
+    <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
     <title>How grounding works — draft</title>
-    <link href="https://draftlib.com/grounding/"/>
-    <id>https://draftlib.com/grounding/</id>
+    <link href="http://127.0.0.1:8000/grounding/"/>
+    <id>http://127.0.0.1:8000/grounding/</id>
     <updated></updated>
     <published></published>
     <summary>A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is the whole gate.</summary>
@@ -52,20 +133,65 @@
   </entry>
   <entry>
     <title>Go packages — draft</title>
-    <link href="https://draftlib.com/library/"/>
-    <id>https://draftlib.com/library/</id>
+    <link href="http://127.0.0.1:8000/library/"/>
+    <id>http://127.0.0.1:8000/library/</id>
     <updated></updated>
     <published></published>
     <summary>draft is a command-line tool first, but every capability is an importable Go package.</summary>
     <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
   </entry>
   <entry>
-    <title>Security — draft</title>
-    <link href="https://draftlib.com/security/"/>
-    <id>https://draftlib.com/security/</id>
+    <title>Made with Static Site Generator (SSG)</title>
+    <link href="http://127.0.0.1:8000/made-with-ssg/"/>
+    <id>http://127.0.0.1:8000/made-with-ssg/</id>
     <updated></updated>
     <published></published>
-    <summary>No tokens on disk, prompt-injection awareness, bounded external calls, and verifiable releases.</summary>
-    <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
+    <summary>Details on native Rust static site generation.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Offline Access: Draft Lib</title>
+    <link href="http://127.0.0.1:8000/offline/"/>
+    <id>http://127.0.0.1:8000/offline/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Service worker offline fallback page.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Privacy Policy: Zero-Telemetry Architecture</title>
+    <link href="http://127.0.0.1:8000/privacy/"/>
+    <id>http://127.0.0.1:8000/privacy/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Privacy policy declaring zero tracking cookies and completely local computation.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Security Architecture: Sovereign Document Processing &amp; Zero Telemetry</title>
+    <link href="http://127.0.0.1:8000/security/"/>
+    <id>http://127.0.0.1:8000/security/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Terms of Use &amp; Open Source License</title>
+    <link href="http://127.0.0.1:8000/terms/"/>
+    <id>http://127.0.0.1:8000/terms/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Terms governing Draft Lib under Apache-2.0 and MIT licenses.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Thank You | Draft Lib</title>
+    <link href="http://127.0.0.1:8000/thanks/"/>
+    <id>http://127.0.0.1:8000/thanks/</id>
+    <updated></updated>
+    <published></published>
+    <summary>Thank you for your message.</summary>
+    <author><name>Sebastien Rousseau</name></author>
   </entry>
 </feed>

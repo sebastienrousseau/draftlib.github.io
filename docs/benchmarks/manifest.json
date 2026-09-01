@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "Empirical benchmarks parsing and rendering 50-page legal and technical documents.",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "Draft Lib",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "draftlib",
+  "start_url": ".",
+  "theme_color": null
+}

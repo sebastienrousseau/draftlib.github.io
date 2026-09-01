@@ -1,0 +1,18 @@
+{
+  "api": {
+    "is_user_authenticated": false,
+    "type": "openapi",
+    "url": "https://draftlib.com/openapi.yaml"
+  },
+  "auth": {
+    "type": "none"
+  },
+  "contact_email": "support@draftlib.com",
+  "description_for_human": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts.",
+  "description_for_model": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts.",
+  "legal_info_url": "https://draftlib.com/legal",
+  "logo_url": "https://draftlib.com/favicon.ico",
+  "name_for_human": "Draft Lib | Fast Document Processing & Drafting Engine in Rust",
+  "name_for_model": "draft_lib",
+  "schema_version": "v1"
+}

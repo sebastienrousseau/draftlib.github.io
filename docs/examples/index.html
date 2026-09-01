@@ -1,268 +1,193 @@
 <!DOCTYPE html>
-<html lang="en-GB">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta itemprop="datePublished" content="" id="date" />
-    <meta itemprop="dateModified" content="" id="last-modified" />
-    <title>Examples — draft</title>
-
-    <meta name="author" content="contact@draftlib.com (Sebastien Rousseau)">
-<meta name="description" content="Runnable, network-free demos of every capability: the dashboard, grounding, the pipeline, review and article sets.">
-<meta name="keywords" content="draft examples, go run, demo, dashboard, pipeline">
-<meta property="og:image" content="https://draftlib.com/img/og-card.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="draft — grounded article drafting from research papers." />
-    <meta name="accessibility" content="ARIA, fullKeyboardControl, noFlashingHazard" />
-    
-
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'  'unsafe-hashes'; script-src 'self' ; connect-src 'self'; font-src 'self'; form-action 'self'" />
-    <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()" />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-
-    
-    
-
-    <link rel="alternate" href="https://draftlib.com/examples/" hreflang="en" />
-    
-    <link rel="icon" type="image/svg+xml" href="/img/draft.svg" sizes="any" />
-    <link rel="apple-touch-icon" href="/img/draft.svg" />
-    <link rel="preload" href="/fonts/source-serif-4-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-    <meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-    <meta name="color-scheme" content="light dark" />
-
-    <script src="/_csp/8145aa0ad262565d.js" integrity="sha384-xojGPg1xO/5JD2kzlGSV/j609dNSF7NoW5JDXbMhLV0On6hgrwS9Jd6K+uAidu1K" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/_csp/c395514ce3055817.css" integrity="sha384-uHzNFOvbMgbgcBoRTPlYIfBOWwa4DHk6VupvwpiVTMkERGyMhp/sTX90x8a0FY+B" crossorigin="anonymous">
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="https://draftlib.com/atom.xml"/>
-  <link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://draftlib.com/feed.json"/>
-<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="Examples — draft">
-<meta property="og:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Examples&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;Every capability has a runnable demo. No model, no session CLI, no API key, no network.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://draftlib.com/examples/">
-<meta property="og:locale" content="en_GB">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Examples — draft">
-<meta name="twitter:description" content="&amp;lt;div lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;h1&amp;gt;Examples&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;Every capability has a runnable demo. No model, no session CLI, no API key, no network.">
-<meta name="twitter:image" content="https://draftlib.com/img/og-card.png">
-<link rel="canonical" href="https://draftlib.com/examples/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
-<link rel="stylesheet" href="/_csp/3ae64e6558e84d20.css" integrity="sha384-f2Z0C5solrQefPCCmZjO/z9IJJNmd4HUMJ7B21K6ilPsXO9ToIfnWd4eZWgycVea" crossorigin="anonymous"></head>
-
-  <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <header class="ap-nav">
-      <input class="ap-toggle" id="ap-menu-toggle" type="checkbox" aria-label="Toggle navigation" />
-      <div class="wrap ap-nav-wrap">
-        <a class="ap-brand" href="/" aria-label="draft home">
-          <!-- The nib, inlined so it needs no alt text: the link is named by
-               its aria-label and the wordmark beside it. Same geometry as
-               /img/draft.svg, which serves the favicon and the OG card. -->
-          <svg class="ap-mark" viewBox="0 0 64 64" width="26" height="26" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="ap-nib-ramp" x1="0" y1="11" x2="0" y2="55" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#F87171" />
-                <stop offset="0.5" stop-color="#C93F36" />
-                <stop offset="1" stop-color="#9F1239" />
-              </linearGradient>
-              <mask id="ap-nib-mask">
-                <rect width="64" height="64" fill="#000" />
-                <path d="M15 19 L20 11 L44 11 L49 19 L49 29 L32 55 L15 29 Z" fill="#fff" />
-                <circle cx="32" cy="23.5" r="4.2" fill="#000" />
-                <path d="M30.1 23.5 L33.9 23.5 L32.6 52.5 L31.4 52.5 Z" fill="#000" />
-              </mask>
-            </defs>
-            <rect width="64" height="64" rx="14" fill="#0b0e14" />
-            <rect width="64" height="64" fill="url(#ap-nib-ramp)" mask="url(#ap-nib-mask)" />
-          </svg>
-          <span>draft</span>
-        </a>
-        <nav aria-label="Primary navigation" id="ap-primary-nav">
-          <ul class="ap-menu">
-            <li><a href="/documentation/">Documentation</a></li>
-            <li><a href="/examples/">Examples</a></li>
-            <li><a href="/grounding/">Grounding</a></li>
-            <li><a href="/security/">Security</a></li>
-            <li><a href="https://github.com/sebastienrousseau/draft" rel="external noopener">GitHub</a></li>
-          </ul>
-        </nav>
-        <label class="ap-burger" for="ap-menu-toggle" aria-hidden="true"><span></span></label>
-      </div>
-    </header>
-
-    <main id="main-content">
-      <div class="wrap">
-        <article class="content-body">
-<div lang="en"><h1>Examples</h1>
-<p>Every capability has a runnable demo. No model, no session CLI, no API key, no
-network. Clone the repository and run any of them:</p>
-<pre><code class="language-sh">git clone https://github.com/sebastienrousseau/draft
-cd draft
-go run ./examples/dashboard</code></pre>
-<div class="table-responsive"><table class="table">
-<thead>
-<tr>
-<th>Example</th>
-<th>What it shows</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="text-left"><code>dashboard</code></td>
-<td class="text-left">The real full-screen TUI driven by an in-process engine — queue, phases, live preview and focus timer</td>
-</tr>
-<tr>
-<td class="text-left"><code>providers</code></td>
-<td class="text-left">Session providers in auto-selection order, install status, default models</td>
-</tr>
-<tr>
-<td class="text-left"><code>grounding</code></td>
-<td class="text-left">Claim verification against a source, ledger rendering, grounded prompt, house-rule validation</td>
-</tr>
-<tr>
-<td class="text-left"><code>pipeline</code></td>
-<td class="text-left">The five-phase pipeline end to end, merged multi-source drafting, streamed events</td>
-</tr>
-<tr>
-<td class="text-left"><code>review</code></td>
-<td class="text-left">Surgical-edit enhancement: body-only prompting, frontmatter re-attachment, set resync</td>
-</tr>
-<tr>
-<td class="text-left"><code>frontmatter</code></td>
-<td class="text-left">Metadata extraction, custom publisher identity, the three regeneration rules</td>
-</tr>
-</tbody>
-</table></div>
-<h2>Everyday recipes</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="text-left"><code>draft paper.pdf</code></td>
-<td class="text-left">Draft one paper, engine auto-selected</td>
-</tr>
-<tr>
-<td class="text-left"><code>draft a.pdf b.pdf c.pdf</code></td>
-<td class="text-left">Queue three papers, one draft each</td>
-</tr>
-<tr>
-<td class="text-left"><code>draft --merge notes.md paper.pdf</code></td>
-<td class="text-left">One draft from combined sources</td>
-</tr>
-<tr>
-<td class="text-left"><code>draft --dry-run paper.pdf</code></td>
-<td class="text-left">See the plan and the cost first</td>
-</tr>
-<tr>
-<td class="text-left"><code>draft --resume paper.pdf</code></td>
-<td class="text-left">Reuse the ledger from a failed attempt</td>
-</tr>
-<tr>
-<td class="text-left"><code>draft --engine ollama paper.pdf</code></td>
-<td class="text-left">Force the local model</td>
-</tr>
-<tr>
-<td class="text-left"><code>draft --review draft.md paper.pdf</code></td>
-<td class="text-left">Enhance an existing draft from its sources</td>
-</tr>
-<tr>
-<td class="text-left"><code>draft --json paper.pdf</code></td>
-<td class="text-left">One JSON object per job, for scripting</td>
-</tr>
-</tbody>
-</table>
-<h2>Scripting</h2>
-<p><code>--json</code> emits one object per job, including per-phase timings, so a run is
-comparable across invocations rather than only readable:</p>
-<pre><code class="language-json">{
-  "source": "/papers/router-s.pdf",
-  "output": "/drafts/2026-07-30/final/2026-07-30-router-s-final.md",
-  "engine": "claude",
-  "words": 1180,
-  "ok": true,
-  "duration_ms": 214301,
-  "phases_ms": { "Extract claims": 198442, "Write article": 12903 }
-}</code></pre>
-</div>
-        </article>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="wrap">
-        <div class="footer-grid">
-          <div>
-            <p class="footer-brand">draft</p>
-            <p class="footer-tagline">Research papers in. Publication-ready Markdown out. Every sentence grounded in a fact it can prove.</p>
-          </div>
-          <div>
-            <h2 class="footer-heading">Documentation</h2>
-            <ul class="footer-links">
-              <li><a href="/documentation/">Command reference</a></li>
-              <li><a href="/grounding/">How grounding works</a></li>
-              <li><a href="/examples/">Runnable examples</a></li>
-              <li><a href="/library/">Go packages</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="footer-heading">Project</h2>
-            <ul class="footer-links">
-              <li><a href="https://github.com/sebastienrousseau/draft" rel="external noopener">Source on GitHub</a></li>
-              <li><a href="https://pkg.go.dev/github.com/sebastienrousseau/draft" rel="external noopener">Go reference</a></li>
-              <li><a href="https://github.com/sebastienrousseau/draft/releases" rel="external noopener">Releases</a></li>
-              <li><a href="https://github.com/sebastienrousseau/draft/blob/main/CHANGELOG.md" rel="external noopener">Changelog</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="footer-heading">Trust</h2>
-            <ul class="footer-links">
-              <li><a href="/security/">Security posture</a></li>
-              <li><a href="https://scorecard.dev/viewer/?uri=github.com/sebastienrousseau/draft" rel="external noopener">OpenSSF Scorecard</a></li>
-              <li><a href="https://github.com/sebastienrousseau/draft/blob/main/SECURITY.md" rel="external noopener">Disclosure policy</a></li>
-              <li><a href="/accessibility/">Accessibility</a></li>
-            </ul>
-          </div>
-        </div>
-        <p class="footer-legal">
-          Licensed under either of Apache-2.0 or MIT, at your option.
-          &copy; 2026 Sebastien Rousseau.
-        </p>
-      </div>
-    </footer>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "draft",
-        "url": "https://draftlib.com/",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "macOS, Linux, Windows",
-        "description": "A command-line tool that turns research papers into publication-ready Markdown, with every claim verified verbatim against its source.",
-        "license": "https://github.com/sebastienrousseau/draft/blob/main/LICENSE-MIT",
-        "codeRepository": "https://github.com/sebastienrousseau/draft",
-        "programmingLanguage": "Go",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "author": { "@type": "Person", "name": "Sebastien Rousseau" }
-      }
-    </script>
-
-    <script src="/_csp/197fcfccbee69bda.js" integrity="sha384-geygAAYoalTqpA6bIgsGUMRQupyTiF/rCnvMiGE5+G0s0ZOYAhHnkhzyMXN9yNxa" crossorigin="anonymous"></script>
+<html lang="en-GB" data-theme-mode="system">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Document Templates &amp; Implementation Examples | Draft Lib</title>
   
+  <meta name="author" content="Sebastien Rousseau">
+  <meta name="description" content="Real-world code examples using Draft Lib for contractual and technical drafting.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'  https://cdn.jsdelivr.net; connect-src 'self' https://formspree.io; img-src 'self' data: https: https://cloudcdn.pro; style-src 'self'  https://cdn.jsdelivr.net; font-src 'self'; form-action 'self' https://formspree.io;" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Draft Lib">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Document Templates &amp; Implementation Examples | Draft Lib">
+  <meta property="og:description" content="Real-world code examples using Draft Lib for contractual and technical drafting.">
+  <meta property="og:image" content="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp">
+  <meta property="og:url" content="https://draftlib.com/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Document Templates &amp; Implementation Examples | Draft Lib">
+  <meta name="twitter:description" content="Real-world code examples using Draft Lib for contractual and technical drafting.">
+  <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp">
+
+  <link rel="alternate" href="https://draftlib.com/" hreflang="en" />
+  
+  <link rel="icon" type="image/svg+xml" href="https://cloudcdn.pro/cmn/v1/logos/cmn.svg" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32" />
+  <link rel="apple-touch-icon" href="https://cloudcdn.pro/cmn/v1/icons/192x192.png" sizes="192x192" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
+  <link rel="stylesheet" href="/styles.css">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://draftlib.com/#software",
+      "name": "Draft Lib",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux, macOS, Windows",
+      "license": "https://opensource.org/licenses/Apache-2.0",
+      "author": {
+        "@type": "Person",
+        "name": "Sebastien Rousseau",
+        "url": "https://sebastienrousseau.com"
+      },
+      "url": "https://draftlib.com/",
+      "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
+      "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://draftlib.com/#website",
+      "url": "https://draftlib.com/",
+      "name": "Draft Lib",
+      "publisher": {
+        "@type": "Person",
+        "name": "Sebastien Rousseau",
+        "url": "https://sebastienrousseau.com"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://draftlib.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://draftlib.com/#webpage",
+      "url": "https://draftlib.com/",
+      "name": "Draft Lib | Fast Document Processing & Drafting Engine in Rust",
+      "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations.",
+      "isPartOf": {
+        "@id": "https://draftlib.com/#website"
+      }
+    }
+  ]
+}
+  </script>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="https://draftlib.com/atom.xml"/>
+  <link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://draftlib.com/feed.json"/>
+<link rel="canonical" href="https://draftlib.com/examples/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="navbar-container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/" aria-label="Draft Lib Homepage">
+          <img src="https://cloudcdn.pro/cmn/v1/logos/cmn.svg" alt="Draft Lib Logo" width="32" height="32" class="d-inline-block" />
+          <span class="navbar-brand-text">Draft Lib</span>
+        </a>
+
+        <!-- Mobile actions -->
+        <div class="navbar-actions d-flex d-lg-none">
+          <button type="button" class="btn search-trigger" id="searchTriggerMobile" aria-label="Search">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+
+          <div class="theme-switcher" role="radiogroup" aria-label="Theme mode">
+            <button type="button" class="theme-btn" data-theme-mode="light" aria-label="Light mode">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <button type="button" class="theme-btn" data-theme-mode="dark" aria-label="Dark mode">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button type="button" class="theme-btn active" data-theme-mode="system" aria-label="System mode">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </button>
+          </div>
+
+          <button type="button" class="navbar-toggle" id="navbarToggle" aria-expanded="false" aria-controls="navbarMenu" aria-label="Toggle navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="navbar-menu" id="navbarMenu"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/getting-started/index.html">Getting Started</a></li><li class="nav-item"><a class="nav-link" href="/features/index.html">Features</a></li><li class="nav-item"><a class="nav-link" href="/documentation/index.html">Documentation</a></li><li class="nav-item"><a class="nav-link" href="/examples/index.html">Examples</a></li><li class="nav-item"><a class="nav-link" href="/benchmarks/index.html">Benchmarks</a></li><li class="nav-item"><a class="nav-link" href="/architecture/index.html">Architecture</a></li><li class="nav-item"><a class="nav-link" href="/security/index.html">Security</a></li><li class="nav-item"><a class="nav-link" href="/faqs/index.html">FAQ</a></li><li class="nav-item nav-item-cta"><a class="btn btn-dark ms-lg-2" href="/getting-started/index.html">Install Crate</a></li></ul></div>
+
+      <!-- Desktop actions -->
+      <div class="navbar-actions d-none d-lg-flex">
+        <button type="button" class="btn search-trigger" id="searchTrigger" aria-label="Search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">⌘K</kbd>
+        </button>
+
+        <div class="theme-switcher" role="radiogroup" aria-label="Theme mode">
+          <button type="button" class="theme-btn" data-theme-mode="light" aria-label="Light mode">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button type="button" class="theme-btn" data-theme-mode="dark" aria-label="Dark mode">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button type="button" class="theme-btn active" data-theme-mode="system" aria-label="System mode">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="content-wrapper" aria-label="Main content">
+    <div lang="en">&lt;h1&gt;Document Examples &amp; Use Cases&lt;/h1&gt;
+<h2>1. Automated Clause Numbering &amp; Validation</h2>
+&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;<span class="source rust"><span class="keyword other rust">use&lt;/span&gt; <span class="meta path rust">draftlib<span class="punctuation accessor rust">::&lt;/span&gt;&lt;/span&gt;<span class="meta block rust"><span class="punctuation section block begin rust">{&lt;/span&gt;Document<span class="punctuation separator rust">,&lt;/span&gt; ClauseValidator&lt;/span&gt;<span class="meta block rust"><span class="punctuation section block end rust">}&lt;/span&gt;&lt;/span&gt;<span class="punctuation terminator rust">;&lt;/span&gt;
+
+<span class="storage type rust">let&lt;/span&gt; doc <span class="keyword operator rust">=&lt;/span&gt; <span class="meta path rust">Document<span class="punctuation accessor rust">::&lt;/span&gt;&lt;/span&gt;from_file<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;<span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;&lt;/span&gt;contracts/nda.md<span class="punctuation definition string end rust">&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;<span class="keyword operator rust">?&lt;/span&gt;<span class="punctuation terminator rust">;&lt;/span&gt;
+<span class="storage type rust">let&lt;/span&gt; validator <span class="keyword operator rust">=&lt;/span&gt; <span class="meta path rust">ClauseValidator<span class="punctuation accessor rust">::&lt;/span&gt;&lt;/span&gt;standard_commercial<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;<span class="punctuation terminator rust">;&lt;/span&gt;
+
+<span class="keyword control rust">match&lt;/span&gt; validator.<span class="support function rust">validate&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;<span class="keyword operator rust">&amp;&lt;/span&gt;doc&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt; <span class="meta block rust"><span class="punctuation section block begin rust">{&lt;/span&gt;
+    <span class="support type rust">Ok&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;<span class="keyword operator rust">_&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt; <span class="keyword operator rust">=&gt;&lt;/span&gt; <span class="support macro rust">println!&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;&lt;/span&gt;Contract satisfies all compliance rules!<span class="punctuation definition string end rust">&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;<span class="punctuation separator rust">,&lt;/span&gt;
+    <span class="support type rust">Err&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;e&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt; <span class="keyword operator rust">=&gt;&lt;/span&gt; <span class="support macro rust">eprintln!&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;<span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;&lt;/span&gt;Validation failed: {}<span class="punctuation definition string end rust">&quot;&lt;/span&gt;&lt;/span&gt;<span class="punctuation separator rust">,&lt;/span&gt; e&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;<span class="punctuation separator rust">,&lt;/span&gt;
+&lt;/span&gt;<span class="meta block rust"><span class="punctuation section block end rust">}&lt;/span&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</div>
+  </main>
+
+  <div class="text-center py-4">
+    <a href="#main" class="btn btn-outline-dark" aria-label="Back to the top">Back to the top ↑</a>
+  </div>
+
+  <footer><div class="container-xxl"><div class="row g-4"><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Core Documentation</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/getting-started/index.html">Getting Started</a></li><li><a href="/features/index.html">AST Compiler & Exporters</a></li><li><a href="/documentation/index.html">API Reference</a></li><li><a href="/examples/index.html">Document Examples</a></li></ul></div><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Architecture & Speed</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/benchmarks/index.html">Parsing Benchmarks</a></li><li><a href="/architecture/index.html">Zero-Allocation Lexer</a></li><li><a href="/security/index.html">Zero Telemetry & Trust</a></li><li><a href="/contact/index.html">Enterprise Support</a></li></ul></div><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Open Source & Author</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/about/index.html">About Sebastien Rousseau</a></li><li><a href="/changelog/index.html">Release Changelog</a></li><li><a href="/contributing/index.html">Contributing Guide</a></li><li><a href="/faqs/index.html">Questions & Answers</a></li><li><a href="/made-with-ssg/index.html">Made with SSG</a></li></ul></div><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Legal & Feeds</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/accessibility/index.html">Accessibility (WCAG AAA)</a></li><li><a href="/terms/index.html">Terms of Use</a></li><li><a href="/privacy/index.html">Privacy Policy</a></li><li><a href="/rss.xml">RSS Feed</a></li><li><a href="/atom.xml">Atom Feed</a></li><li><a href="/feed.json">JSON Feed</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div></div><div class="text-center pt-4 mt-4 border-top text-muted small">© 2026 Draft Lib. High-velocity document compilation engine. All releases Sigstore-signed.</div></div></footer>
+
+  <div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-label="Site Search">
+    <div class="search-backdrop"></div>
+    <div class="search-dialog">
+      <div class="search-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="search" id="searchInput" class="search-input" placeholder="Search AST, parsers, renderers..." aria-label="Search query" autocomplete="off">
+        <button type="button" class="search-close" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+      <div id="searchResults" class="search-results" role="listbox">
+        <div class="search-empty">Type to search...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/main.1dd33063.js" integrity="sha384-PZndwZBSayx7R7I8QNl0hu5d/jreN9qs9MFEGcVkBST/64qQLSgbHYadE36VBHyG" crossorigin="anonymous" defer></script>
+
 <!-- SSG Search Widget -->
 <div id="ssg-search-widget">
-
+<link rel="stylesheet" href="/_csp/ab0ff800df72e7d4.css" integrity="sha384-5/lyYdum7VUqasmpxZRYN9CrkRVxSizBemRDvsbiNqMKv2LpzAGqYf1RVnJOlg3X" crossorigin="anonymous">
 <!-- Search trigger button -->
 <button id="ssg-search-btn" type="button" aria-label="Search">
 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>

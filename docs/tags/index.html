@@ -4,33 +4,51 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
-  <meta content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self'  'unsafe-hashes'; script-src 'self' ; connect-src 'self'; font-src 'self'; form-action 'self'" http-equiv=Content-Security-Policy>
-  <meta content="accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()" http-equiv=Permissions-Policy>
-  <meta content=nosniff http-equiv=X-Content-Type-Options>
-  <meta content=strict-origin-when-cross-origin name=referrer>
-  <meta content=https://draftlib.com/img/og-card.png property=og:image>
-  <meta content=image/png property=og:image:type>
-  <meta content=1200 property=og:image:width>
-  <meta content=630 property=og:image:height>
-  <meta content="A terminal drafting a grounded article from a research paper, each claim checked verbatim against its source." property=og:image:alt>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tags — draft — grounded article drafting from research papers</title>
+  <title>Tags</title>
   <link rel="canonical" href="https://draftlib.com/tags/">
   <meta name="generator" content="ssg-taxonomy">
-  <meta name="description" content="All 8 term(s): browse pages by Tags.">
+  <!-- These pages are generated, carry no script, and load only same-origin
+       styles, so the policy can be stricter than an authored page's. -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'none'">
+  <meta name="description" content="All 5 term(s): browse pages by Tags.">
   <meta property="og:title" content="Tags">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="All 8 term(s): browse pages by Tags.">
+  <meta property="og:description" content="All 5 term(s): browse pages by Tags.">
   <meta property="og:url" content="https://draftlib.com/tags/">
   
   <meta name="twitter:card" content="summary">
   
+  <style>
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 999; }
+    .skip-link:focus {
+      left: 1rem; top: 1rem;
+      display: inline-flex; align-items: center; min-height: 2.75rem;
+      padding: 0.6rem 1rem; border-radius: 8px;
+      background: Canvas; color: CanvasText; border: 2px solid CanvasText;
+      font: inherit; text-decoration: none;
+    }
+    :focus-visible { outline: 3px solid Highlight; outline-offset: 2px; }
+    /* A standalone link in a list is a target in its own right, so WCAG
+       2.5.8's exception for links inside a sentence does not apply to it.
+       At default styling these rows are about 19px tall and fail the 24x24
+       minimum, so give every list link a real box. */
+    nav a, li a {
+      display: inline-flex; align-items: center;
+      min-height: 24px; padding: 0.25rem 0;
+    }
+    li { margin-block: 0.25rem; }
+  </style>
 </head>
 <body>
+  <!-- Generated pages get the same first tab stop as authored ones; without
+       it a keyboard user lands in the navigation on every taxonomy page. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <header role="banner">
     <nav aria-label="Main navigation">
-      <a href="/">Draftlib</a>
+      <a href="/">MySsgSite</a>
     </nav>
   </header>
   
@@ -42,21 +60,15 @@
   </header>
   <ul class="taxonomy-term-list">
     
-    <li><a href="/tags/cli/">cli</a> (1)</li>
+    <li><a href="/tags/draft/">draft</a> (2)</li>
     
-    <li><a href="/tags/draft/">draft</a> (7)</li>
+    <li><a href="/tags/go/">go</a> (2)</li>
     
-    <li><a href="/tags/go/">go</a> (8)</li>
+    <li><a href="/tags/grounded-generation/">grounded generation</a> (2)</li>
     
-    <li><a href="/tags/grounded-generation/">grounded generation</a> (8)</li>
+    <li><a href="/tags/markdown/">markdown</a> (2)</li>
     
-    <li><a href="/tags/local-first/">local-first</a> (1)</li>
-    
-    <li><a href="/tags/markdown/">markdown</a> (8)</li>
-    
-    <li><a href="/tags/ollama/">ollama</a> (1)</li>
-    
-    <li><a href="/tags/research/">research</a> (8)</li>
+    <li><a href="/tags/research/">research</a> (2)</li>
     
   </ul>
 </article>
@@ -64,7 +76,7 @@
   </main>
   
   <footer role="contentinfo">
-    <p>&copy; Draftlib</p>
+    <p>&copy; MySsgSite</p>
   </footer>
   
 </body>

@@ -1,55 +1,22 @@
 {
-  "cli": [
-    "https://draftlib.com/index.html"
-  ],
   "draft": [
-    "https://draftlib.com/accessibility/",
-    "https://draftlib.com/documentation/",
-    "https://draftlib.com/examples/",
-    "https://draftlib.com/grounding/",
-    "https://draftlib.com/library/",
-    "https://draftlib.com/security/"
+    "http://127.0.0.1:8000/grounding/",
+    "http://127.0.0.1:8000/library/"
   ],
   "go": [
-    "https://draftlib.com/accessibility/",
-    "https://draftlib.com/documentation/",
-    "https://draftlib.com/examples/",
-    "https://draftlib.com/grounding/",
-    "https://draftlib.com/index.html",
-    "https://draftlib.com/library/",
-    "https://draftlib.com/security/"
+    "http://127.0.0.1:8000/grounding/",
+    "http://127.0.0.1:8000/library/"
   ],
   "grounded generation": [
-    "https://draftlib.com/accessibility/",
-    "https://draftlib.com/documentation/",
-    "https://draftlib.com/examples/",
-    "https://draftlib.com/grounding/",
-    "https://draftlib.com/index.html",
-    "https://draftlib.com/library/",
-    "https://draftlib.com/security/"
-  ],
-  "local-first": [
-    "https://draftlib.com/index.html"
+    "http://127.0.0.1:8000/grounding/",
+    "http://127.0.0.1:8000/library/"
   ],
   "markdown": [
-    "https://draftlib.com/accessibility/",
-    "https://draftlib.com/documentation/",
-    "https://draftlib.com/examples/",
-    "https://draftlib.com/grounding/",
-    "https://draftlib.com/index.html",
-    "https://draftlib.com/library/",
-    "https://draftlib.com/security/"
-  ],
-  "ollama": [
-    "https://draftlib.com/index.html"
+    "http://127.0.0.1:8000/grounding/",
+    "http://127.0.0.1:8000/library/"
   ],
   "research": [
-    "https://draftlib.com/accessibility/",
-    "https://draftlib.com/documentation/",
-    "https://draftlib.com/examples/",
-    "https://draftlib.com/grounding/",
-    "https://draftlib.com/index.html",
-    "https://draftlib.com/library/",
-    "https://draftlib.com/security/"
+    "http://127.0.0.1:8000/grounding/",
+    "http://127.0.0.1:8000/library/"
   ]
 }

@@ -1,5 +1,13 @@
-# Draftlib
+# Draft Lib
+> Fast document processing and drafting engine in Rust with zero allocations and type-safe AST compilation.
 
-> draft turns research papers into publication-ready Markdown, with every claim verified verbatim against its source. Go, no API key, works offline.
-
-Language: en-GB
+## Core Documentation & Resources
+- Homepage: https://draftlib.com/
+- Getting Started: https://draftlib.com/getting-started/index.html
+- Features: https://draftlib.com/features/index.html
+- Documentation: https://draftlib.com/documentation/index.html
+- Examples: https://draftlib.com/examples/index.html
+- Benchmarks: https://draftlib.com/benchmarks/index.html
+- Architecture: https://draftlib.com/architecture/index.html
+- Security: https://draftlib.com/security/index.html
+- About Sebastien Rousseau: https://draftlib.com/about/index.html

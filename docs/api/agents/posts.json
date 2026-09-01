@@ -1,48 +1,111 @@
 [
   {
-    "date": "2026-07-30T08:00:00+00:00",
-    "description": "The accessibility commitments for draftlib.com and the draft command line.",
-    "locale": "en_GB",
-    "tags": [
-      "draft",
-      "go",
-      "grounded generation",
-      "markdown",
-      "research"
-    ],
-    "title": "Accessibility — draft",
-    "url": "https://draftlib.com/accessibility/",
-    "wordCount": 176
+    "date": "2026-09-01",
+    "description": "Background and credentials of Sebastien Rousseau, creator of Draft Lib and financial systems architect.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "About Sebastien Rousseau & Draft Lib",
+    "url": "http://127.0.0.1:8000/about/",
+    "wordCount": 57
   },
   {
-    "date": "2026-07-30T08:00:00+00:00",
-    "description": "Command reference for draft: flags, environment variables, engine routing, resume and dry-run.",
-    "locale": "en_GB",
-    "tags": [
-      "draft",
-      "go",
-      "grounded generation",
-      "markdown",
-      "research"
-    ],
-    "title": "Documentation — draft",
-    "url": "https://draftlib.com/documentation/",
-    "wordCount": 697
+    "date": "2026-09-01",
+    "description": "Accessibility statement declaring WCAG 2.2 Level AAA compliance.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Accessibility Statement: WCAG 2.2 Level AAA Compliance",
+    "url": "http://127.0.0.1:8000/accessibility/",
+    "wordCount": 26
   },
   {
-    "date": "2026-07-30T08:00:00+00:00",
-    "description": "Runnable, network-free demos of every capability: the dashboard, grounding, the pipeline, review and article sets.",
-    "locale": "en_GB",
-    "tags": [
-      "draft",
-      "go",
-      "grounded generation",
-      "markdown",
-      "research"
-    ],
-    "title": "Examples — draft",
-    "url": "https://draftlib.com/examples/",
-    "wordCount": 298
+    "date": "2026-09-01",
+    "description": "Architectural overview of Draft Lib's token streaming, AST reconciliation, and memory model.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Internal Architecture: Lexer, AST Pipeline & Exporters",
+    "url": "http://127.0.0.1:8000/architecture/",
+    "wordCount": 74
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Empirical benchmarks parsing and rendering 50-page legal and technical documents.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Performance Benchmarks: Draft Lib vs Pandoc & Comrak",
+    "url": "http://127.0.0.1:8000/benchmarks/",
+    "wordCount": 68
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Release notes for Draft Lib starting at v0.0.1.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Changelog & Version History",
+    "url": "http://127.0.0.1:8000/changelog/",
+    "wordCount": 55
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Get in touch regarding Draft Lib integration and support.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Contact & Enterprise Inquiries",
+    "url": "http://127.0.0.1:8000/contact/",
+    "wordCount": 76
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Guidelines for contributing to the Draft Lib project.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Contributing to Draft Lib",
+    "url": "http://127.0.0.1:8000/contributing/",
+    "wordCount": 15
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "API Reference & Trait Specifications",
+    "url": "http://127.0.0.1:8000/documentation/",
+    "wordCount": 76
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Real-world code examples using Draft Lib for contractual and technical drafting.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Document Templates & Implementation Examples",
+    "url": "http://127.0.0.1:8000/examples/",
+    "wordCount": 43
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Common questions about Draft Lib features, licenses, and integrations.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Frequently Asked Questions (FAQ): Draft Lib",
+    "url": "http://127.0.0.1:8000/faqs/",
+    "wordCount": 148
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Detailed breakdown of Draft Lib's AST generation, template expansion, and rendering pipelines.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Core Features: AST Compiler, Schema Validation & Multi-Format Exporters",
+    "url": "http://127.0.0.1:8000/features/",
+    "wordCount": 99
+  },
+  {
+    "date": "2026-09-01",
+    "description": "How to install Draft Lib via Cargo and begin compiling structured documents.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Getting Started with Draft Lib: Installation & Quickstart",
+    "url": "http://127.0.0.1:8000/getting-started/",
+    "wordCount": 75
   },
   {
     "date": "2026-07-30T08:00:00+00:00",
@@ -56,25 +119,17 @@
       "research"
     ],
     "title": "How grounding works — draft",
-    "url": "https://draftlib.com/grounding/",
+    "url": "http://127.0.0.1:8000/grounding/",
     "wordCount": 438
   },
   {
-    "date": "2026-07-30T08:00:00+00:00",
-    "description": "draft turns research papers into publication-ready Markdown. A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Go, no API key, works offline.",
-    "locale": "en_GB",
-    "tags": [
-      "cli",
-      "go",
-      "grounded generation",
-      "local-first",
-      "markdown",
-      "ollama",
-      "research"
-    ],
-    "title": "draft — grounded article drafting from research papers",
-    "url": "https://draftlib.com/index.html",
-    "wordCount": 408
+    "date": "2026-09-01",
+    "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Draft Lib: Fast Document Processing & Drafting Engine in Rust",
+    "url": "http://127.0.0.1:8000/index.html",
+    "wordCount": 714
   },
   {
     "date": "2026-07-30T08:00:00+00:00",
@@ -88,22 +143,61 @@
       "research"
     ],
     "title": "Go packages — draft",
-    "url": "https://draftlib.com/library/",
+    "url": "http://127.0.0.1:8000/library/",
     "wordCount": 248
   },
   {
-    "date": "2026-07-30T08:00:00+00:00",
-    "description": "No tokens on disk, prompt-injection awareness, bounded external calls, and verifiable releases.",
-    "locale": "en_GB",
-    "tags": [
-      "draft",
-      "go",
-      "grounded generation",
-      "markdown",
-      "research"
-    ],
-    "title": "Security — draft",
-    "url": "https://draftlib.com/security/",
-    "wordCount": 377
+    "date": "2026-09-01",
+    "description": "Details on native Rust static site generation.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Made with Static Site Generator (SSG)",
+    "url": "http://127.0.0.1:8000/made-with-ssg/",
+    "wordCount": 22
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Service worker offline fallback page.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Offline Access: Draft Lib",
+    "url": "http://127.0.0.1:8000/offline/",
+    "wordCount": 14
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Privacy policy declaring zero tracking cookies and completely local computation.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Privacy Policy: Zero-Telemetry Architecture",
+    "url": "http://127.0.0.1:8000/privacy/",
+    "wordCount": 21
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Security Architecture: Sovereign Document Processing & Zero Telemetry",
+    "url": "http://127.0.0.1:8000/security/",
+    "wordCount": 62
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Terms governing Draft Lib under Apache-2.0 and MIT licenses.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Terms of Use & Open Source License",
+    "url": "http://127.0.0.1:8000/terms/",
+    "wordCount": 16
+  },
+  {
+    "date": "2026-09-01",
+    "description": "Thank you for your message.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Thank You | Draft Lib",
+    "url": "http://127.0.0.1:8000/thanks/",
+    "wordCount": 26
   }
 ]

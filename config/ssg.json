@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sebastienrousseau/static-site-generator/main/ssg.schema.json",
+  "site_name": "Draftlib",
+  "theme": "lucid",
+  "cdn": "https://cloudcdn.pro",
+  "language": "en-GB",
+  "base_url": "https://draftlib.github.io",
+  "content_dir": "_posts",
+  "template_dir": "templates/tera",
+  "output_dir": "public"
+}
