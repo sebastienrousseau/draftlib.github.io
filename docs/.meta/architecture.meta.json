@@ -2,6 +2,7 @@
   "author": "Sebastien Rousseau",
   "banner": "research-paper",
   "banner_alt": "A printed research paper on a desk",
+  "breadcrumb": true,
   "date": "2026-09-01",
   "description": "How draft turns a paper into a grounded article: read and section, extract and verify, write, then attribute and sign.",
   "eyebrow": "Architecture",

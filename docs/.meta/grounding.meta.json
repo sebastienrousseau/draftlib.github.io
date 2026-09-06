@@ -2,6 +2,7 @@
   "author": "contact@draftlib.com (Sebastien Rousseau)",
   "banner": "research-paper",
   "banner_alt": "A printed research paper on a desk",
+  "breadcrumb": true,
   "date": "2026-07-30T08:00:00+00:00",
   "description": "A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is the whole gate.",
   "eyebrow": "Grounding",

@@ -7,6 +7,8 @@ author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
+breadcrumb: true
+faqpage: true
 permalink: "https://draftlib.com/faqs/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "research-paper"
@@ -60,7 +62,16 @@ it fail.
 ### What inputs are supported?
 
 PDFs with a text layer, read by `pdftotext` (or `--reader docling` when tables
-and structure matter). Scanned PDFs with no text layer are not yet supported.
+and structure matter). Scanned PDFs with no text layer, table values and
+LaTeX-heavy math are current limits — see the [roadmap](/roadmap/).
+
+### Does it work with non-English papers?
+
+The verification gate is largely language-agnostic: UTF-8 handling,
+normalisation and verbatim quote matching do not assume English. The
+English-biased parts are the house-style rules and sentence-boundary repair,
+which you can adjust with `--style`. Full locale-configurable style is on the
+[roadmap](/roadmap/).
 
 ### Can I use the output commercially?
 

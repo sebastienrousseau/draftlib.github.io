@@ -2,6 +2,7 @@
   "author": "Sebastien Rousseau",
   "banner": "research-paper",
   "banner_alt": "A printed research paper on a desk",
+  "breadcrumb": true,
   "date": "2026-09-01",
   "description": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
   "eyebrow": "Docs",

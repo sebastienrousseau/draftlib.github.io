@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "How draft compares to RAG pipelines, to asking an LLM to summarise a paper, and to research-summary tools. An honest, cr",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "draft",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "draft",
+  "start_url": ".",
+  "theme_color": null
+}

@@ -2,6 +2,7 @@
   "author": "Sebastien Rousseau",
   "banner": "research-paper",
   "banner_alt": "A printed research paper on a desk",
+  "breadcrumb": true,
   "date": "2026-09-01",
   "description": "How the draft website is built and tested for accessibility.",
   "eyebrow": "Accessibility",
@@ -15,5 +16,5 @@
   "reading_time": 1,
   "short_name": "draft",
   "title": "Accessibility — draft",
-  "word_count": 98
+  "word_count": 168
 }

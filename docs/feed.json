@@ -98,6 +98,21 @@
           "name": "Sebastien Rousseau"
         }
       ],
+      "content_html": "How draft compares to RAG pipelines, to asking an LLM to summarise a paper, and to research-summary tools. An honest, criteria-based look.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/comparisons/",
+      "language": "en-GB",
+      "tags": [],
+      "title": "Comparisons — draft",
+      "url": "http://127.0.0.1:8000/comparisons/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
       "content_html": "Get in touch about draft: issues, questions and contributions.",
       "date_modified": "",
       "date_published": "",
@@ -271,6 +286,21 @@
       "tags": [],
       "title": "Privacy — draft",
       "url": "http://127.0.0.1:8000/privacy/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
+      "content_html": "What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR for scanned PDFs, and more input formats.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/roadmap/",
+      "language": "en-GB",
+      "tags": [],
+      "title": "Roadmap — draft",
+      "url": "http://127.0.0.1:8000/roadmap/"
     },
     {
       "authors": [

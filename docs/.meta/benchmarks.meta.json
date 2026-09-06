@@ -2,6 +2,7 @@
   "author": "Sebastien Rousseau",
   "banner": "research-paper",
   "banner_alt": "A printed research paper on a desk",
+  "breadcrumb": true,
   "date": "2026-09-01",
   "description": "Measured numbers: a 62-page paper read in about 110 ms, a 10 MB binary, and the drop-rate reduction the claim gate delivers, with the methodology to reproduce them.",
   "eyebrow": "Benchmarks",

@@ -1,0 +1,20 @@
+{
+  "author": "Sebastien Rousseau",
+  "banner": "research-paper",
+  "banner_alt": "A printed research paper on a desk",
+  "breadcrumb": true,
+  "date": "2026-09-01",
+  "description": "What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR for scanned PDFs, and more input formats.",
+  "eyebrow": "Roadmap",
+  "headline": "Roadmap",
+  "language": "en-GB",
+  "layout": "page",
+  "lead": "What draft does not yet do, stated plainly, and the order we mean to close the gaps.",
+  "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
+  "name": "draft",
+  "permalink": "https://draftlib.com/roadmap/",
+  "reading_time": 1,
+  "short_name": "draft",
+  "title": "Roadmap — draft",
+  "word_count": 356
+}

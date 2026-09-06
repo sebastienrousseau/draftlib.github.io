@@ -7,6 +7,7 @@ author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
+breadcrumb: true
 permalink: "https://draftlib.com/examples/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "research-paper"

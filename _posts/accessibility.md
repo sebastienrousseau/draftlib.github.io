@@ -7,6 +7,7 @@ author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
+breadcrumb: true
 permalink: "https://draftlib.com/accessibility/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "research-paper"
@@ -22,9 +23,19 @@ toggle, and text that reflows without loss of content.
 
 ## How it is tested
 
-Automated checks run in the deploy pipeline, and the interactive elements —
-navigation, the theme toggle and the search dialog — are checked by keyboard.
-Automated tooling cannot catch everything, so some judgement is manual.
+Every deploy runs three automated gates before the site can publish:
+
+- **`html-validate`** with its recommended and WCAG rule sets, over every page.
+- **A colour-contrast audit** (`audit/contrast.py`) that fails the build unless
+  body text, headings, links and focus rings clear WCAG AAA ratios in both
+  light and dark themes.
+- **A structure guardrail** requiring exactly one `<h1>`, a canonical link, a
+  Content-Security-Policy, and a visible skip link on every page, with no inline
+  styles.
+
+Automated tooling cannot catch everything, so the interactive elements —
+navigation, the theme toggle and the search dialog — are also checked by
+keyboard, including focus order and Escape handling.
 
 ## Found a problem?
 

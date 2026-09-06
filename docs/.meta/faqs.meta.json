@@ -2,9 +2,11 @@
   "author": "Sebastien Rousseau",
   "banner": "research-paper",
   "banner_alt": "A printed research paper on a desk",
+  "breadcrumb": true,
   "date": "2026-09-01",
   "description": "Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing.",
   "eyebrow": "FAQ",
+  "faqpage": true,
   "headline": "Frequently asked questions",
   "language": "en-GB",
   "layout": "page",
@@ -12,8 +14,8 @@
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
   "permalink": "https://draftlib.com/faqs/",
-  "reading_time": 1,
+  "reading_time": 2,
   "short_name": "draft",
   "title": "FAQ — draft",
-  "word_count": 368
+  "word_count": 423
 }

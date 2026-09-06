@@ -13,6 +13,7 @@
   "permalink": "https://draftlib.com/",
   "reading_time": 1,
   "short_name": "draft",
+  "software_app": true,
   "title": "draft — From paper to post. Grounded.",
   "word_count": 166
 }

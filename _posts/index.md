@@ -7,6 +7,7 @@ author: "Sebastien Rousseau"
 date: "2026-09-06"
 language: "en-GB"
 layout: "index"
+software_app: true
 permalink: "https://draftlib.com/"
 banner: "research-paper"
 banner_alt: "A printed research paper on a desk"

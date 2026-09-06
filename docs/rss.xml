@@ -52,6 +52,15 @@
       <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
+      <title>Comparisons — draft</title>
+      <link>http://127.0.0.1:8000/comparisons/</link>
+      <description>How draft compares to RAG pipelines, to asking an LLM to summarise a paper, and to research-summary tools. An honest, criteria-based look.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/comparisons/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
+    </item>
+    <item>
       <title>Contact — draft</title>
       <link>http://127.0.0.1:8000/contact/</link>
       <description>Get in touch about draft: issues, questions and contributions.</description>
@@ -164,6 +173,15 @@
       <link>http://127.0.0.1:8000/privacy/</link>
       <description>The draft website uses no tracking cookies and no analytics. The CLI runs on your machine.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/privacy/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Roadmap — draft</title>
+      <link>http://127.0.0.1:8000/roadmap/</link>
+      <description>What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR for scanned PDFs, and more input formats.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/roadmap/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
       <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>

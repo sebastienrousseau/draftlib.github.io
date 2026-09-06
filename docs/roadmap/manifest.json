@@ -1,0 +1,19 @@
+{
+  "background_color": "#ffffff",
+  "description": "What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR fo",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any maskable",
+      "sizes": "512x512",
+      "src": "",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "draft",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "draft",
+  "start_url": ".",
+  "theme_color": null
+}

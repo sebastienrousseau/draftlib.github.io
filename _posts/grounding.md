@@ -7,6 +7,7 @@ author: "contact@draftlib.com (Sebastien Rousseau)"
 date: "2026-07-30T08:00:00+00:00"
 language: en-GB
 layout: "page"
+breadcrumb: true
 permalink: "https://draftlib.com/grounding/"
 logo: "https://draftlib.com/img/draft.svg"
 banner: "research-paper"

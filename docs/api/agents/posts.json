@@ -15,7 +15,7 @@
     "tags": [],
     "title": "Accessibility — draft",
     "url": "http://127.0.0.1:8000/accessibility/",
-    "wordCount": 98
+    "wordCount": 168
   },
   {
     "date": "2026-09-01",
@@ -43,6 +43,15 @@
     "title": "Changelog — draft",
     "url": "http://127.0.0.1:8000/changelog/",
     "wordCount": 56
+  },
+  {
+    "date": "2026-09-01",
+    "description": "How draft compares to RAG pipelines, to asking an LLM to summarise a paper, and to research-summary tools. An honest, criteria-based look.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Comparisons — draft",
+    "url": "http://127.0.0.1:8000/comparisons/",
+    "wordCount": 392
   },
   {
     "date": "2026-09-01",
@@ -87,7 +96,7 @@
     "tags": [],
     "title": "FAQ — draft",
     "url": "http://127.0.0.1:8000/faqs/",
-    "wordCount": 368
+    "wordCount": 423
   },
   {
     "date": "2026-09-01",
@@ -160,6 +169,15 @@
     "title": "Privacy — draft",
     "url": "http://127.0.0.1:8000/privacy/",
     "wordCount": 91
+  },
+  {
+    "date": "2026-09-01",
+    "description": "What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR for scanned PDFs, and more input formats.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Roadmap — draft",
+    "url": "http://127.0.0.1:8000/roadmap/",
+    "wordCount": 356
   },
   {
     "date": "2026-09-01",

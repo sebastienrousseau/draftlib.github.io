@@ -60,6 +60,15 @@
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
+    <title>Comparisons — draft</title>
+    <link href="http://127.0.0.1:8000/comparisons/"/>
+    <id>http://127.0.0.1:8000/comparisons/</id>
+    <updated></updated>
+    <published></published>
+    <summary>How draft compares to RAG pipelines, to asking an LLM to summarise a paper, and to research-summary tools. An honest, criteria-based look.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
     <title>Contact — draft</title>
     <link href="http://127.0.0.1:8000/contact/"/>
     <id>http://127.0.0.1:8000/contact/</id>
@@ -165,6 +174,15 @@
     <updated></updated>
     <published></published>
     <summary>The draft website uses no tracking cookies and no analytics. The CLI runs on your machine.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
+    <title>Roadmap — draft</title>
+    <link href="http://127.0.0.1:8000/roadmap/"/>
+    <id>http://127.0.0.1:8000/roadmap/</id>
+    <updated></updated>
+    <published></published>
+    <summary>What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR for scanned PDFs, and more input formats.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>

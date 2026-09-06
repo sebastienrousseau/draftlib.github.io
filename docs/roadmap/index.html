@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!-- `no-js` is removed by theme-init.js. Until then, and forever if
+     scripting is unavailable, the stylesheet uses it to keep every
+     JavaScript-dependent affordance in a usable state. -->
+<html lang="en-GB" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>Roadmap — draft</title>
+
+    <!-- Strict same-origin policy. 'wasm-unsafe-eval' is what lets
+         WebAssembly.instantiateStreaming run the playground bundle. It permits
+         WASM compilation only; it does not re-enable eval() for JavaScript,
+         which is why it exists as a separate keyword. Without it the engine
+         fails to load with a CompileError and the playground silently becomes
+         a static shell. There is no form endpoint: the site posts nothing. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               base-uri 'none';
+               object-src 'none';
+               script-src 'self';
+               style-src 'self';
+               img-src 'self' data: https://cloudcdn.pro;
+               font-src 'self';
+               connect-src 'self';
+               manifest-src 'self';
+               form-action 'none'"
+    />
+
+    <meta name="author" content="Sebastien Rousseau">
+<meta name="description" content="What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR for scanned PDFs, and more input formats.">
+    
+    
+    
+    
+
+    <!-- Absolute URLs: Open Graph consumers do not resolve relative paths. -->
+    <meta property="og:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Roadmap — draft" />
+    <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
+
+    
+    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/roadmap/" />
+    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/roadmap/" />
+
+    <link rel="alternate" type="application/rss+xml" title="draft — RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="draft — Atom" href="/atom.xml" />
+    <link rel="alternate" type="application/feed+json" title="draft — JSON Feed" href="/feed.json" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)" />
+
+    <!-- Native cross-document View Transitions. Browsers without support
+         ignore the hint and perform an ordinary navigation. -->
+    <meta name="view-transition" content="same-origin" />
+
+    <!-- Authored structured data; see README "Structured data". -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://draftlib.com/#website",
+            "url": "https://draftlib.com/",
+            "name": "draft",
+            "description": "What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR for scanned PDFs, and more input formats.",
+            "inLanguage": "en-GB"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://draftlib.com/#organization",
+            "name": "draft",
+            "url": "https://draftlib.com/",
+            "logo": "https://cloudcdn.pro/stocks/images/research-paper-1200.webp",
+            "description": "draft turns research papers into publication-ready Markdown where every sentence is grounded in a quote-verified claim from the source. No API key. Works offline. Provenance you can check.",
+            "sameAs": [
+              "https://github.com/sebastienrousseau/draft",
+              "https://pkg.go.dev/github.com/sebastienrousseau/draft"
+            ]
+          },
+          
+          
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://draftlib.com/roadmap/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://draftlib.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Roadmap", "item": "https://draftlib.com/roadmap/" }
+            ]
+          },
+          
+          
+          {
+            "@type": "WebPage",
+            "@id": "https://draftlib.com/roadmap/#webpage",
+            "url": "https://draftlib.com/roadmap/",
+            "name": "Roadmap — draft",
+            "description": "What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR for scanned PDFs, and more input formats.",
+            "inLanguage": "en-GB",
+            "isPartOf": { "@id": "https://draftlib.com/#website" },
+            "publisher": { "@id": "https://draftlib.com/#organization" },
+            "datePublished": "2026-09-01"
+          }
+        ]
+      }
+    </script>
+
+    <!-- One stylesheet, built from styles.css then brand.css in that order —
+         brand.css overrides the design system and is unlayered, so it has to
+         follow it. Concatenated because both were render-blocking and the page
+         waited for the slower of two requests; minified because the sources are
+         half comments, which are worth their bytes in the repository and
+         nothing at all on the critical path. -->
+    <link rel="stylesheet" href="/site.css" />
+    <!-- Only the playground needs the app styles. Loading them on every page
+         would be a page-weight regression for the pages that never use them. -->
+    <!-- Fetched early so it is already in cache when the parser reaches its
+         tag at the end of the body. Without this the browser paints the plain
+         transcripts, waits a round trip for the script, and then replaces them
+         with taller terminals -- a layout shift that only appears over a real
+         network, which is why it did not show up locally. -->
+    <!-- The banner is the largest thing on the page and therefore what Largest
+         Contentful Paint measures. Left to be discovered when the parser reaches
+         the image element, it starts only after the stylesheets, and the whole
+         page waits on it. Preloading with the same srcset and sizes lets it begin with the
+         first bytes of the document and still pick the right candidate. -->
+    
+    <link rel="preload" as="image"
+          href="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+          imagesrcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+                       https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
+          imagesizes="100vw"
+          fetchpriority="high" />
+    
+    <script src="/theme-init.js"></script>
+  <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:title" content="Roadmap — draft">
+<meta property="og:description" content="Roadmap Roadmap What draft does not yet do, stated plainly, and the order we mean to close the gaps. draft is deliberate about its limits. A tool that sells">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://draftlib.com/roadmap/">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Roadmap — draft">
+<meta name="twitter:description" content="Roadmap Roadmap What draft does not yet do, stated plainly, and the order we mean to close the gaps. draft is deliberate about its limits. A tool that sells">
+<link rel="canonical" href="https://draftlib.com/roadmap/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
+</head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">draft</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <!-- Always present; CSS hides it above 48rem. -->
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <span class="visually-hidden">Menu</span>
+        <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <line x1="5" y1="5" x2="19" y2="19" />
+          <line x1="19" y1="5" x2="5" y2="19" />
+        </svg>
+      </button>
+
+      <!-- Five categories and one action, not a list of pages.
+
+           What it does, the crates it ships as, how to use it, what has
+           changed, who is behind it. Each carries the pages beneath it, so
+           the bar does not grow by one every time a page is written. The one
+           action worth pulling out sits beside them as a button, because
+           trying the parser in the browser is what most people came to do. -->
+      <ul class="nav-menu" id="navMenu">
+        <li>
+          <a class="nav-link" href="/grounding/" >Grounding</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/features/" >Features</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/library/" >Library</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/documentation/" >Docs</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/about/" >About</a>
+        </li>
+        <li>
+          <a class="nav-link nav-cta" href="https://github.com/sebastienrousseau/draft" rel="noopener noreferrer">GitHub</a>
+        </li>
+      </ul>
+
+      <!-- Icon swapped by CSS on [data-theme]; no scripted relabelling. -->
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+        <span class="visually-hidden">Dark theme</span>
+        <svg class="icon-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4" />
+          <line x1="12" y1="2" x2="12" y2="5" />
+          <line x1="12" y1="19" x2="12" y2="22" />
+          <line x1="2" y1="12" x2="5" y2="12" />
+          <line x1="19" y1="12" x2="22" y2="12" />
+        </svg>
+        <svg class="icon-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main">
+      
+<!-- Every page opens with the same masthead, and a photograph behind it when
+     the page names one. Consistency is the point: a reference page and a
+     briefing page should look like parts of the same publication, and the
+     difference between them should be the content, not the furniture.
+
+     The scrim does the work. Photographs vary in brightness and colour; the
+     gradient does not, so the title has the same contrast whichever image sits
+     underneath, and it renders identically on the pages that have no image. -->
+<section class="page-banner" aria-labelledby="page-heading">
+  
+  <img class="page-banner-image"
+       src="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+       srcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+               https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
+       sizes="100vw"
+       width="1280" height="340"
+       alt="A printed research paper on a desk"
+       fetchpriority="high" decoding="async" />
+  
+  <div class="page-banner-body">
+    <div class="container stack">
+      <p class="eyebrow">Roadmap</p>
+      <h1 id="page-heading">Roadmap</h1>
+      <p class="lead">What draft does not yet do, stated plainly, and the order we mean to close the gaps.</p>
+    </div>
+  </div>
+</section>
+
+<article class="section">
+  <div class="container prose stack">
+    <div lang="en"><p>draft is deliberate about its limits. A tool that sells verifiability should be
+the first to say what it cannot yet verify. This page is the honest list, and
+the <a href="/faqs/">FAQ</a> links here from every limitation it mentions.</p>
+<h2>Planned</h2>
+<h3>Table and figure values</h3>
+<p>Docling is already available as a reader (<code>--reader docling</code>), but tabular
+values do not yet become verifiable claims. The plan is to mine table cells as
+claims, with the row and column headers as the quote context, and to verify
+numbers against the cell. Figure captions are text and gate-compatible; chart
+values are a later step.</p>
+<h3>LaTeX and math</h3>
+<p>Today, math around a claim can cause the surrounding text to be dropped. The
+first step is to preserve inline math as opaque tokens so neighbouring claims
+still verify; the second is to accept <code>.tex</code> source directly, where the math is
+exact text and verbatim matching is clean.</p>
+<h3>OCR for scanned PDFs</h3>
+<p>A scanned PDF has no text layer, so extraction returns nothing and the run
+fails. The plan is to detect this and fall back to OCR, surfacing OCR-derived
+claims as a distinct, flagged class rather than treating them as equal to
+verbatim ones, so the trust model is preserved rather than quietly diluted.</p>
+<h3>More input and output formats</h3>
+<p>HTML and <code>.docx</code> reduce cleanly to text and are natural inputs once the reader
+seam accepts them. For output beyond the current Markdown set, an HTML export
+is the likely next step; <code>.docx</code> is better left to a documented pandoc recipe.</p>
+<h3>Non-English papers</h3>
+<p>The verification gate is largely language-agnostic — UTF-8, normalisation and
+verbatim matching do not assume English. The English-biased parts are the
+house-style rules and sentence-boundary repair. The plan is to make style rules
+locale-configurable with <code>--style</code> and to document current behaviour on
+non-English input.</p>
+<h2>Not planned as the default</h2>
+<p>A direct API-key mode (<code>--engine api:&lt;provider&gt;</code>) is possible as an escape
+hatch for users with no agent CLI, but keyless operation is the whole point, so
+it will never be the default story.</p>
+<hr />
+<p>Want something moved up the list? Open an issue on
+<a href="https://github.com/sebastienrousseau/draft/issues">GitHub</a>.</p>
+</div>
+  </div>
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-cols">
+      <div>
+        <h2>Product</h2>
+        <ul>
+          <li><a href="/grounding/">How grounding works</a></li>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/library/">Go packages</a></li>
+          <li><a href="/documentation/">Documentation</a></li>
+          <li><a href="/comparisons/">Comparisons</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="/changelog/">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Source</h2>
+        <ul>
+          <li><a href="https://github.com/sebastienrousseau/draft" rel="noopener noreferrer">draft on GitHub</a></li>
+          <li><a href="https://pkg.go.dev/github.com/sebastienrousseau/draft" rel="noopener noreferrer">API reference on pkg.go.dev</a></li>
+          <li><a href="https://github.com/sebastienrousseau/draft/releases" rel="noopener noreferrer">Releases</a></li>
+          <li><a href="/examples/">Examples</a></li>
+          <li><a href="/benchmarks/">Benchmarks</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="/about/">About draft</a></li>
+          <li><a href="/security/">Security &amp; supply chain</a></li>
+          <li><a href="/contributing/">Contributing</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/faqs/">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Feeds</h2>
+        <ul>
+          <li><a href="/rss.xml">RSS</a></li>
+          <li><a href="/atom.xml">Atom</a></li>
+          <li><a href="/feed.json">JSON Feed</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+          <li><a href="/accessibility/">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-assurance">
+      <p><strong>Grounded by construction.</strong> Every sentence rests on a
+      claim whose quote appears verbatim in the source, and every number in the
+      claim appears in that quote. The model arranges facts; it never sources
+      them.</p>
+      <p><strong>No API key, no network required.</strong> Online, draft writes
+      through the AI coding-agent CLI you already have. Offline, it falls back to
+      a local model. Your sources never leave your machine.</p>
+      <p><strong>Open source, permissively licensed.</strong> Apache-2.0 or MIT,
+      at your option, with no account or licence server.</p>
+    </div>
+
+    <div class="footer-legal">
+      <span>&copy;  Sebastien Rousseau. draft, released under Apache-2.0 or MIT.</span>
+      <span>draft is an independent open-source project. <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a>.</span>
+      <span>WCAG 2.2 verified on every deploy.</span>
+    </div>
+
+  </div>
+</footer>
+
+
+    <script src="/main.57615199.js" integrity="sha384-HnrIch758Y6AfdQD2kqzA6GR0dP4QHWZ8shH7+HzWShbmYPYgVdjoiyGQOa4D9vQ" crossorigin="anonymous" defer></script>
+  
+<!-- SSG Search Widget -->
+<div id="ssg-search-widget">
+<link rel="stylesheet" href="/_csp/ab0ff800df72e7d4.css" integrity="sha384-5/lyYdum7VUqasmpxZRYN9CrkRVxSizBemRDvsbiNqMKv2LpzAGqYf1RVnJOlg3X" crossorigin="anonymous">
+<!-- Search trigger button -->
+<button id="ssg-search-btn" type="button" aria-label="Search">
+<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<span>Search</span>
+<kbd>K</kbd>
+</button>
+<!-- Search modal -->
+<div id="ssg-search-overlay" role="dialog" aria-label="Search">
+<div id="ssg-search-box">
+<div id="ssg-search-header">
+<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<input id="ssg-search-input" type="search" placeholder="Search documentation..." autocomplete="off" aria-label="Search"/>
+</div>
+<div id="ssg-search-results" aria-live="polite"></div>
+<div id="ssg-sr-status" role="status" aria-live="polite" aria-atomic="true"></div>
+<div class="ssg-search-footer"><span><kbd>Esc</kbd> close</span><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span><span><kbd>Enter</kbd> open</span></div>
+</div>
+</div>
+<script src="/_csp/61bc2fae7f71ccad.js" integrity="sha384-0oRzEmXgr9FJ6ttOmzhFx2dsSPgkO2fWLDzcLRT0sq5M9fYUce/wBPOMY7XmqkLT" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

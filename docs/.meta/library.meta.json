@@ -2,6 +2,7 @@
   "author": "contact@draftlib.com (Sebastien Rousseau)",
   "banner": "research-paper",
   "banner_alt": "A printed research paper on a desk",
+  "breadcrumb": true,
   "date": "2026-07-30T08:00:00+00:00",
   "description": "draft is a command-line tool first, but every capability is an importable Go package.",
   "eyebrow": "Library",
