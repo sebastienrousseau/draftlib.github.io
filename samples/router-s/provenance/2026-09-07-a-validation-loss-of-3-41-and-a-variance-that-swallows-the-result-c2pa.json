@@ -1,0 +1,65 @@
+{
+  "claim_generator_info": [
+    {
+      "name": "draft",
+      "version": "0.0.35-0.20260906233428-4200d43a9474+dirty"
+    }
+  ],
+  "title": "A Validation Loss of 3.41, and a Variance That Swallows the Result",
+  "format": "text/markdown",
+  "assertions": [
+    {
+      "label": "c2pa.actions",
+      "data": {
+        "actions": [
+          {
+            "action": "c2pa.created",
+            "digitalSourceType": "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+            "softwareAgent": {
+              "name": "draft",
+              "version": "0.0.35-0.20260906233428-4200d43a9474+dirty"
+            },
+            "when": "2026-09-06T23:42:51Z"
+          }
+        ]
+      }
+    },
+    {
+      "label": "com.draftlib.grounding",
+      "data": {
+        "schema": 1,
+        "article_sha256": "64261b9701285f8399afeeaec37bb0df1a795c3bef6fa7c8b2859f1ec1ce207d",
+        "ledger_sha256": "0ba61c2f2f7d724293337487dba8bb6030c2f417862daf6a4c3b53158e50fba7",
+        "prompt_version": "53dffa59cccf2ee8",
+        "engine": "claude",
+        "model": "sonnet",
+        "reader": "pdftotext",
+        "sources": [
+          {
+            "path": "two-column.pdf",
+            "sha256": "00b63c6adbc3b43aff146ce29773a9d2a21f3c856320c60b5c7425b969c43125"
+          }
+        ],
+        "claims": [
+          "c6403250d2e",
+          "c4f7fbd0d88",
+          "cdd7f5a4a54",
+          "cbc9ba5d006",
+          "c189fdb482c",
+          "c57250b0e23"
+        ],
+        "sentences": 36,
+        "attributed": 13,
+        "unattributed": 23,
+        "sentences_with_ungrounded_numbers": 0
+      }
+    }
+  ],
+  "ingredients": [
+    {
+      "title": "two-column.pdf",
+      "relationship": "inputTo",
+      "format": "application/pdf"
+    }
+  ]
+}

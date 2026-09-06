@@ -56,6 +56,31 @@ checkable.
 | Claims should be traceable to sources | Per-sentence attribution to verbatim quotes |
 | Provenance should be verifiable, not asserted | `draft --verify` recomputes and checks the digests |
 
+## Download a real, verifiable sample
+
+Do not take our word for it. Here is a complete article set `draft` produced
+from a rights-cleared test paper, published exactly as written:
+
+- **[Download the full set (zip)](/samples/router-s-sample.zip)** — source PDF,
+  article, attribution, C2PA manifest and claim ledger.
+- View in place: the [generated article](/samples/router-s/final/2026-09-07-a-validation-loss-of-3-41-and-a-variance-that-swallows-the-result-final.md),
+  its [C2PA manifest](/samples/router-s/provenance/2026-09-07-a-validation-loss-of-3-41-and-a-variance-that-swallows-the-result-c2pa.json), the
+  [per-sentence attribution](/samples/router-s/provenance/2026-09-07-a-validation-loss-of-3-41-and-a-variance-that-swallows-the-result-attribution.json),
+  and the [source paper](/samples/router-s/two-column.pdf).
+
+Install draft and, from inside the unzipped folder, run:
+
+```sh
+draft --verify final/2026-09-07-a-validation-loss-of-3-41-and-a-variance-that-swallows-the-result-final.md
+```
+
+It recomputes the digests and confirms the article is unchanged since it was
+written, the claim ledger matches, and the source is unchanged since it was
+read. This set is honest about its limits: of 36 sentences, 13 rest on a
+verified claim and the rest are connective prose, and the gate dropped 9 of the
+15 candidate claims. That is what grounded-by-construction looks like on a real
+run, not a polished demo.
+
 ## Honest scope
 
 draft provides the **provenance layer**: it makes AI-assisted articles carry

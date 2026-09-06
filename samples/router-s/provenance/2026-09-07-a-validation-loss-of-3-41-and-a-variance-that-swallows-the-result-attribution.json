@@ -1,0 +1,321 @@
+{
+  "schema": 1,
+  "article_sha256": "64261b9701285f8399afeeaec37bb0df1a795c3bef6fa7c8b2859f1ec1ce207d",
+  "sentences": [
+    {
+      "index": 0,
+      "text": "**Router-S reaches a validation loss of 3.41 against a dense baseline on an identical token budget — but the same evaluation reports that seed variance exceeds the gap being measured, which is the more important number to sit with.**",
+      "start": 70,
+      "end": 305,
+      "claims": [
+        "c189fdb482c"
+      ],
+      "evidence": "number"
+    },
+    {
+      "index": 1,
+      "text": "Sparse routing is designed to cut the compute spent on tokens that are trivially predictable, rather than treating every token as equally costly to process.",
+      "start": 1517,
+      "end": 1673,
+      "claims": [
+        "c6403250d2e"
+      ],
+      "evidence": "lexical"
+    },
+    {
+      "index": 2,
+      "text": "Router-S and a dense baseline are compared on an identical token budget, which removes budget size as a confound.",
+      "start": 1678,
+      "end": 1791,
+      "claims": [
+        "cdd7f5a4a54"
+      ],
+      "evidence": "lexical"
+    },
+    {
+      "index": 3,
+      "text": "Data order is held fixed across runs, so differences in loss cannot be attributed to shuffling.",
+      "start": 1796,
+      "end": 1891,
+      "claims": [
+        "c4f7fbd0d88"
+      ],
+      "evidence": "lexical"
+    },
+    {
+      "index": 4,
+      "text": "Each configuration is trained three times, and the resulting seed variance exceeds the gap being measured — the reason the median, not the mean, is the reported statistic.",
+      "start": 1896,
+      "end": 2069,
+      "claims": [
+        "c57250b0e23"
+      ],
+      "evidence": "lexical"
+    },
+    {
+      "index": 5,
+      "text": "The headline figure, a validation loss of 3.41 for Router-S, needs to be read alongside that variance, not instead of it.",
+      "start": 2074,
+      "end": 2195,
+      "claims": [
+        "c189fdb482c"
+      ],
+      "evidence": "number"
+    },
+    {
+      "index": 6,
+      "text": "The premise behind Router-S is straightforward: a dense model spends the same amount of compute on every token, whether that token is genuinely hard to predict or almost free.",
+      "start": 2244,
+      "end": 2419
+    },
+    {
+      "index": 7,
+      "text": "Sparse routing changes that allocation.",
+      "start": 2420,
+      "end": 2459
+    },
+    {
+      "index": 8,
+      "text": "It reduces the compute a dense model spends on tokens that are trivially predictable, which means the parameters and computation saved there can, in principle, be redirected or simply not spent at all.",
+      "start": 2460,
+      "end": 2661,
+      "claims": [
+        "c6403250d2e"
+      ],
+      "evidence": "lexical"
+    },
+    {
+      "index": 9,
+      "text": "This is a mechanism claim, not a hedge — it describes what the routing does, not what it might do.",
+      "start": 2662,
+      "end": 2762
+    },
+    {
+      "index": 10,
+      "text": "The interesting question is never whether routing changes the compute profile of a model; it obviously does by construction.",
+      "start": 2763,
+      "end": 2887
+    },
+    {
+      "index": 11,
+      "text": "The interesting question is whether that reallocation shows up as a measurable improvement once you control for everything else.",
+      "start": 2888,
+      "end": 3016
+    },
+    {
+      "index": 12,
+      "text": "Two decisions in the evaluation design matter more than they might first appear.",
+      "start": 3079,
+      "end": 3159
+    },
+    {
+      "index": 13,
+      "text": "First, the use holds the data order fixed across runs, so that when loss moves, it cannot be explained away by a different shuffle exposing the model to easier or harder sequences in a different order.",
+      "start": 3160,
+      "end": 3361,
+      "claims": [
+        "c4f7fbd0d88"
+      ],
+      "evidence": "lexical"
+    },
+    {
+      "index": 14,
+      "text": "Second, Router-S is evaluated against the dense baseline on an identical token budget.",
+      "start": 3362,
+      "end": 3448,
+      "claims": [
+        "cdd7f5a4a54"
+      ],
+      "evidence": "lexical"
+    },
+    {
+      "index": 15,
+      "text": "That second control rules out the most common way sparse-versus-dense comparisons get muddied: giving one side more tokens to train on and calling the resulting gap an architectural win.",
+      "start": 3449,
+      "end": 3635
+    },
+    {
+      "index": 16,
+      "text": "With budget and ordering fixed, whatever difference remains between Router-S and the dense baseline has a narrower set of possible explanations.",
+      "start": 3636,
+      "end": 3780
+    },
+    {
+      "index": 17,
+      "text": "That is a real methodological discipline, and it is worth taking seriously precisely because it makes the next problem harder to hide from.",
+      "start": 3782,
+      "end": 3921
+    },
+    {
+      "index": 18,
+      "text": "Each configuration is trained three times.",
+      "start": 3961,
+      "end": 4003,
+      "claims": [
+        "cbc9ba5d006"
+      ],
+      "evidence": "lexical"
+    },
+    {
+      "index": 19,
+      "text": "That is not a large number of repeats, but it is enough to expose something the team did not have to disclose: seed variance exceeds the gap being measured.",
+      "start": 4004,
+      "end": 4160
+    },
+    {
+      "index": 20,
+      "text": "In other words, if you trained Router-S three times and the dense baseline three times, the spread of results within each of those triplets is wider than the difference between the two groups' central tendencies.",
+      "start": 4161,
+      "end": 4373
+    },
+    {
+      "index": 21,
+      "text": "That is a limitation claim, stated plainly, and it changes how the headline number should be read.",
+      "start": 4374,
+      "end": 4472
+    },
+    {
+      "index": 22,
+      "text": "Because of that variance, the team reports the median across the three runs rather than the mean.",
+      "start": 4474,
+      "end": 4571,
+      "claims": [
+        "c57250b0e23"
+      ],
+      "evidence": "lexical"
+    },
+    {
+      "index": 23,
+      "text": "This is a sensible response to a small, noisy sample — a median is less sensitive to a single outlying run dragging the reported figure in one direction — but it is also, itself, an admission.",
+      "start": 4572,
+      "end": 4768
+    },
+    {
+      "index": 24,
+      "text": "You do not reach for the median unless the mean would be telling a story the underlying runs do not fully support.",
+      "start": 4769,
+      "end": 4883
+    },
+    {
+      "index": 25,
+      "text": "Reporting practice here is doing some of the work that a larger seed count would otherwise do.",
+      "start": 4884,
+      "end": 4978
+    },
+    {
+      "index": 26,
+      "text": "The headline result is that Router-S reaches a validation loss of 3.41.",
+      "start": 5012,
+      "end": 5083,
+      "claims": [
+        "c189fdb482c"
+      ],
+      "evidence": "number"
+    },
+    {
+      "index": 27,
+      "text": "On its own, that is a specific, checkable number, produced under a fixed token budget and a fixed data order, against a dense baseline evaluated under the same conditions.",
+      "start": 5084,
+      "end": 5255
+    },
+    {
+      "index": 28,
+      "text": "That is worth stating plainly, because it is a demonstrated result, not a projection.",
+      "start": 5256,
+      "end": 5341
+    },
+    {
+      "index": 29,
+      "text": "But it sits next to a second demonstrated result: the variance between seeds is larger than the gap the comparison is designed to detect.",
+      "start": 5343,
+      "end": 5480
+    },
+    {
+      "index": 30,
+      "text": "Put those two facts side by side and the honest reading is that 3.41 is a real, reproducible-in-principle measurement, but the comparison it is meant to support — is Router-S better than the dense baseline — has not yet cleared its own noise floor.",
+      "start": 5481,
+      "end": 5733,
+      "claims": [
+        "c189fdb482c"
+      ],
+      "evidence": "number"
+    },
+    {
+      "index": 31,
+      "text": "Three runs per configuration is enough to notice that the noise floor exists.",
+      "start": 5734,
+      "end": 5811
+    },
+    {
+      "index": 32,
+      "text": "It is not obviously enough to say which side of it the true effect sits on.",
+      "start": 5812,
+      "end": 5887
+    },
+    {
+      "index": 33,
+      "text": "None of this diminishes the value of the mechanism itself, or the discipline of the evaluation setup.",
+      "start": 5889,
+      "end": 5990
+    },
+    {
+      "index": 34,
+      "text": "Fixed token budgets and fixed data order are exactly the right controls to isolate an architectural effect from a training-recipe effect.",
+      "start": 5991,
+      "end": 6128
+    },
+    {
+      "index": 35,
+      "text": "What is missing is scale on the one axis that would resolve the remaining question: more seeds per configuration, run under the same fixed conditions, until the gap being measured is larger than the noise around it — or until it becomes clear that it isn't.",
+      "start": 6129,
+      "end": 6388
+    }
+  ],
+  "claims": [
+    {
+      "id": "c6403250d2e",
+      "claim": "Sparse routing reduces the compute a dense model spends on tokens that are trivially predictable.",
+      "quote": "Sparse routing reduces the compute a dense",
+      "type": "mechanism",
+      "strength": "demonstrated"
+    },
+    {
+      "id": "c4f7fbd0d88",
+      "claim": "The evaluation harness holds the data order fixed across runs so that differences in loss cannot be attributed to shuffling.",
+      "quote": "holds the data order",
+      "type": "method",
+      "strength": "demonstrated"
+    },
+    {
+      "id": "cdd7f5a4a54",
+      "claim": "Router-S is evaluated against a dense baseline on an identical token budget.",
+      "quote": "dense baseline on an identical token budget.",
+      "type": "method",
+      "strength": "demonstrated"
+    },
+    {
+      "id": "cbc9ba5d006",
+      "claim": "Each configuration is trained three times.",
+      "quote": "configuration is trained three times",
+      "type": "method",
+      "strength": "demonstrated"
+    },
+    {
+      "id": "c189fdb482c",
+      "claim": "The headline result is that Router-S reaches a validation loss of 3.41.",
+      "quote": "a validation loss of 3.41",
+      "type": "metric",
+      "strength": "demonstrated"
+    },
+    {
+      "id": "c57250b0e23",
+      "claim": "Seed variance exceeds the gap being measured, which is why the median (rather than e.g. the mean) is reported.",
+      "quote": "exceeds the gap we are measuring here.",
+      "type": "limitation",
+      "strength": "demonstrated"
+    }
+  ],
+  "attributed": 13,
+  "unattributed": 23,
+  "sentences_with_ungrounded_numbers": 0
+}

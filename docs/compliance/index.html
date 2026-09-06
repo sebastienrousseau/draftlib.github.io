@@ -144,6 +144,7 @@
     
     <script src="/theme-init.js"></script>
   <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="stylesheet" href="/highlight.css">
 <meta property="og:title" content="Provenance &amp; compliance — draft">
 <meta property="og:description" content="Compliance Provenance and compliance Every article draft writes carries machine-readable provenance by default — the direction disclosure rules for">
 <meta property="og:type" content="article">
@@ -317,6 +318,26 @@ checkable.</p>
 </tr>
 </tbody>
 </table></div></div>
+<h2>Download a real, verifiable sample</h2>
+<p>Do not take our word for it. Here is a complete article set <code>draft</code> produced
+from a rights-cleared test paper, published exactly as written:</p>
+<ul>
+<li><strong><a href="/samples/router-s-sample.zip">Download the full set (zip)</a></strong> — source PDF,
+article, attribution, C2PA manifest and claim ledger.</li>
+<li>View in place: the <a href="/samples/router-s/final/2026-09-07-a-validation-loss-of-3-41-and-a-variance-that-swallows-the-result-final.md">generated article</a>,
+its <a href="/samples/router-s/provenance/2026-09-07-a-validation-loss-of-3-41-and-a-variance-that-swallows-the-result-c2pa.json">C2PA manifest</a>, the
+<a href="/samples/router-s/provenance/2026-09-07-a-validation-loss-of-3-41-and-a-variance-that-swallows-the-result-attribution.json">per-sentence attribution</a>,
+and the <a href="/samples/router-s/two-column.pdf">source paper</a>.</li>
+</ul>
+<p>Install draft and, from inside the unzipped folder, run:</p>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>verify</span> final/2026-09-07-a-validation-loss-of-3-41-and-a-variance-that-swallows-the-result-final.md</span>
+</span></code></pre>
+<p>It recomputes the digests and confirms the article is unchanged since it was
+written, the claim ledger matches, and the source is unchanged since it was
+read. This set is honest about its limits: of 36 sentences, 13 rest on a
+verified claim and the rest are connective prose, and the gate dropped 9 of the
+15 candidate claims. That is what grounded-by-construction looks like on a real
+run, not a polished demo.</p>
 <h2>Honest scope</h2>
 <p>draft provides the <strong>provenance layer</strong>: it makes AI-assisted articles carry
 checkable, standards-based credentials by default. It does <strong>not</strong>, by itself,

@@ -98,5 +98,7 @@ draft --engine ollama "my-paper.pdf"
 
 No network, no API key. The same gate runs; only the writer changes.
 
-More runnable examples live in the
+A complete, verifiable set from a real run — article, attribution, C2PA
+manifest and source — is on the [provenance & compliance](/compliance/)
+page. More runnable examples live in the
 [repository](https://github.com/sebastienrousseau/draft/tree/main/examples).
