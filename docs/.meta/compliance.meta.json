@@ -1,0 +1,20 @@
+{
+  "author": "Sebastien Rousseau",
+  "banner": "research-paper",
+  "banner_alt": "A printed research paper on a desk",
+  "breadcrumb": true,
+  "date": "2026-09-01",
+  "description": "draft ships C2PA content credentials and per-sentence attribution with every article, so AI-assisted work carries machine-readable provenance by default — the direction regulators are moving.",
+  "eyebrow": "Compliance",
+  "headline": "Provenance and compliance",
+  "language": "en-GB",
+  "layout": "page",
+  "lead": "Every article draft writes carries machine-readable provenance by default — the direction disclosure rules for AI-assisted content are moving.",
+  "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
+  "name": "draft",
+  "permalink": "https://draftlib.com/compliance/",
+  "reading_time": 2,
+  "short_name": "draft",
+  "title": "Provenance & compliance — draft",
+  "word_count": 402
+}

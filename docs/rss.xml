@@ -178,6 +178,15 @@
       <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
+      <title>Provenance & compliance — draft</title>
+      <link>http://127.0.0.1:8000/compliance/</link>
+      <description>draft ships C2PA content credentials and per-sentence attribution with every article, so AI-assisted work carries machine-readable provenance by default — the direction regulators are moving.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/compliance/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
+    </item>
+    <item>
       <title>Roadmap — draft</title>
       <link>http://127.0.0.1:8000/roadmap/</link>
       <description>What draft does not yet do, and the sequence for closing those gaps: table and figure extraction, LaTeX and math, OCR for scanned PDFs, and more input formats.</description>

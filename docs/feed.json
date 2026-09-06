@@ -113,6 +113,21 @@
           "name": "Sebastien Rousseau"
         }
       ],
+      "content_html": "draft ships C2PA content credentials and per-sentence attribution with every article, so AI-assisted work carries machine-readable provenance by default — the direction regulators are moving.",
+      "date_modified": "",
+      "date_published": "",
+      "id": "http://127.0.0.1:8000/compliance/",
+      "language": "en-GB",
+      "tags": [],
+      "title": "Provenance & compliance — draft",
+      "url": "http://127.0.0.1:8000/compliance/"
+    },
+    {
+      "authors": [
+        {
+          "name": "Sebastien Rousseau"
+        }
+      ],
       "content_html": "Get in touch about draft: issues, questions and contributions.",
       "date_modified": "",
       "date_published": "",

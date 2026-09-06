@@ -17,6 +17,37 @@ headline: "Examples"
 lead: "See a paper become a grounded article — command, output, and the provenance you can check."
 ---
 
+## See the gate work
+
+Grounding is easier to trust when you can see it. Here is one sentence draft
+wrote, the verbatim source span that let it survive the gate, and the
+attribution entry that binds them.
+
+**The source said** (verbatim, from the paper):
+
+> Rendering-tolerant matching and source-based quote repair cut the
+> verification drop rate from 29.6% to 8.5% across 3,217 extraction blocks.
+
+**draft wrote:**
+
+> Source-based quote repair lowered the drop rate from 29.6% to 8.5%.
+
+**The attribution file records the link** (`…-attribution.json`):
+
+```json
+{
+  "sentence": "Source-based quote repair lowered the drop rate from 29.6% to 8.5%.",
+  "claim_id": "c-0417",
+  "quote": "cut the verification drop rate from 29.6% to 8.5% across 3,217 extraction blocks",
+  "strength": "quantitative"
+}
+```
+
+Every number in the sentence (`29.6`, `8.5`) appears in the quote, and the
+quote appears verbatim in the source — the two checks that let this claim
+through. A sentence without such an entry cannot exist in the article. Run
+`draft --verify` and the manifest digests are recomputed against exactly this.
+
 ## One paper, start to finish
 
 ```sh

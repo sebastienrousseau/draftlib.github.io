@@ -55,6 +55,15 @@
   },
   {
     "date": "2026-09-01",
+    "description": "draft ships C2PA content credentials and per-sentence attribution with every article, so AI-assisted work carries machine-readable provenance by default — the direction regulators are moving.",
+    "locale": "en-GB",
+    "tags": [],
+    "title": "Provenance & compliance — draft",
+    "url": "http://127.0.0.1:8000/compliance/",
+    "wordCount": 402
+  },
+  {
+    "date": "2026-09-01",
     "description": "Get in touch about draft: issues, questions and contributions.",
     "locale": "en-GB",
     "tags": [],
@@ -87,7 +96,7 @@
     "tags": [],
     "title": "Examples — draft",
     "url": "http://127.0.0.1:8000/examples/",
-    "wordCount": 151
+    "wordCount": 323
   },
   {
     "date": "2026-09-01",
@@ -186,7 +195,7 @@
     "tags": [],
     "title": "Security — draft",
     "url": "http://127.0.0.1:8000/security/",
-    "wordCount": 144
+    "wordCount": 156
   },
   {
     "date": "2026-09-01",

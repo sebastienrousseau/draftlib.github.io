@@ -34,6 +34,8 @@ With a local model, nothing leaves your machine. With a cloud agent CLI, the
 source excerpts draft needs to extract and write pass through that tool under
 your own session — the same data you would send by using that CLI directly.
 
+For how draft's provenance maps to AI-disclosure rules, see [provenance & compliance](/compliance/).
+
 ## Reporting a vulnerability
 
 Please report security issues privately through the

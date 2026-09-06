@@ -69,6 +69,15 @@
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
+    <title>Provenance &amp; compliance — draft</title>
+    <link href="http://127.0.0.1:8000/compliance/"/>
+    <id>http://127.0.0.1:8000/compliance/</id>
+    <updated></updated>
+    <published></published>
+    <summary>draft ships C2PA content credentials and per-sentence attribution with every article, so AI-assisted work carries machine-readable provenance by default — the direction regulators are moving.</summary>
+    <author><name>Sebastien Rousseau</name></author>
+  </entry>
+  <entry>
     <title>Contact — draft</title>
     <link href="http://127.0.0.1:8000/contact/"/>
     <id>http://127.0.0.1:8000/contact/</id>
