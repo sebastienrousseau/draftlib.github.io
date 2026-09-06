@@ -277,20 +277,24 @@ verification drop rate from 29.6% to 8.5% across 3,217 extraction blocks.</p>
 </blockquote>
 <p><strong>draft wrote:</strong></p>
 <blockquote>
-<p>Source-based quote repair lowered the drop rate from 29.6% to 8.5%.</p>
+<p>Rendering-tolerant matching and source-based quote repair together lowered
+the drop rate from 29.6% to 8.5% across 3,217 extraction blocks.</p>
 </blockquote>
 <p><strong>The attribution file records the link</strong> (<code>…-attribution.json</code>):</p>
 <pre class="highlight language-json"><code class="language-json" data-lang="json"><span class="source json"><span class="meta structure dictionary json"><span class="punctuation section dictionary begin json">{</span>
-  <span class="meta structure dictionary key json"><span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>sentence<span class="punctuation definition string end json">&quot;</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json">:</span> <span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>Source-based quote repair lowered the drop rate from 29.6% to 8.5%.<span class="punctuation definition string end json">&quot;</span></span><span class="punctuation separator dictionary pair json">,</span></span>
+  <span class="meta structure dictionary key json"><span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>sentence<span class="punctuation definition string end json">&quot;</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json">:</span> <span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>Rendering-tolerant matching and source-based quote repair together lowered the drop rate from 29.6% to 8.5% across 3,217 extraction blocks.<span class="punctuation definition string end json">&quot;</span></span><span class="punctuation separator dictionary pair json">,</span></span>
   <span class="meta structure dictionary key json"><span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>claim_id<span class="punctuation definition string end json">&quot;</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json">:</span> <span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>c-0417<span class="punctuation definition string end json">&quot;</span></span><span class="punctuation separator dictionary pair json">,</span></span>
-  <span class="meta structure dictionary key json"><span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>quote<span class="punctuation definition string end json">&quot;</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json">:</span> <span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>cut the verification drop rate from 29.6% to 8.5% across 3,217 extraction blocks<span class="punctuation definition string end json">&quot;</span></span><span class="punctuation separator dictionary pair json">,</span></span>
+  <span class="meta structure dictionary key json"><span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>quote<span class="punctuation definition string end json">&quot;</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json">:</span> <span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>Rendering-tolerant matching and source-based quote repair cut the verification drop rate from 29.6% to 8.5% across 3,217 extraction blocks<span class="punctuation definition string end json">&quot;</span></span><span class="punctuation separator dictionary pair json">,</span></span>
   <span class="meta structure dictionary key json"><span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>strength<span class="punctuation definition string end json">&quot;</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json">:</span> <span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>quantitative<span class="punctuation definition string end json">&quot;</span></span>
 </span><span class="punctuation section dictionary end json">}</span></span>
 </span></code></pre>
-<p>Every number in the sentence (<code>29.6</code>, <code>8.5</code>) appears in the quote, and the
-quote appears verbatim in the source — the two checks that let this claim
-through. A sentence without such an entry cannot exist in the article. Run
-<code>draft --verify</code> and the manifest digests are recomputed against exactly this.</p>
+<p>Every number in the sentence (<code>29.6</code>, <code>8.5</code>, <code>3,217</code>) appears in the quote, and
+the quote appears verbatim in the source — the two checks that let this claim
+through. Note the sentence keeps the source's <em>joint</em> attribution to both
+changes: the gate checks quotes and numbers, so faithful wording is on the
+writer, and this is what faithful wording looks like. A sentence without an
+attribution entry cannot exist in the article, and <code>draft --verify</code> recomputes
+the manifest digests against exactly this.</p>
 <h2>One paper, start to finish</h2>
 <pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
 </span></code></pre>

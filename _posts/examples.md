@@ -30,23 +30,27 @@ attribution entry that binds them.
 
 **draft wrote:**
 
-> Source-based quote repair lowered the drop rate from 29.6% to 8.5%.
+> Rendering-tolerant matching and source-based quote repair together lowered
+> the drop rate from 29.6% to 8.5% across 3,217 extraction blocks.
 
 **The attribution file records the link** (`…-attribution.json`):
 
 ```json
 {
-  "sentence": "Source-based quote repair lowered the drop rate from 29.6% to 8.5%.",
+  "sentence": "Rendering-tolerant matching and source-based quote repair together lowered the drop rate from 29.6% to 8.5% across 3,217 extraction blocks.",
   "claim_id": "c-0417",
-  "quote": "cut the verification drop rate from 29.6% to 8.5% across 3,217 extraction blocks",
+  "quote": "Rendering-tolerant matching and source-based quote repair cut the verification drop rate from 29.6% to 8.5% across 3,217 extraction blocks",
   "strength": "quantitative"
 }
 ```
 
-Every number in the sentence (`29.6`, `8.5`) appears in the quote, and the
-quote appears verbatim in the source — the two checks that let this claim
-through. A sentence without such an entry cannot exist in the article. Run
-`draft --verify` and the manifest digests are recomputed against exactly this.
+Every number in the sentence (`29.6`, `8.5`, `3,217`) appears in the quote, and
+the quote appears verbatim in the source — the two checks that let this claim
+through. Note the sentence keeps the source's *joint* attribution to both
+changes: the gate checks quotes and numbers, so faithful wording is on the
+writer, and this is what faithful wording looks like. A sentence without an
+attribution entry cannot exist in the article, and `draft --verify` recomputes
+the manifest digests against exactly this.
 
 ## One paper, start to finish
 
