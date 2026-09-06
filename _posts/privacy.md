@@ -1,22 +1,33 @@
 ---
-name: "Draft Lib"
-short_name: "draftlib"
-title: "Privacy Policy: Zero-Telemetry Architecture"
-description: "Privacy policy declaring zero tracking cookies and completely local computation."
-keywords: "draftlib privacy policy"
+name: "draft"
+short_name: "draft"
+title: "Privacy — draft"
+description: "The draft website uses no tracking cookies and no analytics. The CLI runs on your machine."
 author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
-permalink: "https://draftlib.com/privacy/index.html"
+permalink: "https://draftlib.com/privacy/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
-banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
-banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
-eyebrow: "draft"
-headline: "Privacy Policy: Zero-Telemetry Architecture"
-lead: "Privacy policy declaring zero tracking cookies and completely local computation."
+banner: "research-paper"
+banner_alt: "A printed research paper on a desk"
+eyebrow: "Privacy"
+headline: "Privacy"
+lead: "No tracking on this site. draft runs locally; what it sends depends on the engine you choose."
 ---
 
-## Privacy Policy
+## This website
 
-Draft Lib operates under a strict **zero-telemetry, zero-cookie** architecture. No document content, queries, or personal data are collected.
+This site sets no tracking cookies and runs no analytics. It is a static build
+served as plain HTML and CSS.
+
+## The draft CLI
+
+draft runs on your machine and sends no telemetry. What leaves your machine
+depends on the engine you choose:
+
+- **Offline (`--engine ollama`):** nothing leaves your machine.
+- **A cloud agent CLI:** the source excerpts draft needs to extract and write
+  pass through that tool under your own session, the same as using it directly.
+
+draft stores no credentials and has no servers.

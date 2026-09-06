@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.",
+  "description": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

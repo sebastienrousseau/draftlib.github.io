@@ -1,22 +1,25 @@
 ---
-name: "Draft Lib"
-short_name: "draftlib"
-title: "Made with Static Site Generator (SSG)"
-description: "Details on native Rust static site generation."
-keywords: "Static Site Generator, SSG"
+name: "draft"
+short_name: "draft"
+title: "Made with SSG — draft"
+description: "The draft website is a static site built with the Shokunin static site generator."
 author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
-permalink: "https://draftlib.com/made-with-ssg/index.html"
+permalink: "https://draftlib.com/made-with-ssg/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
-banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
-banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
-eyebrow: "draft"
-headline: "Made with Static Site Generator (SSG)"
-lead: "Details on native Rust static site generation."
+banner: "research-paper"
+banner_alt: "A printed research paper on a desk"
+eyebrow: "Colophon"
+headline: "Made with SSG"
+lead: "This site is a static build — no tracking, no runtime, just HTML and CSS."
 ---
 
-## Made with Static Site Generator (SSG)
+This website is generated with the
+[Shokunin static site generator](https://github.com/sebastienrousseau/shokunin)
+(`ssg`). Content is Markdown; structure lives in Handlebars-style layouts;
+styles are compiled to a single stylesheet at build time.
 
-This site is natively compiled using the high-performance **Static Site Generator (SSG)** written in Rust.
+The result is plain HTML and CSS with no client-side framework, no tracking and
+no runtime — served straight from GitHub Pages.

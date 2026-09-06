@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Architectural overview of Draft Lib's token streaming, AST reconciliation, and memory model.",
+  "description": "How draft turns a paper into a grounded article: read and section, extract and verify, write, then attribute and sign.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

@@ -1,123 +1,117 @@
 [
   {
     "date": "2026-09-01",
-    "description": "Background and credentials of Sebastien Rousseau, creator of Draft Lib and financial systems architect.",
+    "description": "draft is built by Sebastien Rousseau. It turns research papers into grounded, publication-ready Markdown.",
     "locale": "en-GB",
     "tags": [],
-    "title": "About Sebastien Rousseau & Draft Lib",
+    "title": "About — draft",
     "url": "http://127.0.0.1:8000/about/",
-    "wordCount": 57
+    "wordCount": 69
   },
   {
     "date": "2026-09-01",
-    "description": "Accessibility statement declaring WCAG 2.2 Level AAA compliance.",
+    "description": "How the draft website is built and tested for accessibility.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Accessibility Statement: WCAG 2.2 Level AAA Compliance",
+    "title": "Accessibility — draft",
     "url": "http://127.0.0.1:8000/accessibility/",
-    "wordCount": 26
+    "wordCount": 98
   },
   {
     "date": "2026-09-01",
-    "description": "Architectural overview of Draft Lib's token streaming, AST reconciliation, and memory model.",
+    "description": "How draft turns a paper into a grounded article: read and section, extract and verify, write, then attribute and sign.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Internal Architecture: Lexer, AST Pipeline & Exporters",
+    "title": "Architecture — draft",
     "url": "http://127.0.0.1:8000/architecture/",
-    "wordCount": 74
+    "wordCount": 262
   },
   {
     "date": "2026-09-01",
-    "description": "Empirical benchmarks parsing and rendering 50-page legal and technical documents.",
+    "description": "Measured numbers: a 62-page paper read in about 110 ms, a 10 MB binary, and the drop-rate reduction the claim gate delivers, with the methodology to reproduce them.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Performance Benchmarks: Draft Lib vs Pandoc & Comrak",
+    "title": "Benchmarks — draft",
     "url": "http://127.0.0.1:8000/benchmarks/",
     "wordCount": 167
   },
   {
     "date": "2026-09-01",
-    "description": "Release notes for Draft Lib starting at v0.0.1.",
+    "description": "Release notes for the draft CLI.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Changelog & Version History",
+    "title": "Changelog — draft",
     "url": "http://127.0.0.1:8000/changelog/",
-    "wordCount": 55
+    "wordCount": 56
   },
   {
     "date": "2026-09-01",
-    "description": "Get in touch regarding Draft Lib integration and support.",
+    "description": "Get in touch about draft: issues, questions and contributions.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Contact & Enterprise Inquiries",
+    "title": "Contact — draft",
     "url": "http://127.0.0.1:8000/contact/",
     "wordCount": 22
   },
   {
     "date": "2026-09-01",
-    "description": "Guidelines for contributing to the Draft Lib project.",
+    "description": "How to contribute to draft, the open-source Go CLI.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Contributing to Draft Lib",
+    "title": "Contributing — draft",
     "url": "http://127.0.0.1:8000/contributing/",
-    "wordCount": 15
+    "wordCount": 98
   },
   {
     "date": "2026-09-01",
-    "description": "Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.",
+    "description": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
     "locale": "en-GB",
     "tags": [],
-    "title": "API Reference & Trait Specifications",
+    "title": "Documentation — draft",
     "url": "http://127.0.0.1:8000/documentation/",
-    "wordCount": 76
+    "wordCount": 615
   },
   {
     "date": "2026-09-01",
-    "description": "Real-world code examples using Draft Lib for contractual and technical drafting.",
+    "description": "End-to-end examples: a research paper in, a grounded article out, with attribution and a C2PA manifest you can verify.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Document Templates & Implementation Examples",
+    "title": "Examples — draft",
     "url": "http://127.0.0.1:8000/examples/",
-    "wordCount": 43
+    "wordCount": 151
   },
   {
     "date": "2026-09-01",
-    "description": "Common questions about Draft Lib features, licenses, and integrations.",
+    "description": "Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Frequently Asked Questions (FAQ): Draft Lib",
+    "title": "FAQ — draft",
     "url": "http://127.0.0.1:8000/faqs/",
-    "wordCount": 148
+    "wordCount": 368
   },
   {
     "date": "2026-09-01",
-    "description": "Detailed breakdown of Draft Lib's AST generation, template expansion, and rendering pipelines.",
+    "description": "Grounded by construction, keyless, offline-capable and provable. Every capability draft ships, and how it proves each one.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Core Features: AST Compiler, Schema Validation & Multi-Format Exporters",
+    "title": "Features — draft",
     "url": "http://127.0.0.1:8000/features/",
     "wordCount": 259
   },
   {
     "date": "2026-09-01",
-    "description": "How to install Draft Lib via Cargo and begin compiling structured documents.",
+    "description": "From zero to a grounded article: install draft, check your machine, and run your first paper.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Getting Started with Draft Lib: Installation & Quickstart",
+    "title": "Getting started — draft",
     "url": "http://127.0.0.1:8000/getting-started/",
-    "wordCount": 75
+    "wordCount": 160
   },
   {
     "date": "2026-07-30T08:00:00+00:00",
     "description": "A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is the whole gate.",
-    "locale": "en_GB",
-    "tags": [
-      "draft",
-      "go",
-      "grounded generation",
-      "markdown",
-      "research"
-    ],
+    "locale": "en-GB",
+    "tags": [],
     "title": "How grounding works — draft",
     "url": "http://127.0.0.1:8000/grounding/",
     "wordCount": 630
@@ -134,69 +128,63 @@
   {
     "date": "2026-07-30T08:00:00+00:00",
     "description": "draft is a command-line tool first, but every capability is an importable Go package.",
-    "locale": "en_GB",
-    "tags": [
-      "draft",
-      "go",
-      "grounded generation",
-      "markdown",
-      "research"
-    ],
+    "locale": "en-GB",
+    "tags": [],
     "title": "Go packages — draft",
     "url": "http://127.0.0.1:8000/library/",
     "wordCount": 301
   },
   {
     "date": "2026-09-01",
-    "description": "Details on native Rust static site generation.",
+    "description": "The draft website is a static site built with the Shokunin static site generator.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Made with Static Site Generator (SSG)",
+    "title": "Made with SSG — draft",
     "url": "http://127.0.0.1:8000/made-with-ssg/",
-    "wordCount": 22
+    "wordCount": 51
   },
   {
     "date": "2026-09-01",
-    "description": "Service worker offline fallback page.",
+    "description": "You are offline. This page is served from the cache.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Offline Access: Draft Lib",
+    "title": "Offline — draft",
     "url": "http://127.0.0.1:8000/offline/",
-    "wordCount": 14
+    "wordCount": 28
   },
   {
     "date": "2026-09-01",
-    "description": "Privacy policy declaring zero tracking cookies and completely local computation.",
+    "description": "The draft website uses no tracking cookies and no analytics. The CLI runs on your machine.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Privacy Policy: Zero-Telemetry Architecture",
+    "title": "Privacy — draft",
     "url": "http://127.0.0.1:8000/privacy/",
-    "wordCount": 21
+    "wordCount": 91
   },
   {
     "date": "2026-09-01",
-    "description": "Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.",
+    "description": "draft's security posture: local-first, no API keys, signed releases and provenance you can verify.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Security Architecture: Sovereign Document Processing & Zero Telemetry",
+    "title": "Security — draft",
     "url": "http://127.0.0.1:8000/security/",
-    "wordCount": 62
+    "wordCount": 144
   },
   {
     "date": "2026-09-01",
-    "description": "Terms governing Draft Lib under Apache-2.0 and MIT licenses.",
+    "description": "draft is free and open source under the MIT or Apache-2.0 licence.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Terms of Use & Open Source License",
+    "title": "Terms — draft",
     "url": "http://127.0.0.1:8000/terms/",
-    "wordCount": 16
+    "wordCount": 43
   },
   {
     "date": "2026-09-01",
-    "description": "Thank you for your message.",
+    "description": "Thanks for getting in touch.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Thank You | Draft Lib",
+    "title": "Thank you — draft",
     "url": "http://127.0.0.1:8000/thanks/",
     "wordCount": 26
   }

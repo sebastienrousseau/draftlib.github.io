@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Details on native Rust static site generation.",
+  "description": "The draft website is a static site built with the Shokunin static site generator.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

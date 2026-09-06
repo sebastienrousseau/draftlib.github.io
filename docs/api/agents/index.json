@@ -2,7 +2,7 @@
   "api": "ssg-agent-api",
   "counts": {
     "posts": 21,
-    "topics": 5
+    "topics": 0
   },
   "links": {
     "index": "http://127.0.0.1:8000/api/agents/index.json",

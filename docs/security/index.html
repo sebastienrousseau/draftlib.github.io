@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <title>Security Architecture: Sovereign Document Processing &amp; Zero Telemetry</title>
+    <title>Security — draft</title>
 
     <!-- Strict same-origin policy. 'wasm-unsafe-eval' is what lets
          WebAssembly.instantiateStreaming run the playground bundle. It permits
@@ -30,8 +30,7 @@
     />
 
     <meta name="author" content="Sebastien Rousseau">
-<meta name="description" content="Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.">
-<meta name="keywords" content="draftlib security, zero telemetry document parser">
+<meta name="description" content="draft's security posture: local-first, no API keys, signed releases and provenance you can verify.">
     
     
     
@@ -41,16 +40,16 @@
     <meta property="og:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Security Architecture: Sovereign Document Processing &amp; Zero Telemetry" />
+    <meta property="og:image:alt" content="Security — draft" />
     <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
 
     
-    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/security/index.html" />
-    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/security/index.html" />
+    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/security/" />
+    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/security/" />
 
-    <link rel="alternate" type="application/rss+xml" title="Draft Lib — RSS" href="/rss.xml" />
-    <link rel="alternate" type="application/atom+xml" title="Draft Lib — Atom" href="/atom.xml" />
-    <link rel="alternate" type="application/feed+json" title="Draft Lib — JSON Feed" href="/feed.json" />
+    <link rel="alternate" type="application/rss+xml" title="draft — RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="draft — Atom" href="/atom.xml" />
+    <link rel="alternate" type="application/feed+json" title="draft — JSON Feed" href="/feed.json" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -73,8 +72,8 @@
             "@type": "WebSite",
             "@id": "https://draftlib.com/#website",
             "url": "https://draftlib.com/",
-            "name": "Draft Lib",
-            "description": "Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.",
+            "name": "draft",
+            "description": "draft&#x27;s security posture: local-first, no API keys, signed releases and provenance you can verify.",
             "inLanguage": "en-GB"
           },
           {
@@ -91,10 +90,10 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://draftlib.com/security/index.html#webpage",
-            "url": "https://draftlib.com/security/index.html",
-            "name": "Security Architecture: Sovereign Document Processing &amp; Zero Telemetry",
-            "description": "Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.",
+            "@id": "https://draftlib.com/security/#webpage",
+            "url": "https://draftlib.com/security/",
+            "name": "Security — draft",
+            "description": "draft&#x27;s security posture: local-first, no API keys, signed releases and provenance you can verify.",
             "inLanguage": "en-GB",
             "isPartOf": { "@id": "https://draftlib.com/#website" },
             "publisher": { "@id": "https://draftlib.com/#organization" },
@@ -125,22 +124,22 @@
          first bytes of the document and still pick the right candidate. -->
     
     <link rel="preload" as="image"
-          href="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1280.webp"
-          imagesrcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-                       https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+          href="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+          imagesrcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+                       https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
           imagesizes="100vw"
           fetchpriority="high" />
     
     <script src="/theme-init.js"></script>
   <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="Security Architecture: Sovereign Document Processing &amp; Zero Telemetry">
-<meta property="og:description" content="draft Security Architecture: Sovereign Document Processing &amp; Zero Telemetry Guarantees around memory safety, zero external network requests, and CycloneDX">
+<meta property="og:title" content="Security — draft">
+<meta property="og:description" content="Security Security Local-first by default, keyless, with releases and provenance you can check. Posture Local-first. The reader, claim gate, house-style checks">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://draftlib.com/security/index.html">
+<meta property="og:url" content="https://draftlib.com/security/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Security Architecture: Sovereign Document Processing &amp; Zero Telemetry">
-<meta name="twitter:description" content="draft Security Architecture: Sovereign Document Processing &amp; Zero Telemetry Guarantees around memory safety, zero external network requests, and CycloneDX">
+<meta name="twitter:title" content="Security — draft">
+<meta name="twitter:description" content="Security Security Local-first by default, keyless, with releases and provenance you can check. Posture Local-first. The reader, claim gate, house-style checks">
 <link rel="canonical" href="https://draftlib.com/security/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 
@@ -151,7 +150,7 @@
   <div class="container header-inner">
     <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">Draft Lib</span>
+      <span class="brand-text">draft</span>
     </a>
 
     <nav class="site-nav" aria-label="Primary">
@@ -235,32 +234,44 @@
 <section class="page-banner" aria-labelledby="page-heading">
   
   <img class="page-banner-image"
-       src="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp"
-       srcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-               https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+       src="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+       srcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+               https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
        sizes="100vw"
        width="1280" height="340"
-       alt="Draft Lib — Fast Document Processing &amp; Drafting Engine in Rust"
+       alt="A printed research paper on a desk"
        fetchpriority="high" decoding="async" />
   
   <div class="page-banner-body">
     <div class="container stack">
-      <p class="eyebrow">draft</p>
-      <h1 id="page-heading">Security Architecture: Sovereign Document Processing &amp; Zero Telemetry</h1>
-      <p class="lead">Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.</p>
+      <p class="eyebrow">Security</p>
+      <h1 id="page-heading">Security</h1>
+      <p class="lead">Local-first by default, keyless, with releases and provenance you can check.</p>
     </div>
   </div>
 </section>
 
 <article class="section">
   <div class="container prose stack">
-    <div lang="en"><h2>Security Architecture &amp; Trust Guarantees</h2>
-<h3>1. 100% Zero-Telemetry Guarantee</h3>
-<p>Draft Lib performs all computation locally. Confidential contracts and technical specifications never leave your process boundaries.</p>
-<h3>2. Memory Safety</h3>
-<p>Built with 100% safe Rust (<code>#![forbid(unsafe_code)]</code>), eliminating buffer overflow vulnerabilities common in legacy C/C++ parsers.</p>
-<h3>3. Supply Chain Security</h3>
-<p>All releases include a signed CycloneDX Software Bill of Materials (SBOM).</p>
+    <div lang="en"><h2>Posture</h2>
+<ul>
+<li><strong>Local-first.</strong> The reader, claim gate, house-style checks and provenance
+are deterministic Go and never touch the network. Run fully offline with
+<code>--engine ollama</code>.</li>
+<li><strong>No API keys.</strong> draft drives agent CLIs through their own logged-in
+sessions. It stores no credentials and asks for none.</li>
+<li><strong>No telemetry.</strong> draft has no servers and phones nothing home.</li>
+<li><strong>Provenance you can verify.</strong> Every article ships a C2PA manifest and a
+per-sentence attribution file; <code>draft --verify</code> recomputes the digests.</li>
+</ul>
+<h2>Data flow</h2>
+<p>With a local model, nothing leaves your machine. With a cloud agent CLI, the
+source excerpts draft needs to extract and write pass through that tool under
+your own session — the same data you would send by using that CLI directly.</p>
+<h2>Reporting a vulnerability</h2>
+<p>Please report security issues privately through the
+<a href="https://github.com/sebastienrousseau/draft/security/advisories">GitHub security advisories</a>
+page rather than a public issue.</p>
 </div>
   </div>
 </article>

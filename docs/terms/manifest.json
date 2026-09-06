@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Terms governing Draft Lib under Apache-2.0 and MIT licenses.",
+  "description": "draft is free and open source under the MIT or Apache-2.0 licence.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

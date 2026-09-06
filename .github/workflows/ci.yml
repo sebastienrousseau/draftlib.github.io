@@ -31,6 +31,9 @@ jobs:
       - name: WCAG AAA contrast audit
         run: python3 audit/contrast.py
 
+      - name: Content integrity (no wrong-product / broken assets)
+        run: python3 scripts/check-content.py docs
+
       - name: Structure & self-hosting guardrails
         run: |
           fail=0

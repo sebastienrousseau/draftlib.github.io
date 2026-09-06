@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <title>Document Templates &amp; Implementation Examples</title>
+    <title>Examples — draft</title>
 
     <!-- Strict same-origin policy. 'wasm-unsafe-eval' is what lets
          WebAssembly.instantiateStreaming run the playground bundle. It permits
@@ -30,8 +30,7 @@
     />
 
     <meta name="author" content="Sebastien Rousseau">
-<meta name="description" content="Real-world code examples using Draft Lib for contractual and technical drafting.">
-<meta name="keywords" content="draftlib examples, rust document templates">
+<meta name="description" content="End-to-end examples: a research paper in, a grounded article out, with attribution and a C2PA manifest you can verify.">
     
     
     
@@ -41,16 +40,16 @@
     <meta property="og:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Document Templates &amp; Implementation Examples" />
+    <meta property="og:image:alt" content="Examples — draft" />
     <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
 
     
-    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/examples/index.html" />
-    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/examples/index.html" />
+    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/examples/" />
+    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/examples/" />
 
-    <link rel="alternate" type="application/rss+xml" title="Draft Lib — RSS" href="/rss.xml" />
-    <link rel="alternate" type="application/atom+xml" title="Draft Lib — Atom" href="/atom.xml" />
-    <link rel="alternate" type="application/feed+json" title="Draft Lib — JSON Feed" href="/feed.json" />
+    <link rel="alternate" type="application/rss+xml" title="draft — RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="draft — Atom" href="/atom.xml" />
+    <link rel="alternate" type="application/feed+json" title="draft — JSON Feed" href="/feed.json" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -73,8 +72,8 @@
             "@type": "WebSite",
             "@id": "https://draftlib.com/#website",
             "url": "https://draftlib.com/",
-            "name": "Draft Lib",
-            "description": "Real-world code examples using Draft Lib for contractual and technical drafting.",
+            "name": "draft",
+            "description": "End-to-end examples: a research paper in, a grounded article out, with attribution and a C2PA manifest you can verify.",
             "inLanguage": "en-GB"
           },
           {
@@ -91,10 +90,10 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://draftlib.com/examples/index.html#webpage",
-            "url": "https://draftlib.com/examples/index.html",
-            "name": "Document Templates &amp; Implementation Examples",
-            "description": "Real-world code examples using Draft Lib for contractual and technical drafting.",
+            "@id": "https://draftlib.com/examples/#webpage",
+            "url": "https://draftlib.com/examples/",
+            "name": "Examples — draft",
+            "description": "End-to-end examples: a research paper in, a grounded article out, with attribution and a C2PA manifest you can verify.",
             "inLanguage": "en-GB",
             "isPartOf": { "@id": "https://draftlib.com/#website" },
             "publisher": { "@id": "https://draftlib.com/#organization" },
@@ -125,23 +124,23 @@
          first bytes of the document and still pick the right candidate. -->
     
     <link rel="preload" as="image"
-          href="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1280.webp"
-          imagesrcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-                       https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+          href="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+          imagesrcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+                       https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
           imagesizes="100vw"
           fetchpriority="high" />
     
     <script src="/theme-init.js"></script>
   <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="stylesheet" href="/highlight.css">
-<meta property="og:title" content="Document Templates &amp; Implementation Examples">
-<meta property="og:description" content="draft Document Templates &amp; Implementation Examples Real-world code examples using Draft Lib for contractual and technical drafting. Document Examples &amp;">
+<meta property="og:title" content="Examples — draft">
+<meta property="og:description" content="Examples Examples See a paper become a grounded article — command, output, and the provenance you can check. One paper, start to finish draft &quot;">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://draftlib.com/examples/index.html">
+<meta property="og:url" content="https://draftlib.com/examples/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Document Templates &amp; Implementation Examples">
-<meta name="twitter:description" content="draft Document Templates &amp; Implementation Examples Real-world code examples using Draft Lib for contractual and technical drafting. Document Examples &amp;">
+<meta name="twitter:title" content="Examples — draft">
+<meta name="twitter:description" content="Examples Examples See a paper become a grounded article — command, output, and the provenance you can check. One paper, start to finish draft &quot;">
 <link rel="canonical" href="https://draftlib.com/examples/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 
@@ -152,7 +151,7 @@
   <div class="container header-inner">
     <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">Draft Lib</span>
+      <span class="brand-text">draft</span>
     </a>
 
     <nav class="site-nav" aria-label="Primary">
@@ -236,37 +235,55 @@
 <section class="page-banner" aria-labelledby="page-heading">
   
   <img class="page-banner-image"
-       src="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp"
-       srcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-               https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+       src="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+       srcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+               https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
        sizes="100vw"
        width="1280" height="340"
-       alt="Draft Lib — Fast Document Processing &amp; Drafting Engine in Rust"
+       alt="A printed research paper on a desk"
        fetchpriority="high" decoding="async" />
   
   <div class="page-banner-body">
     <div class="container stack">
-      <p class="eyebrow">draft</p>
-      <h1 id="page-heading">Document Templates &amp; Implementation Examples</h1>
-      <p class="lead">Real-world code examples using Draft Lib for contractual and technical drafting.</p>
+      <p class="eyebrow">Examples</p>
+      <h1 id="page-heading">Examples</h1>
+      <p class="lead">See a paper become a grounded article — command, output, and the provenance you can check.</p>
     </div>
   </div>
 </section>
 
 <article class="section">
   <div class="container prose stack">
-    <div lang="en"><h2>Document Examples &amp; Use Cases</h2>
-<h3>1. Automated Clause Numbering &amp; Validation</h3>
-<pre class="highlight language-rust"><code class="language-rust" data-lang="rust"><span class="source rust"><span class="keyword other rust">use</span> <span class="meta path rust">draftlib<span class="punctuation accessor rust">::</span></span><span class="meta block rust"><span class="punctuation section block begin rust">{</span>Document<span class="punctuation separator rust">,</span> ClauseValidator</span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span><span class="punctuation terminator rust">;</span>
-
-<span class="storage type rust">let</span> doc <span class="keyword operator rust">=</span> <span class="meta path rust">Document<span class="punctuation accessor rust">::</span></span>from_file<span class="meta group rust"><span class="punctuation section group begin rust">(</span><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;</span>contracts/nda.md<span class="punctuation definition string end rust">&quot;</span></span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="keyword operator rust">?</span><span class="punctuation terminator rust">;</span>
-<span class="storage type rust">let</span> validator <span class="keyword operator rust">=</span> <span class="meta path rust">ClauseValidator<span class="punctuation accessor rust">::</span></span>standard_commercial<span class="meta group rust"><span class="punctuation section group begin rust">(</span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation terminator rust">;</span>
-
-<span class="keyword control rust">match</span> validator.<span class="support function rust">validate</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span><span class="keyword operator rust">&amp;</span>doc</span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span> <span class="meta block rust"><span class="punctuation section block begin rust">{</span>
-    <span class="support type rust">Ok</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span><span class="keyword operator rust">_</span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span> <span class="keyword operator rust">=&gt;</span> <span class="support macro rust">println!</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span></span><span class="meta group rust"><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;</span>Contract satisfies all compliance rules!<span class="punctuation definition string end rust">&quot;</span></span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation separator rust">,</span>
-    <span class="support type rust">Err</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span>e</span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span> <span class="keyword operator rust">=&gt;</span> <span class="support macro rust">eprintln!</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;</span>Validation failed: {}<span class="punctuation definition string end rust">&quot;</span></span><span class="punctuation separator rust">,</span> e</span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation separator rust">,</span>
-</span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span>
+    <div lang="en"><h2>One paper, start to finish</h2>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
 </span></code></pre>
+<p>draft reads the paper, builds a verified claim ledger, writes the article from
+it, and saves a dated set:</p>
+<pre class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">2026-07-29/
+├── source/2026-07-29-attention-routing-body.md
+├── yaml/2026-07-29-attention-routing-frontmatter.yaml
+├── final/2026-07-29-attention-routing-final.md
+└── provenance/
+    ├── 2026-07-29-attention-routing-attribution.json
+    └── 2026-07-29-attention-routing-c2pa.json
+</span></code></pre>
+<p>The attribution file maps each sentence in the article to the claim, and the
+verbatim source quote, that backs it. Nothing in the body exists without a line
+in that file.</p>
+<h2>Verify it</h2>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>verify</span> 2026-07-29/final/2026-07-29-attention-routing-final.md</span>
+</span></code></pre>
+<p>The manifest digests are recomputed and checked. Edit a sentence the ledger did
+not support and verification fails — that is the guarantee.</p>
+<h2>A batch, merged into one draft</h2>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>merge</span> a.pdf b.pdf c.pdf</span>
+</span></code></pre>
+<h2>Offline, on a plane</h2>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>engine</span> ollama <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>my-paper.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
+</span></code></pre>
+<p>No network, no API key. The same gate runs; only the writer changes.</p>
+<p>More runnable examples live in the
+<a href="https://github.com/sebastienrousseau/draft/tree/main/examples">repository</a>.</p>
 </div>
   </div>
 </article>

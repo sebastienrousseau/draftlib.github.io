@@ -1,7 +1,7 @@
 # Generated site-level configuration for draftlib.github.io
-site_name = "Draft Lib"
-site_title = "Draft Lib | Fast Document Processing & Drafting Engine in Rust"
-site_description = "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts."
+site_name = "draft"
+site_title = "draft — From paper to post. Grounded."
+site_description = "Turn research papers into publication-ready Markdown where every sentence is grounded in a quote-verified claim from the source. No API key. Works offline. Provenance you can check."
 base_url = "https://draftlib.com"
 language = "en-GB"
 
@@ -11,10 +11,10 @@ output_dir = "docs"
 
 [agents]
 agents_txt = true
-ai_plugin = true
+ai_plugin = false
 
 [agents.mcp]
-enabled = true
+enabled = false
 
 [edge_headers]
 targets = ["netlify", "cloudflare", "vercel"]

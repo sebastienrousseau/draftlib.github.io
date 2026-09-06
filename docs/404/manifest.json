@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "The requested documentation page could not be found.",
+  "description": "The page you asked for does not exist. Find your way back to the draft documentation.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

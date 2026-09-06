@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <title>Frequently Asked Questions (FAQ): Draft Lib</title>
+    <title>FAQ — draft</title>
 
     <!-- Strict same-origin policy. 'wasm-unsafe-eval' is what lets
          WebAssembly.instantiateStreaming run the playground bundle. It permits
@@ -30,8 +30,7 @@
     />
 
     <meta name="author" content="Sebastien Rousseau">
-<meta name="description" content="Common questions about Draft Lib features, licenses, and integrations.">
-<meta name="keywords" content="draftlib FAQ, rust document questions">
+<meta name="description" content="Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing.">
     
     
     
@@ -41,16 +40,16 @@
     <meta property="og:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Frequently Asked Questions (FAQ): Draft Lib" />
+    <meta property="og:image:alt" content="FAQ — draft" />
     <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
 
     
-    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/faqs/index.html" />
-    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/faqs/index.html" />
+    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/faqs/" />
+    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/faqs/" />
 
-    <link rel="alternate" type="application/rss+xml" title="Draft Lib — RSS" href="/rss.xml" />
-    <link rel="alternate" type="application/atom+xml" title="Draft Lib — Atom" href="/atom.xml" />
-    <link rel="alternate" type="application/feed+json" title="Draft Lib — JSON Feed" href="/feed.json" />
+    <link rel="alternate" type="application/rss+xml" title="draft — RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="draft — Atom" href="/atom.xml" />
+    <link rel="alternate" type="application/feed+json" title="draft — JSON Feed" href="/feed.json" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -73,8 +72,8 @@
             "@type": "WebSite",
             "@id": "https://draftlib.com/#website",
             "url": "https://draftlib.com/",
-            "name": "Draft Lib",
-            "description": "Common questions about Draft Lib features, licenses, and integrations.",
+            "name": "draft",
+            "description": "Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing.",
             "inLanguage": "en-GB"
           },
           {
@@ -91,10 +90,10 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://draftlib.com/faqs/index.html#webpage",
-            "url": "https://draftlib.com/faqs/index.html",
-            "name": "Frequently Asked Questions (FAQ): Draft Lib",
-            "description": "Common questions about Draft Lib features, licenses, and integrations.",
+            "@id": "https://draftlib.com/faqs/#webpage",
+            "url": "https://draftlib.com/faqs/",
+            "name": "FAQ — draft",
+            "description": "Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing.",
             "inLanguage": "en-GB",
             "isPartOf": { "@id": "https://draftlib.com/#website" },
             "publisher": { "@id": "https://draftlib.com/#organization" },
@@ -125,22 +124,22 @@
          first bytes of the document and still pick the right candidate. -->
     
     <link rel="preload" as="image"
-          href="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1280.webp"
-          imagesrcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-                       https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+          href="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+          imagesrcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+                       https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
           imagesizes="100vw"
           fetchpriority="high" />
     
     <script src="/theme-init.js"></script>
   <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="Frequently Asked Questions (FAQ): Draft Lib">
-<meta property="og:description" content="draft Frequently Asked Questions (FAQ): Draft Lib Common questions about Draft Lib features, licenses, and integrations. Frequently Asked Questions Questions?">
+<meta property="og:title" content="FAQ — draft">
+<meta property="og:description" content="FAQ Frequently asked questions What draft is, how it grounds every sentence, and how your data is handled. What does &quot;grounded by construction&quot; mean?">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://draftlib.com/faqs/index.html">
+<meta property="og:url" content="https://draftlib.com/faqs/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Frequently Asked Questions (FAQ): Draft Lib">
-<meta name="twitter:description" content="draft Frequently Asked Questions (FAQ): Draft Lib Common questions about Draft Lib features, licenses, and integrations. Frequently Asked Questions Questions?">
+<meta name="twitter:title" content="FAQ — draft">
+<meta name="twitter:description" content="FAQ Frequently asked questions What draft is, how it grounds every sentence, and how your data is handled. What does &quot;grounded by construction&quot; mean?">
 <link rel="canonical" href="https://draftlib.com/faqs/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 
@@ -151,7 +150,7 @@
   <div class="container header-inner">
     <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">Draft Lib</span>
+      <span class="brand-text">draft</span>
     </a>
 
     <nav class="site-nav" aria-label="Primary">
@@ -235,55 +234,60 @@
 <section class="page-banner" aria-labelledby="page-heading">
   
   <img class="page-banner-image"
-       src="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp"
-       srcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-               https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+       src="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+       srcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+               https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
        sizes="100vw"
        width="1280" height="340"
-       alt="Draft Lib — Fast Document Processing &amp; Drafting Engine in Rust"
+       alt="A printed research paper on a desk"
        fetchpriority="high" decoding="async" />
   
   <div class="page-banner-body">
     <div class="container stack">
-      <p class="eyebrow">draft</p>
-      <h1 id="page-heading">Frequently Asked Questions (FAQ): Draft Lib</h1>
-      <p class="lead">Common questions about Draft Lib features, licenses, and integrations.</p>
+      <p class="eyebrow">FAQ</p>
+      <h1 id="page-heading">Frequently asked questions</h1>
+      <p class="lead">What draft is, how it grounds every sentence, and how your data is handled.</p>
     </div>
   </div>
 </section>
 
 <article class="section">
   <div class="container prose stack">
-    <div lang="en"><h2>Frequently Asked Questions</h2>
-<div class="apple-faq-section my-4">
-<div class="apple-faq-header">
-<h2 class="apple-faq-title">Questions? Answers.</h2>
-<button type="button" class="apple-faq-expand-btn" id="faqExpandAllBtn" aria-expanded="false">
-<span class="apple-faq-btn-text">Expand all</span>
-<svg class="apple-faq-expand-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-</button>
-</div>
-<div class="apple-faq-list">
-<details class="apple-faq-item">
-<summary class="apple-faq-summary">
-<span class="apple-faq-question">Can I use Draft Lib in commercial applications?</span>
-<span class="apple-faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-</summary>
-<div class="apple-faq-body">
-<p>Yes. Draft Lib is dual-licensed under Apache-2.0 and MIT, making it completely free for both proprietary commercial software and open-source projects.</p>
-</div>
-</details>
-<details class="apple-faq-item">
-<summary class="apple-faq-summary">
-<span class="apple-faq-question">Does it support custom metadata schemas?</span>
-<span class="apple-faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-</summary>
-<div class="apple-faq-body">
-<p>Yes. Any `serde`-compatible Rust struct can be deserialized directly from document YAML/TOML frontmatter with compile-time validation.</p>
-</div>
-</details>
-</div>
-</div>
+    <div lang="en"><h3>What does &quot;grounded by construction&quot; mean?</h3>
+<p>Before a word is written, draft mines your sources for claims. A claim survives
+only if its quote appears verbatim in the source and every number in it appears
+in that quote. The writer is given that verified ledger and nothing else, so a
+sentence with no backing claim cannot be written. See
+<a href="/grounding/">how grounding works</a>.</p>
+<h3>How is this different from RAG, or from asking an LLM to summarise a paper?</h3>
+<p>Retrieval hands a model source text and hopes it stays faithful. draft verifies
+each claim <em>before</em> writing and drops anything unverifiable, then attributes
+every sentence to the claim that backs it. The check is structural, not a prompt.</p>
+<h3>Which agent CLIs does it use, and does it need an API key?</h3>
+<p>No API key. In <code>auto</code> mode draft drives whichever supported agent CLI you are
+already logged into — Claude, Copilot, Codex, Cursor, Grok, Gemini and more —
+through that tool's own session. Offline, it uses a local Ollama model.</p>
+<h3>Does my paper leave my machine?</h3>
+<p>It depends on the engine. With a local Ollama model, nothing leaves your
+machine. With a cloud agent CLI, the source excerpts draft needs to extract and
+write are sent through that tool, exactly as if you had pasted them into it —
+so choose the engine that matches your privacy needs. draft itself has no
+servers and sends no telemetry.</p>
+<h3>What runs fully offline?</h3>
+<p><code>--engine ollama</code> keeps the entire pipeline local. Reading, claim
+verification, house-style checks and provenance are all deterministic Go and
+never touch the network.</p>
+<h3>What is the C2PA manifest, and what does <code>--verify</code> check?</h3>
+<p>Every article ships a per-sentence attribution file and a C2PA manifest.
+<code>draft --verify</code> recomputes the digests and reports whether the article still
+matches the ledger it was written from. Editing an unsupported sentence makes
+it fail.</p>
+<h3>What inputs are supported?</h3>
+<p>PDFs with a text layer, read by <code>pdftotext</code> (or <code>--reader docling</code> when tables
+and structure matter). Scanned PDFs with no text layer are not yet supported.</p>
+<h3>Can I use the output commercially?</h3>
+<p>Yes. draft is free and open source under the MIT or Apache-2.0 licence. No
+account, no telemetry.</p>
 </div>
   </div>
 </article>

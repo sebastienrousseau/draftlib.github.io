@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://draftlib.com/architecture/index.html/sitemap.xml
+Sitemap: https://draftlib.com/architecture/sitemap.xml

@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Background and credentials of Sebastien Rousseau, creator of Draft Lib and financial systems architect.",
+  "description": "draft is built by Sebastien Rousseau. It turns research papers into grounded, publication-ready Markdown.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

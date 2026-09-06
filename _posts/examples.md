@@ -1,34 +1,66 @@
 ---
-name: "Draft Lib"
-short_name: "draftlib"
-title: "Document Templates & Implementation Examples"
-description: "Real-world code examples using Draft Lib for contractual and technical drafting."
-keywords: "draftlib examples, rust document templates"
+name: "draft"
+short_name: "draft"
+title: "Examples — draft"
+description: "End-to-end examples: a research paper in, a grounded article out, with attribution and a C2PA manifest you can verify."
 author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
-permalink: "https://draftlib.com/examples/index.html"
+permalink: "https://draftlib.com/examples/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
-banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
-banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
-eyebrow: "draft"
-headline: "Document Templates & Implementation Examples"
-lead: "Real-world code examples using Draft Lib for contractual and technical drafting."
+banner: "research-paper"
+banner_alt: "A printed research paper on a desk"
+eyebrow: "Examples"
+headline: "Examples"
+lead: "See a paper become a grounded article — command, output, and the provenance you can check."
 ---
 
-## Document Examples & Use Cases
+## One paper, start to finish
 
-### 1. Automated Clause Numbering & Validation
-
-```rust
-use draftlib::{Document, ClauseValidator};
-
-let doc = Document::from_file("contracts/nda.md")?;
-let validator = ClauseValidator::standard_commercial();
-
-match validator.validate(&doc) {
-    Ok(_) => println!("Contract satisfies all compliance rules!"),
-    Err(e) => eprintln!("Validation failed: {}", e),
-}
+```sh
+draft "2603.23420.pdf"
 ```
+
+draft reads the paper, builds a verified claim ledger, writes the article from
+it, and saves a dated set:
+
+```text
+2026-07-29/
+├── source/2026-07-29-attention-routing-body.md
+├── yaml/2026-07-29-attention-routing-frontmatter.yaml
+├── final/2026-07-29-attention-routing-final.md
+└── provenance/
+    ├── 2026-07-29-attention-routing-attribution.json
+    └── 2026-07-29-attention-routing-c2pa.json
+```
+
+The attribution file maps each sentence in the article to the claim, and the
+verbatim source quote, that backs it. Nothing in the body exists without a line
+in that file.
+
+## Verify it
+
+```sh
+draft --verify 2026-07-29/final/2026-07-29-attention-routing-final.md
+```
+
+The manifest digests are recomputed and checked. Edit a sentence the ledger did
+not support and verification fails — that is the guarantee.
+
+## A batch, merged into one draft
+
+```sh
+draft --merge a.pdf b.pdf c.pdf
+```
+
+## Offline, on a plane
+
+```sh
+draft --engine ollama "my-paper.pdf"
+```
+
+No network, no API key. The same gate runs; only the writer changes.
+
+More runnable examples live in the
+[repository](https://github.com/sebastienrousseau/draft/tree/main/examples).

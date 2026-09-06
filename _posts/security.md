@@ -1,29 +1,40 @@
 ---
-name: "Draft Lib"
-short_name: "draftlib"
-title: "Security Architecture: Sovereign Document Processing & Zero Telemetry"
-description: "Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance."
-keywords: "draftlib security, zero telemetry document parser"
+name: "draft"
+short_name: "draft"
+title: "Security — draft"
+description: "draft's security posture: local-first, no API keys, signed releases and provenance you can verify."
 author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
-permalink: "https://draftlib.com/security/index.html"
+permalink: "https://draftlib.com/security/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
-banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
-banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
-eyebrow: "draft"
-headline: "Security Architecture: Sovereign Document Processing & Zero Telemetry"
-lead: "Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance."
+banner: "research-paper"
+banner_alt: "A printed research paper on a desk"
+eyebrow: "Security"
+headline: "Security"
+lead: "Local-first by default, keyless, with releases and provenance you can check."
 ---
 
-## Security Architecture & Trust Guarantees
+## Posture
 
-### 1. 100% Zero-Telemetry Guarantee
-Draft Lib performs all computation locally. Confidential contracts and technical specifications never leave your process boundaries.
+- **Local-first.** The reader, claim gate, house-style checks and provenance
+  are deterministic Go and never touch the network. Run fully offline with
+  `--engine ollama`.
+- **No API keys.** draft drives agent CLIs through their own logged-in
+  sessions. It stores no credentials and asks for none.
+- **No telemetry.** draft has no servers and phones nothing home.
+- **Provenance you can verify.** Every article ships a C2PA manifest and a
+  per-sentence attribution file; `draft --verify` recomputes the digests.
 
-### 2. Memory Safety
-Built with 100% safe Rust (`#![forbid(unsafe_code)]`), eliminating buffer overflow vulnerabilities common in legacy C/C++ parsers.
+## Data flow
 
-### 3. Supply Chain Security
-All releases include a signed CycloneDX Software Bill of Materials (SBOM).
+With a local model, nothing leaves your machine. With a cloud agent CLI, the
+source excerpts draft needs to extract and write pass through that tool under
+your own session — the same data you would send by using that CLI directly.
+
+## Reporting a vulnerability
+
+Please report security issues privately through the
+[GitHub security advisories](https://github.com/sebastienrousseau/draft/security/advisories)
+page rather than a public issue.

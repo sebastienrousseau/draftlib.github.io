@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <title>Offline Access: Draft Lib</title>
+    <title>Offline — draft</title>
 
     <!-- Strict same-origin policy. 'wasm-unsafe-eval' is what lets
          WebAssembly.instantiateStreaming run the playground bundle. It permits
@@ -30,8 +30,7 @@
     />
 
     <meta name="author" content="Sebastien Rousseau">
-<meta name="description" content="Service worker offline fallback page.">
-<meta name="keywords" content="offline draftlib">
+<meta name="description" content="You are offline. This page is served from the cache.">
     
     
     
@@ -41,16 +40,16 @@
     <meta property="og:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Offline Access: Draft Lib" />
+    <meta property="og:image:alt" content="Offline — draft" />
     <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
 
     
-    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/offline/index.html" />
-    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/offline/index.html" />
+    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/offline/" />
+    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/offline/" />
 
-    <link rel="alternate" type="application/rss+xml" title="Draft Lib — RSS" href="/rss.xml" />
-    <link rel="alternate" type="application/atom+xml" title="Draft Lib — Atom" href="/atom.xml" />
-    <link rel="alternate" type="application/feed+json" title="Draft Lib — JSON Feed" href="/feed.json" />
+    <link rel="alternate" type="application/rss+xml" title="draft — RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="draft — Atom" href="/atom.xml" />
+    <link rel="alternate" type="application/feed+json" title="draft — JSON Feed" href="/feed.json" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -73,8 +72,8 @@
             "@type": "WebSite",
             "@id": "https://draftlib.com/#website",
             "url": "https://draftlib.com/",
-            "name": "Draft Lib",
-            "description": "Service worker offline fallback page.",
+            "name": "draft",
+            "description": "You are offline. This page is served from the cache.",
             "inLanguage": "en-GB"
           },
           {
@@ -91,10 +90,10 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://draftlib.com/offline/index.html#webpage",
-            "url": "https://draftlib.com/offline/index.html",
-            "name": "Offline Access: Draft Lib",
-            "description": "Service worker offline fallback page.",
+            "@id": "https://draftlib.com/offline/#webpage",
+            "url": "https://draftlib.com/offline/",
+            "name": "Offline — draft",
+            "description": "You are offline. This page is served from the cache.",
             "inLanguage": "en-GB",
             "isPartOf": { "@id": "https://draftlib.com/#website" },
             "publisher": { "@id": "https://draftlib.com/#organization" },
@@ -125,22 +124,22 @@
          first bytes of the document and still pick the right candidate. -->
     
     <link rel="preload" as="image"
-          href="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1280.webp"
-          imagesrcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-                       https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+          href="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+          imagesrcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+                       https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
           imagesizes="100vw"
           fetchpriority="high" />
     
     <script src="/theme-init.js"></script>
   <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="Offline Access: Draft Lib">
-<meta property="og:description" content="draft Offline Access: Draft Lib Service worker offline fallback page. You Are Currently Offline Draft Lib documentation has been cached for offline">
+<meta property="og:title" content="Offline — draft">
+<meta property="og:description" content="Offline You are offline The page you wanted is not in the cache. Reconnect and try again. It looks like you have lost your connection. This page was served">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://draftlib.com/offline/index.html">
+<meta property="og:url" content="https://draftlib.com/offline/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Offline Access: Draft Lib">
-<meta name="twitter:description" content="draft Offline Access: Draft Lib Service worker offline fallback page. You Are Currently Offline Draft Lib documentation has been cached for offline">
+<meta name="twitter:title" content="Offline — draft">
+<meta name="twitter:description" content="Offline You are offline The page you wanted is not in the cache. Reconnect and try again. It looks like you have lost your connection. This page was served">
 <link rel="canonical" href="https://draftlib.com/offline/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 
@@ -151,7 +150,7 @@
   <div class="container header-inner">
     <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">Draft Lib</span>
+      <span class="brand-text">draft</span>
     </a>
 
     <nav class="site-nav" aria-label="Primary">
@@ -235,27 +234,28 @@
 <section class="page-banner" aria-labelledby="page-heading">
   
   <img class="page-banner-image"
-       src="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp"
-       srcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-               https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+       src="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+       srcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+               https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
        sizes="100vw"
        width="1280" height="340"
-       alt="Draft Lib — Fast Document Processing &amp; Drafting Engine in Rust"
+       alt="A printed research paper on a desk"
        fetchpriority="high" decoding="async" />
   
   <div class="page-banner-body">
     <div class="container stack">
-      <p class="eyebrow">draft</p>
-      <h1 id="page-heading">Offline Access: Draft Lib</h1>
-      <p class="lead">Service worker offline fallback page.</p>
+      <p class="eyebrow">Offline</p>
+      <h1 id="page-heading">You are offline</h1>
+      <p class="lead">The page you wanted is not in the cache. Reconnect and try again.</p>
     </div>
   </div>
 </section>
 
 <article class="section">
   <div class="container prose stack">
-    <div lang="en"><h2>You Are Currently Offline</h2>
-<p>Draft Lib documentation has been cached for offline availability.</p>
+    <div lang="en"><p>It looks like you have lost your connection. This page was served from the
+cache.</p>
+<p>Reconnect and reload, or head back to the <a href="/">homepage</a> once you are online.</p>
 </div>
   </div>
 </article>

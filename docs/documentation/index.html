@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <title>API Reference &amp; Trait Specifications</title>
+    <title>Documentation — draft</title>
 
     <!-- Strict same-origin policy. 'wasm-unsafe-eval' is what lets
          WebAssembly.instantiateStreaming run the playground bundle. It permits
@@ -30,8 +30,7 @@
     />
 
     <meta name="author" content="Sebastien Rousseau">
-<meta name="description" content="Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.">
-<meta name="keywords" content="draftlib API, rust crate documentation">
+<meta name="description" content="Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.">
     
     
     
@@ -41,16 +40,16 @@
     <meta property="og:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="API Reference &amp; Trait Specifications" />
+    <meta property="og:image:alt" content="Documentation — draft" />
     <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
 
     
-    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/documentation/index.html" />
-    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/documentation/index.html" />
+    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/documentation/" />
+    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/documentation/" />
 
-    <link rel="alternate" type="application/rss+xml" title="Draft Lib — RSS" href="/rss.xml" />
-    <link rel="alternate" type="application/atom+xml" title="Draft Lib — Atom" href="/atom.xml" />
-    <link rel="alternate" type="application/feed+json" title="Draft Lib — JSON Feed" href="/feed.json" />
+    <link rel="alternate" type="application/rss+xml" title="draft — RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="draft — Atom" href="/atom.xml" />
+    <link rel="alternate" type="application/feed+json" title="draft — JSON Feed" href="/feed.json" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -73,8 +72,8 @@
             "@type": "WebSite",
             "@id": "https://draftlib.com/#website",
             "url": "https://draftlib.com/",
-            "name": "Draft Lib",
-            "description": "Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.",
+            "name": "draft",
+            "description": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
             "inLanguage": "en-GB"
           },
           {
@@ -91,10 +90,10 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://draftlib.com/documentation/index.html#webpage",
-            "url": "https://draftlib.com/documentation/index.html",
-            "name": "API Reference &amp; Trait Specifications",
-            "description": "Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.",
+            "@id": "https://draftlib.com/documentation/#webpage",
+            "url": "https://draftlib.com/documentation/",
+            "name": "Documentation — draft",
+            "description": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
             "inLanguage": "en-GB",
             "isPartOf": { "@id": "https://draftlib.com/#website" },
             "publisher": { "@id": "https://draftlib.com/#organization" },
@@ -125,23 +124,23 @@
          first bytes of the document and still pick the right candidate. -->
     
     <link rel="preload" as="image"
-          href="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1280.webp"
-          imagesrcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-                       https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+          href="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+          imagesrcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+                       https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
           imagesizes="100vw"
           fetchpriority="high" />
     
     <script src="/theme-init.js"></script>
   <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="stylesheet" href="/highlight.css">
-<meta property="og:title" content="API Reference &amp; Trait Specifications">
-<meta property="og:description" content="draft API Reference &amp; Trait Specifications Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator. API Reference &amp;">
+<meta property="og:title" content="Documentation — draft">
+<meta property="og:description" content="Docs Documentation Install, quickstart, and the full command-line reference for draft. Install Homebrew (macOS, recommended) brew install -- cask">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://draftlib.com/documentation/index.html">
+<meta property="og:url" content="https://draftlib.com/documentation/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="API Reference &amp; Trait Specifications">
-<meta name="twitter:description" content="draft API Reference &amp; Trait Specifications Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator. API Reference &amp;">
+<meta name="twitter:title" content="Documentation — draft">
+<meta name="twitter:description" content="Docs Documentation Install, quickstart, and the full command-line reference for draft. Install Homebrew (macOS, recommended) brew install -- cask">
 <link rel="canonical" href="https://draftlib.com/documentation/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 
@@ -152,7 +151,7 @@
   <div class="container header-inner">
     <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">Draft Lib</span>
+      <span class="brand-text">draft</span>
     </a>
 
     <nav class="site-nav" aria-label="Primary">
@@ -236,43 +235,178 @@
 <section class="page-banner" aria-labelledby="page-heading">
   
   <img class="page-banner-image"
-       src="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp"
-       srcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-               https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+       src="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+       srcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+               https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
        sizes="100vw"
        width="1280" height="340"
-       alt="Draft Lib — Fast Document Processing &amp; Drafting Engine in Rust"
+       alt="A printed research paper on a desk"
        fetchpriority="high" decoding="async" />
   
   <div class="page-banner-body">
     <div class="container stack">
-      <p class="eyebrow">draft</p>
-      <h1 id="page-heading">API Reference &amp; Trait Specifications</h1>
-      <p class="lead">Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.</p>
+      <p class="eyebrow">Docs</p>
+      <h1 id="page-heading">Documentation</h1>
+      <p class="lead">Install, quickstart, and the full command-line reference for draft.</p>
     </div>
   </div>
 </section>
 
 <article class="section">
   <div class="container prose stack">
-    <div lang="en"><h2>API Reference &amp; Trait Specifications</h2>
-<h3>Core Types</h3>
-<h4><code>struct Document</code></h4>
-<p>Represents a parsed document containing frontmatter metadata and a hierarchy of AST nodes.</p>
-<h4><code>enum AstNode</code></h4>
-<pre class="highlight language-rust"><code class="language-rust" data-lang="rust"><span class="source rust"><span class="meta enum rust"><span class="storage modifier rust">pub</span> <span class="storage type enum rust">enum</span> <span class="entity name enum rust">AstNode</span> <span class="meta block rust"><span class="punctuation section block begin rust">{</span>
-    Heading <span class="meta block rust"><span class="punctuation section block begin rust">{</span> level<span class="punctuation separator rust">:</span> <span class="storage type rust">u8</span><span class="punctuation separator rust">,</span> text<span class="punctuation separator rust">:</span> <span class="support type rust">String</span> </span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span><span class="punctuation separator rust">,</span>
-    Paragraph<span class="meta group rust"><span class="punctuation section group begin rust">(</span><span class="support type rust">String</span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation separator rust">,</span>
-    Clause <span class="meta block rust"><span class="punctuation section block begin rust">{</span> number<span class="punctuation separator rust">:</span> <span class="support type rust">String</span><span class="punctuation separator rust">,</span> heading<span class="punctuation separator rust">:</span> <span class="support type rust">String</span><span class="punctuation separator rust">,</span> body<span class="punctuation separator rust">:</span> <span class="meta generic rust">Box<span class="punctuation definition generic begin rust">&lt;</span>AstNode<span class="punctuation definition generic end rust">&gt;</span></span> </span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span><span class="punctuation separator rust">,</span>
-    Table<span class="meta group rust"><span class="punctuation section group begin rust">(</span>TableNode</span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation separator rust">,</span>
-    CodeBlock <span class="meta block rust"><span class="punctuation section block begin rust">{</span> language<span class="punctuation separator rust">:</span> <span class="support type rust">String</span><span class="punctuation separator rust">,</span> content<span class="punctuation separator rust">:</span> <span class="support type rust">String</span> </span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span><span class="punctuation separator rust">,</span>
-</span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span></span>
+    <div lang="en"><h2>Install</h2>
+<p><strong>Homebrew (macOS, recommended)</strong></p>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">brew</span></span><span class="meta function-call arguments shell"> install<span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>cask</span> sebastienrousseau/tap/draft</span>
 </span></code></pre>
-<h4><code>trait Renderer</code></h4>
-<pre class="highlight language-rust"><code class="language-rust" data-lang="rust"><span class="source rust"><span class="meta trait rust"><span class="storage modifier rust">pub</span> <span class="storage type trait rust">trait</span> <span class="entity name trait rust">Renderer</span> <span class="meta block rust"><span class="punctuation section block begin rust">{</span>
-    <span class="meta function rust"><span class="meta function rust"><span class="storage type function rust">fn</span> </span><span class="entity name function rust">render</span></span><span class="meta function rust"><span class="meta function parameters rust"><span class="punctuation section parameters begin rust">(</span><span class="keyword operator rust">&amp;</span><span class="variable parameter rust">self</span>, <span class="variable parameter rust">doc</span><span class="punctuation separator rust">:</span> <span class="keyword operator rust">&amp;</span>Document</span><span class="meta function rust"><span class="meta function parameters rust"><span class="punctuation section parameters end rust">)</span></span></span></span><span class="meta function rust"> <span class="meta function return-type rust"><span class="punctuation separator rust">-&gt;</span> <span class="meta generic rust">Result<span class="punctuation definition generic begin rust">&lt;</span>String<span class="punctuation definition generic end rust">&gt;</span></span></span></span><span class="punctuation terminator rust">;</span>
-</span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span></span>
+<p><strong>Go toolchain (any platform)</strong></p>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">go</span></span><span class="meta function-call arguments shell"> install github.com/sebastienrousseau/draft/cmd/draft@latest</span>
 </span></code></pre>
+<p><strong>From source</strong></p>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">git</span></span><span class="meta function-call arguments shell"> clone https://github.com/sebastienrousseau/draft</span>
+<span class="meta function-call shell"><span class="support function cd shell">cd</span></span><span class="meta function-call arguments shell"> draft</span> <span class="keyword operator logical and shell">&amp;&amp;</span> <span class="meta function-call shell"><span class="variable function shell">make</span></span><span class="meta function-call arguments shell"> build</span>
+</span></code></pre>
+<p>draft reads PDFs with <code>pdftotext</code> (Poppler) and writes offline with a local
+<a href="https://ollama.com">Ollama</a> model. Install what you need:</p>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">brew</span></span><span class="meta function-call arguments shell"> install poppler   <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> PDF text extraction</span><span class="comment line number-sign shell">
+</span></span><span class="meta function-call shell"><span class="variable function shell">brew</span></span><span class="meta function-call arguments shell"> install ollama    <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> offline writing</span><span class="comment line number-sign shell">
+</span></span></span></code></pre>
+<h2>Quickstart</h2>
+<p>Check that the machine is ready, then run a paper:</p>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>doctor</span></span>
+<span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
+</span></code></pre>
+<p>Online, draft drives whichever agent CLI you are already logged into. Offline,
+it falls back to a local Ollama model. Each source becomes its own dated
+article set.</p>
+<h2>Command-line reference</h2>
+<pre class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">draft [flags] &lt;source&gt; [more-sources...]
+</span></code></pre>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table, scrollable horizontally" tabindex="0"><table class="table">
+<thead>
+<tr>
+<th scope="col">Flag</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><code>--engine &lt;mode&gt;</code></td>
+<td class="text-left"><code>auto</code> (default), <code>ollama</code>, or a provider name</td>
+</tr>
+<tr>
+<td class="text-left"><code>--model &lt;name&gt;</code></td>
+<td class="text-left">Session-provider model override (e.g. <code>opus</code>)</td>
+</tr>
+<tr>
+<td class="text-left"><code>--extract-engine &lt;m&gt;</code></td>
+<td class="text-left">Backend for claim extraction (default: <code>--engine</code>)</td>
+</tr>
+<tr>
+<td class="text-left"><code>--write-engine &lt;m&gt;</code></td>
+<td class="text-left">Backend for writing the article (default: <code>--engine</code>)</td>
+</tr>
+<tr>
+<td class="text-left"><code>--experimental</code></td>
+<td class="text-left">Let auto mode use experimental providers</td>
+</tr>
+<tr>
+<td class="text-left"><code>--strict-numbers</code></td>
+<td class="text-left">Fail a draft carrying a number found in no verified claim</td>
+</tr>
+<tr>
+<td class="text-left"><code>--reader &lt;name&gt;</code></td>
+<td class="text-left"><code>pdftotext</code> (default) or <code>docling</code> for tables and structure</td>
+</tr>
+<tr>
+<td class="text-left"><code>--style &lt;file&gt;</code></td>
+<td class="text-left">House-style rules to enforce</td>
+</tr>
+<tr>
+<td class="text-left"><code>--resume</code></td>
+<td class="text-left">Reuse a verified claim ledger from an earlier attempt</td>
+</tr>
+<tr>
+<td class="text-left"><code>--verify &lt;f&gt;</code></td>
+<td class="text-left">Check an article against its provenance, and exit</td>
+</tr>
+<tr>
+<td class="text-left"><code>--frontmatter &lt;f&gt;</code></td>
+<td class="text-left">Regenerate frontmatter and final document from an article</td>
+</tr>
+<tr>
+<td class="text-left"><code>--review &lt;draft&gt;</code></td>
+<td class="text-left">Enhance an existing draft with surgical edits</td>
+</tr>
+<tr>
+<td class="text-left"><code>--out &lt;dir&gt;</code></td>
+<td class="text-left">Directory to write drafts into (default <code>~/Drop/Drafts</code>)</td>
+</tr>
+<tr>
+<td class="text-left"><code>--merge</code></td>
+<td class="text-left">Combine all sources into one draft</td>
+</tr>
+<tr>
+<td class="text-left"><code>--dry-run</code></td>
+<td class="text-left">Report what a run would do, without calling a model</td>
+</tr>
+<tr>
+<td class="text-left"><code>--doctor</code></td>
+<td class="text-left">Check that this machine can run draft, and exit</td>
+</tr>
+<tr>
+<td class="text-left"><code>--print</code></td>
+<td class="text-left">Run without the TUI; print draft paths to stdout</td>
+</tr>
+<tr>
+<td class="text-left"><code>--json</code></td>
+<td class="text-left">Run without the TUI; one JSON object per job on stdout</td>
+</tr>
+<tr>
+<td class="text-left"><code>--version</code></td>
+<td class="text-left">Print version and exit</td>
+</tr>
+<tr>
+<td class="text-left"><code>-h, --help</code></td>
+<td class="text-left">Show help</td>
+</tr>
+</tbody>
+</table></div></div>
+<p>The <a href="https://github.com/sebastienrousseau/draft#usage">README</a> lists every
+flag, including cache and Ollama-tuning options.</p>
+<h2>Engines</h2>
+<p>draft never asks for an API key. In <code>auto</code> mode it walks a list of supported
+agent CLIs and uses the first one you are logged into, driving that tool's own
+session. Supported engines include Claude, Copilot, Codex, Cursor, Grok and
+Gemini; offline, it uses a local Ollama model. Force one with <code>--engine &lt;name&gt;</code>.</p>
+<h2>Article sets</h2>
+<p>Each run writes one article as three files that stay in sync, plus two a reader
+can check:</p>
+<pre class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">2026-07-29/
+├── source/…-body.md              # the article — edit this
+├── yaml/…-frontmatter.yaml       # adjacent frontmatter
+├── final/…-final.md              # combined, ready to publish
+└── provenance/
+    ├── …-attribution.json        # which claim backs each sentence
+    └── …-c2pa.json               # C2PA manifest definition
+</span></code></pre>
+<p>Edit the body, then regenerate the other two in place with
+<code>draft --frontmatter &lt;body.md&gt;</code>. Your curated fields are preserved; only
+missing ones are rebuilt.</p>
+<h2>Provenance</h2>
+<p>Every set ships a per-sentence attribution file and a C2PA manifest.
+<code>draft --verify &lt;final.md&gt;</code> recomputes the digests and reports whether the
+article still matches the ledger it was written from.</p>
+<h2>Troubleshooting</h2>
+<ul>
+<li><strong>No text in the PDF.</strong> A scanned PDF has no text layer; extraction returns
+nothing. Use a source with selectable text.</li>
+<li><strong>No engine found.</strong> Run <code>draft --doctor</code>. Log into an agent CLI, or install
+Ollama for offline runs.</li>
+<li><strong>A thin ledger.</strong> A source with few checkable claims yields a short draft by
+design — draft never pads.</li>
+</ul>
+<p>Full library API is on
+<a href="https://pkg.go.dev/github.com/sebastienrousseau/draft">pkg.go.dev</a>.</p>
 </div>
   </div>
 </article>

@@ -1,13 +1,25 @@
-# Draft Lib
-> Fast document processing and drafting engine in Rust with zero allocations and type-safe AST compilation.
+# draft
+> draft is a command-line tool that turns research papers into publication-ready Markdown where every sentence is grounded in a quote-verified claim from the source. No API key. Works offline. Provenance you can check.
 
-## Core Documentation & Resources
+draft is the Go CLI at github.com/sebastienrousseau/draft. It is not a Rust library or a document-drafting engine; any older description of this domain as one is obsolete.
+
+## What it does
+- Reads a PDF, mines each section for claims, and keeps a claim only if its quote appears verbatim in the source and every number in it appears in that quote.
+- Writes the article from that verified ledger using an agent CLI you are already logged into (Claude, Copilot, Codex, Cursor, Grok, Gemini), or a local Ollama model offline.
+- Ships per-sentence attribution and a C2PA manifest; `draft --verify` recomputes the digests.
+
+## Install
+- Homebrew: `brew install --cask sebastienrousseau/tap/draft`
+- Go: `go install github.com/sebastienrousseau/draft/cmd/draft@latest`
+
+## Core resources
 - Homepage: https://draftlib.com/
-- Getting Started: https://draftlib.com/getting-started/index.html
-- Features: https://draftlib.com/features/index.html
-- Documentation: https://draftlib.com/documentation/index.html
-- Examples: https://draftlib.com/examples/index.html
-- Benchmarks: https://draftlib.com/benchmarks/index.html
-- Architecture: https://draftlib.com/architecture/index.html
-- Security: https://draftlib.com/security/index.html
-- About Sebastien Rousseau: https://draftlib.com/about/index.html
+- How grounding works: https://draftlib.com/grounding/
+- Getting started: https://draftlib.com/getting-started/
+- Documentation: https://draftlib.com/documentation/
+- Features: https://draftlib.com/features/
+- Examples: https://draftlib.com/examples/
+- FAQ: https://draftlib.com/faqs/
+- Go packages: https://draftlib.com/library/
+- Source: https://github.com/sebastienrousseau/draft
+- API reference: https://pkg.go.dev/github.com/sebastienrousseau/draft

@@ -6,96 +6,113 @@
     <description>Turn research papers into publication-ready Markdown where every sentence is grounded in a quote-verified claim from the source. No API key. Works offline. Provenance you can check.</description>
     <atom:link href="http://127.0.0.1:8000/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
-    <copyright>© 2026 Sebastien Rousseau. Dual Apache-2.0 / MIT.</copyright>
     <item>
-      <title>API Reference & Trait Specifications</title>
-      <link>http://127.0.0.1:8000/documentation/</link>
-      <description>Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.</description>
-      <guid isPermaLink="true">http://127.0.0.1:8000/documentation/</guid>
-      <pubDate></pubDate>
-      <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
-    </item>
-    <item>
-      <title>About Sebastien Rousseau & Draft Lib</title>
+      <title>About — draft</title>
       <link>http://127.0.0.1:8000/about/</link>
-      <description>Background and credentials of Sebastien Rousseau, creator of Draft Lib and financial systems architect.</description>
+      <description>draft is built by Sebastien Rousseau. It turns research papers into grounded, publication-ready Markdown.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/about/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Accessibility Statement: WCAG 2.2 Level AAA Compliance</title>
+      <title>Accessibility — draft</title>
       <link>http://127.0.0.1:8000/accessibility/</link>
-      <description>Accessibility statement declaring WCAG 2.2 Level AAA compliance.</description>
+      <description>How the draft website is built and tested for accessibility.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/accessibility/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Changelog & Version History</title>
+      <title>Architecture — draft</title>
+      <link>http://127.0.0.1:8000/architecture/</link>
+      <description>How draft turns a paper into a grounded article: read and section, extract and verify, write, then attribute and sign.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/architecture/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Benchmarks — draft</title>
+      <link>http://127.0.0.1:8000/benchmarks/</link>
+      <description>Measured numbers: a 62-page paper read in about 110 ms, a 10 MB binary, and the drop-rate reduction the claim gate delivers, with the methodology to reproduce them.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/benchmarks/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Changelog — draft</title>
       <link>http://127.0.0.1:8000/changelog/</link>
-      <description>Release notes for Draft Lib starting at v0.0.1.</description>
+      <description>Release notes for the draft CLI.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/changelog/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Contact & Enterprise Inquiries</title>
+      <title>Contact — draft</title>
       <link>http://127.0.0.1:8000/contact/</link>
-      <description>Get in touch regarding Draft Lib integration and support.</description>
+      <description>Get in touch about draft: issues, questions and contributions.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/contact/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Contributing to Draft Lib</title>
+      <title>Contributing — draft</title>
       <link>http://127.0.0.1:8000/contributing/</link>
-      <description>Guidelines for contributing to the Draft Lib project.</description>
+      <description>How to contribute to draft, the open-source Go CLI.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/contributing/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Core Features: AST Compiler, Schema Validation & Multi-Format Exporters</title>
-      <link>http://127.0.0.1:8000/features/</link>
-      <description>Detailed breakdown of Draft Lib&apos;s AST generation, template expansion, and rendering pipelines.</description>
-      <guid isPermaLink="true">http://127.0.0.1:8000/features/</guid>
+      <title>Documentation — draft</title>
+      <link>http://127.0.0.1:8000/documentation/</link>
+      <description>Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/documentation/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Document Templates & Implementation Examples</title>
+      <title>Examples — draft</title>
       <link>http://127.0.0.1:8000/examples/</link>
-      <description>Real-world code examples using Draft Lib for contractual and technical drafting.</description>
+      <description>End-to-end examples: a research paper in, a grounded article out, with attribution and a C2PA manifest you can verify.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/examples/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Frequently Asked Questions (FAQ): Draft Lib</title>
+      <title>FAQ — draft</title>
       <link>http://127.0.0.1:8000/faqs/</link>
-      <description>Common questions about Draft Lib features, licenses, and integrations.</description>
+      <description>Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/faqs/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Getting Started with Draft Lib: Installation & Quickstart</title>
+      <title>Features — draft</title>
+      <link>http://127.0.0.1:8000/features/</link>
+      <description>Grounded by construction, keyless, offline-capable and provable. Every capability draft ships, and how it proves each one.</description>
+      <guid isPermaLink="true">http://127.0.0.1:8000/features/</guid>
+      <pubDate></pubDate>
+      <author>Sebastien Rousseau</author>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <title>Getting started — draft</title>
       <link>http://127.0.0.1:8000/getting-started/</link>
-      <description>How to install Draft Lib via Cargo and begin compiling structured documents.</description>
+      <description>From zero to a grounded article: install draft, check your machine, and run your first paper.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/getting-started/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
       <title>Go packages — draft</title>
@@ -104,12 +121,7 @@
       <guid isPermaLink="true">http://127.0.0.1:8000/library/</guid>
       <pubDate></pubDate>
       <author>contact@draftlib.com (Sebastien Rousseau)</author>
-      <enclosure url="https://draftlib.com/img/og-card.png" type="image/png" length="0"/>
-      <category>draft</category>
-      <category>grounded generation</category>
-      <category>research</category>
-      <category>markdown</category>
-      <category>go</category>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
       <title>How grounding works — draft</title>
@@ -118,93 +130,70 @@
       <guid isPermaLink="true">http://127.0.0.1:8000/grounding/</guid>
       <pubDate></pubDate>
       <author>contact@draftlib.com (Sebastien Rousseau)</author>
-      <enclosure url="https://draftlib.com/img/og-card.png" type="image/png" length="0"/>
-      <category>draft</category>
-      <category>grounded generation</category>
-      <category>research</category>
-      <category>markdown</category>
-      <category>go</category>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Internal Architecture: Lexer, AST Pipeline & Exporters</title>
-      <link>http://127.0.0.1:8000/architecture/</link>
-      <description>Architectural overview of Draft Lib&apos;s token streaming, AST reconciliation, and memory model.</description>
-      <guid isPermaLink="true">http://127.0.0.1:8000/architecture/</guid>
-      <pubDate></pubDate>
-      <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
-    </item>
-    <item>
-      <title>Made with Static Site Generator (SSG)</title>
+      <title>Made with SSG — draft</title>
       <link>http://127.0.0.1:8000/made-with-ssg/</link>
-      <description>Details on native Rust static site generation.</description>
+      <description>The draft website is a static site built with the Shokunin static site generator.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/made-with-ssg/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Offline Access: Draft Lib</title>
+      <title>Offline — draft</title>
       <link>http://127.0.0.1:8000/offline/</link>
-      <description>Service worker offline fallback page.</description>
+      <description>You are offline. This page is served from the cache.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/offline/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Page Not Found (404) | Draft Lib</title>
+      <title>Page not found — draft</title>
       <link>http://127.0.0.1:8000/404/</link>
-      <description>The requested documentation page could not be found.</description>
+      <description>The page you asked for does not exist. Find your way back to the draft documentation.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/404/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Performance Benchmarks: Draft Lib vs Pandoc & Comrak</title>
-      <link>http://127.0.0.1:8000/benchmarks/</link>
-      <description>Empirical benchmarks parsing and rendering 50-page legal and technical documents.</description>
-      <guid isPermaLink="true">http://127.0.0.1:8000/benchmarks/</guid>
-      <pubDate></pubDate>
-      <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
-    </item>
-    <item>
-      <title>Privacy Policy: Zero-Telemetry Architecture</title>
+      <title>Privacy — draft</title>
       <link>http://127.0.0.1:8000/privacy/</link>
-      <description>Privacy policy declaring zero tracking cookies and completely local computation.</description>
+      <description>The draft website uses no tracking cookies and no analytics. The CLI runs on your machine.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/privacy/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Security Architecture: Sovereign Document Processing & Zero Telemetry</title>
+      <title>Security — draft</title>
       <link>http://127.0.0.1:8000/security/</link>
-      <description>Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.</description>
+      <description>draft&apos;s security posture: local-first, no API keys, signed releases and provenance you can verify.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/security/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Terms of Use & Open Source License</title>
+      <title>Terms — draft</title>
       <link>http://127.0.0.1:8000/terms/</link>
-      <description>Terms governing Draft Lib under Apache-2.0 and MIT licenses.</description>
+      <description>draft is free and open source under the MIT or Apache-2.0 licence.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/terms/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
     <item>
-      <title>Thank You | Draft Lib</title>
+      <title>Thank you — draft</title>
       <link>http://127.0.0.1:8000/thanks/</link>
-      <description>Thank you for your message.</description>
+      <description>Thanks for getting in touch.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/thanks/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>
-      <enclosure url="https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp" type="image/webp" length="0"/>
+      <enclosure url="http://127.0.0.1:8000/research-paper" type="image/jpeg" length="0"/>
     </item>
   </channel>
 </rss>

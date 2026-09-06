@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://draftlib.com/features/index.html/sitemap.xml
+Sitemap: https://draftlib.com/features/sitemap.xml

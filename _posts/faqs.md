@@ -1,52 +1,68 @@
 ---
-name: "Draft Lib"
-short_name: "draftlib"
-title: "Frequently Asked Questions (FAQ): Draft Lib"
-description: "Common questions about Draft Lib features, licenses, and integrations."
-keywords: "draftlib FAQ, rust document questions"
+name: "draft"
+short_name: "draft"
+title: "FAQ — draft"
+description: "Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing."
 author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
-permalink: "https://draftlib.com/faqs/index.html"
+permalink: "https://draftlib.com/faqs/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
-banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
-banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
-eyebrow: "draft"
-headline: "Frequently Asked Questions (FAQ): Draft Lib"
-lead: "Common questions about Draft Lib features, licenses, and integrations."
+banner: "research-paper"
+banner_alt: "A printed research paper on a desk"
+eyebrow: "FAQ"
+headline: "Frequently asked questions"
+lead: "What draft is, how it grounds every sentence, and how your data is handled."
 ---
 
-## Frequently Asked Questions
+### What does "grounded by construction" mean?
 
-<div class="apple-faq-section my-4">
-<div class="apple-faq-header">
-<h2 class="apple-faq-title">Questions? Answers.</h2>
-<button type="button" class="apple-faq-expand-btn" id="faqExpandAllBtn" aria-expanded="false">
-<span class="apple-faq-btn-text">Expand all</span>
-<svg class="apple-faq-expand-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-</button>
-</div>
+Before a word is written, draft mines your sources for claims. A claim survives
+only if its quote appears verbatim in the source and every number in it appears
+in that quote. The writer is given that verified ledger and nothing else, so a
+sentence with no backing claim cannot be written. See
+[how grounding works](/grounding/).
 
-<div class="apple-faq-list">
-<details class="apple-faq-item">
-<summary class="apple-faq-summary">
-<span class="apple-faq-question">Can I use Draft Lib in commercial applications?</span>
-<span class="apple-faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-</summary>
-<div class="apple-faq-body">
-<p>Yes. Draft Lib is dual-licensed under Apache-2.0 and MIT, making it completely free for both proprietary commercial software and open-source projects.</p>
-</div>
-</details>
+### How is this different from RAG, or from asking an LLM to summarise a paper?
 
-<details class="apple-faq-item">
-<summary class="apple-faq-summary">
-<span class="apple-faq-question">Does it support custom metadata schemas?</span>
-<span class="apple-faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-</summary>
-<div class="apple-faq-body">
-<p>Yes. Any `serde`-compatible Rust struct can be deserialized directly from document YAML/TOML frontmatter with compile-time validation.</p>
-</div>
-</details>
-</div>
-</div>
+Retrieval hands a model source text and hopes it stays faithful. draft verifies
+each claim *before* writing and drops anything unverifiable, then attributes
+every sentence to the claim that backs it. The check is structural, not a prompt.
+
+### Which agent CLIs does it use, and does it need an API key?
+
+No API key. In `auto` mode draft drives whichever supported agent CLI you are
+already logged into — Claude, Copilot, Codex, Cursor, Grok, Gemini and more —
+through that tool's own session. Offline, it uses a local Ollama model.
+
+### Does my paper leave my machine?
+
+It depends on the engine. With a local Ollama model, nothing leaves your
+machine. With a cloud agent CLI, the source excerpts draft needs to extract and
+write are sent through that tool, exactly as if you had pasted them into it —
+so choose the engine that matches your privacy needs. draft itself has no
+servers and sends no telemetry.
+
+### What runs fully offline?
+
+`--engine ollama` keeps the entire pipeline local. Reading, claim
+verification, house-style checks and provenance are all deterministic Go and
+never touch the network.
+
+### What is the C2PA manifest, and what does `--verify` check?
+
+Every article ships a per-sentence attribution file and a C2PA manifest.
+`draft --verify` recomputes the digests and reports whether the article still
+matches the ledger it was written from. Editing an unsupported sentence makes
+it fail.
+
+### What inputs are supported?
+
+PDFs with a text layer, read by `pdftotext` (or `--reader docling` when tables
+and structure matter). Scanned PDFs with no text layer are not yet supported.
+
+### Can I use the output commercially?
+
+Yes. draft is free and open source under the MIT or Apache-2.0 licence. No
+account, no telemetry.

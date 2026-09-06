@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Common questions about Draft Lib features, licenses, and integrations.",
+  "description": "Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

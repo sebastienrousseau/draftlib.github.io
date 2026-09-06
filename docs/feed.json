@@ -8,13 +8,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "The requested documentation page could not be found.",
+      "content_html": "The page you asked for does not exist. Find your way back to the draft documentation.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/404/",
       "language": "en-GB",
       "tags": [],
-      "title": "Page Not Found (404) | Draft Lib",
+      "title": "Page not found — draft",
       "url": "http://127.0.0.1:8000/404/"
     },
     {
@@ -23,13 +23,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Background and credentials of Sebastien Rousseau, creator of Draft Lib and financial systems architect.",
+      "content_html": "draft is built by Sebastien Rousseau. It turns research papers into grounded, publication-ready Markdown.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/about/",
       "language": "en-GB",
       "tags": [],
-      "title": "About Sebastien Rousseau & Draft Lib",
+      "title": "About — draft",
       "url": "http://127.0.0.1:8000/about/"
     },
     {
@@ -38,13 +38,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Accessibility statement declaring WCAG 2.2 Level AAA compliance.",
+      "content_html": "How the draft website is built and tested for accessibility.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/accessibility/",
       "language": "en-GB",
       "tags": [],
-      "title": "Accessibility Statement: WCAG 2.2 Level AAA Compliance",
+      "title": "Accessibility — draft",
       "url": "http://127.0.0.1:8000/accessibility/"
     },
     {
@@ -53,13 +53,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Architectural overview of Draft Lib's token streaming, AST reconciliation, and memory model.",
+      "content_html": "How draft turns a paper into a grounded article: read and section, extract and verify, write, then attribute and sign.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/architecture/",
       "language": "en-GB",
       "tags": [],
-      "title": "Internal Architecture: Lexer, AST Pipeline & Exporters",
+      "title": "Architecture — draft",
       "url": "http://127.0.0.1:8000/architecture/"
     },
     {
@@ -68,13 +68,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Empirical benchmarks parsing and rendering 50-page legal and technical documents.",
+      "content_html": "Measured numbers: a 62-page paper read in about 110 ms, a 10 MB binary, and the drop-rate reduction the claim gate delivers, with the methodology to reproduce them.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/benchmarks/",
       "language": "en-GB",
       "tags": [],
-      "title": "Performance Benchmarks: Draft Lib vs Pandoc & Comrak",
+      "title": "Benchmarks — draft",
       "url": "http://127.0.0.1:8000/benchmarks/"
     },
     {
@@ -83,13 +83,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Release notes for Draft Lib starting at v0.0.1.",
+      "content_html": "Release notes for the draft CLI.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/changelog/",
       "language": "en-GB",
       "tags": [],
-      "title": "Changelog & Version History",
+      "title": "Changelog — draft",
       "url": "http://127.0.0.1:8000/changelog/"
     },
     {
@@ -98,13 +98,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Get in touch regarding Draft Lib integration and support.",
+      "content_html": "Get in touch about draft: issues, questions and contributions.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/contact/",
       "language": "en-GB",
       "tags": [],
-      "title": "Contact & Enterprise Inquiries",
+      "title": "Contact — draft",
       "url": "http://127.0.0.1:8000/contact/"
     },
     {
@@ -113,13 +113,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Guidelines for contributing to the Draft Lib project.",
+      "content_html": "How to contribute to draft, the open-source Go CLI.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/contributing/",
       "language": "en-GB",
       "tags": [],
-      "title": "Contributing to Draft Lib",
+      "title": "Contributing — draft",
       "url": "http://127.0.0.1:8000/contributing/"
     },
     {
@@ -128,13 +128,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.",
+      "content_html": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/documentation/",
       "language": "en-GB",
       "tags": [],
-      "title": "API Reference & Trait Specifications",
+      "title": "Documentation — draft",
       "url": "http://127.0.0.1:8000/documentation/"
     },
     {
@@ -143,13 +143,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Real-world code examples using Draft Lib for contractual and technical drafting.",
+      "content_html": "End-to-end examples: a research paper in, a grounded article out, with attribution and a C2PA manifest you can verify.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/examples/",
       "language": "en-GB",
       "tags": [],
-      "title": "Document Templates & Implementation Examples",
+      "title": "Examples — draft",
       "url": "http://127.0.0.1:8000/examples/"
     },
     {
@@ -158,13 +158,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Common questions about Draft Lib features, licenses, and integrations.",
+      "content_html": "Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/faqs/",
       "language": "en-GB",
       "tags": [],
-      "title": "Frequently Asked Questions (FAQ): Draft Lib",
+      "title": "FAQ — draft",
       "url": "http://127.0.0.1:8000/faqs/"
     },
     {
@@ -173,13 +173,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Detailed breakdown of Draft Lib's AST generation, template expansion, and rendering pipelines.",
+      "content_html": "Grounded by construction, keyless, offline-capable and provable. Every capability draft ships, and how it proves each one.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/features/",
       "language": "en-GB",
       "tags": [],
-      "title": "Core Features: AST Compiler, Schema Validation & Multi-Format Exporters",
+      "title": "Features — draft",
       "url": "http://127.0.0.1:8000/features/"
     },
     {
@@ -188,13 +188,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "How to install Draft Lib via Cargo and begin compiling structured documents.",
+      "content_html": "From zero to a grounded article: install draft, check your machine, and run your first paper.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/getting-started/",
       "language": "en-GB",
       "tags": [],
-      "title": "Getting Started with Draft Lib: Installation & Quickstart",
+      "title": "Getting started — draft",
       "url": "http://127.0.0.1:8000/getting-started/"
     },
     {
@@ -208,13 +208,7 @@
       "date_published": "",
       "id": "http://127.0.0.1:8000/grounding/",
       "language": "en-GB",
-      "tags": [
-        "draft",
-        "grounded generation",
-        "research",
-        "markdown",
-        "go"
-      ],
+      "tags": [],
       "title": "How grounding works — draft",
       "url": "http://127.0.0.1:8000/grounding/"
     },
@@ -229,13 +223,7 @@
       "date_published": "",
       "id": "http://127.0.0.1:8000/library/",
       "language": "en-GB",
-      "tags": [
-        "draft",
-        "grounded generation",
-        "research",
-        "markdown",
-        "go"
-      ],
+      "tags": [],
       "title": "Go packages — draft",
       "url": "http://127.0.0.1:8000/library/"
     },
@@ -245,13 +233,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Details on native Rust static site generation.",
+      "content_html": "The draft website is a static site built with the Shokunin static site generator.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/made-with-ssg/",
       "language": "en-GB",
       "tags": [],
-      "title": "Made with Static Site Generator (SSG)",
+      "title": "Made with SSG — draft",
       "url": "http://127.0.0.1:8000/made-with-ssg/"
     },
     {
@@ -260,13 +248,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Service worker offline fallback page.",
+      "content_html": "You are offline. This page is served from the cache.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/offline/",
       "language": "en-GB",
       "tags": [],
-      "title": "Offline Access: Draft Lib",
+      "title": "Offline — draft",
       "url": "http://127.0.0.1:8000/offline/"
     },
     {
@@ -275,13 +263,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Privacy policy declaring zero tracking cookies and completely local computation.",
+      "content_html": "The draft website uses no tracking cookies and no analytics. The CLI runs on your machine.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/privacy/",
       "language": "en-GB",
       "tags": [],
-      "title": "Privacy Policy: Zero-Telemetry Architecture",
+      "title": "Privacy — draft",
       "url": "http://127.0.0.1:8000/privacy/"
     },
     {
@@ -290,13 +278,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.",
+      "content_html": "draft's security posture: local-first, no API keys, signed releases and provenance you can verify.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/security/",
       "language": "en-GB",
       "tags": [],
-      "title": "Security Architecture: Sovereign Document Processing & Zero Telemetry",
+      "title": "Security — draft",
       "url": "http://127.0.0.1:8000/security/"
     },
     {
@@ -305,13 +293,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Terms governing Draft Lib under Apache-2.0 and MIT licenses.",
+      "content_html": "draft is free and open source under the MIT or Apache-2.0 licence.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/terms/",
       "language": "en-GB",
       "tags": [],
-      "title": "Terms of Use & Open Source License",
+      "title": "Terms — draft",
       "url": "http://127.0.0.1:8000/terms/"
     },
     {
@@ -320,13 +308,13 @@
           "name": "Sebastien Rousseau"
         }
       ],
-      "content_html": "Thank you for your message.",
+      "content_html": "Thanks for getting in touch.",
       "date_modified": "",
       "date_published": "",
       "id": "http://127.0.0.1:8000/thanks/",
       "language": "en-GB",
       "tags": [],
-      "title": "Thank You | Draft Lib",
+      "title": "Thank you — draft",
       "url": "http://127.0.0.1:8000/thanks/"
     }
   ],

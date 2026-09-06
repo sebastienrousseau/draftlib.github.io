@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Real-world code examples using Draft Lib for contractual and technical drafting.",
+  "description": "End-to-end examples: a research paper in, a grounded article out, with attribution and a C2PA manifest you can verify.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

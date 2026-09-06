@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Guidelines for contributing to the Draft Lib project.",
+  "description": "How to contribute to draft, the open-source Go CLI.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

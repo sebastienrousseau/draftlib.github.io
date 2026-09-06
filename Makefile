@@ -20,6 +20,7 @@ build:
 	@for a in main.js theme-init.js logo.svg favicon.ico apple-touch-icon.png; do cp -f _layouts/$$a public/$$a 2>/dev/null || true; done
 	@h=$$(ls public/highlight.*.css 2>/dev/null | head -1); test -n "$$h" && cp -f "$$h" public/highlight.css || true
 	python3 scripts/post-build.py
+	python3 scripts/check-content.py docs
 
 audit: contrast validate
 	@/usr/bin/python3 scripts/regression-test.py

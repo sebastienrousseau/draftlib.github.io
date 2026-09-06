@@ -1,6 +1,6 @@
 {
   "background_color": "#ffffff",
-  "description": "Accessibility statement declaring WCAG 2.2 Level AAA compliance.",
+  "description": "How the draft website is built and tested for accessibility.",
   "display": "standalone",
   "icons": [
     {
@@ -10,10 +10,10 @@
       "type": "image/svg+xml"
     }
   ],
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

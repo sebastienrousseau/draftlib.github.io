@@ -39,19 +39,31 @@ def post_build():
         with open(os.path.join(d, "CNAME"), "w", encoding="utf-8") as f:
             f.write("draftlib.com\n")
 
-    llms_txt = f"""# Draft Lib
-> Fast document processing and drafting engine in Rust with zero allocations and type-safe AST compilation.
+    llms_txt = f"""# draft
+> draft is a command-line tool that turns research papers into publication-ready Markdown where every sentence is grounded in a quote-verified claim from the source. No API key. Works offline. Provenance you can check.
 
-## Core Documentation & Resources
+draft is the Go CLI at github.com/sebastienrousseau/draft. It is not a Rust library or a document-drafting engine; any older description of this domain as one is obsolete.
+
+## What it does
+- Reads a PDF, mines each section for claims, and keeps a claim only if its quote appears verbatim in the source and every number in it appears in that quote.
+- Writes the article from that verified ledger using an agent CLI you are already logged into (Claude, Copilot, Codex, Cursor, Grok, Gemini), or a local Ollama model offline.
+- Ships per-sentence attribution and a C2PA manifest; `draft --verify` recomputes the digests.
+
+## Install
+- Homebrew: `brew install --cask sebastienrousseau/tap/draft`
+- Go: `go install github.com/sebastienrousseau/draft/cmd/draft@latest`
+
+## Core resources
 - Homepage: {base_url}/
-- Getting Started: {base_url}/getting-started/index.html
-- Features: {base_url}/features/index.html
-- Documentation: {base_url}/documentation/index.html
-- Examples: {base_url}/examples/index.html
-- Benchmarks: {base_url}/benchmarks/index.html
-- Architecture: {base_url}/architecture/index.html
-- Security: {base_url}/security/index.html
-- About Sebastien Rousseau: {base_url}/about/index.html
+- How grounding works: {base_url}/grounding/
+- Getting started: {base_url}/getting-started/
+- Documentation: {base_url}/documentation/
+- Features: {base_url}/features/
+- Examples: {base_url}/examples/
+- FAQ: {base_url}/faqs/
+- Go packages: {base_url}/library/
+- Source: https://github.com/sebastienrousseau/draft
+- API reference: https://pkg.go.dev/github.com/sebastienrousseau/draft
 """
     for d in [output_dir, docs_dir]:
         with open(os.path.join(d, "llms.txt"), "w", encoding="utf-8") as f:

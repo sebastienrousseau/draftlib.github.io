@@ -1,53 +1,65 @@
 ---
-name: "Draft Lib"
-short_name: "draftlib"
-title: "Getting Started with Draft Lib: Installation & Quickstart"
-description: "How to install Draft Lib via Cargo and begin compiling structured documents."
-keywords: "install draftlib, cargo draftlib, rust document quickstart"
+name: "draft"
+short_name: "draft"
+title: "Getting started — draft"
+description: "From zero to a grounded article: install draft, check your machine, and run your first paper."
 author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
-permalink: "https://draftlib.com/getting-started/index.html"
+permalink: "https://draftlib.com/getting-started/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
-banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
-banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
-eyebrow: "draft"
-headline: "Getting Started with Draft Lib: Installation & Quickstart"
-lead: "How to install Draft Lib via Cargo and begin compiling structured documents."
+banner: "research-paper"
+banner_alt: "A printed research paper on a desk"
+eyebrow: "Getting started"
+headline: "Getting started"
+lead: "Install draft, run --doctor, and turn your first paper into a grounded article."
 ---
 
-## Getting Started with Draft Lib
+## 1. Install
 
-### 1. Installation
-
-Add `draftlib` to your `Cargo.toml`:
-
-```toml
-[dependencies]
-draftlib = "0.0.1"
+```sh
+brew install --cask sebastienrousseau/tap/draft
 ```
 
----
+Or with the Go toolchain:
 
-### 2. Basic Example
-
-```rust
-use draftlib::{Document, Result};
-
-fn main() -> Result<()> {
-    let markdown_input = r#"
----
-title: "Master Services Agreement"
-version: "1.0.0"
----
-
-## 1. Scope of Services
-The service provider agrees to perform the services detailed in Schedule A.
-    "#;
-
-    let doc = Document::from_markdown(markdown_input)?;
-    println!("Parsed Title: {}", doc.metadata.get("title").unwrap());
-    Ok(())
-}
+```sh
+go install github.com/sebastienrousseau/draft/cmd/draft@latest
 ```
+
+## 2. Check the machine
+
+```sh
+draft --doctor
+```
+
+`--doctor` reports which agent CLIs you are logged into and whether Ollama is
+reachable for offline runs. You need one online engine **or** Ollama.
+
+```text
+  ok  claude                 session provider
+  ok  ollama                 responding at http://127.0.0.1:11434
+  Ready. Run draft --dry-run <source> to check a specific paper.
+```
+
+## 3. Run your first paper
+
+```sh
+draft "my-paper.pdf"
+```
+
+draft reads the PDF, mines each section for claims, keeps only those whose
+quote appears verbatim in the source, writes the article from that ledger, and
+saves it with a per-sentence attribution file and a C2PA manifest.
+
+## 4. Check the result
+
+```sh
+draft --verify 2026-07-29/final/2026-07-29-my-paper-final.md
+```
+
+This recomputes the digests and confirms the article still matches its ledger.
+
+Next: the [documentation](/documentation/) for the full flag reference, or
+[how grounding works](/grounding/) for the verification gate in detail.

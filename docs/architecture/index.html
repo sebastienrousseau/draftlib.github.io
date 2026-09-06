@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <title>Internal Architecture: Lexer, AST Pipeline &amp; Exporters</title>
+    <title>Architecture — draft</title>
 
     <!-- Strict same-origin policy. 'wasm-unsafe-eval' is what lets
          WebAssembly.instantiateStreaming run the playground bundle. It permits
@@ -30,8 +30,7 @@
     />
 
     <meta name="author" content="Sebastien Rousseau">
-<meta name="description" content="Architectural overview of Draft Lib's token streaming, AST reconciliation, and memory model.">
-<meta name="keywords" content="draftlib architecture, rust AST parser design">
+<meta name="description" content="How draft turns a paper into a grounded article: read and section, extract and verify, write, then attribute and sign.">
     
     
     
@@ -41,16 +40,16 @@
     <meta property="og:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Internal Architecture: Lexer, AST Pipeline &amp; Exporters" />
+    <meta property="og:image:alt" content="Architecture — draft" />
     <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
 
     
-    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/architecture/index.html" />
-    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/architecture/index.html" />
+    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/architecture/" />
+    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/architecture/" />
 
-    <link rel="alternate" type="application/rss+xml" title="Draft Lib — RSS" href="/rss.xml" />
-    <link rel="alternate" type="application/atom+xml" title="Draft Lib — Atom" href="/atom.xml" />
-    <link rel="alternate" type="application/feed+json" title="Draft Lib — JSON Feed" href="/feed.json" />
+    <link rel="alternate" type="application/rss+xml" title="draft — RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="draft — Atom" href="/atom.xml" />
+    <link rel="alternate" type="application/feed+json" title="draft — JSON Feed" href="/feed.json" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -73,8 +72,8 @@
             "@type": "WebSite",
             "@id": "https://draftlib.com/#website",
             "url": "https://draftlib.com/",
-            "name": "Draft Lib",
-            "description": "Architectural overview of Draft Lib&#x27;s token streaming, AST reconciliation, and memory model.",
+            "name": "draft",
+            "description": "How draft turns a paper into a grounded article: read and section, extract and verify, write, then attribute and sign.",
             "inLanguage": "en-GB"
           },
           {
@@ -91,10 +90,10 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://draftlib.com/architecture/index.html#webpage",
-            "url": "https://draftlib.com/architecture/index.html",
-            "name": "Internal Architecture: Lexer, AST Pipeline &amp; Exporters",
-            "description": "Architectural overview of Draft Lib&#x27;s token streaming, AST reconciliation, and memory model.",
+            "@id": "https://draftlib.com/architecture/#webpage",
+            "url": "https://draftlib.com/architecture/",
+            "name": "Architecture — draft",
+            "description": "How draft turns a paper into a grounded article: read and section, extract and verify, write, then attribute and sign.",
             "inLanguage": "en-GB",
             "isPartOf": { "@id": "https://draftlib.com/#website" },
             "publisher": { "@id": "https://draftlib.com/#organization" },
@@ -125,22 +124,23 @@
          first bytes of the document and still pick the right candidate. -->
     
     <link rel="preload" as="image"
-          href="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1280.webp"
-          imagesrcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-                       https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+          href="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+          imagesrcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+                       https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
           imagesizes="100vw"
           fetchpriority="high" />
     
     <script src="/theme-init.js"></script>
   <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="Internal Architecture: Lexer, AST Pipeline &amp; Exporters">
-<meta property="og:description" content="draft Internal Architecture: Lexer, AST Pipeline &amp; Exporters Architectural overview of Draft Lib&#x27;s token streaming, AST reconciliation, and memory">
+<link rel="stylesheet" href="/highlight.css">
+<meta property="og:title" content="Architecture — draft">
+<meta property="og:description" content="Architecture How draft is built Four phases, one claim gate. Read and section, extract and verify, write, then attribute and sign. The pipeline PDF ──▶">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://draftlib.com/architecture/index.html">
+<meta property="og:url" content="https://draftlib.com/architecture/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Internal Architecture: Lexer, AST Pipeline &amp; Exporters">
-<meta name="twitter:description" content="draft Internal Architecture: Lexer, AST Pipeline &amp; Exporters Architectural overview of Draft Lib&#x27;s token streaming, AST reconciliation, and memory">
+<meta name="twitter:title" content="Architecture — draft">
+<meta name="twitter:description" content="Architecture How draft is built Four phases, one claim gate. Read and section, extract and verify, write, then attribute and sign. The pipeline PDF ──▶">
 <link rel="canonical" href="https://draftlib.com/architecture/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 
@@ -151,7 +151,7 @@
   <div class="container header-inner">
     <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">Draft Lib</span>
+      <span class="brand-text">draft</span>
     </a>
 
     <nav class="site-nav" aria-label="Primary">
@@ -235,36 +235,58 @@
 <section class="page-banner" aria-labelledby="page-heading">
   
   <img class="page-banner-image"
-       src="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp"
-       srcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-               https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+       src="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+       srcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+               https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
        sizes="100vw"
        width="1280" height="340"
-       alt="Draft Lib — Fast Document Processing &amp; Drafting Engine in Rust"
+       alt="A printed research paper on a desk"
        fetchpriority="high" decoding="async" />
   
   <div class="page-banner-body">
     <div class="container stack">
-      <p class="eyebrow">draft</p>
-      <h1 id="page-heading">Internal Architecture: Lexer, AST Pipeline &amp; Exporters</h1>
-      <p class="lead">Architectural overview of Draft Lib&#x27;s token streaming, AST reconciliation, and memory model.</p>
+      <p class="eyebrow">Architecture</p>
+      <h1 id="page-heading">How draft is built</h1>
+      <p class="lead">Four phases, one claim gate. Read and section, extract and verify, write, then attribute and sign.</p>
     </div>
   </div>
 </section>
 
 <article class="section">
   <div class="container prose stack">
-    <div lang="en"><h2>Internal Architecture &amp; Design</h2>
-<pre><code><span class="text plain">+--------------------+     +---------------------+     +--------------------+
-| Markdown Stream    | --&gt; | AST Synthesizer     | --&gt; | Target Renderer    |
-| (Zero-Copy Lexer)  |     | (Schema Validation) |     | (HTML / PDF / JSON)|
-+--------------------+     +---------------------+     +--------------------+
+    <div lang="en"><h2>The pipeline</h2>
+<pre class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">PDF ──▶ Read &amp; section ──▶ Extract &amp; verify ──▶ Write ──▶ Attribute &amp; sign
+        (pdftotext /        (the claim gate)     (engine)   (provenance +
+         docling)                                            C2PA manifest)
 </span></code></pre>
 <ol>
-<li><strong>Zero-Copy Lexer:</strong> Scans bytes linearly using string slicing without heap allocation.</li>
-<li><strong>Schema Validator:</strong> Inspects AST tree structure against declarative contract schemas.</li>
-<li><strong>Target Exporter:</strong> Emits formatted artifacts directly into buffered writers.</li>
+<li><strong>Read and section.</strong> <code>pdftotext</code> extracts the text (a 62-page paper in
+about 110 ms); <code>--reader docling</code> is available when tables and structure
+matter. The text is split into sections.</li>
+<li><strong>Extract and verify.</strong> Each section is mined for claims. A claim is a short
+factual statement plus the source span that supports it, and it survives
+only if its quote appears verbatim in the source and every number in it
+appears in that quote. This gate is the choke point of the whole design.</li>
+<li><strong>Write.</strong> The verified ledger — and nothing else — is handed to the engine.
+Online, that is whichever agent CLI you are logged into; offline, a local
+Ollama model. House-style rules are enforced on the result, not merely
+requested.</li>
+<li><strong>Attribute and sign.</strong> Every sentence is mapped back to the claim that
+backs it, and the set is written with a per-sentence attribution file and a
+C2PA manifest a reader can check.</li>
 </ol>
+<h2>The engine seam</h2>
+<p>Everything model-facing sits behind one small interface, so the same pipeline
+drives a one-shot CLI, a long-lived Agent Client Protocol agent, or a local
+model, and the whole test suite runs without a network:</p>
+<pre class="highlight language-go"><code class="language-go" data-lang="go"><span class="source go"><span class="meta type go"><span class="storage type go">type</span> <span class="entity name type go">Engine</span> <span class="storage type go">interface</span> {</span>
+	<span class="meta function-call go"><span class="variable function go">Name</span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(</span></span></span></span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group end go">)</span></span></span> <span class="storage type go">string</span>
+	<span class="meta function-call go"><span class="variable function go">Generate</span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(</span></span></span></span><span class="meta function-call go"><span class="meta group go">ctx context<span class="punctuation accessor go">.</span><span class="variable other member go">Context</span><span class="punctuation separator go">,</span> req Request</span><span class="meta group go"><span class="punctuation definition group end go">)</span></span></span> <span class="meta group go"><span class="punctuation definition group begin go">(</span>Result<span class="punctuation separator go">,</span> <span class="storage type go">error</span><span class="punctuation definition group end go">)</span></span>
+}
+</span></code></pre>
+<p>The capabilities are importable Go packages — <code>claims</code>, <code>engine</code>, <code>pipeline</code>,
+<code>provenance</code>, <code>validate</code> and more. See the <a href="/library/">library</a> page and
+<a href="https://pkg.go.dev/github.com/sebastienrousseau/draft">pkg.go.dev</a>.</p>
 </div>
   </div>
 </article>

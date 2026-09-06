@@ -6,120 +6,120 @@
   <id>http://127.0.0.1:8000</id>
   <updated></updated>
   <entry>
-    <title>Page Not Found (404) | Draft Lib</title>
+    <title>Page not found — draft</title>
     <link href="http://127.0.0.1:8000/404/"/>
     <id>http://127.0.0.1:8000/404/</id>
     <updated></updated>
     <published></published>
-    <summary>The requested documentation page could not be found.</summary>
+    <summary>The page you asked for does not exist. Find your way back to the draft documentation.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>About Sebastien Rousseau &amp; Draft Lib</title>
+    <title>About — draft</title>
     <link href="http://127.0.0.1:8000/about/"/>
     <id>http://127.0.0.1:8000/about/</id>
     <updated></updated>
     <published></published>
-    <summary>Background and credentials of Sebastien Rousseau, creator of Draft Lib and financial systems architect.</summary>
+    <summary>draft is built by Sebastien Rousseau. It turns research papers into grounded, publication-ready Markdown.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Accessibility Statement: WCAG 2.2 Level AAA Compliance</title>
+    <title>Accessibility — draft</title>
     <link href="http://127.0.0.1:8000/accessibility/"/>
     <id>http://127.0.0.1:8000/accessibility/</id>
     <updated></updated>
     <published></published>
-    <summary>Accessibility statement declaring WCAG 2.2 Level AAA compliance.</summary>
+    <summary>How the draft website is built and tested for accessibility.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Internal Architecture: Lexer, AST Pipeline &amp; Exporters</title>
+    <title>Architecture — draft</title>
     <link href="http://127.0.0.1:8000/architecture/"/>
     <id>http://127.0.0.1:8000/architecture/</id>
     <updated></updated>
     <published></published>
-    <summary>Architectural overview of Draft Lib&apos;s token streaming, AST reconciliation, and memory model.</summary>
+    <summary>How draft turns a paper into a grounded article: read and section, extract and verify, write, then attribute and sign.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Performance Benchmarks: Draft Lib vs Pandoc &amp; Comrak</title>
+    <title>Benchmarks — draft</title>
     <link href="http://127.0.0.1:8000/benchmarks/"/>
     <id>http://127.0.0.1:8000/benchmarks/</id>
     <updated></updated>
     <published></published>
-    <summary>Empirical benchmarks parsing and rendering 50-page legal and technical documents.</summary>
+    <summary>Measured numbers: a 62-page paper read in about 110 ms, a 10 MB binary, and the drop-rate reduction the claim gate delivers, with the methodology to reproduce them.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Changelog &amp; Version History</title>
+    <title>Changelog — draft</title>
     <link href="http://127.0.0.1:8000/changelog/"/>
     <id>http://127.0.0.1:8000/changelog/</id>
     <updated></updated>
     <published></published>
-    <summary>Release notes for Draft Lib starting at v0.0.1.</summary>
+    <summary>Release notes for the draft CLI.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Contact &amp; Enterprise Inquiries</title>
+    <title>Contact — draft</title>
     <link href="http://127.0.0.1:8000/contact/"/>
     <id>http://127.0.0.1:8000/contact/</id>
     <updated></updated>
     <published></published>
-    <summary>Get in touch regarding Draft Lib integration and support.</summary>
+    <summary>Get in touch about draft: issues, questions and contributions.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Contributing to Draft Lib</title>
+    <title>Contributing — draft</title>
     <link href="http://127.0.0.1:8000/contributing/"/>
     <id>http://127.0.0.1:8000/contributing/</id>
     <updated></updated>
     <published></published>
-    <summary>Guidelines for contributing to the Draft Lib project.</summary>
+    <summary>How to contribute to draft, the open-source Go CLI.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>API Reference &amp; Trait Specifications</title>
+    <title>Documentation — draft</title>
     <link href="http://127.0.0.1:8000/documentation/"/>
     <id>http://127.0.0.1:8000/documentation/</id>
     <updated></updated>
     <published></published>
-    <summary>Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator.</summary>
+    <summary>Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Document Templates &amp; Implementation Examples</title>
+    <title>Examples — draft</title>
     <link href="http://127.0.0.1:8000/examples/"/>
     <id>http://127.0.0.1:8000/examples/</id>
     <updated></updated>
     <published></published>
-    <summary>Real-world code examples using Draft Lib for contractual and technical drafting.</summary>
+    <summary>End-to-end examples: a research paper in, a grounded article out, with attribution and a C2PA manifest you can verify.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Frequently Asked Questions (FAQ): Draft Lib</title>
+    <title>FAQ — draft</title>
     <link href="http://127.0.0.1:8000/faqs/"/>
     <id>http://127.0.0.1:8000/faqs/</id>
     <updated></updated>
     <published></published>
-    <summary>Common questions about Draft Lib features, licenses, and integrations.</summary>
+    <summary>Common questions about draft: how grounding works, which agent CLIs it uses, offline mode, provenance and licensing.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Core Features: AST Compiler, Schema Validation &amp; Multi-Format Exporters</title>
+    <title>Features — draft</title>
     <link href="http://127.0.0.1:8000/features/"/>
     <id>http://127.0.0.1:8000/features/</id>
     <updated></updated>
     <published></published>
-    <summary>Detailed breakdown of Draft Lib&apos;s AST generation, template expansion, and rendering pipelines.</summary>
+    <summary>Grounded by construction, keyless, offline-capable and provable. Every capability draft ships, and how it proves each one.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Getting Started with Draft Lib: Installation &amp; Quickstart</title>
+    <title>Getting started — draft</title>
     <link href="http://127.0.0.1:8000/getting-started/"/>
     <id>http://127.0.0.1:8000/getting-started/</id>
     <updated></updated>
     <published></published>
-    <summary>How to install Draft Lib via Cargo and begin compiling structured documents.</summary>
+    <summary>From zero to a grounded article: install draft, check your machine, and run your first paper.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
@@ -141,57 +141,57 @@
     <author><name>contact@draftlib.com (Sebastien Rousseau)</name></author>
   </entry>
   <entry>
-    <title>Made with Static Site Generator (SSG)</title>
+    <title>Made with SSG — draft</title>
     <link href="http://127.0.0.1:8000/made-with-ssg/"/>
     <id>http://127.0.0.1:8000/made-with-ssg/</id>
     <updated></updated>
     <published></published>
-    <summary>Details on native Rust static site generation.</summary>
+    <summary>The draft website is a static site built with the Shokunin static site generator.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Offline Access: Draft Lib</title>
+    <title>Offline — draft</title>
     <link href="http://127.0.0.1:8000/offline/"/>
     <id>http://127.0.0.1:8000/offline/</id>
     <updated></updated>
     <published></published>
-    <summary>Service worker offline fallback page.</summary>
+    <summary>You are offline. This page is served from the cache.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Privacy Policy: Zero-Telemetry Architecture</title>
+    <title>Privacy — draft</title>
     <link href="http://127.0.0.1:8000/privacy/"/>
     <id>http://127.0.0.1:8000/privacy/</id>
     <updated></updated>
     <published></published>
-    <summary>Privacy policy declaring zero tracking cookies and completely local computation.</summary>
+    <summary>The draft website uses no tracking cookies and no analytics. The CLI runs on your machine.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Security Architecture: Sovereign Document Processing &amp; Zero Telemetry</title>
+    <title>Security — draft</title>
     <link href="http://127.0.0.1:8000/security/"/>
     <id>http://127.0.0.1:8000/security/</id>
     <updated></updated>
     <published></published>
-    <summary>Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance.</summary>
+    <summary>draft&apos;s security posture: local-first, no API keys, signed releases and provenance you can verify.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Terms of Use &amp; Open Source License</title>
+    <title>Terms — draft</title>
     <link href="http://127.0.0.1:8000/terms/"/>
     <id>http://127.0.0.1:8000/terms/</id>
     <updated></updated>
     <published></published>
-    <summary>Terms governing Draft Lib under Apache-2.0 and MIT licenses.</summary>
+    <summary>draft is free and open source under the MIT or Apache-2.0 licence.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>
-    <title>Thank You | Draft Lib</title>
+    <title>Thank you — draft</title>
     <link href="http://127.0.0.1:8000/thanks/"/>
     <id>http://127.0.0.1:8000/thanks/</id>
     <updated></updated>
     <published></published>
-    <summary>Thank you for your message.</summary>
+    <summary>Thanks for getting in touch.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
 </feed>

@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <title>Contributing to Draft Lib</title>
+    <title>Contributing — draft</title>
 
     <!-- Strict same-origin policy. 'wasm-unsafe-eval' is what lets
          WebAssembly.instantiateStreaming run the playground bundle. It permits
@@ -30,8 +30,7 @@
     />
 
     <meta name="author" content="Sebastien Rousseau">
-<meta name="description" content="Guidelines for contributing to the Draft Lib project.">
-<meta name="keywords" content="contribute draftlib">
+<meta name="description" content="How to contribute to draft, the open-source Go CLI.">
     
     
     
@@ -41,16 +40,16 @@
     <meta property="og:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Contributing to Draft Lib" />
+    <meta property="og:image:alt" content="Contributing — draft" />
     <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
 
     
-    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/contributing/index.html" />
-    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/contributing/index.html" />
+    <link rel="alternate" hreflang="en-GB" href="https://draftlib.com/contributing/" />
+    <link rel="alternate" hreflang="x-default" href="https://draftlib.com/contributing/" />
 
-    <link rel="alternate" type="application/rss+xml" title="Draft Lib — RSS" href="/rss.xml" />
-    <link rel="alternate" type="application/atom+xml" title="Draft Lib — Atom" href="/atom.xml" />
-    <link rel="alternate" type="application/feed+json" title="Draft Lib — JSON Feed" href="/feed.json" />
+    <link rel="alternate" type="application/rss+xml" title="draft — RSS" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="draft — Atom" href="/atom.xml" />
+    <link rel="alternate" type="application/feed+json" title="draft — JSON Feed" href="/feed.json" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -73,8 +72,8 @@
             "@type": "WebSite",
             "@id": "https://draftlib.com/#website",
             "url": "https://draftlib.com/",
-            "name": "Draft Lib",
-            "description": "Guidelines for contributing to the Draft Lib project.",
+            "name": "draft",
+            "description": "How to contribute to draft, the open-source Go CLI.",
             "inLanguage": "en-GB"
           },
           {
@@ -91,10 +90,10 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://draftlib.com/contributing/index.html#webpage",
-            "url": "https://draftlib.com/contributing/index.html",
-            "name": "Contributing to Draft Lib",
-            "description": "Guidelines for contributing to the Draft Lib project.",
+            "@id": "https://draftlib.com/contributing/#webpage",
+            "url": "https://draftlib.com/contributing/",
+            "name": "Contributing — draft",
+            "description": "How to contribute to draft, the open-source Go CLI.",
             "inLanguage": "en-GB",
             "isPartOf": { "@id": "https://draftlib.com/#website" },
             "publisher": { "@id": "https://draftlib.com/#organization" },
@@ -125,22 +124,23 @@
          first bytes of the document and still pick the right candidate. -->
     
     <link rel="preload" as="image"
-          href="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1280.webp"
-          imagesrcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-                       https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+          href="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+          imagesrcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+                       https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
           imagesizes="100vw"
           fetchpriority="high" />
     
     <script src="/theme-init.js"></script>
   <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta property="og:title" content="Contributing to Draft Lib">
-<meta property="og:description" content="draft Contributing to Draft Lib Guidelines for contributing to the Draft Lib project. Contributing to Draft Lib Pull requests and bug reports are welcome on">
+<link rel="stylesheet" href="/highlight.css">
+<meta property="og:title" content="Contributing — draft">
+<meta property="og:description" content="Contributing Contributing draft is open source under MIT or Apache-2.0. Issues and pull requests are welcome. draft is developed in the open at">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://draftlib.com/contributing/index.html">
+<meta property="og:url" content="https://draftlib.com/contributing/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contributing to Draft Lib">
-<meta name="twitter:description" content="draft Contributing to Draft Lib Guidelines for contributing to the Draft Lib project. Contributing to Draft Lib Pull requests and bug reports are welcome on">
+<meta name="twitter:title" content="Contributing — draft">
+<meta name="twitter:description" content="Contributing Contributing draft is open source under MIT or Apache-2.0. Issues and pull requests are welcome. draft is developed in the open at">
 <link rel="canonical" href="https://draftlib.com/contributing/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 
@@ -151,7 +151,7 @@
   <div class="container header-inner">
     <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">Draft Lib</span>
+      <span class="brand-text">draft</span>
     </a>
 
     <nav class="site-nav" aria-label="Primary">
@@ -235,27 +235,41 @@
 <section class="page-banner" aria-labelledby="page-heading">
   
   <img class="page-banner-image"
-       src="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp"
-       srcset="https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-640.webp 640w,
-               https://cloudcdn.pro/stocks/images/https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp-1200.webp 1200w"
+       src="https://cloudcdn.pro/stocks/images/research-paper-1200.webp"
+       srcset="https://cloudcdn.pro/stocks/images/research-paper-640.webp 640w,
+               https://cloudcdn.pro/stocks/images/research-paper-1200.webp 1200w"
        sizes="100vw"
        width="1280" height="340"
-       alt="Draft Lib — Fast Document Processing &amp; Drafting Engine in Rust"
+       alt="A printed research paper on a desk"
        fetchpriority="high" decoding="async" />
   
   <div class="page-banner-body">
     <div class="container stack">
-      <p class="eyebrow">draft</p>
-      <h1 id="page-heading">Contributing to Draft Lib</h1>
-      <p class="lead">Guidelines for contributing to the Draft Lib project.</p>
+      <p class="eyebrow">Contributing</p>
+      <h1 id="page-heading">Contributing</h1>
+      <p class="lead">draft is open source under MIT or Apache-2.0. Issues and pull requests are welcome.</p>
     </div>
   </div>
 </section>
 
 <article class="section">
   <div class="container prose stack">
-    <div lang="en"><h2>Contributing to Draft Lib</h2>
-<p>Pull requests and bug reports are welcome on GitHub: <code>https://github.com/sebastienrousseau/draftlib.github.io</code>.</p>
+    <div lang="en"><p>draft is developed in the open at
+<a href="https://github.com/sebastienrousseau/draft">github.com/sebastienrousseau/draft</a>.</p>
+<h2>Getting set up</h2>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">git</span></span><span class="meta function-call arguments shell"> clone https://github.com/sebastienrousseau/draft</span>
+<span class="meta function-call shell"><span class="support function cd shell">cd</span></span><span class="meta function-call arguments shell"> draft</span> <span class="keyword operator logical and shell">&amp;&amp;</span> <span class="meta function-call shell"><span class="variable function shell">make</span></span><span class="meta function-call arguments shell"> build</span> <span class="keyword operator logical and shell">&amp;&amp;</span> <span class="meta function-call shell"><span class="variable function shell">make</span></span><span class="meta function-call arguments shell"> test</span>
+</span></code></pre>
+<h2>Before you open a pull request</h2>
+<p>The project holds a strict gate. Run it locally:</p>
+<ul>
+<li><code>gofmt</code> and <code>go vet</code> clean</li>
+<li><code>golangci-lint run</code> with zero issues</li>
+<li><code>go test -race ./...</code> green, with the coverage floor met</li>
+<li>REUSE-compliant licence headers on new files</li>
+</ul>
+<p>Small, focused pull requests with a test that fails before your change and
+passes after are the easiest to review. Open an issue first for anything large.</p>
 </div>
   </div>
 </article>
