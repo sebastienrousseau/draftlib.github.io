@@ -150,17 +150,17 @@
   </nav>
 
   <main id="main" class="content-wrapper" aria-label="Main content">
-    <div lang="en">&lt;h1&gt;Internal Architecture &amp; Design&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;<span class="text plain">+--------------------+     +---------------------+     +--------------------+
+    <div lang="en"><h1>Internal Architecture &amp; Design</h1>
+<pre><code><span class="text plain">+--------------------+     +---------------------+     +--------------------+
 | Markdown Stream    | --&gt; | AST Synthesizer     | --&gt; | Target Renderer    |
 | (Zero-Copy Lexer)  |     | (Schema Validation) |     | (HTML / PDF / JSON)|
 +--------------------+     +---------------------+     +--------------------+
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Zero-Copy Lexer:&lt;/strong&gt; Scans bytes linearly using string slicing without heap allocation.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Schema Validator:&lt;/strong&gt; Inspects AST tree structure against declarative contract schemas.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Target Exporter:&lt;/strong&gt; Emits formatted artifacts directly into buffered writers.&lt;/li&gt;
-&lt;/ol&gt;
+</span></code></pre>
+<ol>
+<li><strong>Zero-Copy Lexer:</strong> Scans bytes linearly using string slicing without heap allocation.</li>
+<li><strong>Schema Validator:</strong> Inspects AST tree structure against declarative contract schemas.</li>
+<li><strong>Target Exporter:</strong> Emits formatted artifacts directly into buffered writers.</li>
+</ol>
 </div>
   </main>
 

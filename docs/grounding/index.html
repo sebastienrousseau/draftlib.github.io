@@ -150,68 +150,68 @@
   </nav>
 
   <main id="main" class="content-wrapper" aria-label="Main content">
-    <div lang="en">&lt;h1&gt;How grounding works&lt;/h1&gt;
-&lt;p&gt;The claim ledger is the only factual substrate the writer is given. Everything
-else in &lt;code&gt;draft&lt;/code&gt; exists to make that ledger trustworthy.&lt;/p&gt;
+    <div lang="en"><h1>How grounding works</h1>
+<p>The claim ledger is the only factual substrate the writer is given. Everything
+else in <code>draft</code> exists to make that ledger trustworthy.</p>
 <h2>The gate</h2>
-&lt;p&gt;Each source section is mined for claims. A claim is a short factual statement
-plus the span of source text that supports it. &lt;code&gt;Verify&lt;/code&gt; applies nine checks in
-order and returns the first failure as its reason:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The claim and its quote are both non-empty.&lt;/li&gt;
-&lt;li&gt;The quote is at least 12 runes long.&lt;/li&gt;
-&lt;li&gt;The quote is valid UTF-8.&lt;/li&gt;
-&lt;li&gt;The quote holds no replacement character.&lt;/li&gt;
-&lt;li&gt;The quote occurs in the source.&lt;/li&gt;
-&lt;li&gt;The quote does not end mid-clause.&lt;/li&gt;
-&lt;li&gt;The claim type is one of the accepted kinds.&lt;/li&gt;
-&lt;li&gt;The claim strength is one of the accepted values.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Every numeric token in the claim also appears in the quote.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Anything else is dropped and counted. A thin source visibly yields a thin
-ledger rather than a padded one.&lt;/p&gt;
+<p>Each source section is mined for claims. A claim is a short factual statement
+plus the span of source text that supports it. <code>Verify</code> applies nine checks in
+order and returns the first failure as its reason:</p>
+<ol>
+<li>The claim and its quote are both non-empty.</li>
+<li>The quote is at least 12 runes long.</li>
+<li>The quote is valid UTF-8.</li>
+<li>The quote holds no replacement character.</li>
+<li>The quote occurs in the source.</li>
+<li>The quote does not end mid-clause.</li>
+<li>The claim type is one of the accepted kinds.</li>
+<li>The claim strength is one of the accepted values.</li>
+<li><strong>Every numeric token in the claim also appears in the quote.</strong></li>
+</ol>
+<p>Anything else is dropped and counted. A thin source visibly yields a thin
+ledger rather than a padded one.</p>
 <h2>Rendering tolerance, not word tolerance</h2>
-&lt;p&gt;Quote matching normalises both sides before comparing, so the same words
+<p>Quote matching normalises both sides before comparing, so the same words
 verify however the model and the PDF extractor rendered the characters
 between them: lower-cased, whitespace collapsed, smart quotes folded, a
-literal &lt;code&gt;\n&lt;/code&gt; a model wrote for a line break turned back into a space, a
+literal <code>\n</code> a model wrote for a line break turned back into a space, a
 hyphen the extractor dropped from a word restored, a ligature the PDF
 rendered as one glyph split, and non-breaking or zero-width spaces removed.
 That tolerance is necessary — PDF text extraction produces all of it
 constantly, and byte-exact matching would drop true claims from every real
 paper. Measured over 3,217 extraction blocks from real papers, it cut the
-rate of dropped claims from 29.6% to 8.5%.&lt;/p&gt;
-&lt;p&gt;A quote that changes, adds, drops or reorders a &lt;em&gt;word&lt;/em&gt; still fails. The
-tolerance is over rendering, never over meaning.&lt;/p&gt;
+rate of dropped claims from 29.6% to 8.5%.</p>
+<p>A quote that changes, adds, drops or reorders a <em>word</em> still fails. The
+tolerance is over rendering, never over meaning.</p>
 <h2>Repairing a cut quote</h2>
-&lt;p&gt;A model sometimes copies a supporting span but stops mid-clause, or copies one
-too short to cite. Rather than drop it, &lt;code&gt;draft&lt;/code&gt; extends the quote to its
-sentence boundary using the &lt;strong&gt;source&#x27;s own words&lt;/strong&gt; — never the model&#x27;s — so
+<p>A model sometimes copies a supporting span but stops mid-clause, or copies one
+too short to cite. Rather than drop it, <code>draft</code> extends the quote to its
+sentence boundary using the <strong>source's own words</strong> — never the model's — so
 the repaired quote is verbatim by construction and the same gate judges it exactly as it would any other. The extension stops at the first sentence end,
 so a fabricated number living in the next sentence can never be pulled in. A
-quote the source does not contain word for word is left alone and dropped.&lt;/p&gt;
+quote the source does not contain word for word is left alone and dropped.</p>
 <h2>Why checks 3 and 4 exist</h2>
-&lt;p&gt;The same normalisation is lossy in one dangerous way. &lt;code&gt;strings.ToLower&lt;/code&gt; maps every
-invalid UTF-8 byte to the replacement character, so two &lt;em&gt;different&lt;/em&gt; invalid
+<p>The same normalisation is lossy in one dangerous way. <code>strings.ToLower</code> maps every
+invalid UTF-8 byte to the replacement character, so two <em>different</em> invalid
 byte sequences normalise to the same text — and a fabricated quote could match
 a source it does not occur in. A fuzzer found it. Requiring the quote to be
 valid UTF-8 and free of replacement characters closes it, because normalisation
-can only ever &lt;em&gt;introduce&lt;/em&gt; that character, never any other.&lt;/p&gt;
-&lt;p&gt;Whitespace collapsing carries no equivalent risk: a run of spaces collapses to
-one, never to none, so &lt;code&gt;a b&lt;/code&gt; can never match &lt;code&gt;ab&lt;/code&gt;.&lt;/p&gt;
+can only ever <em>introduce</em> that character, never any other.</p>
+<p>Whitespace collapsing carries no equivalent risk: a run of spaces collapses to
+one, never to none, so <code>a b</code> can never match <code>ab</code>.</p>
 <h2>After the writing</h2>
-&lt;p&gt;A finished draft is checked twice more. The house rules cover structure, the
+<p>A finished draft is checked twice more. The house rules cover structure, the
 word band, banned vocabulary and emoji. The faithfulness pass cross-checks the
 article against the ledger that grounded it — flagging a metric term no claim
 supports, an ending that does not close a sentence, and near-duplicate
 paragraphs, with ungrounded numbers and over-stated hedges reported as
-warnings.&lt;/p&gt;
-&lt;p&gt;A violation triggers a targeted rewrite, not a shrug.&lt;/p&gt;
+warnings.</p>
+<p>A violation triggers a targeted rewrite, not a shrug.</p>
 <h2>Resume cannot weaken this</h2>
-&lt;p&gt;&lt;code&gt;--resume&lt;/code&gt; reuses a ledger from an earlier attempt, but it re-verifies every
+<p><code>--resume</code> reuses a ledger from an earlier attempt, but it re-verifies every
 record against the freshly re-read sources first. A resumed ledger is trusted
-because it still passes the same gate, not because &lt;code&gt;draft&lt;/code&gt; wrote it. Edit a
-source underneath and the records it no longer supports are dropped.&lt;/p&gt;
+because it still passes the same gate, not because <code>draft</code> wrote it. Edit a
+source underneath and the records it no longer supports are dropped.</p>
 </div>
   </main>
 

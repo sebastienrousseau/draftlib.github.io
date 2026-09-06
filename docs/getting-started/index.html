@@ -87,6 +87,7 @@
   </script>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="https://draftlib.com/atom.xml"/>
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://draftlib.com/feed.json"/>
+<link rel="stylesheet" href="/highlight.css">
 <link rel="canonical" href="https://draftlib.com/getting-started/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 <body>
@@ -150,18 +151,18 @@
   </nav>
 
   <main id="main" class="content-wrapper" aria-label="Main content">
-    <div lang="en">&lt;h1&gt;Getting Started with Draft Lib&lt;/h1&gt;
+    <div lang="en"><h1>Getting Started with Draft Lib</h1>
 <h2>1. Installation</h2>
-&lt;p&gt;Add &lt;code&gt;draftlib&lt;/code&gt; to your &lt;code&gt;Cargo.toml&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-toml&quot;&gt;<span class="text plain">[dependencies]
+<p>Add <code>draftlib</code> to your <code>Cargo.toml</code>:</p>
+<pre class="highlight language-toml"><code class="language-toml" data-lang="toml"><span class="text plain">[dependencies]
 draftlib = &quot;0.0.1&quot;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;hr /&gt;
+</span></code></pre>
+<hr />
 <h2>2. Basic Example</h2>
-&lt;pre&gt;&lt;code class=&quot;language-rust&quot;&gt;<span class="source rust"><span class="keyword other rust">use&lt;/span&gt; <span class="meta path rust">draftlib<span class="punctuation accessor rust">::&lt;/span&gt;&lt;/span&gt;<span class="meta block rust"><span class="punctuation section block begin rust">{&lt;/span&gt;Document<span class="punctuation separator rust">,&lt;/span&gt; <span class="support type rust">Result&lt;/span&gt;&lt;/span&gt;<span class="meta block rust"><span class="punctuation section block end rust">}&lt;/span&gt;&lt;/span&gt;<span class="punctuation terminator rust">;&lt;/span&gt;
+<pre class="highlight language-rust"><code class="language-rust" data-lang="rust"><span class="source rust"><span class="keyword other rust">use</span> <span class="meta path rust">draftlib<span class="punctuation accessor rust">::</span></span><span class="meta block rust"><span class="punctuation section block begin rust">{</span>Document<span class="punctuation separator rust">,</span> <span class="support type rust">Result</span></span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span><span class="punctuation terminator rust">;</span>
 
-<span class="meta function rust"><span class="meta function rust"><span class="storage type function rust">fn&lt;/span&gt; &lt;/span&gt;<span class="entity name function rust">main&lt;/span&gt;&lt;/span&gt;<span class="meta function rust"><span class="meta function parameters rust"><span class="punctuation section parameters begin rust">(&lt;/span&gt;&lt;/span&gt;<span class="meta function rust"><span class="meta function parameters rust"><span class="punctuation section parameters end rust">)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta function rust"> <span class="meta function return-type rust"><span class="punctuation separator rust">-&gt;&lt;/span&gt; <span class="meta generic rust">Result<span class="punctuation definition generic begin rust">&lt;&lt;/span&gt;<span class="punctuation section group begin rust">(&lt;/span&gt;<span class="punctuation section group end rust">)&lt;/span&gt;<span class="punctuation definition generic end rust">&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; &lt;/span&gt;<span class="meta function rust"><span class="meta block rust"><span class="punctuation section block begin rust">{&lt;/span&gt;
-    <span class="storage type rust">let&lt;/span&gt; markdown_input <span class="keyword operator rust">=&lt;/span&gt; <span class="string quoted double raw rust"><span class="storage type string rust">r&lt;/span&gt;<span class="punctuation definition string begin rust">#&lt;/span&gt;&quot;
+<span class="meta function rust"><span class="meta function rust"><span class="storage type function rust">fn</span> </span><span class="entity name function rust">main</span></span><span class="meta function rust"><span class="meta function parameters rust"><span class="punctuation section parameters begin rust">(</span></span><span class="meta function rust"><span class="meta function parameters rust"><span class="punctuation section parameters end rust">)</span></span></span></span><span class="meta function rust"> <span class="meta function return-type rust"><span class="punctuation separator rust">-&gt;</span> <span class="meta generic rust">Result<span class="punctuation definition generic begin rust">&lt;</span><span class="punctuation section group begin rust">(</span><span class="punctuation section group end rust">)</span><span class="punctuation definition generic end rust">&gt;</span></span></span> </span><span class="meta function rust"><span class="meta block rust"><span class="punctuation section block begin rust">{</span>
+    <span class="storage type rust">let</span> markdown_input <span class="keyword operator rust">=</span> <span class="string quoted double raw rust"><span class="storage type string rust">r</span><span class="punctuation definition string begin rust">#</span>&quot;
 ---
 title: &quot;Master Services Agreement&quot;
 version: &quot;1.0.0&quot;
@@ -169,13 +170,13 @@ version: &quot;1.0.0&quot;
 
 # 1. Scope of Services
 The service provider agrees to perform the services detailed in Schedule A.
-    <span class="punctuation definition string end rust">&quot;#&lt;/span&gt;&lt;/span&gt;<span class="punctuation terminator rust">;&lt;/span&gt;
+    <span class="punctuation definition string end rust">&quot;#</span></span><span class="punctuation terminator rust">;</span>
 
-    <span class="storage type rust">let&lt;/span&gt; doc <span class="keyword operator rust">=&lt;/span&gt; <span class="meta path rust">Document<span class="punctuation accessor rust">::&lt;/span&gt;&lt;/span&gt;from_markdown<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;markdown_input&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;<span class="keyword operator rust">?&lt;/span&gt;<span class="punctuation terminator rust">;&lt;/span&gt;
-    <span class="support macro rust">println!&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;&lt;/span&gt;Parsed Title: <span class="constant other placeholder rust">{}&lt;/span&gt;<span class="punctuation definition string end rust">&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="punctuation separator rust">,&lt;/span&gt; doc.metadata.<span class="support function rust">get&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;<span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;&lt;/span&gt;title<span class="punctuation definition string end rust">&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;.<span class="support function rust">unwrap&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;<span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;<span class="punctuation terminator rust">;&lt;/span&gt;
-    <span class="support type rust">Ok&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group begin rust">(&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta group rust"><span class="punctuation section group end rust">)&lt;/span&gt;&lt;/span&gt;
-&lt;/span&gt;<span class="meta block rust"><span class="punctuation section block end rust">}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    <span class="storage type rust">let</span> doc <span class="keyword operator rust">=</span> <span class="meta path rust">Document<span class="punctuation accessor rust">::</span></span>from_markdown<span class="meta group rust"><span class="punctuation section group begin rust">(</span>markdown_input</span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="keyword operator rust">?</span><span class="punctuation terminator rust">;</span>
+    <span class="support macro rust">println!</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span></span><span class="meta group rust"><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;</span>Parsed Title: <span class="constant other placeholder rust">{}</span><span class="punctuation definition string end rust">&quot;</span></span></span><span class="meta group rust"><span class="punctuation separator rust">,</span> doc.metadata.<span class="support function rust">get</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span><span class="string quoted double rust"><span class="punctuation definition string begin rust">&quot;</span>title<span class="punctuation definition string end rust">&quot;</span></span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span>.<span class="support function rust">unwrap</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span><span class="punctuation section group end rust">)</span></span><span class="punctuation terminator rust">;</span>
+    <span class="support type rust">Ok</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span><span class="meta group rust"><span class="punctuation section group begin rust">(</span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span></span><span class="meta group rust"><span class="punctuation section group end rust">)</span></span>
+</span><span class="meta block rust"><span class="punctuation section block end rust">}</span></span></span>
+</span></code></pre>
 </div>
   </main>
 

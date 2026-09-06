@@ -87,6 +87,7 @@
   </script>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="https://draftlib.com/atom.xml"/>
   <link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://draftlib.com/feed.json"/>
+<link rel="stylesheet" href="/highlight.css">
 <link rel="canonical" href="https://draftlib.com/library/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 <body>
@@ -150,79 +151,79 @@
   </nav>
 
   <main id="main" class="content-wrapper" aria-label="Main content">
-    <div lang="en">&lt;h1&gt;Go packages&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;draft&lt;/code&gt; is a command-line tool first. But every capability is an importable Go
+    <div lang="en"><h1>Go packages</h1>
+<p><code>draft</code> is a command-line tool first. But every capability is an importable Go
 package, and only the PDF extractor, the brand assets and the TUI stay
-internal.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;<span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">go&lt;/span&gt;&lt;/span&gt;<span class="meta function-call arguments shell"> get github.com/sebastienrousseau/draft@latest&lt;/span&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-<div class="table-responsive"><table class="table">
+internal.</p>
+<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">go</span></span><span class="meta function-call arguments shell"> get github.com/sebastienrousseau/draft@latest</span>
+</span></code></pre>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table, scrollable horizontally" tabindex="0"><table class="table">
 <thead>
 <tr>
-<th>Package</th>
-<th>What it does</th>
+<th scope="col">Package</th>
+<th scope="col">What it does</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="text-left">&lt;code&gt;claims&lt;/code&gt;</td>
+<td class="text-left"><code>claims</code></td>
 <td class="text-left">Claim parsing, the verbatim-quote gate, ledger rendering</td>
 </tr>
 <tr>
-<td class="text-left">&lt;code&gt;config&lt;/code&gt;</td>
+<td class="text-left"><code>config</code></td>
 <td class="text-left">Flag, environment and default resolution</td>
 </tr>
 <tr>
-<td class="text-left">&lt;code&gt;engine&lt;/code&gt;</td>
-<td class="text-left">The &lt;code&gt;Engine&lt;/code&gt; seam, provider registry, Ollama, fallback chain</td>
+<td class="text-left"><code>engine</code></td>
+<td class="text-left">The <code>Engine</code> seam, provider registry, Ollama, fallback chain</td>
 </tr>
 <tr>
-<td class="text-left">&lt;code&gt;frontmatter&lt;/code&gt;</td>
+<td class="text-left"><code>frontmatter</code></td>
 <td class="text-left">Metadata, YAML generation, article-set regeneration</td>
 </tr>
 <tr>
-<td class="text-left">&lt;code&gt;pipeline&lt;/code&gt;</td>
+<td class="text-left"><code>pipeline</code></td>
 <td class="text-left">Five-phase orchestration, retries, continuation, events</td>
 </tr>
 <tr>
-<td class="text-left">&lt;code&gt;prompt&lt;/code&gt;</td>
+<td class="text-left"><code>prompt</code></td>
 <td class="text-left">Grounded claim, writing and review prompts</td>
 </tr>
 <tr>
-<td class="text-left">&lt;code&gt;provenance&lt;/code&gt;</td>
+<td class="text-left"><code>provenance</code></td>
 <td class="text-left">Per-sentence claim attribution and the C2PA manifest a reader can check</td>
 </tr>
 <tr>
-<td class="text-left">&lt;code&gt;rules&lt;/code&gt;</td>
+<td class="text-left"><code>rules</code></td>
 <td class="text-left">Shared editorial constants</td>
 </tr>
 <tr>
-<td class="text-left">&lt;code&gt;validate&lt;/code&gt;</td>
+<td class="text-left"><code>validate</code></td>
 <td class="text-left">House-rule and faithfulness checks</td>
 </tr>
 </tbody>
-</table></div>
-&lt;p&gt;Each has its own README with a runnable quick start and an API table. Full
-reference on &lt;a href=&quot;https://pkg.go.dev/github.com/sebastienrousseau/draft&quot;&gt;pkg.go.dev&lt;/a&gt;.&lt;/p&gt;
+</table></div></div>
+<p>Each has its own README with a runnable quick start and an API table. Full
+reference on <a href="https://pkg.go.dev/github.com/sebastienrousseau/draft">pkg.go.dev</a>.</p>
 <h2>The seam that matters</h2>
-&lt;p&gt;&lt;code&gt;Engine&lt;/code&gt; is two methods. The whole test suite and every example run against
-in-process implementations of it, which is why none of them need a network:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-go&quot;&gt;<span class="source go"><span class="meta type go"><span class="storage type go">type&lt;/span&gt; <span class="entity name type go">Engine&lt;/span&gt; <span class="storage type go">interface&lt;/span&gt; {&lt;/span&gt;
-	<span class="meta function-call go"><span class="variable function go">Name&lt;/span&gt;<span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group end go">)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; <span class="storage type go">string&lt;/span&gt;
-	<span class="meta function-call go"><span class="variable function go">Generate&lt;/span&gt;<span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<span class="meta function-call go"><span class="meta group go">ctx context<span class="punctuation accessor go">.&lt;/span&gt;<span class="variable other member go">Context&lt;/span&gt;<span class="punctuation separator go">,&lt;/span&gt; req Request&lt;/span&gt;<span class="meta group go"><span class="punctuation definition group end go">)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; <span class="meta group go"><span class="punctuation definition group begin go">(&lt;/span&gt;Result<span class="punctuation separator go">,&lt;/span&gt; <span class="storage type go">error&lt;/span&gt;<span class="punctuation definition group end go">)&lt;/span&gt;&lt;/span&gt;
+<p><code>Engine</code> is two methods. The whole test suite and every example run against
+in-process implementations of it, which is why none of them need a network:</p>
+<pre class="highlight language-go"><code class="language-go" data-lang="go"><span class="source go"><span class="meta type go"><span class="storage type go">type</span> <span class="entity name type go">Engine</span> <span class="storage type go">interface</span> {</span>
+	<span class="meta function-call go"><span class="variable function go">Name</span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(</span></span></span></span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group end go">)</span></span></span> <span class="storage type go">string</span>
+	<span class="meta function-call go"><span class="variable function go">Generate</span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(</span></span></span></span><span class="meta function-call go"><span class="meta group go">ctx context<span class="punctuation accessor go">.</span><span class="variable other member go">Context</span><span class="punctuation separator go">,</span> req Request</span><span class="meta group go"><span class="punctuation definition group end go">)</span></span></span> <span class="meta group go"><span class="punctuation definition group begin go">(</span>Result<span class="punctuation separator go">,</span> <span class="storage type go">error</span><span class="punctuation definition group end go">)</span></span>
 }
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Return &lt;code&gt;Result{Truncated: true}&lt;/code&gt; and the pipeline continues generation rather
-than saving a mid-sentence article; &lt;code&gt;Result&lt;/code&gt; also carries a &lt;code&gt;Usage&lt;/code&gt; the
+</span></code></pre>
+<p>Return <code>Result{Truncated: true}</code> and the pipeline continues generation rather
+than saving a mid-sentence article; <code>Result</code> also carries a <code>Usage</code> the
 pipeline sums into the per-job token and dollar cost. A backend can drive a
 one-shot CLI, a long-lived Agent Client Protocol agent, or the local model,
-all behind the same two methods.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;API stability.&lt;/strong&gt; While the module is &lt;code&gt;0.0.x&lt;/code&gt;, the exported Go API may
+all behind the same two methods.</p>
+<blockquote>
+<p><strong>API stability.</strong> While the module is <code>0.0.x</code>, the exported Go API may
 change between releases without a deprecation cycle. Pin an exact version if
-you depend on it. The CLI&#x27;s flags and output layout are the stable surface;
-the Go packages are not yet.&lt;/p&gt;
-&lt;/blockquote&gt;
+you depend on it. The CLI's flags and output layout are the stable surface;
+the Go packages are not yet.</p>
+</blockquote>
 </div>
   </main>
 
