@@ -38,13 +38,21 @@ git clone https://github.com/sebastienrousseau/draft
 cd draft && make build
 ```
 
-draft reads PDFs with `pdftotext` (Poppler) and writes offline with a local
-[Ollama](https://ollama.com) model. Install what you need:
+### Dependencies by platform
 
-```sh
-brew install poppler   # PDF text extraction
-brew install ollama    # offline writing
-```
+draft reads PDFs with `pdftotext` (Poppler) and, offline, writes with a local
+[Ollama](https://ollama.com) model. `.docx` reads through `textutil` on macOS
+(built in) or `--reader docling` anywhere.
+
+| Platform | Poppler (`pdftotext`) | Ollama (offline writing) |
+| --- | --- | --- |
+| **macOS** | `brew install poppler` | `brew install ollama` |
+| **Debian / Ubuntu** | `sudo apt-get install poppler-utils` | `curl -fsSL https://ollama.com/install.sh \| sh` |
+| **Fedora** | `sudo dnf install poppler-utils` | `curl -fsSL https://ollama.com/install.sh \| sh` |
+| **Windows** | `scoop install poppler` (or `choco install poppler`) | download from [ollama.com/download](https://ollama.com/download) |
+
+You need Poppler only for PDF input, and Ollama only for offline runs; online,
+draft writes through an agent CLI you are already logged into.
 
 ## Quickstart
 

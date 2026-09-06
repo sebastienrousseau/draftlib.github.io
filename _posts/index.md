@@ -13,7 +13,7 @@ banner: "research-paper"
 banner_alt: "A printed research paper on a desk"
 eyebrow: "draft"
 headline: "From paper to post. Grounded."
-lead: "Research papers in, publication-ready Markdown out — and every sentence grounded in a fact it can prove. No API key. Works offline. Provenance a reader can check."
+lead: "Research papers in, publication-ready Markdown out — every sentence tied to a quote-verified claim from the source. No API key. Works offline. Provenance a reader can check."
 ---
 
 ## Why draft

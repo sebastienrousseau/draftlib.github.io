@@ -22,6 +22,17 @@ lead: "A claim survives only if its quote appears verbatim in the source and eve
 The claim ledger is the only factual substrate the writer is given. Everything
 else in `draft` exists to make that ledger trustworthy.
 
+### What the gate does and does not check
+
+The gate is precise about its own scope. It guarantees that every claim's quote
+appears **verbatim** in the source and that every number in the claim appears in
+that quote. It does **not** judge whether the claim *interprets* the quote
+correctly — whether the unit, population, comparison, direction or causal
+reading is faithful. Those are the writer's responsibility, and the
+per-sentence attribution file is what lets a reader check them against the
+source. "Grounded" here means source-linked and quote-and-number-checked, not
+semantically guaranteed.
+
 ### The gate
 
 Each source section is mined for claims. A claim is a short factual statement

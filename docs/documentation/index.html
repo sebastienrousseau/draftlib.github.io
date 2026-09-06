@@ -202,7 +202,7 @@
           <a class="nav-link" href="/features/" >Features</a>
         </li>
         <li>
-          <a class="nav-link" href="/library/" >Library</a>
+          <a class="nav-link" href="/library/" >Go API</a>
         </li>
         <li>
           <a class="nav-link" href="/documentation/" >Docs</a>
@@ -277,11 +277,43 @@
 <pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">git</span></span><span class="meta function-call arguments shell"> clone https://github.com/sebastienrousseau/draft</span>
 <span class="meta function-call shell"><span class="support function cd shell">cd</span></span><span class="meta function-call arguments shell"> draft</span> <span class="keyword operator logical and shell">&amp;&amp;</span> <span class="meta function-call shell"><span class="variable function shell">make</span></span><span class="meta function-call arguments shell"> build</span>
 </span></code></pre>
-<p>draft reads PDFs with <code>pdftotext</code> (Poppler) and writes offline with a local
-<a href="https://ollama.com">Ollama</a> model. Install what you need:</p>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">brew</span></span><span class="meta function-call arguments shell"> install poppler   <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> PDF text extraction</span><span class="comment line number-sign shell">
-</span></span><span class="meta function-call shell"><span class="variable function shell">brew</span></span><span class="meta function-call arguments shell"> install ollama    <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> offline writing</span><span class="comment line number-sign shell">
-</span></span></span></code></pre>
+<h3>Dependencies by platform</h3>
+<p>draft reads PDFs with <code>pdftotext</code> (Poppler) and, offline, writes with a local
+<a href="https://ollama.com">Ollama</a> model. <code>.docx</code> reads through <code>textutil</code> on macOS
+(built in) or <code>--reader docling</code> anywhere.</p>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table, scrollable horizontally" tabindex="0"><table class="table">
+<thead>
+<tr>
+<th scope="col">Platform</th>
+<th scope="col">Poppler (<code>pdftotext</code>)</th>
+<th scope="col">Ollama (offline writing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><strong>macOS</strong></td>
+<td class="text-left"><code>brew install poppler</code></td>
+<td class="text-left"><code>brew install ollama</code></td>
+</tr>
+<tr>
+<td class="text-left"><strong>Debian / Ubuntu</strong></td>
+<td class="text-left"><code>sudo apt-get install poppler-utils</code></td>
+<td class="text-left"><code>curl -fsSL https://ollama.com/install.sh | sh</code></td>
+</tr>
+<tr>
+<td class="text-left"><strong>Fedora</strong></td>
+<td class="text-left"><code>sudo dnf install poppler-utils</code></td>
+<td class="text-left"><code>curl -fsSL https://ollama.com/install.sh | sh</code></td>
+</tr>
+<tr>
+<td class="text-left"><strong>Windows</strong></td>
+<td class="text-left"><code>scoop install poppler</code> (or <code>choco install poppler</code>)</td>
+<td class="text-left">download from <a href="https://ollama.com/download">ollama.com/download</a></td>
+</tr>
+</tbody>
+</table></div></div>
+<p>You need Poppler only for PDF input, and Ollama only for offline runs; online,
+draft writes through an agent CLI you are already logged into.</p>
 <h2>Quickstart</h2>
 <p>Check that the machine is ready, then run a paper:</p>
 <pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>doctor</span></span>

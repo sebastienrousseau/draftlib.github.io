@@ -201,7 +201,7 @@
           <a class="nav-link" href="/features/" >Features</a>
         </li>
         <li>
-          <a class="nav-link" href="/library/" >Library</a>
+          <a class="nav-link" href="/library/" >Go API</a>
         </li>
         <li>
           <a class="nav-link" href="/documentation/" >Docs</a>
@@ -268,6 +268,15 @@
     <div lang="en"><h2>How grounding works</h2>
 <p>The claim ledger is the only factual substrate the writer is given. Everything
 else in <code>draft</code> exists to make that ledger trustworthy.</p>
+<h3>What the gate does and does not check</h3>
+<p>The gate is precise about its own scope. It guarantees that every claim's quote
+appears <strong>verbatim</strong> in the source and that every number in the claim appears in
+that quote. It does <strong>not</strong> judge whether the claim <em>interprets</em> the quote
+correctly — whether the unit, population, comparison, direction or causal
+reading is faithful. Those are the writer's responsibility, and the
+per-sentence attribution file is what lets a reader check them against the
+source. &quot;Grounded&quot; here means source-linked and quote-and-number-checked, not
+semantically guaranteed.</p>
 <h3>The gate</h3>
 <p>Each source section is mined for claims. A claim is a short factual statement
 plus the span of source text that supports it. <code>Verify</code> applies nine checks in

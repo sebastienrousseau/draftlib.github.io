@@ -12,7 +12,7 @@ permalink: "https://draftlib.com/library/"
 logo: "https://draftlib.com/img/draft.svg"
 banner: "research-paper"
 banner_alt: "A printed research paper on a desk"
-eyebrow: "Library"
+eyebrow: "Go API"
 headline: "Go packages"
 lead: "draft is a command-line tool first, but every capability is an importable Go package."
 ---
