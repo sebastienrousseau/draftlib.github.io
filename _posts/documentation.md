@@ -12,16 +12,19 @@ permalink: "https://draftlib.com/documentation/index.html"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
 banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
+eyebrow: "draft"
+headline: "API Reference & Trait Specifications"
+lead: "Comprehensive Rust API documentation for Document, AstNode, Renderer, and SchemaValidator."
 ---
 
-# API Reference & Trait Specifications
+## API Reference & Trait Specifications
 
-## Core Types
+### Core Types
 
-### `struct Document`
+#### `struct Document`
 Represents a parsed document containing frontmatter metadata and a hierarchy of AST nodes.
 
-### `enum AstNode`
+#### `enum AstNode`
 ```rust
 pub enum AstNode {
     Heading { level: u8, text: String },
@@ -32,7 +35,7 @@ pub enum AstNode {
 }
 ```
 
-### `trait Renderer`
+#### `trait Renderer`
 ```rust
 pub trait Renderer {
     fn render(&self, doc: &Document) -> Result<String>;

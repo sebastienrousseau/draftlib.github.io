@@ -21,7 +21,7 @@ image_width: 120
 image: "https://draftlib.com/img/draft.svg"
 keywords: "grounded generation, hallucination, claim verification, verbatim quote, provenance"
 language: en-GB
-layout: page
+layout: "page"
 locale: en_GB
 logo_alt: "draft logo"
 logo_height: 36
@@ -41,14 +41,17 @@ theme_color: "#0b0e14"
 title: "How grounding works — draft"
 url: "https://draftlib.com/grounding/"
 viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
+eyebrow: "draft"
+headline: "How grounding works"
+lead: "A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is the whole gate."
 ---
 
-# How grounding works
+## How grounding works
 
 The claim ledger is the only factual substrate the writer is given. Everything
 else in `draft` exists to make that ledger trustworthy.
 
-## The gate
+### The gate
 
 Each source section is mined for claims. A claim is a short factual statement
 plus the span of source text that supports it. `Verify` applies nine checks in
@@ -67,7 +70,7 @@ order and returns the first failure as its reason:
 Anything else is dropped and counted. A thin source visibly yields a thin
 ledger rather than a padded one.
 
-## Rendering tolerance, not word tolerance
+### Rendering tolerance, not word tolerance
 
 Quote matching normalises both sides before comparing, so the same words
 verify however the model and the PDF extractor rendered the characters
@@ -83,7 +86,7 @@ rate of dropped claims from 29.6% to 8.5%.
 A quote that changes, adds, drops or reorders a *word* still fails. The
 tolerance is over rendering, never over meaning.
 
-## Repairing a cut quote
+### Repairing a cut quote
 
 A model sometimes copies a supporting span but stops mid-clause, or copies one
 too short to cite. Rather than drop it, `draft` extends the quote to its
@@ -92,7 +95,7 @@ the repaired quote is verbatim by construction and the same gate judges it exact
 so a fabricated number living in the next sentence can never be pulled in. A
 quote the source does not contain word for word is left alone and dropped.
 
-## Why checks 3 and 4 exist
+### Why checks 3 and 4 exist
 
 The same normalisation is lossy in one dangerous way. `strings.ToLower` maps every
 invalid UTF-8 byte to the replacement character, so two *different* invalid
@@ -104,7 +107,7 @@ can only ever *introduce* that character, never any other.
 Whitespace collapsing carries no equivalent risk: a run of spaces collapses to
 one, never to none, so `a b` can never match `ab`.
 
-## After the writing
+### After the writing
 
 A finished draft is checked twice more. The house rules cover structure, the
 word band, banned vocabulary and emoji. The faithfulness pass cross-checks the
@@ -115,7 +118,7 @@ warnings.
 
 A violation triggers a targeted rewrite, not a shrug.
 
-## Resume cannot weaken this
+### Resume cannot weaken this
 
 `--resume` reuses a ledger from an earlier attempt, but it re-verifies every
 record against the freshly re-read sources first. A resumed ledger is trusted

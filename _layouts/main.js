@@ -1,242 +1,159 @@
-/* ==========================================================================
-   Bank Statement Parser — Enterprise Client Interaction Engine
-   ========================================================================== */
-
-'use strict';
-
+/*!
+ * Apex behaviour: a navigation disclosure and a theme toggle.
+ *
+ * Both controls are present and usable in the markup before this file
+ * runs; this only upgrades them.
+ */
 (function () {
-  /* 1. Theme Switcher Engine */
-  var storedTheme = 'system';
-  try {
-    storedTheme = localStorage.getItem('theme-mode') || 'system';
-  } catch (e) {}
+  'use strict';
 
-  function applyTheme(mode) {
-    var effectiveTheme = mode;
-    if (mode === 'system') {
-      var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      effectiveTheme = isDark ? 'dark' : 'light';
+  function ready(fn) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn, { once: true });
+    } else {
+      fn();
     }
-    document.documentElement.setAttribute('data-theme-mode', mode);
-    document.documentElement.setAttribute('data-theme', effectiveTheme);
-    try {
-      localStorage.setItem('theme-mode', mode);
-    } catch (e) {}
-
-    var buttons = document.querySelectorAll('.theme-btn');
-    buttons.forEach(function (btn) {
-      if (btn.getAttribute('data-theme-mode') === mode) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
   }
 
-  applyTheme(storedTheme);
+  ready(function () {
+    var root = document.documentElement;
 
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
-      var cur = 'system';
-      try {
-        cur = localStorage.getItem('theme-mode') || 'system';
-      } catch (e) {}
-      if (cur === 'system') {
-        applyTheme('system');
-      }
-    });
-  }
+    /* ---------------- navigation disclosure ---------------- */
+    var navToggle = document.getElementById('navToggle');
+    var navMenu = document.getElementById('navMenu');
 
-  /* 2. Main Application Initializer */
-  function initApp() {
-    applyTheme(storedTheme);
-
-    var themeButtons = document.querySelectorAll('.theme-btn');
-    themeButtons.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        var mode = btn.getAttribute('data-theme-mode');
-        if (mode) applyTheme(mode);
-      });
-    });
-
-    /* Mobile Navbar Toggle */
-    var navToggle = document.getElementById('navbarToggle');
-    var navMenu = document.getElementById('navbarMenu');
     if (navToggle && navMenu) {
-      navToggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isExpanded));
-        navMenu.classList.toggle('open');
+      var setNav = function (open) {
+        navToggle.setAttribute('aria-expanded', String(open));
+        navMenu.setAttribute('data-open', String(open));
+      };
+
+      setNav(false);
+
+      navToggle.addEventListener('click', function () {
+        setNav(navToggle.getAttribute('aria-expanded') !== 'true');
       });
+
+      /* Escape closes the menu and returns focus to the control that
+         opened it, so keyboard users are never stranded inside it. */
+      navMenu.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          setNav(false);
+          navToggle.focus();
+        }
+      });
+
+      document.addEventListener('click', function (event) {
+        if (
+          navToggle.getAttribute('aria-expanded') === 'true' &&
+          !navMenu.contains(event.target) &&
+          !navToggle.contains(event.target)
+        ) {
+          setNav(false);
+        }
+      });
+
+      /* Re-opening the desktop layout must not leave the menu in the
+         collapsed state the small-screen rules depend on. */
+      var wide = window.matchMedia('(min-width: 48rem)');
+      var syncWidth = function (mq) {
+        if (mq.matches) {
+          setNav(false);
+        }
+      };
+      if (typeof wide.addEventListener === 'function') {
+        wide.addEventListener('change', syncWidth);
+      }
     }
 
-    /* Apple FAQ Accordion Controller */
-    var expandBtn = document.getElementById('faqExpandAllBtn');
-    var faqItems = document.querySelectorAll('.apple-faq-item');
-    if (expandBtn && faqItems.length > 0) {
-      var isAllExpanded = false;
+    /* ---------------- search trigger, into the header ---------------- */
 
-      function updateBtnState() {
-        var allOpen = true;
-        faqItems.forEach(function (item) {
-          if (!item.hasAttribute('open')) allOpen = false;
-        });
-        isAllExpanded = allOpen;
-        expandBtn.setAttribute('aria-expanded', String(isAllExpanded));
-        var label = expandBtn.querySelector('.apple-faq-btn-text');
-        var chevron = expandBtn.querySelector('.apple-faq-expand-chevron');
-        if (label) label.textContent = isAllExpanded ? 'Collapse all' : 'Expand all';
-        if (chevron) chevron.style.transform = isAllExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
-      }
+    /* The generator appends its search trigger near the end of the body and
+       fixes it to the viewport, so it renders at the top right of the header
+       while sitting last in the document. Visually it is the fifth thing on the
+       page; by keyboard it was tab stop 374 of 400, which means reaching the
+       search on a 2,861-page site required tabbing through an entire page
+       first. WCAG 2.4.3 asks focus order to preserve meaning and operability,
+       and no automated checker can see this one — focus order is not decidable
+       from markup alone, so axe passes it.
 
-      expandBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        var newState = !isAllExpanded;
-        faqItems.forEach(function (item) {
-          if (newState) {
-            item.setAttribute('open', '');
-          } else {
-            item.removeAttribute('open');
+       Moving the node keeps its listeners, and the generator's script binds by
+       id afterwards, so it finds the trigger wherever it now lives. Nothing
+       moves on screen either: the trigger is out of flow in both places. */
+    var searchTrigger = document.getElementById('ssg-search-btn');
+    var themeToggleForSearch = document.getElementById('themeToggle');
+
+    if (searchTrigger && themeToggleForSearch && themeToggleForSearch.parentNode) {
+      themeToggleForSearch.parentNode.insertBefore(
+        searchTrigger, themeToggleForSearch.nextSibling);
+    }
+
+    /* ---------------- search shortcut hint ---------------- */
+
+    /* The generator ships the trigger labelled `<kbd>K</kbd>`, and its own
+       handler opens the overlay on Cmd+K or Ctrl+K. Pressing K on its own does
+       nothing, so the badge names a shortcut that does not exist — and the badge
+       is the only place the shortcut is advertised.
+
+       Corrected here rather than in the markup because there is no one right
+       static answer: Cmd on a Mac, Ctrl everywhere else. It also cannot be got
+       wrong in a way that matters, because a visitor without scripting has no
+       search overlay for the shortcut to open.
+
+       The trigger is positioned by the generator's stylesheet, which fixes it to
+       the viewport, so the badge growing a character moves nothing on the page. */
+    var shortcutHint = document.querySelector('#ssg-search-btn kbd');
+
+    if (shortcutHint) {
+      var platform = (navigator.userAgentData && navigator.userAgentData.platform) ||
+        navigator.platform || '';
+      var apple = /mac|iphone|ipad|ipod/i.test(platform);
+      shortcutHint.textContent = apple ? '\u2318K' : 'Ctrl K';
+    }
+
+    /* ---------------- theme toggle ---------------- */
+    var themeToggle = document.getElementById('themeToggle');
+
+    if (themeToggle) {
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+      var currentTheme = function () {
+        return (
+          root.getAttribute('data-theme') ||
+          (prefersDark.matches ? 'dark' : 'light')
+        );
+      };
+
+      /* The visible icon is chosen by CSS from [data-theme]; the only
+         state this needs to publish is `aria-pressed`. */
+      var syncPressed = function () {
+        themeToggle.setAttribute(
+          'aria-pressed',
+          String(currentTheme() === 'dark')
+        );
+      };
+
+      syncPressed();
+
+      themeToggle.addEventListener('click', function () {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try {
+          localStorage.setItem('theme', next);
+        } catch (e) {
+          /* Storage unavailable: the choice applies for this page only. */
+        }
+        syncPressed();
+      });
+
+      /* Track the OS while the visitor has not made an explicit choice. */
+      if (typeof prefersDark.addEventListener === 'function') {
+        prefersDark.addEventListener('change', function () {
+          if (!root.hasAttribute('data-theme')) {
+            syncPressed();
           }
         });
-        updateBtnState();
-      });
-
-      faqItems.forEach(function (item) {
-        item.addEventListener('toggle', updateBtnState);
-      });
-    }
-
-    /* Search Modal Engine */
-    var searchIndex = null;
-    var isFetching = false;
-    var modal = document.getElementById('searchModal');
-    var input = document.getElementById('searchInput');
-    var results = document.getElementById('searchResults');
-    var closeBtn = document.getElementById('searchClose');
-
-    function escapeHtml(str) {
-      if (!str) return '';
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
-
-    async function loadSearch() {
-      if (searchIndex || isFetching) return;
-      isFetching = true;
-      try {
-        var res = await fetch('/search-index.json');
-        if (res.ok) {
-          var data = await res.json();
-          searchIndex = Array.isArray(data) ? data : (data.entries || []);
-        } else {
-          searchIndex = [];
-        }
-      } catch (e) {
-        searchIndex = [];
-      } finally {
-        isFetching = false;
       }
     }
-
-    function openSearch() {
-      if (!modal) return;
-      modal.classList.add('active');
-      loadSearch();
-      setTimeout(function () {
-        if (input) {
-          input.focus();
-          if (input.value.trim()) {
-            input.dispatchEvent(new Event('input'));
-          }
-        }
-      }, 50);
-    }
-
-    function closeSearch() {
-      if (!modal) return;
-      modal.classList.remove('active');
-      if (input) input.value = '';
-      if (results) results.innerHTML = '<div class="search-empty">Type to search...</div>';
-    }
-
-    var triggers = document.querySelectorAll('#searchTrigger, #searchTriggerMobile, .search-trigger');
-    triggers.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        openSearch();
-      });
-    });
-
-    if (closeBtn) closeBtn.addEventListener('click', closeSearch);
-    if (modal) {
-      var backdrop = modal.querySelector('.search-backdrop');
-      if (backdrop) backdrop.addEventListener('click', closeSearch);
-    }
-
-    window.addEventListener('keydown', function (e) {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        openSearch();
-      } else if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-        closeSearch();
-      }
-    });
-
-    if (input) {
-      input.addEventListener('input', function () {
-        var query = input.value.trim().toLowerCase();
-        if (!query) {
-          results.innerHTML = '<div class="search-empty">Type to search...</div>';
-          return;
-        }
-        if (!searchIndex) {
-          results.innerHTML = '<div class="search-empty">Loading search index...</div>';
-          loadSearch().then(function () {
-            input.dispatchEvent(new Event('input'));
-          });
-          return;
-        }
-        if (searchIndex.length === 0) {
-          results.innerHTML = '<div class="search-empty">No results found for "' + escapeHtml(query) + '"</div>';
-          return;
-        }
-
-        var tokens = query.split(/\s+/).filter(Boolean);
-        var matches = searchIndex.filter(function (item) {
-          var t = (item.title || '').toLowerCase();
-          var d = (item.description || '').toLowerCase();
-          var c = (item.content || '').toLowerCase();
-          var u = (item.url || '').toLowerCase();
-          var target = t + ' ' + d + ' ' + c + ' ' + u;
-          return tokens.every(function (tok) {
-            return target.includes(tok);
-          });
-        }).slice(0, 10);
-
-        if (matches.length === 0) {
-          results.innerHTML = '<div class="search-empty">No results found for "' + escapeHtml(query) + '"</div>';
-          return;
-        }
-
-        results.innerHTML = matches.map(function (item) {
-          return '<a class="search-item" href="' + item.url + '">' +
-            '<div class="search-item-title">' + escapeHtml(item.title) + '</div>' +
-            '<div class="search-item-desc">' + escapeHtml((item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 140)) + '...</div>' +
-            '</a>';
-        }).join('');
-      });
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initApp);
-  } else {
-    initApp();
-  }
+  });
 })();

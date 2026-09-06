@@ -33,7 +33,7 @@
     "tags": [],
     "title": "Performance Benchmarks: Draft Lib vs Pandoc & Comrak",
     "url": "http://127.0.0.1:8000/benchmarks/",
-    "wordCount": 68
+    "wordCount": 167
   },
   {
     "date": "2026-09-01",
@@ -51,7 +51,7 @@
     "tags": [],
     "title": "Contact & Enterprise Inquiries",
     "url": "http://127.0.0.1:8000/contact/",
-    "wordCount": 76
+    "wordCount": 22
   },
   {
     "date": "2026-09-01",
@@ -96,7 +96,7 @@
     "tags": [],
     "title": "Core Features: AST Compiler, Schema Validation & Multi-Format Exporters",
     "url": "http://127.0.0.1:8000/features/",
-    "wordCount": 99
+    "wordCount": 259
   },
   {
     "date": "2026-09-01",
@@ -123,13 +123,13 @@
     "wordCount": 630
   },
   {
-    "date": "2026-09-01",
-    "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations.",
+    "date": "2026-09-06",
+    "description": "Turn research papers into publication-ready Markdown where every sentence is grounded in a quote-verified claim from the source. No API key. Works offline. Provenance you can check.",
     "locale": "en-GB",
     "tags": [],
-    "title": "Draft Lib: Fast Document Processing & Drafting Engine in Rust",
+    "title": "draft — From paper to post. Grounded.",
     "url": "http://127.0.0.1:8000/index.html",
-    "wordCount": 714
+    "wordCount": 166
   },
   {
     "date": "2026-07-30T08:00:00+00:00",

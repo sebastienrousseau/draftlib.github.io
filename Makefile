@@ -13,7 +13,13 @@ help:
 	@echo "  make clean      - Remove build artifacts and temporary files"
 
 build:
-	@if command -v ssg >/dev/null 2>&1; then 		ssg build --content _posts --template _layouts --output public; 		python3 scripts/post-build.py; 	elif [ -f build.sh ]; then 		bash build.sh; 	else 		echo "Notice: Standard SSG layout ready. Run 'cargo install ssg' to compile."; 	fi
+	@command -v ssg >/dev/null 2>&1 || { echo "ssg required: cargo install ssg --version 0.0.56 --locked"; exit 1; }
+	rm -rf public
+	ssg build --content _posts --template _layouts --output public
+	python3 scripts/minify-css.py public/site.css _layouts/styles.css _layouts/brand.css
+	@for a in main.js theme-init.js logo.svg favicon.ico apple-touch-icon.png; do cp -f _layouts/$$a public/$$a 2>/dev/null || true; done
+	@h=$$(ls public/highlight.*.css 2>/dev/null | head -1); test -n "$$h" && cp -f "$$h" public/highlight.css || true
+	python3 scripts/post-build.py
 
 audit: contrast validate
 	@/usr/bin/python3 scripts/regression-test.py

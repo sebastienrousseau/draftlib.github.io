@@ -7,14 +7,17 @@ keywords: "draftlib FAQ, rust document questions"
 author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
-layout: "faqs"
+layout: "page"
 permalink: "https://draftlib.com/faqs/index.html"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
 banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
+eyebrow: "draft"
+headline: "Frequently Asked Questions (FAQ): Draft Lib"
+lead: "Common questions about Draft Lib features, licenses, and integrations."
 ---
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 <div class="apple-faq-section my-4">
 <div class="apple-faq-header">

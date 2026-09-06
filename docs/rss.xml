@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Draft Lib: Fast Document Processing &amp; Drafting Engine in Rust</title>
+    <title>draft — From paper to post. Grounded.</title>
     <link>https://draftlib.com/</link>
-    <description>A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations.</description>
+    <description>Turn research papers into publication-ready Markdown where every sentence is grounded in a quote-verified claim from the source. No API key. Works offline. Provenance you can check.</description>
     <atom:link href="http://127.0.0.1:8000/rss.xml" rel="self" type="application/rss+xml"/>
     <language>en</language>
     <copyright>© 2026 Sebastien Rousseau. Dual Apache-2.0 / MIT.</copyright>

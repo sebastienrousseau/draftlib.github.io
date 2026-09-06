@@ -12,9 +12,12 @@ permalink: "https://draftlib.com/about/index.html"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
 banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
+eyebrow: "draft"
+headline: "About Sebastien Rousseau & Draft Lib"
+lead: "Background and credentials of Sebastien Rousseau, creator of Draft Lib and financial systems architect."
 ---
 
-# About Sebastien Rousseau
+## About Sebastien Rousseau
 
 <div class="author-pedigree-strip my-4">
 <div class="author-avatar-wrap">

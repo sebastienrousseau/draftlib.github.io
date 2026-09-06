@@ -21,7 +21,7 @@ image_width: 120
 image: "https://draftlib.com/img/draft.svg"
 keywords: "go packages, library, claims, pipeline, engine, frontmatter, validate"
 language: en-GB
-layout: page
+layout: "page"
 locale: en_GB
 logo_alt: "draft logo"
 logo_height: 36
@@ -41,9 +41,12 @@ theme_color: "#0b0e14"
 title: "Go packages — draft"
 url: "https://draftlib.com/library/"
 viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
+eyebrow: "draft"
+headline: "Go packages"
+lead: "draft is a command-line tool first, but every capability is an importable Go package."
 ---
 
-# Go packages
+## Go packages
 
 `draft` is a command-line tool first. But every capability is an importable Go
 package, and only the PDF extractor, the brand assets and the TUI stay
@@ -68,7 +71,7 @@ go get github.com/sebastienrousseau/draft@latest
 Each has its own README with a runnable quick start and an API table. Full
 reference on [pkg.go.dev](https://pkg.go.dev/github.com/sebastienrousseau/draft).
 
-## The seam that matters
+### The seam that matters
 
 `Engine` is two methods. The whole test suite and every example run against
 in-process implementations of it, which is why none of them need a network:

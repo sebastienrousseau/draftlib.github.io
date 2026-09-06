@@ -12,12 +12,11 @@ permalink: "https://draftlib.com/thanks/index.html"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
 banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
+eyebrow: "draft"
+headline: "Thank You"
+lead: "Thank you for your message."
 ---
 
-# Thank You for Your Message
+### Thank you
 
-We have received your inquiry. A team member will respond shortly.
-
-<div class="my-4">
-<a href="/" class="btn-primary-quantum">Return to Homepage →</a>
-</div>
+Your message has been received. In the meantime, the fastest way to get started is the [grounding guide](/grounding/) or the [source on GitHub](https://github.com/sebastienrousseau/draft).

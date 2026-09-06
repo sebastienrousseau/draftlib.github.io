@@ -1,11 +1,11 @@
 {
   "background_color": "#ffffff",
-  "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations.",
+  "description": "Turn research papers into publication-ready Markdown where every sentence is grounded in a quote-verified claim from the source. No API key. Works offline. Provenance you can check.",
   "display": "standalone",
-  "name": "Draft Lib",
+  "name": "draft",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "draftlib",
+  "short_name": "draft",
   "start_url": ".",
   "theme_color": null
 }

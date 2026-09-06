@@ -12,15 +12,18 @@ permalink: "https://draftlib.com/security/index.html"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
 banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
+eyebrow: "draft"
+headline: "Security Architecture: Sovereign Document Processing & Zero Telemetry"
+lead: "Guarantees around memory safety, zero external network requests, and CycloneDX SBOM provenance."
 ---
 
-# Security Architecture & Trust Guarantees
+## Security Architecture & Trust Guarantees
 
-## 1. 100% Zero-Telemetry Guarantee
+### 1. 100% Zero-Telemetry Guarantee
 Draft Lib performs all computation locally. Confidential contracts and technical specifications never leave your process boundaries.
 
-## 2. Memory Safety
+### 2. Memory Safety
 Built with 100% safe Rust (`#![forbid(unsafe_code)]`), eliminating buffer overflow vulnerabilities common in legacy C/C++ parsers.
 
-## 3. Supply Chain Security
+### 3. Supply Chain Security
 All releases include a signed CycloneDX Software Bill of Materials (SBOM).

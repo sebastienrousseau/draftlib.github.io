@@ -1,902 +1,116 @@
-<!DOCTYPE html>
-<html lang="en-GB" data-theme-mode="system">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>{{title}} | Draft Lib</title>
-  
-  <meta name="author" content="Sebastien Rousseau">
-  <meta name="description" content="{{description}}">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' https://formspree.io; img-src 'self' data: https: https://cloudcdn.pro; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self'; form-action 'self' https://formspree.io;" />
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Draft Lib">
-  <meta property="og:locale" content="en_GB">
-  <meta property="og:title" content="{{title}} | Draft Lib">
-  <meta property="og:description" content="{{description}}">
-  <meta property="og:image" content="{{banner}}">
-  <meta property="og:url" content="https://draftlib.com/">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{title}} | Draft Lib">
-  <meta name="twitter:description" content="{{description}}">
-  <meta name="twitter:image" content="{{banner}}">
-
-  <link rel="alternate" href="https://draftlib.com/" hreflang="en" />
-  <link rel="canonical" href="https://draftlib.com/" />
-  <link rel="icon" type="image/svg+xml" href="{{logo}}" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32" />
-  <link rel="apple-touch-icon" href="https://cloudcdn.pro/cmn/v1/icons/192x192.png" sizes="192x192" />
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-  <!-- styles.css:begin -->
-<style>
-/* ==========================================================================
-   Bank Statement Parser — Design System Tokens (Apple Benchmark Precision)
-   ========================================================================== */
-
-:root {
-  /* 5.1 Typographic Scale */
-  --fs-display: clamp(2.2rem, 3.8vw, 3.2rem);
-  --fs-section: clamp(1.5rem, 2.4vw, 2.0rem);
-  --fs-subsection: 1.25rem;
-  --fs-body: 1.0625rem;
-  --fs-caption: 0.875rem;
-  --fs-stat: clamp(1.85rem, 3.2vw, 2.5rem);
-
-  --lh-display: 1.15;
-  --lh-section: 1.25;
-  --lh-body: 1.6;
-  --lh-caption: 1.4;
-
-  --fw-regular: 400;
-  --fw-bold: 600;
-
-  /* 5.2 Spacing Scale (8px base) */
-  --space-1: 0.5rem;   /* 8px */
-  --space-2: 1rem;     /* 16px */
-  --space-3: 1.5rem;   /* 24px */
-  --space-4: 2rem;     /* 32px */
-  --space-6: 3rem;     /* 48px */
-  --space-8: 4rem;     /* 64px */
-  --space-12: 6rem;    /* 96px */
-
-  /* 5.3 Colour & AAA Neutrals (Light Mode) */
-  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-  --bg-canvas: #ffffff;
-  --bg-surface: #ffffff;
-  --bg-subtle: #f8fafc;
-  --bg-glass: rgba(255, 255, 255, 0.94);
-  --text-headline: #0f172a;
-  --text-body: #0f172a;
-  --text-muted: #334155;
-  --cl-primary: #0056b3;
-  --cl-primary-hover: #004494;
-  --border-hairline: rgba(0, 0, 0, 0.12);
-  --border-subtle: rgba(0, 0, 0, 0.22);
-  --radius-pill: 980px;
-  --radius-card: 16px;
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.04);
-  --container-max: 68rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme-mode="light"]) {
-    --bg-canvas: #090d16;
-    --bg-surface: #111827;
-    --bg-subtle: #1f2937;
-    --bg-glass: rgba(9, 13, 22, 0.94);
-    --text-headline: #f8fafc;
-    --text-body: #f8fafc;
-    --text-muted: #cbd5e1;
-    --cl-primary: #3b82f6;
-    --cl-primary-hover: #60a5fa;
-    --border-hairline: rgba(255, 255, 255, 0.15);
-    --border-subtle: rgba(255, 255, 255, 0.25);
-    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.35);
-  }
-}
-
-:root[data-theme-mode="dark"] {
-  --bg-canvas: #090d16;
-  --bg-surface: #111827;
-  --bg-subtle: #1f2937;
-  --bg-glass: rgba(9, 13, 22, 0.94);
-  --text-headline: #f8fafc;
-  --text-body: #f8fafc;
-  --text-muted: #cbd5e1;
-  --cl-primary: #3b82f6;
-  --cl-primary-hover: #60a5fa;
-  --border-hairline: rgba(255, 255, 255, 0.15);
-  --border-subtle: rgba(255, 255, 255, 0.25);
-  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.35);
-}
-
-:root[data-theme-mode="light"] {
-  --bg-canvas: #ffffff;
-  --bg-surface: #ffffff;
-  --bg-subtle: #f8fafc;
-  --bg-glass: rgba(255, 255, 255, 0.94);
-  --text-headline: #0f172a;
-  --text-body: #0f172a;
-  --text-muted: #334155;
-  --cl-primary: #0056b3;
-  --cl-primary-hover: #004494;
-  --border-hairline: rgba(0, 0, 0, 0.12);
-  --border-subtle: rgba(0, 0, 0, 0.22);
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.04);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-
-html {
-  font-family: var(--font-sans);
-  font-size: 17px;
-  line-height: var(--lh-body);
-  background-color: var(--bg-canvas);
-  color: var(--text-body);
-  -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--bg-canvas);
-  color: var(--text-body);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: var(--space-2);
-  background: var(--cl-primary);
-  color: #fff !important;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-pill);
-  z-index: 9999;
-}
-.skip-link:focus { top: var(--space-2); }
-
-.container-xxl, .content-wrapper, .navbar-container {
-  max-width: var(--container-max);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--space-3);
-  padding-right: var(--space-3);
-  width: 100%;
-}
-
-.content-wrapper {
-  padding-top: var(--space-6);
-  padding-bottom: var(--space-6);
-  flex: 1;
-}
-
-/* Typography */
-h1, .h1 {
-  font-size: var(--fs-display);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-display);
-  color: var(--text-headline);
-  margin-bottom: var(--space-3);
-  letter-spacing: -0.03em;
-}
-
-h2, .h2 {
-  font-size: var(--fs-section);
-  font-weight: var(--fw-bold);
-  line-height: var(--lh-section);
-  color: var(--text-headline);
-  margin-top: var(--space-4);
-  margin-bottom: var(--space-2);
-  letter-spacing: -0.02em;
-}
-
-h3, .h3 {
-  font-size: var(--fs-subsection);
-  font-weight: var(--fw-bold);
-  color: var(--text-headline);
-  margin-top: var(--space-3);
-  margin-bottom: var(--space-1);
-}
-
-p, .fs-5 {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-  color: var(--text-body);
-  margin-bottom: var(--space-3);
-}
-
-a {
-  color: var(--cl-primary);
-  text-decoration: none;
-}
-a:hover { text-decoration: underline; }
-
-/* Navbar */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  background-color: var(--bg-glass);
-  border-bottom: 1px solid var(--border-hairline);
-  padding: 0.65rem 0;
-  width: 100%;
-}
-
-.navbar-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
-}
-
-.navbar-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
-  flex-shrink: 0;
-}
-
-.navbar-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: var(--fw-bold);
-  color: var(--text-headline) !important;
-  text-decoration: none;
-  font-size: 1.05rem;
-  white-space: nowrap;
-}
-
-.navbar-menu {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  justify-content: flex-end;
-}
-
-.nav-list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.4rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-}
-
-.nav-link {
-  color: var(--text-headline) !important;
-  font-size: 0.92rem;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-}
-
-.nav-link:hover, .nav-link.active {
-  background: var(--bg-subtle);
-}
-
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
-.theme-switcher {
-  display: inline-flex;
-  align-items: center;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-pill);
-  padding: 3px;
-  gap: 2px;
-}
-
-.theme-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 50%;
-  color: var(--text-muted);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.theme-btn.active {
-  background: var(--bg-surface);
-  color: var(--text-headline);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.search-trigger {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-pill);
-  padding: 0.35rem 0.75rem;
-  color: var(--text-muted);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
-}
-
-.search-kbd {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  border-radius: 4px;
-  padding: 1px 4px;
-  font-size: 0.75rem;
-  font-family: inherit;
-}
-
-/* Card Geometry & Bento System */
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-3);
-  margin-top: var(--space-3);
-  margin-bottom: var(--space-3);
-}
-
-.bento-col-4 { grid-column: span 12; }
-.bento-col-6 { grid-column: span 12; }
-.bento-col-8 { grid-column: span 12; }
-.bento-col-12 { grid-column: span 12; }
-
-@media (min-width: 768px) {
-  .bento-col-4 { grid-column: span 6; }
-  .bento-col-6 { grid-column: span 6; }
-}
-
-@media (min-width: 992px) {
-  .bento-col-4 { grid-column: span 4; }
-  .bento-col-6 { grid-column: span 6; }
-  .bento-col-8 { grid-column: span 8; }
-}
-
-.bento-card, .clock-card, .service-card, .article-card, .stat-card, .card-surface {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-card);
-  padding: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  box-shadow: var(--shadow-card);
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.bento-card:hover, .article-card:hover {
-  border-color: var(--border-subtle);
-}
-
-.bento-tag {
-  font-size: var(--fs-caption);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
-  color: var(--cl-primary);
-  margin-bottom: var(--space-1);
-}
-
-.bento-title {
-  font-size: var(--fs-subsection);
-  font-weight: var(--fw-bold);
-  color: var(--text-headline);
-  margin-bottom: var(--space-1);
-}
-
-.bento-desc {
-  font-size: var(--fs-body);
-  color: var(--text-muted);
-  line-height: var(--lh-body);
-  margin-bottom: var(--space-2);
-}
-
-/* Stat Component */
-.stat-card {
-  text-align: left;
-  padding: var(--space-3);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-card);
-}
-
-.stat-figure {
-  font-size: var(--fs-stat);
-  font-weight: var(--fw-bold);
-  line-height: 1.1;
-  color: var(--cl-primary);
-  margin-bottom: var(--space-1);
-}
-
-.stat-label {
-  font-size: var(--fs-body);
-  font-weight: var(--fw-bold);
-  color: var(--text-headline);
-  line-height: var(--lh-caption);
-  margin-bottom: var(--space-1);
-}
-
-.stat-source {
-  font-size: var(--fs-caption);
-  color: var(--text-muted);
-  line-height: var(--lh-caption);
-}
-
-/* CTA Hierarchy */
-.btn-primary-quantum {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-1);
-  background-color: var(--cl-primary);
-  color: #ffffff !important;
-  font-size: var(--fs-body);
-  font-weight: var(--fw-bold);
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-  border: 1px solid transparent;
-}
-
-.btn-primary-quantum:hover {
-  background-color: var(--cl-primary-hover);
-  transform: translateY(-1px);
-}
-
-.btn-secondary-quantum {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-1);
-  background-color: var(--bg-surface);
-  color: var(--text-headline) !important;
-  font-size: var(--fs-body);
-  font-weight: var(--fw-bold);
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  border: 1px solid var(--border-hairline);
-  transition: all 0.2s ease;
-}
-
-.btn-secondary-quantum:hover {
-  background-color: var(--bg-subtle);
-  border-color: var(--border-subtle);
-}
-
-/* Terminal Component */
-.hero-visual-terminal {
-  background: #0f172a;
-  color: #f8fafc;
-  border-radius: var(--radius-card);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: var(--space-3);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.85rem;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
-  text-align: left;
-  overflow-x: auto;
-}
-
-.terminal-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: var(--space-2);
-  padding-bottom: var(--space-1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.terminal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.dot-red { background: #ef4444; }
-.dot-yellow { background: #eab308; }
-.dot-green { background: #22c55e; }
-.terminal-title {
-  color: #94a3b8;
-  font-size: 0.75rem;
-  margin-left: 6px;
-}
-
-/* Hero Editorial */
-.hero-editorial {
-  text-align: center;
-  padding: var(--space-4) 0;
-}
-
-.eyebrow-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-hairline);
-  padding: 0.35rem 0.95rem;
-  border-radius: var(--radius-pill);
-  font-size: var(--fs-caption);
-  font-weight: var(--fw-bold);
-  color: var(--cl-primary);
-  margin-bottom: var(--space-3);
-}
-
-.eyebrow-pulse {
-  width: 8px;
-  height: 8px;
-  background: #22c55e;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
-}
-
-.hero-lead {
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: var(--text-muted);
-  max-width: 46rem;
-  margin: 0 auto var(--space-4) auto;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  flex-wrap: wrap;
-}
-
-/* Apple FAQ Accordion */
-.apple-faq-section {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-card);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-card);
-}
-
-.apple-faq-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-3);
-  padding-bottom: var(--space-2);
-  border-bottom: 1px solid var(--border-hairline);
-}
-
-.apple-faq-title {
-  font-size: var(--fs-section);
-  font-weight: var(--fw-bold);
-  color: var(--text-headline);
-  margin: 0;
-}
-
-.apple-faq-expand-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: var(--cl-primary);
-  font-size: var(--fs-caption);
-  font-weight: var(--fw-bold);
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.apple-faq-item {
-  border-bottom: 1px solid var(--border-hairline);
-  padding: var(--space-3) 0;
-}
-.apple-faq-item:last-child { border-bottom: none; }
-
-.apple-faq-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  font-weight: var(--fw-bold);
-  font-size: 1.1rem;
-  color: var(--text-headline);
-  list-style: none;
-}
-.apple-faq-summary::-webkit-details-marker { display: none; }
-
-.apple-faq-body {
-  padding-top: var(--space-2);
-  color: var(--text-muted);
-  line-height: var(--lh-body);
-}
-
-/* Footer */
-footer {
-  background-color: var(--bg-subtle);
-  border-top: 1px solid var(--border-hairline);
-  padding: var(--space-6) 0 var(--space-4) 0;
-  margin-top: auto;
-}
-
-/* Search Modal */
-.search-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 10vh;
-}
-.search-modal.active { display: flex; }
-.search-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-}
-.search-dialog {
-  position: relative;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-card);
-  width: 90%;
-  max-width: 600px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  overflow: hidden;
-  z-index: 10;
-}
-.search-header {
-  display: flex;
-  align-items: center;
-  padding: var(--space-2) var(--space-3);
-  border-bottom: 1px solid var(--border-hairline);
-  gap: var(--space-2);
-}
-.search-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  font-size: 1.1rem;
-  color: var(--text-headline);
-  outline: none;
-}
-.search-close {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: var(--text-muted);
-  font-size: 1.1rem;
-}
-.search-results {
-  max-height: 50vh;
-  overflow-y: auto;
-  padding: var(--space-2);
-}
-.search-item {
-  display: block;
-  padding: var(--space-2);
-  border-radius: 8px;
-  text-decoration: none;
-  color: var(--text-body);
-}
-.search-item:hover { background: var(--bg-subtle); }
-.search-item-title { font-weight: var(--fw-bold); color: var(--cl-primary); }
-.search-item-desc { font-size: 0.85rem; color: var(--text-muted); }
-.search-empty { padding: var(--space-3); text-align: center; color: var(--text-muted); }
-
-/* Mobile Navigation */
-@media (max-width: 991px) {
-  .navbar-toggle { display: inline-flex; }
-  .navbar-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--bg-surface);
-    border-bottom: 1px solid var(--border-hairline);
-    padding: var(--space-3);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  }
-  .navbar-menu.open { display: block; }
-  .nav-list { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
-  .nav-link { width: 100%; padding: 0.6rem var(--space-2); }
-}
-
-/* Utilities */
-.row { display: flex; flex-wrap: wrap; margin-left: -0.75rem; margin-right: -0.75rem; }
-.row > [class*="col-"] { padding-left: 0.75rem; padding-right: 0.75rem; }
-.col-12 { flex: 0 0 100%; max-width: 100%; }
-.col-md-4 { flex: 0 0 100%; max-width: 100%; }
-.col-md-6 { flex: 0 0 100%; max-width: 100%; }
-.col-lg-3 { flex: 0 0 100%; max-width: 100%; }
-.col-lg-6 { flex: 0 0 100%; max-width: 100%; }
-.col-lg-2-4 { flex: 0 0 100%; max-width: 100%; }
-
-@media (min-width: 768px) {
-  .col-md-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
-  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
-}
-@media (min-width: 992px) {
-  .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
-  .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
-  .col-lg-2-4 { flex: 0 0 20%; max-width: 20%; }
-  .d-none { display: none !important; }
-  .d-lg-flex { display: flex !important; }
-  .d-lg-none { display: none !important; }
-}
-
-.table { width: 100%; border-collapse: collapse; margin-bottom: var(--space-3); }
-.table th, .table td { padding: 0.75rem; border: 1px solid var(--border-hairline); }
-.table-striped tbody tr:nth-of-type(odd) { background-color: var(--bg-subtle); }
-.table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-.form-control {
-  width: 100%;
-  padding: 0.65rem 1rem;
-  border: 1px solid var(--border-hairline);
-  border-radius: 8px;
-  background: var(--bg-surface);
-  color: var(--text-body);
-  font-size: var(--fs-body);
-}
-</style>
-<!-- styles.css:end -->
-
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://draftlib.com/#software",
-      "name": "Draft Lib",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Linux, macOS, Windows",
-      "license": "https://opensource.org/licenses/Apache-2.0",
-      "author": {
-        "@type": "Person",
-        "name": "Sebastien Rousseau",
-        "url": "https://sebastienrousseau.com"
-      },
-      "url": "https://draftlib.com/",
-      "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
-      "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations."
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://draftlib.com/#website",
-      "url": "https://draftlib.com/",
-      "name": "Draft Lib",
-      "publisher": {
-        "@type": "Person",
-        "name": "Sebastien Rousseau",
-        "url": "https://sebastienrousseau.com"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://draftlib.com/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://draftlib.com/#webpage",
-      "url": "https://draftlib.com/",
-      "name": "Draft Lib | Fast Document Processing & Drafting Engine in Rust",
-      "description": "A modular, type-safe Rust library for compiling, formatting, and generating structured legal and technical drafts with zero allocations.",
-      "isPartOf": {
-        "@id": "https://draftlib.com/#website"
-      }
-    }
-  ]
-}
-  </script>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
-  <nav class="navbar" aria-label="Main Navigation">
-    <div class="navbar-container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/" aria-label="Draft Lib Homepage">
-          <img src="https://cloudcdn.pro/cmn/v1/logos/cmn.svg" alt="Draft Lib Logo" width="32" height="32" class="d-inline-block" />
-          <span class="navbar-brand-text">Draft Lib</span>
-        </a>
-
-        <!-- Mobile actions -->
-        <div class="navbar-actions d-flex d-lg-none">
-          <button type="button" class="btn search-trigger" id="searchTriggerMobile" aria-label="Search">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          </button>
-
-          <div class="theme-switcher" role="radiogroup" aria-label="Theme mode">
-            <button type="button" class="theme-btn" data-theme-mode="light" aria-label="Light mode">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            </button>
-            <button type="button" class="theme-btn" data-theme-mode="dark" aria-label="Dark mode">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            </button>
-            <button type="button" class="theme-btn active" data-theme-mode="system" aria-label="System mode">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            </button>
-          </div>
-
-          <button type="button" class="navbar-toggle" id="navbarToggle" aria-expanded="false" aria-controls="navbarMenu" aria-label="Toggle navigation menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-          </button>
-        </div>
+{{#extends "base"}}
+{{#block "main"}}
+<section class="page-banner home-banner" aria-labelledby="hero-heading">
+  {{#if banner}}
+  <img class="page-banner-image"
+       src="https://cloudcdn.pro/stocks/images/{{banner}}-1200.webp"
+       srcset="https://cloudcdn.pro/stocks/images/{{banner}}-640.webp 640w,
+               https://cloudcdn.pro/stocks/images/{{banner}}-1200.webp 1200w"
+       sizes="100vw"
+       width="1440" height="830"
+       alt="{{banner_alt}}"
+       fetchpriority="high" decoding="async" />
+  {{/if}}
+  <div class="hero-art" aria-hidden="true"><span class="hero-mark-art"></span></div>
+  <div class="page-banner-body">
+    <div class="container stack">
+      <p class="eyebrow">{{eyebrow}}</p>
+      <h1 id="hero-heading">{{headline}}</h1>
+      <p class="lead">{{lead}}</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{locale_path}}grounding/">How grounding works</a>
+        <a class="btn btn-secondary" href="https://github.com/sebastienrousseau/draft">Get draft</a>
       </div>
+      <p class="hero-install"><span class="prompt" aria-hidden="true">$</span> <code>brew install --cask sebastienrousseau/tap/draft</code></p>
+      <ul class="trust-strip" role="list">
+        <li>Quote-verified claims</li>
+        <li>No API key</li>
+        <li>Works offline</li>
+        <li>Provenance you can check</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      <div class="navbar-menu" id="navbarMenu"><ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/getting-started/index.html">Getting Started</a></li><li class="nav-item"><a class="nav-link" href="/features/index.html">Features</a></li><li class="nav-item"><a class="nav-link" href="/documentation/index.html">Documentation</a></li><li class="nav-item"><a class="nav-link" href="/examples/index.html">Examples</a></li><li class="nav-item"><a class="nav-link" href="/benchmarks/index.html">Benchmarks</a></li><li class="nav-item"><a class="nav-link" href="/architecture/index.html">Architecture</a></li><li class="nav-item"><a class="nav-link" href="/security/index.html">Security</a></li><li class="nav-item"><a class="nav-link" href="/faqs/index.html">FAQ</a></li><li class="nav-item nav-item-cta"><a class="btn btn-dark ms-lg-2" href="/getting-started/index.html">Install Crate</a></li></ul></div>
-
-      <!-- Desktop actions -->
-      <div class="navbar-actions d-none d-lg-flex">
-        <button type="button" class="btn search-trigger" id="searchTrigger" aria-label="Search">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Search</span>
-          <kbd class="search-kbd">⌘K</kbd>
-        </button>
-
-        <div class="theme-switcher" role="radiogroup" aria-label="Theme mode">
-          <button type="button" class="theme-btn" data-theme-mode="light" aria-label="Light mode">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          </button>
-          <button type="button" class="theme-btn" data-theme-mode="dark" aria-label="Dark mode">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-          </button>
-          <button type="button" class="theme-btn active" data-theme-mode="system" aria-label="System mode">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-          </button>
-        </div>
+<section class="section section-soft" aria-labelledby="pillars-heading">
+  <div class="container stack">
+    <h2 id="pillars-heading" class="statement">Grounded. Keyless. Provable.</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <p class="pillar-num">100%</p>
+        <h3>Grounded by construction.</h3>
+        <p>Before a word is written, your sources are mined for claims. A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. That verified ledger is the only substrate the writer is given.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">0</p>
+        <h3>API keys. No token budget.</h3>
+        <p>Online, draft writes through the AI coding-agent CLI you already have &mdash; Claude, Codex, Copilot, Cursor, Grok and more &mdash; using that tool&rsquo;s own logged-in session. Offline, it falls back to a local Ollama model and stays there.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">C2PA</p>
+        <h3>Provenance you can check.</h3>
+        <p>Every article ships with a per-sentence attribution to the claims it rests on and a C2PA manifest binding it to its sources. <code>draft --verify</code> recomputes the digests and tells you whether a draft is exactly what the ledger was verified against.</p>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <main id="main" class="content-wrapper" aria-label="Main content">
+<section class="section" aria-labelledby="lineup-heading">
+  <div class="container stack">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2 id="lineup-heading">Four phases, one grounded draft.</h2>
+      <p class="lead">A research PDF in, a publication-ready Markdown set out &mdash; each phase reporting as it runs.</p>
+    </div>
+    <div class="lineup">
+      <a class="lineup-item" href="{{locale_path}}grounding/">
+        <h3>Read &amp; section</h3>
+        <p>A 62-page paper read and split in about 110&nbsp;ms by a 10&nbsp;MB binary. Poppler for PDFs, Docling for tables.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}grounding/">
+        <h3>Extract &amp; verify</h3>
+        <p>One model call per section mines claims; each is checked against the source and dropped unless its quote is verbatim.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}grounding/">
+        <h3>Write</h3>
+        <p>One call arranges the verified ledger into an article in your house style. It arranges facts; it never sources them.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}grounding/">
+        <h3>Attribute &amp; sign</h3>
+        <p>Per-sentence attribution and a C2PA manifest are written beside the set, so a reader can check the draft against its sources.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}library/">
+        <h3>Every capability is a package</h3>
+        <p>The claim gate, the engine seam and the pipeline are importable Go packages, tested without a network.</p>
+      </a>
+      <a class="lineup-item" href="{{locale_path}}features/">
+        <h3>Publish-ready sets</h3>
+        <p>Body, frontmatter and combined document, written side by side and regenerable without losing a curated field.</p>
+      </a>
+    </div>
+    <p class="section-link"><a href="{{locale_path}}features/">See every capability</a></p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="body-heading">
+  <div class="container prose">
+    <h2 id="body-heading" class="visually-hidden">About draft</h2>
     {{!content}}
-  </main>
-
-  <div class="text-center py-4">
-    <a href="#main" class="btn btn-outline-dark" aria-label="Back to the top">Back to the top ↑</a>
   </div>
+</section>
 
-  <footer><div class="container-xxl"><div class="row g-4"><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Core Documentation</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/getting-started/index.html">Getting Started</a></li><li><a href="/features/index.html">AST Compiler & Exporters</a></li><li><a href="/documentation/index.html">API Reference</a></li><li><a href="/examples/index.html">Document Examples</a></li></ul></div><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Architecture & Speed</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/benchmarks/index.html">Parsing Benchmarks</a></li><li><a href="/architecture/index.html">Zero-Allocation Lexer</a></li><li><a href="/security/index.html">Zero Telemetry & Trust</a></li><li><a href="/contact/index.html">Enterprise Support</a></li></ul></div><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Open Source & Author</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/about/index.html">About Sebastien Rousseau</a></li><li><a href="/changelog/index.html">Release Changelog</a></li><li><a href="/contributing/index.html">Contributing Guide</a></li><li><a href="/faqs/index.html">Questions & Answers</a></li><li><a href="/made-with-ssg/index.html">Made with SSG</a></li></ul></div><div class="col-lg-3 col-md-6"><h2 class="h5 fw-bold mb-3">Legal & Feeds</h2><ul class="list-unstyled d-flex flex-column gap-2"><li><a href="/accessibility/index.html">Accessibility (WCAG AAA)</a></li><li><a href="/terms/index.html">Terms of Use</a></li><li><a href="/privacy/index.html">Privacy Policy</a></li><li><a href="/rss.xml">RSS Feed</a></li><li><a href="/atom.xml">Atom Feed</a></li><li><a href="/feed.json">JSON Feed</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div></div><div class="text-center pt-4 mt-4 border-top text-muted small">© 2026 Draft Lib. High-velocity document compilation engine. All releases Sigstore-signed.</div></div></footer>
-
-  <div id="searchModal" class="search-modal" role="dialog" aria-modal="true" aria-label="Site Search">
-    <div class="search-backdrop"></div>
-    <div class="search-dialog">
-      <div class="search-header">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="search" id="searchInput" class="search-input" placeholder="Search AST, parsers, renderers..." aria-label="Search query" autocomplete="off">
-        <button type="button" class="search-close" id="searchClose" aria-label="Close search">✕</button>
+<section class="section" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-band">
+      <div class="stack">
+        <h2 id="cta-heading">From paper to post. Grounded.</h2>
+        <p>Point it at one paper or twenty. Each becomes its own draft, and every sentence can prove itself.</p>
       </div>
-      <div id="searchResults" class="search-results" role="listbox">
-        <div class="search-empty">Type to search...</div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{locale_path}}grounding/">How grounding works</a>
+        <a class="btn btn-outline" href="https://github.com/sebastienrousseau/draft" rel="noopener noreferrer">Source on GitHub</a>
       </div>
     </div>
   </div>
-
-  <script src="/main.js" defer></script>
-</body>
-</html>
+</section>
+{{/block}}

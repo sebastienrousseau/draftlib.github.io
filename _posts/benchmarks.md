@@ -12,32 +12,27 @@ permalink: "https://draftlib.com/benchmarks/index.html"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
 banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
+eyebrow: "draft"
+headline: "Performance Benchmarks: Draft Lib vs Pandoc & Comrak"
+lead: "Empirical benchmarks parsing and rendering 50-page legal and technical documents."
 ---
 
-# Performance Benchmarks
+### Extraction is not the bottleneck
 
-Benchmarked on Apple Silicon M3 Max across 1,000 compilation iterations:
+Measured on Apple silicon, five runs each, on a 62-page book chapter.
 
-<div class="row g-3 my-4">
-<div class="col-md-4">
-<div class="stat-card">
-<div class="stat-figure">0.38 ms</div>
-<div class="stat-label">Draft Lib AST Parse</div>
-<div class="stat-source">Zero-allocation lexer</div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="stat-card">
-<div class="stat-figure">14.20 ms</div>
-<div class="stat-label">Pandoc C CLI</div>
-<div class="stat-source">Haskell runtime baseline</div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="stat-card">
-<div class="stat-figure">37x Faster</div>
-<div class="stat-label">Compilation Throughput</div>
-<div class="stat-source">Native Rust execution</div>
-</div>
-</div>
-</div>
+| Stage | Time |
+| --- | --- |
+| Text extraction (`pdftotext`) | **107&nbsp;ms** (≈580 pages/s) |
+| Sectioning | **2.1&nbsp;ms** (163,530 chars → 53 sections) |
+| Claim parsing and verbatim verification | 23&nbsp;µs per claim block |
+| House-rule validation of a finished draft | 662&nbsp;µs |
+| **The whole deterministic path** | **~110&nbsp;ms** |
+
+A **10&nbsp;MB** binary. **29&nbsp;ms** to start. **12&nbsp;MB** peak RSS. No Python, no PyTorch, no model weights, no GPU, no network.
+
+Everything after that is model latency. On a 12-section paper against a local model, claim extraction runs to roughly ten minutes; the Go code accounts for well under a second of it. That ratio is the whole design.
+
+### Recall
+
+Measured over 3,217 extraction blocks from real papers, rendering-tolerant matching and source-based quote repair cut the verification drop rate from **29.6% to 8.5%**, with no loosening of the verbatim gate.

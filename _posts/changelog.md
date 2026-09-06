@@ -12,14 +12,17 @@ permalink: "https://draftlib.com/changelog/index.html"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
 banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
+eyebrow: "draft"
+headline: "Changelog & Version History"
+lead: "Release notes for Draft Lib starting at v0.0.1."
 ---
 
-# Changelog
+## Changelog
 
 All notable changes to **Draft Lib** are documented in this file following Semantic Versioning.
 
-## [0.0.1] - 2026-09-01
-### Added
+### [0.0.1] - 2026-09-01
+#### Added
 - Initial release of Draft Lib documentation portal.
 - Rust Static Site Generator (SSG) native compilation pipeline.
 - AST compiler, schema validation, and rendering documentation.

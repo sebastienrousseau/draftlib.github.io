@@ -1,350 +1,159 @@
-'use strict';
+/*!
+ * Apex behaviour: a navigation disclosure and a theme toggle.
+ *
+ * Both controls are present and usable in the markup before this file
+ * runs; this only upgrades them.
+ */
+(function () {
+  'use strict';
 
-// 1. Theme Engine
-(function() {
-  var storedTheme = localStorage.getItem('theme-mode') || 'system';
-
-  function applyTheme(mode) {
-    var effectiveTheme = mode;
-    if (mode === 'system') {
-      var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      effectiveTheme = isDark ? 'dark' : 'light';
+  function ready(fn) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn, { once: true });
+    } else {
+      fn();
     }
-    document.documentElement.setAttribute('data-theme-mode', mode);
-    document.documentElement.setAttribute('data-theme', effectiveTheme);
-    localStorage.setItem('theme-mode', mode);
-
-    var buttons = document.querySelectorAll('.theme-btn');
-    buttons.forEach(function(btn) {
-      if (btn.getAttribute('data-theme-mode') === mode) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
   }
 
-  // Apply immediately
-  applyTheme(storedTheme);
+  ready(function () {
+    var root = document.documentElement;
 
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
-      if ((localStorage.getItem('theme-mode') || 'system') === 'system') {
-        applyTheme('system');
-      }
-    });
-  }
+    /* ---------------- navigation disclosure ---------------- */
+    var navToggle = document.getElementById('navToggle');
+    var navMenu = document.getElementById('navMenu');
 
-  function initApp() {
-    applyTheme(localStorage.getItem('theme-mode') || 'system');
-
-    // Attach theme toggle buttons
-    var themeButtons = document.querySelectorAll('.theme-btn');
-    themeButtons.forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        var mode = btn.getAttribute('data-theme-mode');
-        if (mode) applyTheme(mode);
-      });
-    });
-
-    // Mobile Navbar toggle
-    var navToggle = document.getElementById('navbarToggle');
-    var navMenu = document.getElementById('navbarMenu');
     if (navToggle && navMenu) {
-      navToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', !isExpanded);
-        navMenu.classList.toggle('show');
-      });
-    }
+      var setNav = function (open) {
+        navToggle.setAttribute('aria-expanded', String(open));
+        navMenu.setAttribute('data-open', String(open));
+      };
 
-    // FAQ Expand / Collapse All Engine
-    var toggleBtn = document.getElementById('toggleAllBtn');
-    var toggleText = document.getElementById('toggleAllText');
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        var allDetails = document.querySelectorAll('.apple-faq-list-exact details, .apple-faq-accordion details, details.apple-faq-item');
-        if (!allDetails.length) return;
-        var allOpen = Array.from(allDetails).every(function(d) { return d.open; });
-        var nextState = !allOpen;
-        allDetails.forEach(function(d) { d.open = nextState; });
-        if (toggleText) toggleText.textContent = nextState ? 'Collapse all' : 'Expand all';
-        toggleBtn.setAttribute('aria-expanded', String(nextState));
-        var icon = toggleBtn.querySelector('svg');
-        if (icon) {
-          icon.style.transform = nextState ? 'rotate(180deg)' : 'rotate(0deg)';
-          icon.style.transition = 'transform 0.25s ease';
+      setNav(false);
+
+      navToggle.addEventListener('click', function () {
+        setNav(navToggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      /* Escape closes the menu and returns focus to the control that
+         opened it, so keyboard users are never stranded inside it. */
+      navMenu.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          setNav(false);
+          navToggle.focus();
         }
       });
 
-      document.querySelectorAll('.apple-faq-list-exact details, .apple-faq-accordion details, details.apple-faq-item').forEach(function(detail) {
-        detail.addEventListener('toggle', function() {
-          var allDetails = document.querySelectorAll('.apple-faq-list-exact details, .apple-faq-accordion details, details.apple-faq-item');
-          var allOpen = Array.from(allDetails).every(function(d) { return d.open; });
-          if (toggleText) toggleText.textContent = allOpen ? 'Collapse all' : 'Expand all';
-          toggleBtn.setAttribute('aria-expanded', String(allOpen));
-          var icon = toggleBtn.querySelector('svg');
-          if (icon) {
-            icon.style.transform = allOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+      document.addEventListener('click', function (event) {
+        if (
+          navToggle.getAttribute('aria-expanded') === 'true' &&
+          !navMenu.contains(event.target) &&
+          !navToggle.contains(event.target)
+        ) {
+          setNav(false);
+        }
+      });
+
+      /* Re-opening the desktop layout must not leave the menu in the
+         collapsed state the small-screen rules depend on. */
+      var wide = window.matchMedia('(min-width: 48rem)');
+      var syncWidth = function (mq) {
+        if (mq.matches) {
+          setNav(false);
+        }
+      };
+      if (typeof wide.addEventListener === 'function') {
+        wide.addEventListener('change', syncWidth);
+      }
+    }
+
+    /* ---------------- search trigger, into the header ---------------- */
+
+    /* The generator appends its search trigger near the end of the body and
+       fixes it to the viewport, so it renders at the top right of the header
+       while sitting last in the document. Visually it is the fifth thing on the
+       page; by keyboard it was tab stop 374 of 400, which means reaching the
+       search on a 2,861-page site required tabbing through an entire page
+       first. WCAG 2.4.3 asks focus order to preserve meaning and operability,
+       and no automated checker can see this one — focus order is not decidable
+       from markup alone, so axe passes it.
+
+       Moving the node keeps its listeners, and the generator's script binds by
+       id afterwards, so it finds the trigger wherever it now lives. Nothing
+       moves on screen either: the trigger is out of flow in both places. */
+    var searchTrigger = document.getElementById('ssg-search-btn');
+    var themeToggleForSearch = document.getElementById('themeToggle');
+
+    if (searchTrigger && themeToggleForSearch && themeToggleForSearch.parentNode) {
+      themeToggleForSearch.parentNode.insertBefore(
+        searchTrigger, themeToggleForSearch.nextSibling);
+    }
+
+    /* ---------------- search shortcut hint ---------------- */
+
+    /* The generator ships the trigger labelled `<kbd>K</kbd>`, and its own
+       handler opens the overlay on Cmd+K or Ctrl+K. Pressing K on its own does
+       nothing, so the badge names a shortcut that does not exist — and the badge
+       is the only place the shortcut is advertised.
+
+       Corrected here rather than in the markup because there is no one right
+       static answer: Cmd on a Mac, Ctrl everywhere else. It also cannot be got
+       wrong in a way that matters, because a visitor without scripting has no
+       search overlay for the shortcut to open.
+
+       The trigger is positioned by the generator's stylesheet, which fixes it to
+       the viewport, so the badge growing a character moves nothing on the page. */
+    var shortcutHint = document.querySelector('#ssg-search-btn kbd');
+
+    if (shortcutHint) {
+      var platform = (navigator.userAgentData && navigator.userAgentData.platform) ||
+        navigator.platform || '';
+      var apple = /mac|iphone|ipad|ipod/i.test(platform);
+      shortcutHint.textContent = apple ? '\u2318K' : 'Ctrl K';
+    }
+
+    /* ---------------- theme toggle ---------------- */
+    var themeToggle = document.getElementById('themeToggle');
+
+    if (themeToggle) {
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+      var currentTheme = function () {
+        return (
+          root.getAttribute('data-theme') ||
+          (prefersDark.matches ? 'dark' : 'light')
+        );
+      };
+
+      /* The visible icon is chosen by CSS from [data-theme]; the only
+         state this needs to publish is `aria-pressed`. */
+      var syncPressed = function () {
+        themeToggle.setAttribute(
+          'aria-pressed',
+          String(currentTheme() === 'dark')
+        );
+      };
+
+      syncPressed();
+
+      themeToggle.addEventListener('click', function () {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try {
+          localStorage.setItem('theme', next);
+        } catch (e) {
+          /* Storage unavailable: the choice applies for this page only. */
+        }
+        syncPressed();
+      });
+
+      /* Track the OS while the visitor has not made an explicit choice. */
+      if (typeof prefersDark.addEventListener === 'function') {
+        prefersDark.addEventListener('change', function () {
+          if (!root.hasAttribute('data-theme')) {
+            syncPressed();
           }
         });
-      });
-    }
-
-    // Search Engine Modal
-    var searchIndex = null;
-    var isFetching = false;
-    var modal = document.getElementById('searchModal');
-    var input = document.getElementById('searchInput');
-    var results = document.getElementById('searchResults');
-    var closeBtn = document.getElementById('searchClose');
-
-    function escapeHtml(str) {
-      if (!str) return '';
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
-
-    async function loadSearch() {
-      if (searchIndex || isFetching) return;
-      isFetching = true;
-      try {
-        var res = await fetch('/search-index.json');
-        if (res.ok) {
-          var data = await res.json();
-          searchIndex = Array.isArray(data) ? data : (data.entries || []);
-        } else {
-          searchIndex = [];
-        }
-      } catch (e) {
-        searchIndex = [];
-      } finally {
-        isFetching = false;
       }
     }
-
-    function openSearch() {
-      if (!modal) return;
-      modal.classList.add('active');
-      loadSearch();
-      setTimeout(function() {
-        if (input) {
-          input.focus();
-          if (input.value.trim()) {
-            input.dispatchEvent(new Event('input'));
-          }
-        }
-      }, 50);
-    }
-
-    function closeSearch() {
-      if (!modal) return;
-      modal.classList.remove('active');
-      if (input) input.value = '';
-      if (results) results.innerHTML = '<div class="search-empty">Type to search...</div>';
-    }
-
-    var triggers = document.querySelectorAll('#searchTrigger, #searchTriggerMobile, .search-trigger');
-    triggers.forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        openSearch();
-      });
-    });
-
-    if (closeBtn) closeBtn.addEventListener('click', closeSearch);
-    if (modal) {
-      var backdrop = modal.querySelector('.search-backdrop');
-      if (backdrop) backdrop.addEventListener('click', closeSearch);
-    }
-
-    window.addEventListener('keydown', function(e) {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        openSearch();
-      } else if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-        closeSearch();
-      }
-    });
-
-    if (input) {
-      input.addEventListener('input', function() {
-        var query = input.value.trim().toLowerCase();
-        if (!query) {
-          results.innerHTML = '<div class="search-empty">Type to search...</div>';
-          return;
-        }
-        if (!searchIndex) {
-          results.innerHTML = '<div class="search-empty">Loading search index...</div>';
-          loadSearch().then(function() {
-            input.dispatchEvent(new Event('input'));
-          });
-          return;
-        }
-        if (searchIndex.length === 0) {
-          results.innerHTML = '<div class="search-empty">No results found for "' + escapeHtml(query) + '"</div>';
-          return;
-        }
-        var tokens = query.split(/\s+/).filter(Boolean);
-        var matches = searchIndex.filter(function(item) {
-          var t = (item.title || '').toLowerCase();
-          var d = (item.description || '').toLowerCase();
-          var c = (item.content || '').toLowerCase();
-          var u = (item.url || '').toLowerCase();
-          var target = t + ' ' + d + ' ' + c + ' ' + u;
-          return tokens.every(function(tok) { return target.includes(tok); });
-        }).slice(0, 10);
-
-        if (matches.length === 0) {
-          results.innerHTML = '<div class="search-empty">No results found for "' + escapeHtml(query) + '"</div>';
-          return;
-        }
-        results.innerHTML = matches.map(function(item) {
-          return '<a class="search-item" href="' + item.url + '">' +
-            '<div class="search-item-title">' + escapeHtml(item.title) + '</div>' +
-            '<div class="search-item-desc">' + escapeHtml((item.description || item.content || '').replace(/<[^>]+>/g, '').slice(0, 140)) + '...</div>' +
-          '</a>';
-        }).join('');
-      });
-    }
-
-    // 5. Photo Lightbox Modal Engine with Left/Right Arrows & Keyboard Nav
-    var galleryPhotos = [];
-    var currentPhotoIndex = -1;
-
-    function refreshGalleryPhotos() {
-      var imgElements = document.querySelectorAll('.photo-gallery-grid img, .photo-grid img, .gallery-grid img, .photo-card img, .gallery-card img');
-      galleryPhotos = [];
-      imgElements.forEach(function(img) {
-        if (img.src && !img.closest('.navbar') && !img.closest('footer') && !img.classList.contains('hero-banner-img') && !img.classList.contains('navbar-brand')) {
-          galleryPhotos.push({
-            src: img.src,
-            alt: img.alt || 'Photograph'
-          });
-        }
-      });
-    }
-
-    var lightboxModal = document.getElementById('photoLightboxModal');
-    if (!lightboxModal) {
-      lightboxModal = document.createElement('div');
-      lightboxModal.id = 'photoLightboxModal';
-      lightboxModal.className = 'photo-lightbox-modal';
-      lightboxModal.setAttribute('role', 'dialog');
-      lightboxModal.setAttribute('aria-modal', 'true');
-      lightboxModal.setAttribute('aria-label', 'Photo Preview');
-      lightboxModal.innerHTML = '<div class="photo-lightbox-backdrop"></div>' +
-        '<div class="photo-lightbox-content">' +
-        '  <div class="photo-lightbox-media-wrap">' +
-        '    <button type="button" class="photo-lightbox-close" aria-label="Close photo preview">✕</button>' +
-        '    <button type="button" class="photo-lightbox-nav photo-lightbox-prev" aria-label="Previous photograph">' +
-        '      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>' +
-        '    </button>' +
-        '    <button type="button" class="photo-lightbox-nav photo-lightbox-next" aria-label="Next photograph">' +
-        '      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>' +
-        '    </button>' +
-        '    <img src="" alt="" class="photo-lightbox-img" id="lightboxImg" />' +
-        '  </div>' +
-        '  <div class="photo-lightbox-footer">' +
-        '    <div class="photo-lightbox-caption" id="lightboxCaption"></div>' +
-        '    <div class="photo-lightbox-counter" id="lightboxCounter"></div>' +
-        '  </div>' +
-        '</div>';
-      document.body.appendChild(lightboxModal);
-    }
-
-    var lightboxImg = document.getElementById('lightboxImg');
-    var lightboxCaption = document.getElementById('lightboxCaption');
-    var lightboxCounter = document.getElementById('lightboxCounter');
-    var lightboxClose = lightboxModal.querySelector('.photo-lightbox-close');
-    var lightboxPrev = lightboxModal.querySelector('.photo-lightbox-prev');
-    var lightboxNext = lightboxModal.querySelector('.photo-lightbox-next');
-    var lightboxBackdrop = lightboxModal.querySelector('.photo-lightbox-backdrop');
-
-    function showPhotoAtIndex(idx) {
-      if (!galleryPhotos.length) return;
-      if (idx < 0) idx = galleryPhotos.length - 1;
-      if (idx >= galleryPhotos.length) idx = 0;
-      currentPhotoIndex = idx;
-      var item = galleryPhotos[idx];
-      if (lightboxImg) {
-        lightboxImg.src = item.src;
-        lightboxImg.alt = item.alt;
-      }
-      if (lightboxCaption) {
-        lightboxCaption.textContent = item.alt;
-      }
-      if (lightboxCounter) {
-        lightboxCounter.textContent = (idx + 1) + ' / ' + galleryPhotos.length;
-      }
-    }
-
-    function openLightbox(src, alt) {
-      refreshGalleryPhotos();
-      var foundIdx = galleryPhotos.findIndex(function(p) { return p.src === src; });
-      if (foundIdx === -1) {
-        galleryPhotos.push({ src: src, alt: alt || 'Photograph' });
-        foundIdx = galleryPhotos.length - 1;
-      }
-      showPhotoAtIndex(foundIdx);
-      lightboxModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      if (!lightboxModal) return;
-      lightboxModal.classList.remove('active');
-      if (lightboxImg) lightboxImg.src = '';
-      document.body.style.overflow = '';
-    }
-
-    function prevPhoto(e) {
-      if (e) e.stopPropagation();
-      showPhotoAtIndex(currentPhotoIndex - 1);
-    }
-
-    function nextPhoto(e) {
-      if (e) e.stopPropagation();
-      showPhotoAtIndex(currentPhotoIndex + 1);
-    }
-
-    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-    if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
-    if (lightboxPrev) lightboxPrev.addEventListener('click', prevPhoto);
-    if (lightboxNext) lightboxNext.addEventListener('click', nextPhoto);
-
-    document.addEventListener('keydown', function(e) {
-      if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
-      if (e.key === 'Escape') {
-        closeLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        prevPhoto();
-      } else if (e.key === 'ArrowRight') {
-        nextPhoto();
-      }
-    });
-
-    document.addEventListener('click', function(e) {
-      var photoTarget = e.target.closest('.photo-card, .photo-img-wrapper, .gallery-card, .gallery-img-wrapper, .photo-gallery-item, figure');
-      if (photoTarget) {
-        var img = photoTarget.querySelector('img');
-        if (img && img.src && !img.classList.contains('hero-banner-img')) {
-          e.preventDefault();
-          openLightbox(img.src, img.alt);
-        }
-      }
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initApp);
-  } else {
-    initApp();
-  }
+  });
 })();

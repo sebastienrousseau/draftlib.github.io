@@ -12,11 +12,14 @@ permalink: "https://draftlib.com/getting-started/index.html"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
 banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
+eyebrow: "draft"
+headline: "Getting Started with Draft Lib: Installation & Quickstart"
+lead: "How to install Draft Lib via Cargo and begin compiling structured documents."
 ---
 
-# Getting Started with Draft Lib
+## Getting Started with Draft Lib
 
-## 1. Installation
+### 1. Installation
 
 Add `draftlib` to your `Cargo.toml`:
 
@@ -27,7 +30,7 @@ draftlib = "0.0.1"
 
 ---
 
-## 2. Basic Example
+### 2. Basic Example
 
 ```rust
 use draftlib::{Document, Result};
@@ -39,7 +42,7 @@ title: "Master Services Agreement"
 version: "1.0.0"
 ---
 
-# 1. Scope of Services
+## 1. Scope of Services
 The service provider agrees to perform the services detailed in Schedule A.
     "#;
 

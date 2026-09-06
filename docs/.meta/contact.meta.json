@@ -4,14 +4,17 @@
   "banner_alt": "Draft Lib — Fast Document Processing & Drafting Engine in Rust",
   "date": "2026-09-01",
   "description": "Get in touch regarding Draft Lib integration and support.",
+  "eyebrow": "draft",
+  "headline": "Contact & Enterprise Inquiries",
   "keywords": "contact draftlib",
   "language": "en-GB",
-  "layout": "contact",
+  "layout": "page",
+  "lead": "Get in touch regarding Draft Lib integration and support.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "Draft Lib",
   "permalink": "https://draftlib.com/contact/index.html",
   "reading_time": 1,
   "short_name": "draftlib",
   "title": "Contact & Enterprise Inquiries",
-  "word_count": 76
+  "word_count": 22
 }

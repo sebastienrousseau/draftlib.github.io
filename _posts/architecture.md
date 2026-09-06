@@ -12,9 +12,12 @@ permalink: "https://draftlib.com/architecture/index.html"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"
 banner: "https://cloudcdn.pro/stocks/images/quantum-computer-room-1200.webp"
 banner_alt: "Draft Lib — Fast Document Processing & Drafting Engine in Rust"
+eyebrow: "draft"
+headline: "Internal Architecture: Lexer, AST Pipeline & Exporters"
+lead: "Architectural overview of Draft Lib's token streaming, AST reconciliation, and memory model."
 ---
 
-# Internal Architecture & Design
+## Internal Architecture & Design
 
 ```
 +--------------------+     +---------------------+     +--------------------+
