@@ -310,9 +310,11 @@ never touch the network.</p>
 matches the ledger it was written from. Editing an unsupported sentence makes
 it fail.</p>
 <h3>What inputs are supported?</h3>
-<p>PDFs with a text layer, read by <code>pdftotext</code> (or <code>--reader docling</code> when tables
-and structure matter). Scanned PDFs with no text layer, table values and
-LaTeX-heavy math are current limits — see the <a href="/roadmap/">roadmap</a>.</p>
+<p>PDF, Markdown and plain text work everywhere. <code>.docx</code> works too — built in on
+macOS via <code>textutil</code>, and on any platform with <code>--reader docling</code>. PDFs are read
+by <code>pdftotext</code> by default, or by <code>--reader docling</code> when tables and structure
+matter. Scanned PDFs with no text layer, table values and LaTeX-heavy math are
+current limits — see the <a href="/roadmap/">roadmap</a>.</p>
 <h3>Does it work with non-English papers?</h3>
 <p>The verification gate is largely language-agnostic: UTF-8 handling,
 normalisation and verbatim quote matching do not assume English. The

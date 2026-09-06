@@ -286,9 +286,11 @@ fails. The plan is to detect this and fall back to OCR, surfacing OCR-derived
 claims as a distinct, flagged class rather than treating them as equal to
 verbatim ones, so the trust model is preserved rather than quietly diluted.</p>
 <h3>More input and output formats</h3>
-<p>HTML and <code>.docx</code> reduce cleanly to text and are natural inputs once the reader
-seam accepts them. For output beyond the current Markdown set, an HTML export
-is the likely next step; <code>.docx</code> is better left to a documented pandoc recipe.</p>
+<p><code>.docx</code> input already works today — built in on macOS via <code>textutil</code>, and on
+any platform with <code>--reader docling</code>. The remaining input gap is HTML, which
+reduces cleanly to text once the reader seam accepts it. For output beyond the
+current Markdown set, an HTML export is the likely next step; a <code>.docx</code> export
+is better left to a documented pandoc recipe.</p>
 <h3>Non-English papers</h3>
 <p>The verification gate is largely language-agnostic — UTF-8, normalisation and
 verbatim matching do not assume English. The English-biased parts are the

@@ -61,9 +61,11 @@ it fail.
 
 ### What inputs are supported?
 
-PDFs with a text layer, read by `pdftotext` (or `--reader docling` when tables
-and structure matter). Scanned PDFs with no text layer, table values and
-LaTeX-heavy math are current limits — see the [roadmap](/roadmap/).
+PDF, Markdown and plain text work everywhere. `.docx` works too — built in on
+macOS via `textutil`, and on any platform with `--reader docling`. PDFs are read
+by `pdftotext` by default, or by `--reader docling` when tables and structure
+matter. Scanned PDFs with no text layer, table values and LaTeX-heavy math are
+current limits — see the [roadmap](/roadmap/).
 
 ### Does it work with non-English papers?
 

@@ -59,6 +59,9 @@ Online, draft drives whichever agent CLI you are already logged into. Offline,
 it falls back to a local Ollama model. Each source becomes its own dated
 article set.
 
+**Supported inputs:** PDF, Markdown and plain text on every platform; `.docx`
+built in on macOS (`textutil`) or anywhere with `--reader docling`.
+
 ## Command-line reference
 
 ```text

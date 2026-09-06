@@ -47,9 +47,11 @@ verbatim ones, so the trust model is preserved rather than quietly diluted.
 
 ### More input and output formats
 
-HTML and `.docx` reduce cleanly to text and are natural inputs once the reader
-seam accepts them. For output beyond the current Markdown set, an HTML export
-is the likely next step; `.docx` is better left to a documented pandoc recipe.
+`.docx` input already works today — built in on macOS via `textutil`, and on
+any platform with `--reader docling`. The remaining input gap is HTML, which
+reduces cleanly to text once the reader seam accepts it. For output beyond the
+current Markdown set, an HTML export is the likely next step; a `.docx` export
+is better left to a documented pandoc recipe.
 
 ### Non-English papers
 
