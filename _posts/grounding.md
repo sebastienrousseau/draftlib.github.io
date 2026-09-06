@@ -67,15 +67,34 @@ order and returns the first failure as its reason:
 Anything else is dropped and counted. A thin source visibly yields a thin
 ledger rather than a padded one.
 
+## Rendering tolerance, not word tolerance
+
+Quote matching normalises both sides before comparing, so the same words
+verify however the model and the PDF extractor rendered the characters
+between them: lower-cased, whitespace collapsed, smart quotes folded, a
+literal `\n` a model wrote for a line break turned back into a space, a
+hyphen the extractor dropped from a word restored, a ligature the PDF
+rendered as one glyph split, and non-breaking or zero-width spaces removed.
+That tolerance is necessary — PDF text extraction produces all of it
+constantly, and byte-exact matching would drop true claims from every real
+paper. Measured over 3,217 extraction blocks from real papers, it cut the
+rate of dropped claims from 29.6% to 8.5%.
+
+A quote that changes, adds, drops or reorders a *word* still fails. The
+tolerance is over rendering, never over meaning.
+
+## Repairing a cut quote
+
+A model sometimes copies a supporting span but stops mid-clause, or copies one
+too short to cite. Rather than drop it, `draft` extends the quote to its
+sentence boundary using the **source's own words** — never the model's — so
+the repaired quote is verbatim by construction and the same gate judges it exactly as it would any other. The extension stops at the first sentence end,
+so a fabricated number living in the next sentence can never be pulled in. A
+quote the source does not contain word for word is left alone and dropped.
+
 ## Why checks 3 and 4 exist
 
-Quote matching normalises both sides — lowercased, whitespace collapsed, smart
-quotes folded — so a sentence wrapped across lines or split by a column gutter
-still verifies. That tolerance is necessary: PDF text extraction produces both
-constantly, and byte-exact matching would drop true claims from every real
-paper.
-
-But normalisation is lossy in one dangerous way. `strings.ToLower` maps every
+The same normalisation is lossy in one dangerous way. `strings.ToLower` maps every
 invalid UTF-8 byte to the replacement character, so two *different* invalid
 byte sequences normalise to the same text — and a fabricated quote could match
 a source it does not occur in. A fuzzer found it. Requiring the quote to be

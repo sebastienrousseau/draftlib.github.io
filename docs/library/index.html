@@ -187,6 +187,10 @@ internal.&lt;/p&gt;
 <td class="text-left">Grounded claim, writing and review prompts</td>
 </tr>
 <tr>
+<td class="text-left">&lt;code&gt;provenance&lt;/code&gt;</td>
+<td class="text-left">Per-sentence claim attribution and the C2PA manifest a reader can check</td>
+</tr>
+<tr>
 <td class="text-left">&lt;code&gt;rules&lt;/code&gt;</td>
 <td class="text-left">Shared editorial constants</td>
 </tr>
@@ -207,7 +211,10 @@ in-process implementations of it, which is why none of them need a network:&lt;/
 }
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Return &lt;code&gt;Result{Truncated: true}&lt;/code&gt; and the pipeline continues generation rather
-than saving a mid-sentence article.&lt;/p&gt;
+than saving a mid-sentence article; &lt;code&gt;Result&lt;/code&gt; also carries a &lt;code&gt;Usage&lt;/code&gt; the
+pipeline sums into the per-job token and dollar cost. A backend can drive a
+one-shot CLI, a long-lived Agent Client Protocol agent, or the local model,
+all behind the same two methods.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;API stability.&lt;/strong&gt; While the module is &lt;code&gt;0.0.x&lt;/code&gt;, the exported Go API may
 change between releases without a deprecation cycle. Pin an exact version if

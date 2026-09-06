@@ -61,6 +61,7 @@ go get github.com/sebastienrousseau/draft@latest
 | `frontmatter` | Metadata, YAML generation, article-set regeneration |
 | `pipeline` | Five-phase orchestration, retries, continuation, events |
 | `prompt` | Grounded claim, writing and review prompts |
+| `provenance` | Per-sentence claim attribution and the C2PA manifest a reader can check |
 | `rules` | Shared editorial constants |
 | `validate` | House-rule and faithfulness checks |
 
@@ -80,7 +81,10 @@ type Engine interface {
 ```
 
 Return `Result{Truncated: true}` and the pipeline continues generation rather
-than saving a mid-sentence article.
+than saving a mid-sentence article; `Result` also carries a `Usage` the
+pipeline sums into the per-job token and dollar cost. A backend can drive a
+one-shot CLI, a long-lived Agent Client Protocol agent, or the local model,
+all behind the same two methods.
 
 > **API stability.** While the module is `0.0.x`, the exported Go API may
 > change between releases without a deprecation cycle. Pin an exact version if
