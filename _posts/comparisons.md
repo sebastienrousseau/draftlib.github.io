@@ -57,6 +57,30 @@ If you want to *interrogate* a corpus, reach for those. If you want to
 *publish* a grounded article from a paper and be able to prove it, that is
 draft.
 
+## Capability matrix
+
+A criteria-based summary, as of September 2026. The rows are the dimensions that
+actually differ; the columns are categories, with example products, rather than
+a claim about any one product's current feature set. These tools evolve quickly,
+so check a product's own documentation before relying on a cell.
+
+| Capability | draft | Retrieval / RAG pipeline | General chat assistant | Research-summary platform (NotebookLM, Elicit, SciSpace, …) |
+| --- | --- | --- | --- | --- |
+| Fidelity check | Verbatim quote + numeric gate, before writing | Optional, after generation | None | Varies; usually citation links, not a verbatim gate |
+| Per-sentence provenance | Yes, as a file | Rarely | No | Citations/links, not sentence-level attribution files |
+| Signed content credentials (C2PA) | Yes, by default | No | No | Not typically |
+| Independent verification | `draft --verify` recomputes digests | No | No | No |
+| Runs fully offline | Yes (local model) | Depends on stack | No | No (hosted) |
+| No account / no API key | Yes | Depends | Account required | Account required |
+| Primary output | A publication-ready article | Answers/passages | Chat answer | Summaries, extractions, Q&A |
+| Best at | Turning one paper into a grounded, provable article | Answering over a private corpus | Fast, flexible drafting | Exploring and reviewing a literature |
+
+The distinction that matters: the research-summary platforms are literature
+*review* and exploration tools, and they are good at it. draft is a paper-to-
+*publication* pipeline. If your job is to survey a field or interrogate a
+library, one of those fits better. If your job is to publish a grounded article
+from a specific paper and be able to prove each sentence, that is draft.
+
 ## The honest limits
 
 draft is not magic, and the [roadmap](/roadmap/) lists what it does not yet do:

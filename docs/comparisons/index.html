@@ -320,6 +320,85 @@ no account and no API key, and offline if you want.</p>
 <p>If you want to <em>interrogate</em> a corpus, reach for those. If you want to
 <em>publish</em> a grounded article from a paper and be able to prove it, that is
 draft.</p>
+<h2>Capability matrix</h2>
+<p>A criteria-based summary, as of September 2026. The rows are the dimensions that
+actually differ; the columns are categories, with example products, rather than
+a claim about any one product's current feature set. These tools evolve quickly,
+so check a product's own documentation before relying on a cell.</p>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table, scrollable horizontally" tabindex="0"><table class="table">
+<thead>
+<tr>
+<th scope="col">Capability</th>
+<th scope="col">draft</th>
+<th scope="col">Retrieval / RAG pipeline</th>
+<th scope="col">General chat assistant</th>
+<th scope="col">Research-summary platform (NotebookLM, Elicit, SciSpace, …)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">Fidelity check</td>
+<td class="text-left">Verbatim quote + numeric gate, before writing</td>
+<td class="text-left">Optional, after generation</td>
+<td class="text-left">None</td>
+<td class="text-left">Varies; usually citation links, not a verbatim gate</td>
+</tr>
+<tr>
+<td class="text-left">Per-sentence provenance</td>
+<td class="text-left">Yes, as a file</td>
+<td class="text-left">Rarely</td>
+<td class="text-left">No</td>
+<td class="text-left">Citations/links, not sentence-level attribution files</td>
+</tr>
+<tr>
+<td class="text-left">Signed content credentials (C2PA)</td>
+<td class="text-left">Yes, by default</td>
+<td class="text-left">No</td>
+<td class="text-left">No</td>
+<td class="text-left">Not typically</td>
+</tr>
+<tr>
+<td class="text-left">Independent verification</td>
+<td class="text-left"><code>draft --verify</code> recomputes digests</td>
+<td class="text-left">No</td>
+<td class="text-left">No</td>
+<td class="text-left">No</td>
+</tr>
+<tr>
+<td class="text-left">Runs fully offline</td>
+<td class="text-left">Yes (local model)</td>
+<td class="text-left">Depends on stack</td>
+<td class="text-left">No</td>
+<td class="text-left">No (hosted)</td>
+</tr>
+<tr>
+<td class="text-left">No account / no API key</td>
+<td class="text-left">Yes</td>
+<td class="text-left">Depends</td>
+<td class="text-left">Account required</td>
+<td class="text-left">Account required</td>
+</tr>
+<tr>
+<td class="text-left">Primary output</td>
+<td class="text-left">A publication-ready article</td>
+<td class="text-left">Answers/passages</td>
+<td class="text-left">Chat answer</td>
+<td class="text-left">Summaries, extractions, Q&amp;A</td>
+</tr>
+<tr>
+<td class="text-left">Best at</td>
+<td class="text-left">Turning one paper into a grounded, provable article</td>
+<td class="text-left">Answering over a private corpus</td>
+<td class="text-left">Fast, flexible drafting</td>
+<td class="text-left">Exploring and reviewing a literature</td>
+</tr>
+</tbody>
+</table></div></div>
+<p>The distinction that matters: the research-summary platforms are literature
+<em>review</em> and exploration tools, and they are good at it. draft is a paper-to-
+<em>publication</em> pipeline. If your job is to survey a field or interrogate a
+library, one of those fits better. If your job is to publish a grounded article
+from a specific paper and be able to prove each sentence, that is draft.</p>
 <h2>The honest limits</h2>
 <p>draft is not magic, and the <a href="/roadmap/">roadmap</a> lists what it does not yet do:
 table and figure values, LaTeX-heavy math, and scanned PDFs are current gaps.
