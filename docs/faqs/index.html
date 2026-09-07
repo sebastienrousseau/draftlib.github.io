@@ -280,48 +280,48 @@
 
 <article class="section">
   <div class="container prose stack">
-    <div lang="en"><h3>What does &quot;grounded by construction&quot; mean?</h3>
+    <div lang="en"><h2>What does &quot;grounded by construction&quot; mean?</h2>
 <p>Before a word is written, draft mines your sources for claims. A claim survives
 only if its quote appears verbatim in the source and every number in it appears
 in that quote. The writer is given that verified ledger and nothing else, so a
 sentence with no backing claim cannot be written. See
 <a href="/grounding/">how grounding works</a>.</p>
-<h3>How is this different from RAG, or from asking an LLM to summarise a paper?</h3>
+<h2>How is this different from RAG, or from asking an LLM to summarise a paper?</h2>
 <p>Retrieval hands a model source text and hopes it stays faithful. draft verifies
 each claim <em>before</em> writing and drops anything unverifiable, then attributes
 every sentence to the claim that backs it. The check is structural, not a prompt.</p>
-<h3>Which agent CLIs does it use, and does it need an API key?</h3>
+<h2>Which agent CLIs does it use, and does it need an API key?</h2>
 <p>No API key. In <code>auto</code> mode draft drives whichever supported agent CLI you are
 already logged into — Claude, Copilot, Codex, Cursor, Grok, Gemini and more —
 through that tool's own session. Offline, it uses a local Ollama model.</p>
-<h3>Does my paper leave my machine?</h3>
+<h2>Does my paper leave my machine?</h2>
 <p>It depends on the engine. With a local Ollama model, nothing leaves your
 machine. With a cloud agent CLI, the source excerpts draft needs to extract and
 write are sent through that tool, exactly as if you had pasted them into it —
 so choose the engine that matches your privacy needs. draft itself has no
 servers and sends no telemetry.</p>
-<h3>What runs fully offline?</h3>
+<h2>What runs fully offline?</h2>
 <p><code>--engine ollama</code> keeps the entire pipeline local. Reading, claim
 verification, house-style checks and provenance are all deterministic Go and
 never touch the network.</p>
-<h3>What is the C2PA manifest, and what does <code>--verify</code> check?</h3>
+<h2>What is the C2PA manifest, and what does <code>--verify</code> check?</h2>
 <p>Every article ships a per-sentence attribution file and a C2PA manifest.
 <code>draft --verify</code> recomputes the digests and reports whether the article still
 matches the ledger it was written from. Editing an unsupported sentence makes
 it fail.</p>
-<h3>What inputs are supported?</h3>
+<h2>What inputs are supported?</h2>
 <p>PDF, Markdown and plain text work everywhere. <code>.docx</code> works too — built in on
 macOS via <code>textutil</code>, and on any platform with <code>--reader docling</code>. PDFs are read
 by <code>pdftotext</code> by default, or by <code>--reader docling</code> when tables and structure
 matter. Scanned PDFs with no text layer, table values and LaTeX-heavy math are
 current limits — see the <a href="/roadmap/">roadmap</a>.</p>
-<h3>Does it work with non-English papers?</h3>
+<h2>Does it work with non-English papers?</h2>
 <p>The verification gate is largely language-agnostic: UTF-8 handling,
 normalisation and verbatim quote matching do not assume English. The
 English-biased parts are the house-style rules and sentence-boundary repair,
 which you can adjust with <code>--style</code>. Full locale-configurable style is on the
 <a href="/roadmap/">roadmap</a>.</p>
-<h3>Can I use the output commercially?</h3>
+<h2>Can I use the output commercially?</h2>
 <p>Yes. draft is free and open source under the MIT or Apache-2.0 licence. No
 account, no telemetry.</p>
 </div>

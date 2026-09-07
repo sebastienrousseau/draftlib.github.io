@@ -18,6 +18,6 @@ headline: "Thank you"
 lead: "Your message has been received."
 ---
 
-### Thank you
+## Thank you
 
 Your message has been received. In the meantime, the fastest way to get started is the [grounding guide](/grounding/) or the [source on GitHub](https://github.com/sebastienrousseau/draft).

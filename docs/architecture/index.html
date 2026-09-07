@@ -267,7 +267,7 @@
 <article class="section">
   <div class="container prose stack">
     <div lang="en"><h2>The pipeline</h2>
-<pre class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">PDF ──▶ Read &amp; section ──▶ Extract &amp; verify ──▶ Write ──▶ Attribute &amp; sign
+<pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">PDF ──▶ Read &amp; section ──▶ Extract &amp; verify ──▶ Write ──▶ Attribute &amp; sign
         (pdftotext /        (the claim gate)     (engine)   (provenance +
          docling)                                            C2PA manifest)
 </span></code></pre>
@@ -291,7 +291,7 @@ C2PA manifest a reader can check.</li>
 <p>Everything model-facing sits behind one small interface, so the same pipeline
 drives a one-shot CLI, a long-lived Agent Client Protocol agent, or a local
 model, and the whole test suite runs without a network:</p>
-<pre class="highlight language-go"><code class="language-go" data-lang="go"><span class="source go"><span class="meta type go"><span class="storage type go">type</span> <span class="entity name type go">Engine</span> <span class="storage type go">interface</span> {</span>
+<pre tabindex="0" class="highlight language-go"><code class="language-go" data-lang="go"><span class="source go"><span class="meta type go"><span class="storage type go">type</span> <span class="entity name type go">Engine</span> <span class="storage type go">interface</span> {</span>
 	<span class="meta function-call go"><span class="variable function go">Name</span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(</span></span></span></span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group end go">)</span></span></span> <span class="storage type go">string</span>
 	<span class="meta function-call go"><span class="variable function go">Generate</span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(</span></span></span></span><span class="meta function-call go"><span class="meta group go">ctx context<span class="punctuation accessor go">.</span><span class="variable other member go">Context</span><span class="punctuation separator go">,</span> req Request</span><span class="meta group go"><span class="punctuation definition group end go">)</span></span></span> <span class="meta group go"><span class="punctuation definition group begin go">(</span>Result<span class="punctuation separator go">,</span> <span class="storage type go">error</span><span class="punctuation definition group end go">)</span></span>
 }

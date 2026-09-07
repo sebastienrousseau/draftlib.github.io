@@ -18,7 +18,7 @@ headline: "Contact"
 lead: "Questions, issues and contributions — here is how to reach the project."
 ---
 
-### Contact
+## Contact
 
 draft is an open-source project by [Sebastien Rousseau](https://github.com/sebastienrousseau).
 

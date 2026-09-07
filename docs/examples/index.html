@@ -281,7 +281,7 @@ verification drop rate from 29.6% to 8.5% across 3,217 extraction blocks.</p>
 the drop rate from 29.6% to 8.5% across 3,217 extraction blocks.</p>
 </blockquote>
 <p><strong>The attribution file records the link</strong> (<code>…-attribution.json</code>):</p>
-<pre class="highlight language-json"><code class="language-json" data-lang="json"><span class="source json"><span class="meta structure dictionary json"><span class="punctuation section dictionary begin json">{</span>
+<pre tabindex="0" class="highlight language-json"><code class="language-json" data-lang="json"><span class="source json"><span class="meta structure dictionary json"><span class="punctuation section dictionary begin json">{</span>
   <span class="meta structure dictionary key json"><span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>sentence<span class="punctuation definition string end json">&quot;</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json">:</span> <span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>Rendering-tolerant matching and source-based quote repair together lowered the drop rate from 29.6% to 8.5% across 3,217 extraction blocks.<span class="punctuation definition string end json">&quot;</span></span><span class="punctuation separator dictionary pair json">,</span></span>
   <span class="meta structure dictionary key json"><span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>claim_id<span class="punctuation definition string end json">&quot;</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json">:</span> <span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>c-0417<span class="punctuation definition string end json">&quot;</span></span><span class="punctuation separator dictionary pair json">,</span></span>
   <span class="meta structure dictionary key json"><span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>quote<span class="punctuation definition string end json">&quot;</span></span></span><span class="meta structure dictionary value json"><span class="punctuation separator dictionary key-value json">:</span> <span class="string quoted double json"><span class="punctuation definition string begin json">&quot;</span>Rendering-tolerant matching and source-based quote repair cut the verification drop rate from 29.6% to 8.5% across 3,217 extraction blocks<span class="punctuation definition string end json">&quot;</span></span><span class="punctuation separator dictionary pair json">,</span></span>
@@ -296,11 +296,11 @@ writer, and this is what faithful wording looks like. A sentence without an
 attribution entry cannot exist in the article, and <code>draft --verify</code> recomputes
 the manifest digests against exactly this.</p>
 <h2>One paper, start to finish</h2>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
 </span></code></pre>
 <p>draft reads the paper, builds a verified claim ledger, writes the article from
 it, and saves a dated set:</p>
-<pre class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">2026-07-29/
+<pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">2026-07-29/
 ├── source/2026-07-29-attention-routing-body.md
 ├── yaml/2026-07-29-attention-routing-frontmatter.yaml
 ├── final/2026-07-29-attention-routing-final.md
@@ -312,15 +312,15 @@ it, and saves a dated set:</p>
 verbatim source quote, that backs it. Nothing in the body exists without a line
 in that file.</p>
 <h2>Verify it</h2>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>verify</span> 2026-07-29/final/2026-07-29-attention-routing-final.md</span>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>verify</span> 2026-07-29/final/2026-07-29-attention-routing-final.md</span>
 </span></code></pre>
 <p>The manifest digests are recomputed and checked. Edit a sentence the ledger did
 not support and verification fails — that is the guarantee.</p>
 <h2>A batch, merged into one draft</h2>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>merge</span> a.pdf b.pdf c.pdf</span>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>merge</span> a.pdf b.pdf c.pdf</span>
 </span></code></pre>
 <h2>Offline, on a plane</h2>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>engine</span> ollama <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>my-paper.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>engine</span> ollama <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>my-paper.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
 </span></code></pre>
 <p>No network, no API key. The same gate runs; only the writer changes.</p>
 <p>A complete, verifiable set from a real run — article, attribution, C2PA

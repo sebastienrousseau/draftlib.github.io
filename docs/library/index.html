@@ -270,9 +270,9 @@
 <p><code>draft</code> is a command-line tool first. But every capability is an importable Go
 package, and only the PDF extractor, the brand assets and the TUI stay
 internal.</p>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">go</span></span><span class="meta function-call arguments shell"> get github.com/sebastienrousseau/draft@latest</span>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">go</span></span><span class="meta function-call arguments shell"> get github.com/sebastienrousseau/draft@latest</span>
 </span></code></pre>
-<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table, scrollable horizontally" tabindex="0"><table class="table">
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 1, scrollable horizontally" tabindex="0"><table class="table">
 <thead>
 <tr>
 <th scope="col">Package</th>
@@ -323,7 +323,7 @@ reference on <a href="https://pkg.go.dev/github.com/sebastienrousseau/draft">pkg
 <h3>The seam that matters</h3>
 <p><code>Engine</code> is two methods. The whole test suite and every example run against
 in-process implementations of it, which is why none of them need a network:</p>
-<pre class="highlight language-go"><code class="language-go" data-lang="go"><span class="source go"><span class="meta type go"><span class="storage type go">type</span> <span class="entity name type go">Engine</span> <span class="storage type go">interface</span> {</span>
+<pre tabindex="0" class="highlight language-go"><code class="language-go" data-lang="go"><span class="source go"><span class="meta type go"><span class="storage type go">type</span> <span class="entity name type go">Engine</span> <span class="storage type go">interface</span> {</span>
 	<span class="meta function-call go"><span class="variable function go">Name</span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(</span></span></span></span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group end go">)</span></span></span> <span class="storage type go">string</span>
 	<span class="meta function-call go"><span class="variable function go">Generate</span><span class="meta function-call go"><span class="meta group go"><span class="punctuation definition group begin go">(</span></span></span></span><span class="meta function-call go"><span class="meta group go">ctx context<span class="punctuation accessor go">.</span><span class="variable other member go">Context</span><span class="punctuation separator go">,</span> req Request</span><span class="meta group go"><span class="punctuation definition group end go">)</span></span></span> <span class="meta group go"><span class="punctuation definition group begin go">(</span>Result<span class="punctuation separator go">,</span> <span class="storage type go">error</span><span class="punctuation definition group end go">)</span></span>
 }

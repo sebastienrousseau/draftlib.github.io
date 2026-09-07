@@ -89,6 +89,19 @@ draft is the Go CLI at github.com/sebastienrousseau/draft. It is not a Rust libr
 
             content = re.sub(r'&lt;/?(section|div|details|summary|table|thead|tbody|tr|th|td|form|label|input|textarea|button|svg|circle|line|path|polyline|kbd|span class|h2|h3|h4|p class|a class|img class).*?&gt;', fix_html_tags, content, flags=re.DOTALL)
 
+            # Accessibility (WCAG 2.2, verified by axe-core in CI):
+            # 1. Make scrollable code blocks keyboard-focusable so a keyboard
+            #    user can scroll them (axe: scrollable-region-focusable).
+            content = content.replace('<pre class="highlight', '<pre tabindex="0" class="highlight')
+            # 2. ssg wraps every table in a role="region" with an identical
+            #    label; two same-named landmarks are not distinguishable
+            #    (axe: landmark-unique). Number them uniquely per page.
+            _tbl = {"n": 0}
+            def _uniq_table(m):
+                _tbl["n"] += 1
+                return f'aria-label="Table {_tbl["n"]}, scrollable horizontally"'
+            content = re.sub(r'aria-label="Table, scrollable horizontally"', _uniq_table, content)
+
             with open(html_file, "w", encoding="utf-8") as f:
                 f.write(content)
 

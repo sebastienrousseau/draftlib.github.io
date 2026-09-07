@@ -266,9 +266,9 @@
 
 <article class="section">
   <div class="container prose stack">
-    <div lang="en"><h3>Extraction is not the bottleneck</h3>
+    <div lang="en"><h2>Extraction is not the bottleneck</h2>
 <p>Measured on Apple silicon, five runs each, on a 62-page book chapter.</p>
-<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table, scrollable horizontally" tabindex="0"><table class="table">
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 1, scrollable horizontally" tabindex="0"><table class="table">
 <thead>
 <tr>
 <th scope="col">Stage</th>
@@ -300,13 +300,13 @@
 </table></div></div>
 <p>A <strong>10 MB</strong> binary. <strong>29 ms</strong> to start. <strong>12 MB</strong> peak RSS. No Python, no PyTorch, no model weights, no GPU, no network.</p>
 <p>Everything after that is model latency. On a 12-section paper against a local model, claim extraction runs to roughly ten minutes; the Go code accounts for well under a second of it. That ratio is the whole design.</p>
-<h3>Recall</h3>
+<h2>Recall</h2>
 <p>Measured over 3,217 extraction blocks from real papers, rendering-tolerant matching and source-based quote repair cut the verification drop rate from <strong>29.6% to 8.5%</strong>, with no loosening of the verbatim gate.</p>
 <p>The recall figure is a ratchet, not a one-off measurement: a deterministic
 corpus lives in the repository at <code>claims/testdata/corpus/</code>, and a test fails CI
 if verified-claim recall across it ever falls. So the number cannot silently
 regress between releases.</p>
-<h3>Environment and method</h3>
+<h2>Environment and method</h2>
 <ul>
 <li><strong>Hardware:</strong> Apple silicon (arm64).</li>
 <li><strong>Toolchain:</strong> Go 1.24.2, Poppler (<code>pdftotext</code>) 26.07.</li>
@@ -320,9 +320,9 @@ request whose benchmarks regress by more than 25%.</li>
 </ul>
 <p>The binary, start-time and RSS figures are the conservative numbers draft
 publishes; measured builds come out smaller and faster.</p>
-<h3>Reproduce it yourself</h3>
+<h2>Reproduce it yourself</h2>
 <p>From a clone of <a href="https://github.com/sebastienrousseau/draft">the repository</a>:</p>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> Deterministic microbenchmarks (allocations included), comparable with benchstat</span><span class="comment line number-sign shell">
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> Deterministic microbenchmarks (allocations included), comparable with benchstat</span><span class="comment line number-sign shell">
 </span><span class="meta function-call shell"><span class="variable function shell">go</span></span><span class="meta function-call arguments shell"> test<span class="variable parameter option shell"><span class="punctuation definition parameter shell"> -</span>run</span><span class="keyword operator assignment option shell">=</span><span class="string quoted single shell"><span class="punctuation definition string begin shell">&#39;</span>^$<span class="punctuation definition string end shell">&#39;</span></span><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> -</span>bench</span><span class="keyword operator assignment option shell">=</span>.<span class="variable parameter option shell"><span class="punctuation definition parameter shell"> -</span>benchmem</span><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> -</span>benchtime</span><span class="keyword operator assignment option shell">=</span>250ms<span class="variable parameter option shell"><span class="punctuation definition parameter shell"> -</span>count</span><span class="keyword operator assignment option shell">=</span>8 ./...</span>
 
 <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> The recall corpus — the 29.6% -&gt; 8.5% drop-rate ratchet</span><span class="comment line number-sign shell">

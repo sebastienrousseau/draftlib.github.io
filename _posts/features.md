@@ -18,11 +18,11 @@ headline: "Features"
 lead: "Grounded, keyless, provable. What draft does, and how it proves it."
 ---
 
-### Grounded by construction
+## Grounded by construction
 
 A small local model will invent a plausible number. A cloud API will charge for it and want a network. draft takes neither risk: before a word is written, your sources are mined for claims, and a claim survives only if its quote appears verbatim in the source and every number in it appears in that quote.
 
-### What it does
+## What it does
 
 - **Any agent you already have.** Ten CLIs supported — Claude, Codex, Copilot, Cursor, Grok and more — driven headlessly through their own logged-in sessions. No API key.
 - **Works offline.** When a session call fails because you are on a plane, the chain advances to a local Ollama model and stays there.
@@ -33,6 +33,6 @@ A small local model will invent a plausible number. A cloud API will charge for 
 - **Publish-ready sets.** Body, frontmatter and combined document, written side by side and regenerable without losing a curated field.
 - **Never re-pay for extraction.** A failed run leaves its verified ledger on disk; `--resume` re-verifies it and skips straight to writing.
 
-### Grounded, keyless, provable
+## Grounded, keyless, provable
 
 Point it at one paper or twenty. Each becomes its own draft, and every draft can prove itself against its sources.

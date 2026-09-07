@@ -18,7 +18,7 @@ headline: "Benchmarks"
 lead: "The numbers draft quotes, and the methodology behind them."
 ---
 
-### Extraction is not the bottleneck
+## Extraction is not the bottleneck
 
 Measured on Apple silicon, five runs each, on a 62-page book chapter.
 
@@ -34,7 +34,7 @@ A **10&nbsp;MB** binary. **29&nbsp;ms** to start. **12&nbsp;MB** peak RSS. No Py
 
 Everything after that is model latency. On a 12-section paper against a local model, claim extraction runs to roughly ten minutes; the Go code accounts for well under a second of it. That ratio is the whole design.
 
-### Recall
+## Recall
 
 Measured over 3,217 extraction blocks from real papers, rendering-tolerant matching and source-based quote repair cut the verification drop rate from **29.6% to 8.5%**, with no loosening of the verbatim gate.
 
@@ -43,7 +43,7 @@ corpus lives in the repository at `claims/testdata/corpus/`, and a test fails CI
 if verified-claim recall across it ever falls. So the number cannot silently
 regress between releases.
 
-### Environment and method
+## Environment and method
 
 - **Hardware:** Apple silicon (arm64).
 - **Toolchain:** Go 1.24.2, Poppler (`pdftotext`) 26.07.
@@ -58,7 +58,7 @@ regress between releases.
 The binary, start-time and RSS figures are the conservative numbers draft
 publishes; measured builds come out smaller and faster.
 
-### Reproduce it yourself
+## Reproduce it yourself
 
 From a clone of [the repository](https://github.com/sebastienrousseau/draft):
 

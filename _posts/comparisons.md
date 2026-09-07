@@ -29,7 +29,7 @@ survives only if its quote appears verbatim in the source and every number in
 it appears in that quote. The writer receives that verified ledger and nothing
 else, and every sentence it produces is attributed back to a claim.
 
-| | RAG pipeline | draft |
+| Aspect | RAG pipeline | draft |
 | --- | --- | --- |
 | When is fidelity checked? | After generation, if at all | Before writing, as a gate |
 | What can the writer say? | Anything, grounded or not | Only what a verified claim supports |

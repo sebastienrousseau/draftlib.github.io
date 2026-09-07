@@ -268,20 +268,20 @@
   <div class="container prose stack">
     <div lang="en"><h2>Install</h2>
 <p><strong>Homebrew (macOS, recommended)</strong></p>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">brew</span></span><span class="meta function-call arguments shell"> install<span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>cask</span> sebastienrousseau/tap/draft</span>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">brew</span></span><span class="meta function-call arguments shell"> install<span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>cask</span> sebastienrousseau/tap/draft</span>
 </span></code></pre>
 <p><strong>Go toolchain (any platform)</strong></p>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">go</span></span><span class="meta function-call arguments shell"> install github.com/sebastienrousseau/draft/cmd/draft@latest</span>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">go</span></span><span class="meta function-call arguments shell"> install github.com/sebastienrousseau/draft/cmd/draft@latest</span>
 </span></code></pre>
 <p><strong>From source</strong></p>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">git</span></span><span class="meta function-call arguments shell"> clone https://github.com/sebastienrousseau/draft</span>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">git</span></span><span class="meta function-call arguments shell"> clone https://github.com/sebastienrousseau/draft</span>
 <span class="meta function-call shell"><span class="support function cd shell">cd</span></span><span class="meta function-call arguments shell"> draft</span> <span class="keyword operator logical and shell">&amp;&amp;</span> <span class="meta function-call shell"><span class="variable function shell">make</span></span><span class="meta function-call arguments shell"> build</span>
 </span></code></pre>
 <h3>Dependencies by platform</h3>
 <p>draft reads PDFs with <code>pdftotext</code> (Poppler) and, offline, writes with a local
 <a href="https://ollama.com">Ollama</a> model. <code>.docx</code> reads through <code>textutil</code> on macOS
 (built in) or <code>--reader docling</code> anywhere.</p>
-<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table, scrollable horizontally" tabindex="0"><table class="table">
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 1, scrollable horizontally" tabindex="0"><table class="table">
 <thead>
 <tr>
 <th scope="col">Platform</th>
@@ -316,7 +316,7 @@
 draft writes through an agent CLI you are already logged into.</p>
 <h2>Quickstart</h2>
 <p>Check that the machine is ready, then run a paper:</p>
-<pre class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>doctor</span></span>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>doctor</span></span>
 <span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
 </span></code></pre>
 <p>Online, draft drives whichever agent CLI you are already logged into. Offline,
@@ -325,9 +325,9 @@ article set.</p>
 <p><strong>Supported inputs:</strong> PDF, Markdown and plain text on every platform; <code>.docx</code>
 built in on macOS (<code>textutil</code>) or anywhere with <code>--reader docling</code>.</p>
 <h2>Command-line reference</h2>
-<pre class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">draft [flags] &lt;source&gt; [more-sources...]
+<pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">draft [flags] &lt;source&gt; [more-sources...]
 </span></code></pre>
-<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table, scrollable horizontally" tabindex="0"><table class="table">
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 2, scrollable horizontally" tabindex="0"><table class="table">
 <thead>
 <tr>
 <th scope="col">Flag</th>
@@ -427,7 +427,7 @@ Gemini; offline, it uses a local Ollama model. Force one with <code>--engine &lt
 <h2>Article sets</h2>
 <p>Each run writes one article as three files that stay in sync, plus two a reader
 can check:</p>
-<pre class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">2026-07-29/
+<pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">2026-07-29/
 ├── source/…-body.md              # the article — edit this
 ├── yaml/…-frontmatter.yaml       # adjacent frontmatter
 ├── final/…-final.md              # combined, ready to publish
