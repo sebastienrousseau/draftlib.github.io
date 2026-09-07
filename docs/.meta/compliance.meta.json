@@ -12,6 +12,7 @@
   "lead": "Every article draft writes carries machine-readable provenance by default — the direction disclosure rules for AI-assisted content are moving.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "compliance",
   "permalink": "https://draftlib.com/compliance/",
   "reading_time": 2,
   "short_name": "draft",

@@ -12,6 +12,7 @@
   "lead": "The page you wanted is not in the cache. Reconnect and try again.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "offline",
   "permalink": "https://draftlib.com/offline/",
   "reading_time": 1,
   "short_name": "draft",

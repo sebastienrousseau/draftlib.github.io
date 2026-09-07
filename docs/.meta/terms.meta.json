@@ -12,6 +12,7 @@
   "lead": "draft is dual-licensed under MIT or Apache-2.0. Use it freely; it comes without warranty.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "terms",
   "permalink": "https://draftlib.com/terms/",
   "reading_time": 1,
   "short_name": "draft",

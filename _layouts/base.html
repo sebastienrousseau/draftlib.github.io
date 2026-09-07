@@ -36,11 +36,11 @@
     {{!microsoft}}
 
     <!-- Absolute URLs: Open Graph consumers do not resolve relative paths. -->
-    <meta property="og:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
+    <meta property="og:image" content="{{#if og_card}}{{site_url}}og/{{og_card}}.png{{else}}https://cloudcdn.pro/stocks/images/research-paper-1200.webp{{/if}}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="{{title}}" />
-    <meta name="twitter:image" content="https://cloudcdn.pro/stocks/images/research-paper-1200.webp" />
+    <meta name="twitter:image" content="{{#if og_card}}{{site_url}}og/{{og_card}}.png{{else}}https://cloudcdn.pro/stocks/images/research-paper-1200.webp{{/if}}" />
 
     <link rel="canonical" href="{{permalink}}" />
     <link rel="alternate" hreflang="{{language}}" href="{{permalink}}" />

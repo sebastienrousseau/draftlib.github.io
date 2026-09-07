@@ -12,6 +12,7 @@
   "lead": "An open-source tool for turning research papers into grounded articles you can prove.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "about",
   "permalink": "https://draftlib.com/about/",
   "reading_time": 1,
   "short_name": "draft",

@@ -12,6 +12,7 @@
   "lead": "What changed in each release of draft. Full history on GitHub.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "changelog",
   "permalink": "https://draftlib.com/changelog/",
   "reading_time": 1,
   "short_name": "draft",

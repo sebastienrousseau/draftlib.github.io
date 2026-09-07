@@ -10,6 +10,7 @@
   "layout": "index",
   "lead": "Research papers in, publication-ready Markdown out — every sentence tied to a quote-verified claim from the source. No API key. Works offline. Provenance a reader can check.",
   "name": "draft",
+  "og_card": "home",
   "permalink": "https://draftlib.com/",
   "reading_time": 1,
   "short_name": "draft",

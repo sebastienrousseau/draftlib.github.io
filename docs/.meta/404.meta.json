@@ -12,6 +12,7 @@
   "lead": "The page you asked for is not here. Try the documentation, or head back home.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "404",
   "permalink": "https://draftlib.com/404/",
   "reading_time": 1,
   "short_name": "draft",

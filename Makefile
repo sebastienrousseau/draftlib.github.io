@@ -20,6 +20,7 @@ build:
 	@for a in main.js theme-init.js logo.svg favicon.ico apple-touch-icon.png; do cp -f _layouts/$$a public/$$a 2>/dev/null || true; done
 	@h=$$(ls public/highlight.*.css 2>/dev/null | head -1); test -n "$$h" && cp -f "$$h" public/highlight.css || true
 	@test -d samples && cp -r samples public/samples || true
+	@test -d og && cp -r og public/og || true
 	python3 scripts/post-build.py
 	python3 scripts/check-content.py docs
 

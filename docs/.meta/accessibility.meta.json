@@ -12,6 +12,7 @@
   "lead": "How this site is built and tested for accessibility, and how to report an issue.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "accessibility",
   "permalink": "https://draftlib.com/accessibility/",
   "reading_time": 1,
   "short_name": "draft",

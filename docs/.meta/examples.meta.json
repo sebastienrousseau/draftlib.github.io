@@ -12,6 +12,7 @@
   "lead": "See a paper become a grounded article — command, output, and the provenance you can check.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "examples",
   "permalink": "https://draftlib.com/examples/",
   "reading_time": 2,
   "short_name": "draft",

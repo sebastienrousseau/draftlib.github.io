@@ -7,6 +7,7 @@ author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
+og_card: "features"
 breadcrumb: true
 permalink: "https://draftlib.com/features/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"

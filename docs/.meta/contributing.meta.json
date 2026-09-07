@@ -12,6 +12,7 @@
   "lead": "draft is open source under MIT or Apache-2.0. Issues and pull requests are welcome.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "contributing",
   "permalink": "https://draftlib.com/contributing/",
   "reading_time": 1,
   "short_name": "draft",

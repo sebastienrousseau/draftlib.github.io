@@ -12,6 +12,7 @@
   "lead": "Four phases, one claim gate. Read and section, extract and verify, write, then attribute and sign.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "architecture",
   "permalink": "https://draftlib.com/architecture/",
   "reading_time": 1,
   "short_name": "draft",

@@ -12,6 +12,7 @@
   "lead": "draft is a command-line tool first, but every capability is an importable Go package.",
   "logo": "https://draftlib.com/img/draft.svg",
   "name": "draft",
+  "og_card": "library",
   "permalink": "https://draftlib.com/library/",
   "reading_time": 1,
   "short_name": "draft",

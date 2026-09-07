@@ -7,6 +7,7 @@ author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
+og_card: "comparisons"
 breadcrumb: true
 permalink: "https://draftlib.com/comparisons/"
 logo: "https://cloudcdn.pro/cmn/v1/logos/cmn.svg"

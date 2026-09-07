@@ -12,6 +12,7 @@
   "lead": "No tracking on this site. draft runs locally; what it sends depends on the engine you choose.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "privacy",
   "permalink": "https://draftlib.com/privacy/",
   "reading_time": 1,
   "short_name": "draft",

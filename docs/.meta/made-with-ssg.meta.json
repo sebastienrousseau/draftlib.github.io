@@ -12,6 +12,7 @@
   "lead": "This site is a static build — no tracking, no runtime, just HTML and CSS.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "made-with-ssg",
   "permalink": "https://draftlib.com/made-with-ssg/",
   "reading_time": 1,
   "short_name": "draft",

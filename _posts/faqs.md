@@ -7,6 +7,7 @@ author: "Sebastien Rousseau"
 date: "2026-09-01"
 language: "en-GB"
 layout: "page"
+og_card: "faqs"
 breadcrumb: true
 faqpage: true
 permalink: "https://draftlib.com/faqs/"

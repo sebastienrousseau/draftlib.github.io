@@ -12,6 +12,7 @@
   "lead": "Install, quickstart, and the full command-line reference for draft.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "documentation",
   "permalink": "https://draftlib.com/documentation/",
   "reading_time": 3,
   "short_name": "draft",

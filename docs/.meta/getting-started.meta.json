@@ -12,6 +12,7 @@
   "lead": "Install draft, run --doctor, and turn your first paper into a grounded article.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "getting-started",
   "permalink": "https://draftlib.com/getting-started/",
   "reading_time": 1,
   "short_name": "draft",

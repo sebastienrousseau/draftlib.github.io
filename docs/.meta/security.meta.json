@@ -12,6 +12,7 @@
   "lead": "Local-first by default, keyless, with releases and provenance you can check.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "security",
   "permalink": "https://draftlib.com/security/",
   "reading_time": 1,
   "short_name": "draft",

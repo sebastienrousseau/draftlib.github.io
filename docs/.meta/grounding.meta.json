@@ -12,6 +12,7 @@
   "lead": "A claim survives only if its quote appears verbatim in the source and every number in it appears in that quote. Here is the whole gate.",
   "logo": "https://draftlib.com/img/draft.svg",
   "name": "draft",
+  "og_card": "grounding",
   "permalink": "https://draftlib.com/grounding/",
   "reading_time": 3,
   "short_name": "draft",

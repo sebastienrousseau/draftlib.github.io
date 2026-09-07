@@ -12,6 +12,7 @@
   "lead": "Where draft sits next to retrieval pipelines, a plain LLM summary, and research-summary tools.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
+  "og_card": "comparisons",
   "permalink": "https://draftlib.com/comparisons/",
   "reading_time": 3,
   "short_name": "draft",
