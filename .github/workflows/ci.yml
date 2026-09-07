@@ -50,3 +50,12 @@ jobs:
           done
           if [ "$fail" -eq 0 ]; then echo "All structure & self-hosting guardrails passed."; fi
           exit $fail
+
+      - name: Accessibility (axe-core, rendered)
+        run: |
+          npm install --no-save puppeteer-core@23 axe-core@4
+          ( cd docs && python3 -m http.server 8099 >/tmp/httpd.log 2>&1 & )
+          sleep 3
+          CHROME_PATH="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium-browser || command -v chromium)"
+          echo "Using Chrome at: $CHROME_PATH"
+          CHROME_PATH="$CHROME_PATH" node scripts/a11y-axe.mjs http://localhost:8099 docs
