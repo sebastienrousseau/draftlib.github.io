@@ -2125,25 +2125,38 @@ pre.highlight:focus-visible {
    surface columns, use-case cards, closing band.
    --------------------------------------------------------------------------- */
 
-.hero-install {
-  display: inline-flex;
-  width: fit-content;
+.hero-terminal {
   justify-self: start;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-  margin-block-start: 0.25rem;
-  padding: 0.55rem 0.9rem;
-  border: 1px solid rgb(255 255 255 / 28%);
-  border-radius: 999px;
-  background: rgb(11 15 25 / 55%);
-  color: #f5f5fa;
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
+  width: 100%;
+  max-width: 40rem;
+  margin-block: 0.5rem 0;
 }
 
-.hero-install .prompt {
-  color: var(--accent-bright);
+/* macOS-style traffic lights, so the block reads as a terminal at a glance. */
+.hero-terminal .terminal-dot:nth-child(1) { background: #ff5f57; }
+.hero-terminal .terminal-dot:nth-child(2) { background: #febc2e; }
+.hero-terminal .terminal-dot:nth-child(3) { background: #28c840; }
+
+.hero-terminal .terminal-screen {
+  min-height: 0;
+  font-size: 0.9rem;
+}
+
+/* One command per line; a prompt the copy skips. The line scrolls rather than
+   wraps, and the screen is focusable (see index.html) so a keyboard user can
+   reach the overflow. */
+.term-static {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.term-static + .term-static {
+  margin-top: 0.2rem;
+}
+
+.hero-install-more {
+  margin-block-start: 0.7rem;
+  font-size: 0.9rem;
 }
 
 .trust-strip {

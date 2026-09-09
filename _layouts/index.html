@@ -22,11 +22,19 @@
         <a class="btn btn-secondary" href="{{locale_path}}grounding/">How grounding works</a>
         <a class="btn btn-outline" href="https://github.com/sebastienrousseau/draft" rel="noopener noreferrer">Source on GitHub</a>
       </div>
-      <div class="hero-install">
-        <p><span class="prompt" aria-hidden="true">$</span> <code>brew install --cask sebastienrousseau/tap/draft</code></p>
-        <p><span class="prompt" aria-hidden="true">$</span> <code>go install github.com/sebastienrousseau/draft/cmd/draft@latest</code></p>
-        <p class="hero-install-more"><a href="{{locale_path}}documentation/">More ways to install, and the full command reference</a></p>
+      <div class="terminal hero-terminal">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-title">Install draft</span>
+        </div>
+        <div class="terminal-screen" tabindex="0" role="group" aria-label="Install draft from a terminal">
+          <p class="term-static"><span class="term-prompt" aria-hidden="true">$ </span>brew install --cask sebastienrousseau/tap/draft</p>
+          <p class="term-static"><span class="term-prompt" aria-hidden="true">$ </span>go install github.com/sebastienrousseau/draft/cmd/draft@latest</p>
+        </div>
       </div>
+      <p class="hero-install-more"><a href="{{locale_path}}documentation/">More ways to install, and the full command reference</a></p>
       <ul class="trust-strip" role="list">
         <li>Quote-verified claims</li>
         <li>No API key</li>
