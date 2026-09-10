@@ -155,7 +155,10 @@ draft is the Go CLI at github.com/sebastienrousseau/draft. It is not a Rust libr
             # Accessibility (WCAG 2.2, verified by axe-core in CI):
             # 1. Make scrollable code blocks keyboard-focusable so a keyboard
             #    user can scroll them (axe: scrollable-region-focusable).
-            content = content.replace('<pre class="highlight', '<pre tabindex="0" class="highlight')
+            # Any <pre> can scroll horizontally (a long unhighlighted code
+            # block does), so make every one keyboard-focusable, not only the
+            # syntax-highlighted ones. axe: scrollable-region-focusable.
+            content = re.sub(r'<pre(?![^>]*\btabindex=)', '<pre tabindex="0"', content)
             # 2. ssg wraps every table in a role="region" with an identical
             #    label; two same-named landmarks are not distinguishable
             #    (axe: landmark-unique). Number them uniquely per page.
