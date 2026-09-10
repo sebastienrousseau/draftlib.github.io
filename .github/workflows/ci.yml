@@ -59,3 +59,12 @@ jobs:
           CHROME_PATH="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium-browser || command -v chromium)"
           echo "Using Chrome at: $CHROME_PATH"
           CHROME_PATH="$CHROME_PATH" node scripts/a11y-axe.mjs http://localhost:8099 docs
+
+      - name: Lighthouse (performance, best practices, SEO — measured)
+        run: |
+          npm install --no-save lighthouse@12 chrome-launcher
+          ( cd docs && python3 -m http.server 8099 >/tmp/httpd.log 2>&1 & )
+          sleep 3
+          CHROME_PATH="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium-browser || command -v chromium)"
+          echo "Using Chrome at: $CHROME_PATH"
+          CHROME_PATH="$CHROME_PATH" node scripts/lighthouse-check.mjs http://localhost:8099

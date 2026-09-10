@@ -19,3 +19,5 @@ docs/.ssg-plugin-cache.json
 # Python bytecode from scripts/
 __pycache__/
 *.pyc
+node_modules/
+package-lock.json
