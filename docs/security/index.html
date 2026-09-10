@@ -302,16 +302,16 @@ ID-signed installer.</li>
 <p>Verify the provenance of a downloaded artefact with the GitHub CLI. It checks
 the Sigstore signature and that the attestation came from this repository's
 release workflow:</p>
-<pre><code><span class="text plain">gh attestation verify draft_&lt;version&gt;_darwin_arm64.tar.gz \
+<pre tabindex="0"><code><span class="text plain">gh attestation verify draft_&lt;version&gt;_darwin_arm64.tar.gz \
   --repo sebastienrousseau/draft
 </span></code></pre>
 <p>The same command verifies the installer:</p>
-<pre><code><span class="text plain">gh attestation verify draft-&lt;version&gt;.pkg --repo sebastienrousseau/draft
+<pre tabindex="0"><code><span class="text plain">gh attestation verify draft-&lt;version&gt;.pkg --repo sebastienrousseau/draft
 </span></code></pre>
 <p>Verify the signed checksum manifest with cosign. The identity regexp pins the
 signature to this repository's release workflow, so a manifest signed by
 anything else fails:</p>
-<pre><code><span class="text plain">cosign verify-blob \
+<pre tabindex="0"><code><span class="text plain">cosign verify-blob \
   --bundle checksums.txt.sigstore.json \
   --certificate-identity-regexp \
     &#39;https://github.com/sebastienrousseau/draft/.github/workflows/release.yml@.*&#39; \
@@ -319,7 +319,7 @@ anything else fails:</p>
   checksums.txt
 </span></code></pre>
 <p>Then confirm your download against the verified manifest:</p>
-<pre><code><span class="text plain">shasum -a 256 --check checksums.txt --ignore-missing
+<pre tabindex="0"><code><span class="text plain">shasum -a 256 --check checksums.txt --ignore-missing
 </span></code></pre>
 <p>This verifies the <strong>release</strong> — that the binary you ran was built by us and
 not tampered with. It is separate from, and complementary to, the per-article
