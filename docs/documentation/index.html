@@ -374,18 +374,36 @@ into and shows a live view of the four phases as they run.</p>
 </span></code></pre>
 <div class="figure">
 <div class="terminal">
-  <div class="terminal-bar" aria-hidden="true"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">draft — 2603.23420.pdf</span></div>
-  <div class="terminal-screen" tabindex="0" role="group" aria-label="the draft run, phase by phase">
-<p class="tui-head">Drafting Grounded Articles — claude · sonnet · 900–1200 words</p>
+  <div class="terminal-bar" aria-hidden="true"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">draft — live run</span></div>
+  <div class="terminal-screen" tabindex="0" role="group" aria-label="the draft terminal UI during a run">
+<p class="tui-headline"><span class="tui-wordmark">draft</span>  ⧇ Drafting Grounded Articles — claude · sonnet · 900–1200 words</p>
+<hr class="tui-rule">
+<div class="tui-cols">
+<div class="tui-col">
+<p class="tui-section">Queue</p>
+<p class="tui-phase tui-run"><span class="tui-count">[1/1]</span> <span class="tui-marker">⠙</span>2603.23420.pdf</p>
+<p class="tui-section">Pipeline</p>
 <p class="tui-phase tui-done"><span class="tui-marker">✓</span>Resolve source</p>
-<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Read and section <span class="tui-note">· 5 sections</span></p>
-<p class="tui-phase tui-run"><span class="tui-marker">⠙</span>Extract claims <span class="tui-note">· claim section 3/5</span></p>
-<p class="tui-phase tui-pending"><span class="tui-marker">·</span>Write article</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Read and section</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Extract claims</p>
+<p class="tui-phase tui-run"><span class="tui-marker">⠙</span>Write article</p>
 <p class="tui-phase tui-pending"><span class="tui-marker">·</span>Validate and save</p>
-<p class="tui-bar">q / esc quit · enter queue another source · j / k · arrows · pgup / pgdn scroll</p>
+<p class="tui-section">Log</p>
+<p class="tui-log">· read 5 section(s)</p>
+<p class="tui-log">· 6 claim(s) verified, 9 dropped</p>
+<p class="tui-log">· writing…</p>
+</div>
+<div class="tui-col">
+<p class="tui-section">Live Draft</p>
+<p class="tui-status"><span class="tui-marker tui-spin">⠙</span> writing, 342 words visible</p>
+<p><span aria-hidden="true"><span class="tui-progressbar">████████████████</span><span class="tui-progressempty">░░░░░░░░░░░░</span></span> <span class="tui-pct">57%</span></p>
+<p class="tui-preview">## Router-S: conditional compute at a fixed budget<br><br>Router-S reaches a validation loss of 3.41 against a dense baseline on an identical token budget — but the same evaluation reports that seed variance exceeds the gap being measured, which is the more important number to sit with.<br><br>Sparse routing is designed to cut the compute spent on tokens that are trivially predictable<span class="tui-pcursor">▋</span></p>
+</div>
+</div>
+<p class="tui-shortcuts">[q] quit · [j/k] up/down · [pgup/pgdn] page</p>
   </div>
 </div>
-<p class="term-caption">The terminal UI as a run proceeds. A muted <code>·</code> is a phase not started, the coral spinner is the phase running now, and a green <code>✓</code> is one done. Prefer no UI? Add <code>--print</code> (paths to stdout) or <code>--json</code> (one JSON object per job).</p>
+<p class="term-caption">The draft terminal UI mid-run. On the left, the queue and the five-phase pipeline with a live log; on the right, the <strong>Live Draft</strong> panel — a status line, a progress bar, and the grounded article previewing as it is written, sentence by sentence. Prefer no UI? Add <code>--print</code> (paths to stdout) or <code>--json</code> (one JSON object per job).</p>
 </div>
 <p>When it finishes, the summary line reports the result:</p>
 <div class="figure">

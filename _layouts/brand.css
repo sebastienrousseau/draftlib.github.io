@@ -2718,3 +2718,36 @@ pre.highlight:focus-visible {
 }
 :root[data-theme="dark"] .callout-note .callout-label { color: #8fb3e8; }
 :root[data-theme="dark"] .callout-warning .callout-label { color: #e0b45f; }
+
+/* ---------- two-panel TUI figure (the live-draft interface) ---------- */
+.tui-headline { color: #9fb4bd; margin: 0 0 0.2rem; white-space: nowrap; }
+.tui-wordmark { color: var(--accent-bright); font-weight: 700; }
+.tui-rule { border: 0; border-top: 1px solid #22333c; margin: 0.3rem 0 0.7rem; }
+.tui-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.75rem; }
+@media (max-width: 44rem) { .tui-cols { grid-template-columns: 1fr; gap: 0.9rem; } }
+.tui-section {
+  color: var(--accent-bright);
+  font-weight: 700;
+  font-size: 0.82em;
+  letter-spacing: 0.03em;
+  margin: 0.75rem 0 0.4rem;
+  border-bottom: 1px solid #22333c;
+  padding-bottom: 0.2rem;
+}
+.tui-col > .tui-section:first-child { margin-top: 0; }
+.tui-count { color: #7c94a0; }
+.tui-log { color: #7c94a0; margin: 0.06rem 0; white-space: nowrap; }
+.tui-status { color: #d6e4ea; margin: 0 0 0.4rem; }
+.tui-spin { color: var(--accent-bright); }
+.tui-progressbar { color: var(--accent-bright); letter-spacing: -0.06em; }
+.tui-progressempty { color: #3a4a55; letter-spacing: -0.06em; }
+.tui-pct { color: var(--accent-bright); }
+.tui-preview { color: #aebfc8; margin: 0.5rem 0 0; white-space: normal; }
+.tui-preview .tui-pcursor { color: var(--accent-bright); }
+.tui-shortcuts {
+  color: #7c94a0;
+  margin: 0.9rem 0 0;
+  border-top: 1px solid #22333c;
+  padding-top: 0.5rem;
+  white-space: nowrap;
+}
