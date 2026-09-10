@@ -9,8 +9,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Page Not Found (404) | Draft Lib</news:title>
-    <news:keywords>404 not found</news:keywords>
+    <news:title>Page not found — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -21,8 +20,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>About Sebastien Rousseau & Draft Lib</news:title>
-    <news:keywords>Sebastien Rousseau, Draft Lib creator</news:keywords>
+    <news:title>About — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -33,8 +31,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Accessibility Statement: WCAG 2.2 Level AAA Compliance</news:title>
-    <news:keywords>accessibility statement</news:keywords>
+    <news:title>Accessibility — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -45,8 +42,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Internal Architecture: Lexer, AST Pipeline & Exporters</news:title>
-    <news:keywords>draftlib architecture, rust AST parser design</news:keywords>
+    <news:title>Architecture — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -57,8 +53,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Performance Benchmarks: Draft Lib vs Pandoc & Comrak</news:title>
-    <news:keywords>draftlib benchmarks, rust markdown benchmark</news:keywords>
+    <news:title>Benchmarks — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -69,8 +64,29 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Changelog & Version History</news:title>
-    <news:keywords>draftlib changelog, version history</news:keywords>
+    <news:title>Changelog — draft</news:title>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/comparisons/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Comparisons — draft</news:title>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/compliance/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Provenance & compliance — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -81,8 +97,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Contact & Enterprise Inquiries</news:title>
-    <news:keywords>contact draftlib</news:keywords>
+    <news:title>Contact — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -93,8 +108,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Contributing to Draft Lib</news:title>
-    <news:keywords>contribute draftlib</news:keywords>
+    <news:title>Contributing — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -105,8 +119,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>API Reference & Trait Specifications</news:title>
-    <news:keywords>draftlib API, rust crate documentation</news:keywords>
+    <news:title>Documentation — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -117,8 +130,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Document Templates & Implementation Examples</news:title>
-    <news:keywords>draftlib examples, rust document templates</news:keywords>
+    <news:title>Examples — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -129,8 +141,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Frequently Asked Questions (FAQ): Draft Lib</news:title>
-    <news:keywords>draftlib FAQ, rust document questions</news:keywords>
+    <news:title>FAQ — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -141,8 +152,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Core Features: AST Compiler, Schema Validation & Multi-Format Exporters</news:title>
-    <news:keywords>draftlib features, markdown AST compiler, rust template engine</news:keywords>
+    <news:title>Features — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -153,8 +163,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Getting Started with Draft Lib: Installation & Quickstart</news:title>
-    <news:keywords>install draftlib, cargo draftlib, rust document quickstart</news:keywords>
+    <news:title>Getting started — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -166,7 +175,6 @@
     </news:publication>
     <news:publication_date></news:publication_date>
     <news:title>How grounding works — draft</news:title>
-    <news:keywords>grounded generation, hallucination, claim verification, verbatim quote, provenance</news:keywords>
   </news:news>
 </url>
 <url>
@@ -178,7 +186,6 @@
     </news:publication>
     <news:publication_date></news:publication_date>
     <news:title>Go packages — draft</news:title>
-    <news:keywords>go packages, library, claims, pipeline, engine, frontmatter, validate</news:keywords>
   </news:news>
 </url>
 <url>
@@ -189,8 +196,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Made with Static Site Generator (SSG)</news:title>
-    <news:keywords>Static Site Generator, SSG</news:keywords>
+    <news:title>Made with SSG — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -201,8 +207,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Offline Access: Draft Lib</news:title>
-    <news:keywords>offline draftlib</news:keywords>
+    <news:title>Offline — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -213,8 +218,18 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Privacy Policy: Zero-Telemetry Architecture</news:title>
-    <news:keywords>draftlib privacy policy</news:keywords>
+    <news:title>Privacy — draft</news:title>
+  </news:news>
+</url>
+<url>
+  <loc>http://127.0.0.1:8000/roadmap/</loc>
+  <news:news>
+    <news:publication>
+      <news:name>Sebastien Rousseau</news:name>
+      <news:language>en-GB</news:language>
+    </news:publication>
+    <news:publication_date></news:publication_date>
+    <news:title>Roadmap — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -225,8 +240,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Security Architecture: Sovereign Document Processing & Zero Telemetry</news:title>
-    <news:keywords>draftlib security, zero telemetry document parser</news:keywords>
+    <news:title>Security — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -237,8 +251,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Terms of Use & Open Source License</news:title>
-    <news:keywords>terms of use</news:keywords>
+    <news:title>Terms — draft</news:title>
   </news:news>
 </url>
 <url>
@@ -249,8 +262,7 @@
       <news:language>en-GB</news:language>
     </news:publication>
     <news:publication_date></news:publication_date>
-    <news:title>Thank You | Draft Lib</news:title>
-    <news:keywords>thank you</news:keywords>
+    <news:title>Thank you — draft</news:title>
   </news:news>
 </url>
 </urlset>
