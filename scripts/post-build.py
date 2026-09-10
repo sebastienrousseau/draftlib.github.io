@@ -69,6 +69,27 @@ draft is the Go CLI at github.com/sebastienrousseau/draft. It is not a Rust libr
         with open(os.path.join(d, "llms.txt"), "w", encoding="utf-8") as f:
             f.write(llms_txt)
 
+    # The manifest plugin emits theme_color/background_color as null, which
+    # browsers reject ("property 'theme_color' ignored, type string expected").
+    # Force valid hex strings matching the site's dark theme-color meta.
+    for d in [output_dir, docs_dir]:
+        mp = os.path.join(d, "manifest.json")
+        if not os.path.exists(mp):
+            continue
+        try:
+            with open(mp, encoding="utf-8") as f:
+                m = json.load(f)
+        except (ValueError, OSError):
+            continue
+        changed = False
+        for key in ("theme_color", "background_color"):
+            if not isinstance(m.get(key), str):
+                m[key] = "#0b0e14"
+                changed = True
+        if changed:
+            with open(mp, "w", encoding="utf-8") as f:
+                json.dump(m, f, indent=2)
+
     for base_path in [output_dir, docs_dir]:
         for html_file in glob.glob(f"{base_path}/**/*.html", recursive=True):
             with open(html_file, "r", encoding="utf-8") as f:
