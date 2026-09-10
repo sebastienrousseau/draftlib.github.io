@@ -1113,7 +1113,7 @@ h3 {
 .brand-mark,
 .hero-mark {
   display: inline-block;
-  background: url("/images/mark-96.webp") center / contain no-repeat;
+  background: url("/logo.svg") center / contain no-repeat;
   border-radius: 50%;
 }
 
@@ -1124,7 +1124,7 @@ h3 {
   height: 2.1rem;
   padding: 0;
   border-radius: 0;
-  background: url("/images/mark-96.webp") center / contain no-repeat;
+  background: url("/logo.svg") center / contain no-repeat;
 }
 
 /* The generator pins its search trigger to the viewport's right edge, which
@@ -2202,7 +2202,7 @@ pre.highlight:focus-visible {
   inset-block-end: -8rem;
   width: clamp(18rem, 34vw, 32rem);
   aspect-ratio: 1;
-  background: url("/images/mark-512.png") center / contain no-repeat;
+  background: url("/logo.svg") center / contain no-repeat;
   opacity: 0.35;
 }
 
