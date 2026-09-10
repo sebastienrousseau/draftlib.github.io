@@ -89,6 +89,48 @@ draft is the Go CLI at github.com/sebastienrousseau/draft. It is not a Rust libr
 
             content = re.sub(r'&lt;/?(section|div|details|summary|table|thead|tbody|tr|th|td|form|label|input|textarea|button|svg|circle|line|path|polyline|kbd|span class|h2|h3|h4|p class|a class|img class).*?&gt;', fix_html_tags, content, flags=re.DOTALL)
 
+            # Deep-link IDs on body headings + an auto "On this page" TOC.
+            # Scope to the content above the footer so the footer's own <h2>
+            # column titles are neither given ids nor listed in the TOC.
+            head_part, sep, foot_part = content.partition("<footer")
+            if sep:
+                seen_ids = {}
+
+                def _slugify(s):
+                    s = re.sub(r"<[^>]+>", "", s)
+                    s = html.unescape(s)
+                    s = re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+                    return s or "section"
+
+                def _add_heading_id(m):
+                    tag, attrs, inner = m.group(1), m.group(2), m.group(3)
+                    if re.search(r'\sid=', attrs):
+                        return m.group(0)
+                    base = _slugify(inner)
+                    n = seen_ids.get(base, 0) + 1
+                    seen_ids[base] = n
+                    sid = base if n == 1 else f"{base}-{n}"
+                    return f"<{tag}{attrs} id=\"{sid}\">{inner}</{tag}>"
+
+                head_part = re.sub(
+                    r"<(h[234])((?:\s+[^>]*)?)>(.*?)</\1>",
+                    _add_heading_id, head_part, flags=re.DOTALL,
+                )
+
+                if "<!--TOC-->" in head_part:
+                    h2s = re.findall(
+                        r'<h2[^>]*\sid="([^"]+)"[^>]*>(.*?)</h2>',
+                        head_part, flags=re.DOTALL,
+                    )
+                    items = "".join(
+                        f'<li><a href="#{i}">{re.sub(r"<[^>]+>", "", t).strip()}</a></li>'
+                        for i, t in h2s
+                    )
+                    head_part = head_part.replace(
+                        "<!--TOC-->", f'<ol class="toc-list">{items}</ol>', 1
+                    )
+                content = head_part + sep + foot_part
+
             # Accessibility (WCAG 2.2, verified by axe-core in CI):
             # 1. Make scrollable code blocks keyboard-focusable so a keyboard
             #    user can scroll them (axe: scrollable-region-focusable).

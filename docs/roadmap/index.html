@@ -264,40 +264,41 @@
 </section>
 
 <article class="section">
+  
   <div class="container prose stack">
     <div lang="en"><p>draft is deliberate about its limits. A tool that sells verifiability should be
 the first to say what it cannot yet verify. This page is the honest list, and
 the <a href="/faqs/">FAQ</a> links here from every limitation it mentions.</p>
-<h2>Planned</h2>
-<h3>Table and figure values</h3>
+<h2 id="planned">Planned</h2>
+<h3 id="table-and-figure-values">Table and figure values</h3>
 <p>Docling is already available as a reader (<code>--reader docling</code>), but tabular
 values do not yet become verifiable claims. The plan is to mine table cells as
 claims, with the row and column headers as the quote context, and to verify
 numbers against the cell. Figure captions are text and gate-compatible; chart
 values are a later step.</p>
-<h3>LaTeX and math</h3>
+<h3 id="latex-and-math">LaTeX and math</h3>
 <p>Today, math around a claim can cause the surrounding text to be dropped. The
 first step is to preserve inline math as opaque tokens so neighbouring claims
 still verify; the second is to accept <code>.tex</code> source directly, where the math is
 exact text and verbatim matching is clean.</p>
-<h3>OCR for scanned PDFs</h3>
+<h3 id="ocr-for-scanned-pdfs">OCR for scanned PDFs</h3>
 <p>A scanned PDF has no text layer, so extraction returns nothing and the run
 fails. The plan is to detect this and fall back to OCR, surfacing OCR-derived
 claims as a distinct, flagged class rather than treating them as equal to
 verbatim ones, so the trust model is preserved rather than quietly diluted.</p>
-<h3>More input and output formats</h3>
+<h3 id="more-input-and-output-formats">More input and output formats</h3>
 <p><code>.docx</code> input already works today — built in on macOS via <code>textutil</code>, and on
 any platform with <code>--reader docling</code>. The remaining input gap is HTML, which
 reduces cleanly to text once the reader seam accepts it. For output beyond the
 current Markdown set, an HTML export is the likely next step; a <code>.docx</code> export
 is better left to a documented pandoc recipe.</p>
-<h3>Non-English papers</h3>
+<h3 id="non-english-papers">Non-English papers</h3>
 <p>The verification gate is largely language-agnostic — UTF-8, normalisation and
 verbatim matching do not assume English. The English-biased parts are the
 house-style rules and sentence-boundary repair. The plan is to make style rules
 locale-configurable with <code>--style</code> and to document current behaviour on
 non-English input.</p>
-<h2>Not planned as the default</h2>
+<h2 id="not-planned-as-the-default">Not planned as the default</h2>
 <p>A direct API-key mode (<code>--engine api:&lt;provider&gt;</code>) is possible as an escape
 hatch for users with no agent CLI, but keyless operation is the whole point, so
 it will never be the default story.</p>
@@ -306,6 +307,7 @@ it will never be the default story.</p>
 <a href="https://github.com/sebastienrousseau/draft/issues">GitHub</a>.</p>
 </div>
   </div>
+  
 </article>
 
     </main>

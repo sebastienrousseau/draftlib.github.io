@@ -265,8 +265,9 @@
 </section>
 
 <article class="section">
+  
   <div class="container prose stack">
-    <div lang="en"><h2>Go packages</h2>
+    <div lang="en"><h2 id="go-packages">Go packages</h2>
 <p><code>draft</code> is a command-line tool first. But every capability is an importable Go
 package, and only the PDF extractor, the brand assets and the TUI stay
 internal.</p>
@@ -320,7 +321,7 @@ internal.</p>
 </table></div></div>
 <p>Each has its own README with a runnable quick start and an API table. Full
 reference on <a href="https://pkg.go.dev/github.com/sebastienrousseau/draft">pkg.go.dev</a>.</p>
-<h3>The seam that matters</h3>
+<h3 id="the-seam-that-matters">The seam that matters</h3>
 <p><code>Engine</code> is two methods. The whole test suite and every example run against
 in-process implementations of it, which is why none of them need a network:</p>
 <pre tabindex="0" class="highlight language-go"><code class="language-go" data-lang="go"><span class="source go"><span class="meta type go"><span class="storage type go">type</span> <span class="entity name type go">Engine</span> <span class="storage type go">interface</span> {</span>
@@ -341,6 +342,7 @@ the Go packages are not yet.</p>
 </blockquote>
 </div>
   </div>
+  
 </article>
 
     </main>

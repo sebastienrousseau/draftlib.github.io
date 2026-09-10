@@ -82,12 +82,12 @@
   },
   {
     "date": "2026-09-01",
-    "description": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
+    "description": "Install draft, run your first paper-to-post in a minute, understand the four-phase run, and read the full command-line reference — with real terminal output at every step.",
     "locale": "en-GB",
     "tags": [],
     "title": "Documentation — draft",
     "url": "http://127.0.0.1:8000/documentation/",
-    "wordCount": 731
+    "wordCount": 2429
   },
   {
     "date": "2026-09-01",

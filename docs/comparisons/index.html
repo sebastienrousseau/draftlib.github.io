@@ -264,8 +264,9 @@
 </section>
 
 <article class="section">
+  
   <div class="container prose stack">
-    <div lang="en"><h2>draft vs. a RAG pipeline</h2>
+    <div lang="en"><h2 id="draft-vs-a-rag-pipeline">draft vs. a RAG pipeline</h2>
 <p>Retrieval-augmented generation hands a model some retrieved source text at
 generation time and hopes the output stays faithful to it. The fidelity is a
 matter of prompt and luck, and it is checked after the fact, if at all.</p>
@@ -304,14 +305,14 @@ else, and every sentence it produces is attributed back to a claim.</p>
 </tr>
 </tbody>
 </table></div></div>
-<h2>draft vs. asking an LLM to summarise a paper</h2>
+<h2 id="draft-vs-asking-an-llm-to-summarise-a-paper">draft vs. asking an LLM to summarise a paper</h2>
 <p>A general chat model will produce a fluent summary, and it will occasionally
 invent a statistic, a citation or a result that reads perfectly and is simply
 false. There is no gate and no record of which sentence came from where.</p>
 <p>draft cannot write a sentence that no verified claim supports, and it ships an
 attribution file mapping every sentence to the source span that backs it. When
 a source is thin, the draft is visibly short rather than confidently padded.</p>
-<h2>draft vs. research-summary tools</h2>
+<h2 id="draft-vs-research-summary-tools">draft vs. research-summary tools</h2>
 <p>Tools such as NotebookLM, Elicit and SciSpace are strong at exploration:
 question-answering across a library, semantic search, and interactive reading.
 draft is not an exploration tool. It does one thing: turn a paper into a
@@ -320,7 +321,7 @@ no account and no API key, and offline if you want.</p>
 <p>If you want to <em>interrogate</em> a corpus, reach for those. If you want to
 <em>publish</em> a grounded article from a paper and be able to prove it, that is
 draft.</p>
-<h2>Capability matrix</h2>
+<h2 id="capability-matrix">Capability matrix</h2>
 <p>A criteria-based summary, as of September 2026. The rows are the dimensions that
 actually differ; the columns are categories, with example products, rather than
 a claim about any one product's current feature set. These tools evolve quickly,
@@ -399,12 +400,13 @@ so check a product's own documentation before relying on a cell.</p>
 <em>publication</em> pipeline. If your job is to survey a field or interrogate a
 library, one of those fits better. If your job is to publish a grounded article
 from a specific paper and be able to prove each sentence, that is draft.</p>
-<h2>The honest limits</h2>
+<h2 id="the-honest-limits">The honest limits</h2>
 <p>draft is not magic, and the <a href="/roadmap/">roadmap</a> lists what it does not yet do:
 table and figure values, LaTeX-heavy math, and scanned PDFs are current gaps.
 See <a href="/grounding/">how grounding works</a> for the gate in detail.</p>
 </div>
   </div>
+  
 </article>
 
     </main>

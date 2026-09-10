@@ -265,8 +265,9 @@
 </section>
 
 <article class="section">
+  
   <div class="container prose stack">
-    <div lang="en"><h2>The pipeline</h2>
+    <div lang="en"><h2 id="the-pipeline">The pipeline</h2>
 <pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">PDF ──▶ Read &amp; section ──▶ Extract &amp; verify ──▶ Write ──▶ Attribute &amp; sign
         (pdftotext /        (the claim gate)     (engine)   (provenance +
          docling)                                            C2PA manifest)
@@ -287,7 +288,7 @@ requested.</li>
 backs it, and the set is written with a per-sentence attribution file and a
 C2PA manifest a reader can check.</li>
 </ol>
-<h2>The engine seam</h2>
+<h2 id="the-engine-seam">The engine seam</h2>
 <p>Everything model-facing sits behind one small interface, so the same pipeline
 drives a one-shot CLI, a long-lived Agent Client Protocol agent, or a local
 model, and the whole test suite runs without a network:</p>
@@ -301,6 +302,7 @@ model, and the whole test suite runs without a network:</p>
 <a href="https://pkg.go.dev/github.com/sebastienrousseau/draft">pkg.go.dev</a>.</p>
 </div>
   </div>
+  
 </article>
 
     </main>

@@ -30,7 +30,7 @@
     />
 
     <meta name="author" content="Sebastien Rousseau">
-<meta name="description" content="Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.">
+<meta name="description" content="Install draft, run your first paper-to-post in a minute, understand the four-phase run, and read the full command-line reference — with real terminal output at every step.">
     
     
     
@@ -73,7 +73,7 @@
             "@id": "https://draftlib.com/#website",
             "url": "https://draftlib.com/",
             "name": "draft",
-            "description": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
+            "description": "Install draft, run your first paper-to-post in a minute, understand the four-phase run, and read the full command-line reference — with real terminal output at every step.",
             "inLanguage": "en-GB"
           },
           {
@@ -105,7 +105,7 @@
             "@id": "https://draftlib.com/documentation/#webpage",
             "url": "https://draftlib.com/documentation/",
             "name": "Documentation — draft",
-            "description": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
+            "description": "Install draft, run your first paper-to-post in a minute, understand the four-phase run, and read the full command-line reference — with real terminal output at every step.",
             "inLanguage": "en-GB",
             "isPartOf": { "@id": "https://draftlib.com/#website" },
             "publisher": { "@id": "https://draftlib.com/#organization" },
@@ -146,13 +146,13 @@
   <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="stylesheet" href="/highlight.css">
 <meta property="og:title" content="Documentation — draft">
-<meta property="og:description" content="Docs Documentation Install, quickstart, and the full command-line reference for draft. Install Homebrew (macOS, recommended) brew install -- cask">
+<meta property="og:description" content="Docs Documentation Install draft, run your first paper in a minute, and read the full command-line reference — with real terminal output at every step. draft">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://draftlib.com/documentation/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Documentation — draft">
-<meta name="twitter:description" content="Docs Documentation Install, quickstart, and the full command-line reference for draft. Install Homebrew (macOS, recommended) brew install -- cask">
+<meta name="twitter:description" content="Docs Documentation Install draft, run your first paper in a minute, and read the full command-line reference — with real terminal output at every step. draft">
 <link rel="canonical" href="https://draftlib.com/documentation/"><link rel="sbom" type="application/vnd.cyclonedx+json" href="/sbom.cdx.json">
 </head>
 
@@ -259,15 +259,45 @@
     <div class="container stack">
       <p class="eyebrow">Docs</p>
       <h1 id="page-heading">Documentation</h1>
-      <p class="lead">Install, quickstart, and the full command-line reference for draft.</p>
+      <p class="lead">Install draft, run your first paper in a minute, and read the full command-line reference — with real terminal output at every step.</p>
     </div>
   </div>
 </section>
 
 <article class="section">
-  <div class="container prose stack">
-    <div lang="en"><h2>Install</h2>
-<p><strong>Homebrew (macOS, recommended)</strong></p>
+  
+  <div class="container doc-layout">
+    <div class="prose stack doc-main">
+      <div lang="en"><p>draft is a command-line tool that turns a research PDF into a publication-ready
+Markdown article where every sentence is grounded in a quote-verified claim from
+the source. This page takes you from a clean machine to a checked, published
+article, then documents every flag, output and failure mode.</p>
+<p>New to the idea? Read <a href="/grounding/">how grounding works</a> first — it explains the
+gate that makes the output trustworthy. Ready to run it? Start below.</p>
+<h2 id="overview">Overview</h2>
+<p>A run moves a paper through four phases. Only two of them call a model; the rest
+are deterministic Go.</p>
+<ol>
+<li><strong>Read and section.</strong> The PDF is read to text and split into sections.</li>
+<li><strong>Extract and verify.</strong> Each section is mined for claims, and a claim
+survives only if its quote appears verbatim in the source and every number
+in it appears in that quote.</li>
+<li><strong>Write.</strong> The verified ledger — and nothing else — is arranged into an
+article in your house style.</li>
+<li><strong>Attribute and sign.</strong> Every sentence is mapped back to the claim behind it,
+and a C2PA manifest is written beside the article.</li>
+</ol>
+<div class="callout callout-note">
+<span class="callout-label">Before you start</span>
+draft never asks for an API key. Online, it drives an AI coding-agent CLI you
+are already logged into; offline, it uses a local model. Your PDF is read on
+your machine. See <a href="/compliance/">provenance &amp; compliance</a> for
+exactly what leaves it.
+</div>
+<h2 id="install">Install</h2>
+<p>Pick one. Homebrew is the shortest path on macOS; <code>go install</code> works anywhere
+with a Go toolchain.</p>
+<p><strong>Homebrew (macOS)</strong></p>
 <pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">brew</span></span><span class="meta function-call arguments shell"> install<span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>cask</span> sebastienrousseau/tap/draft</span>
 </span></code></pre>
 <p><strong>Go toolchain (any platform)</strong></p>
@@ -277,10 +307,10 @@
 <pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">git</span></span><span class="meta function-call arguments shell"> clone https://github.com/sebastienrousseau/draft</span>
 <span class="meta function-call shell"><span class="support function cd shell">cd</span></span><span class="meta function-call arguments shell"> draft</span> <span class="keyword operator logical and shell">&amp;&amp;</span> <span class="meta function-call shell"><span class="variable function shell">make</span></span><span class="meta function-call arguments shell"> build</span>
 </span></code></pre>
-<h3>Dependencies by platform</h3>
+<h3 id="dependencies-by-platform">Dependencies by platform</h3>
 <p>draft reads PDFs with <code>pdftotext</code> (Poppler) and, offline, writes with a local
-<a href="https://ollama.com">Ollama</a> model. <code>.docx</code> reads through <code>textutil</code> on macOS
-(built in) or <code>--reader docling</code> anywhere.</p>
+<a href="https://ollama.com">Ollama</a> model. <code>.docx</code> is read by <code>textutil</code> on macOS
+(built in) or by <code>--reader docling</code> anywhere.</p>
 <div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 1, scrollable horizontally" tabindex="0"><table class="table">
 <thead>
 <tr>
@@ -312,22 +342,194 @@
 </tr>
 </tbody>
 </table></div></div>
-<p>You need Poppler only for PDF input, and Ollama only for offline runs; online,
-draft writes through an agent CLI you are already logged into.</p>
-<h2>Quickstart</h2>
-<p>Check that the machine is ready, then run a paper:</p>
-<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>doctor</span></span>
-<span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
+<p>You need Poppler only for PDF input, and Ollama only for offline runs.</p>
+<h2 id="quickstart">Quickstart</h2>
+<p>From a clean machine to a checked article in four steps.</p>
+<h3 id="1-check-the-machine">1. Check the machine</h3>
+<p><code>draft --doctor</code> reports what draft can find: readers, backends, and the paths
+it will read from and write to. You need one online backend <strong>or</strong> a running
+Ollama server.</p>
+<div class="figure">
+<div class="terminal">
+  <div class="terminal-bar" aria-hidden="true"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">draft --doctor</span></div>
+  <div class="terminal-screen" tabindex="0" role="group" aria-label="draft --doctor output">
+<p class="tui-head">SOURCE TOOLING</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>pdftotext            /opt/homebrew/bin/pdftotext</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>docling              --reader docling: tables and structure, slower</p>
+<p class="tui-head">BACKENDS</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>claude               session provider</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>copilot              session provider</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>ollama               responding at http://127.0.0.1:11434</p>
+<p class="tui-head">PATHS</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>drafts (--out)       ~/Drop/Drafts</p>
+<p class="tui-out">Ready. Run draft --dry-run &lt;source&gt; to check a specific paper.</p>
+  </div>
+</div>
+<p class="term-caption">Real <code>draft --doctor</code> output. A green tick is a backend draft can use; run <code>--dry-run</code> to check one specific paper without calling a model.</p>
+</div>
+<h3 id="2-run-a-paper">2. Run a paper</h3>
+<p>Point draft at a PDF. In <code>auto</code> mode it picks the first backend you are logged
+into and shows a live view of the four phases as they run.</p>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
 </span></code></pre>
-<p>Online, draft drives whichever agent CLI you are already logged into. Offline,
-it falls back to a local Ollama model. Each source becomes its own dated
-article set.</p>
-<p><strong>Supported inputs:</strong> PDF, Markdown and plain text on every platform; <code>.docx</code>
-built in on macOS (<code>textutil</code>) or anywhere with <code>--reader docling</code>.</p>
-<h2>Command-line reference</h2>
+<div class="figure">
+<div class="terminal">
+  <div class="terminal-bar" aria-hidden="true"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">draft — 2603.23420.pdf</span></div>
+  <div class="terminal-screen" tabindex="0" role="group" aria-label="the draft run, phase by phase">
+<p class="tui-head">Drafting Grounded Articles — claude · sonnet · 900–1200 words</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Resolve source</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Read and section <span class="tui-note">· 5 sections</span></p>
+<p class="tui-phase tui-run"><span class="tui-marker">⠙</span>Extract claims <span class="tui-note">· claim section 3/5</span></p>
+<p class="tui-phase tui-pending"><span class="tui-marker">·</span>Write article</p>
+<p class="tui-phase tui-pending"><span class="tui-marker">·</span>Validate and save</p>
+<p class="tui-bar">q / esc quit · enter queue another source · j / k · arrows · pgup / pgdn scroll</p>
+  </div>
+</div>
+<p class="term-caption">The terminal UI as a run proceeds. A muted <code>·</code> is a phase not started, the coral spinner is the phase running now, and a green <code>✓</code> is one done. Prefer no UI? Add <code>--print</code> (paths to stdout) or <code>--json</code> (one JSON object per job).</p>
+</div>
+<p>When it finishes, the summary line reports the result:</p>
+<div class="figure">
+<div class="terminal">
+  <div class="terminal-bar" aria-hidden="true"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">draft — complete</span></div>
+  <div class="terminal-screen" tabindex="0" role="group" aria-label="a completed run">
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Resolve source</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Read and section</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Extract claims <span class="tui-note">· 6 verified, 9 dropped</span></p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Write article</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>Validate and save</p>
+<p class="tui-out">✓ 1,066 words via claude in 3m 54s · 16,230 tokens · $0.52</p>
+  </div>
+</div>
+<p class="term-caption">A finished run. Nine of fifteen candidate claims were dropped by the gate — that is grounded-by-construction working, not a bug. A thin source yields a short draft rather than a padded one.</p>
+</div>
+<h3 id="3-inspect-the-article-set">3. Inspect the article set</h3>
+<p>Each run writes one article as a dated set: three files that stay in sync, plus
+two a reader can check.</p>
+<pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">~/Drop/Drafts/2026-07-29/
+├── source/2026-07-29-&lt;slug&gt;-body.md          # the article — edit this
+├── yaml/2026-07-29-&lt;slug&gt;-frontmatter.yaml   # adjacent frontmatter
+├── final/2026-07-29-&lt;slug&gt;-final.md          # combined, ready to publish
+└── provenance/
+    ├── 2026-07-29-&lt;slug&gt;-attribution.json    # which claim backs each sentence
+    └── 2026-07-29-&lt;slug&gt;-c2pa.json           # C2PA manifest
+</span></code></pre>
+<p>Edit the body, then regenerate the other two in place with
+<code>draft --frontmatter &lt;body.md&gt;</code>. Your curated fields are preserved; only missing
+ones are rebuilt. See <a href="#the-article-set">the article set</a> for the rules.</p>
+<h3 id="4-verify-it">4. Verify it</h3>
+<p><code>draft --verify</code> recomputes the digests and confirms the article still matches
+the ledger it was written from.</p>
+<div class="figure">
+<div class="terminal">
+  <div class="terminal-bar" aria-hidden="true"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">draft --verify …-final.md</span></div>
+  <div class="terminal-screen" tabindex="0" role="group" aria-label="draft --verify output">
+<p class="tui-head">PROVENANCE</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>made by            draft 0.0.35</p>
+<p class="tui-phase tui-pending"><span class="tui-marker">·</span>written with       claude sonnet</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>article            unchanged since it was written (64261b97…)</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>claim ledger       matches the verified claims</p>
+<p class="tui-head">GROUNDING</p>
+<p class="tui-phase tui-pending"><span class="tui-marker">·</span>claims             6 verified</p>
+<p class="tui-phase tui-pending"><span class="tui-marker">·</span>attribution        13 of 36 sentences rest on a claim</p>
+<p class="tui-head">SOURCES</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>two-column.pdf     unchanged since it was read</p>
+<p class="tui-out">Verified. The article matches the provenance written beside it.</p>
+  </div>
+</div>
+<p class="term-caption">Edit a sentence the ledger did not support and re-run this: verification fails. Download a real, verifiable set on the <a href="/compliance/">provenance &amp; compliance</a> page and run <code>--verify</code> on it yourself.</p>
+</div>
+<h2 id="the-run-phase-by-phase">The run, phase by phase</h2>
+<p>The live view above maps one-to-one onto the pipeline. Each phase reports as it
+completes:</p>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 2, scrollable horizontally" tabindex="0"><table class="table">
+<thead>
+<tr>
+<th scope="col">Phase</th>
+<th scope="col">What happens</th>
+<th scope="col">Model call?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><strong>Resolve source</strong></td>
+<td class="text-left">Locate the file; bare names resolve against <code>~/Drop/Drafts/Sources</code>.</td>
+<td class="text-left">No</td>
+</tr>
+<tr>
+<td class="text-left"><strong>Read and section</strong></td>
+<td class="text-left"><code>pdftotext</code> (or <code>--reader docling</code>) extracts text; it is split into sections.</td>
+<td class="text-left">No</td>
+</tr>
+<tr>
+<td class="text-left"><strong>Extract claims</strong></td>
+<td class="text-left">One call per section mines claims; each is checked against the source and dropped unless its quote is verbatim.</td>
+<td class="text-left">Yes</td>
+</tr>
+<tr>
+<td class="text-left"><strong>Write article</strong></td>
+<td class="text-left">One call arranges the verified ledger into an article in your house style.</td>
+<td class="text-left">Yes</td>
+</tr>
+<tr>
+<td class="text-left"><strong>Validate and save</strong></td>
+<td class="text-left">House-style checks run; the set is written with attribution and a C2PA manifest.</td>
+<td class="text-left">No</td>
+</tr>
+</tbody>
+</table></div></div>
+<div class="callout callout-tip">
+<span class="callout-label">Tip</span>
+The deterministic path — read, section, gate, validate — runs in about a tenth
+of a second on a 62-page paper. Everything else is model latency, which depends
+on your engine, not on draft. See the <a href="/benchmarks/">benchmarks</a>.
+</div>
+<h2 id="choosing-an-engine">Choosing an engine</h2>
+<p>In <code>auto</code> mode draft walks a preference list and uses the first backend you are
+logged into. Force one with <code>--engine &lt;name&gt;</code>, or split the two model phases
+with <code>--extract-engine</code> and <code>--write-engine</code>.</p>
+<p><strong>Verified, used by auto mode:</strong> <code>claude</code>, <code>copilot</code>, <code>codex</code>, <code>grok</code>, <code>agy</code>,
+<code>cursor-agent</code>.</p>
+<p><strong>Experimental</strong> (invocation correct, output unverified; auto uses them only
+with <code>--experimental</code>): <code>amp</code>, <code>crush</code>, <code>goose</code>, <code>qwen</code>, <code>gemini-acp</code>,
+<code>codex-acp</code>.</p>
+<p><strong>Offline:</strong> <code>--engine ollama</code> runs the whole pipeline against a local model. If
+an online call fails because you are offline, draft fails over to Ollama and
+stays there for the rest of the run.</p>
+<div class="callout callout-note">
+<span class="callout-label">No API key</span>
+A session backend uses that tool's own logged-in session — the same credentials
+you already use with the CLI directly. draft stores no keys and adds no network
+calls of its own.
+</div>
+<h2 id="readers">Readers</h2>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 3, scrollable horizontally" tabindex="0"><table class="table">
+<thead>
+<tr>
+<th scope="col">Reader</th>
+<th scope="col">Use it for</th>
+<th scope="col">Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><code>pdftotext</code> (default)</td>
+<td class="text-left">Most PDFs. A 62-page paper in about 110 ms.</td>
+<td class="text-left">Fast</td>
+</tr>
+<tr>
+<td class="text-left"><code>--reader docling</code></td>
+<td class="text-left">Papers where tables and structure matter; reads PDF and DOCX on every platform.</td>
+<td class="text-left">Slower</td>
+</tr>
+</tbody>
+</table></div></div>
+<h2 id="command-reference">Command reference</h2>
 <pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">draft [flags] &lt;source&gt; [more-sources...]
 </span></code></pre>
-<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 2, scrollable horizontally" tabindex="0"><table class="table">
+<p>Bare filenames resolve against <code>~/Drop/Drafts/Sources</code>. Each source becomes its
+own draft, processed as a queue.</p>
+<h3 id="engine-and-model">Engine and model</h3>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 4, scrollable horizontally" tabindex="0"><table class="table">
 <thead>
 <tr>
 <th scope="col">Flag</th>
@@ -340,56 +542,125 @@ built in on macOS (<code>textutil</code>) or anywhere with <code>--reader doclin
 <td class="text-left"><code>auto</code> (default), <code>ollama</code>, or a provider name</td>
 </tr>
 <tr>
-<td class="text-left"><code>--model &lt;name&gt;</code></td>
-<td class="text-left">Session-provider model override (e.g. <code>opus</code>)</td>
-</tr>
-<tr>
 <td class="text-left"><code>--extract-engine &lt;m&gt;</code></td>
 <td class="text-left">Backend for claim extraction (default: <code>--engine</code>)</td>
 </tr>
 <tr>
 <td class="text-left"><code>--write-engine &lt;m&gt;</code></td>
-<td class="text-left">Backend for writing the article (default: <code>--engine</code>)</td>
+<td class="text-left">Backend for writing (default: <code>--engine</code>)</td>
+</tr>
+<tr>
+<td class="text-left"><code>--model &lt;name&gt;</code></td>
+<td class="text-left">Session-provider model override (e.g. <code>opus</code>)</td>
 </tr>
 <tr>
 <td class="text-left"><code>--experimental</code></td>
 <td class="text-left">Let auto mode use experimental providers</td>
 </tr>
 <tr>
-<td class="text-left"><code>--strict-numbers</code></td>
-<td class="text-left">Fail a draft carrying a number found in no verified claim</td>
+<td class="text-left"><code>--num-ctx &lt;n&gt;</code></td>
+<td class="text-left">Ollama context window (default <code>8192</code>)</td>
 </tr>
 <tr>
+<td class="text-left"><code>--num-predict &lt;n&gt;</code></td>
+<td class="text-left">Ollama max output tokens (default <code>6000</code>)</td>
+</tr>
+</tbody>
+</table></div></div>
+<h3 id="reading-and-grounding">Reading and grounding</h3>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 5, scrollable horizontally" tabindex="0"><table class="table">
+<thead>
+<tr>
+<th scope="col">Flag</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td class="text-left"><code>--reader &lt;name&gt;</code></td>
-<td class="text-left"><code>pdftotext</code> (default) or <code>docling</code> for tables and structure</td>
+<td class="text-left"><code>pdftotext</code> (default) or <code>docling</code></td>
 </tr>
 <tr>
 <td class="text-left"><code>--style &lt;file&gt;</code></td>
-<td class="text-left">House-style rules to enforce</td>
+<td class="text-left">JSON house-style file: word band, banned vocabulary, language variant</td>
+</tr>
+<tr>
+<td class="text-left"><code>--strict-numbers</code></td>
+<td class="text-left">Fail on a number found in no verified claim</td>
+</tr>
+<tr>
+<td class="text-left"><code>--no-cache</code></td>
+<td class="text-left">Re-extract instead of reusing cached claims</td>
+</tr>
+<tr>
+<td class="text-left"><code>--clear-cache</code></td>
+<td class="text-left">Delete every cached claim extraction and exit</td>
+</tr>
+</tbody>
+</table></div></div>
+<h3 id="output-and-workflow">Output and workflow</h3>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 6, scrollable horizontally" tabindex="0"><table class="table">
+<thead>
+<tr>
+<th scope="col">Flag</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><code>--out &lt;dir&gt;</code></td>
+<td class="text-left">Directory to write drafts into (default <code>~/Drop/Drafts</code>)</td>
+</tr>
+<tr>
+<td class="text-left"><code>--sources-dir &lt;dir&gt;</code></td>
+<td class="text-left">Directory bare filenames resolve against</td>
+</tr>
+<tr>
+<td class="text-left"><code>--merge</code></td>
+<td class="text-left">Combine all sources into one draft</td>
+</tr>
+<tr>
+<td class="text-left"><code>--force-new</code></td>
+<td class="text-left">Draft even if today's folder already has one</td>
 </tr>
 <tr>
 <td class="text-left"><code>--resume</code></td>
 <td class="text-left">Reuse a verified claim ledger from an earlier attempt</td>
 </tr>
 <tr>
-<td class="text-left"><code>--verify &lt;f&gt;</code></td>
-<td class="text-left">Check an article against its provenance, and exit</td>
-</tr>
-<tr>
-<td class="text-left"><code>--frontmatter &lt;f&gt;</code></td>
-<td class="text-left">Regenerate frontmatter and final document from an article</td>
-</tr>
-<tr>
-<td class="text-left"><code>--review &lt;draft&gt;</code></td>
+<td class="text-left"><code>--review &lt;draft.md&gt;</code></td>
 <td class="text-left">Enhance an existing draft with surgical edits</td>
 </tr>
 <tr>
-<td class="text-left"><code>--out &lt;dir&gt;</code></td>
-<td class="text-left">Directory to write drafts into (default <code>~/Drop/Drafts</code>)</td>
+<td class="text-left"><code>--frontmatter &lt;file&gt;</code></td>
+<td class="text-left">Regenerate frontmatter and the final article</td>
 </tr>
 <tr>
-<td class="text-left"><code>--merge</code></td>
-<td class="text-left">Combine all sources into one draft</td>
+<td class="text-left"><code>--verify &lt;file&gt;</code></td>
+<td class="text-left">Check an article against its provenance, and exit</td>
+</tr>
+<tr>
+<td class="text-left"><code>--keep-artifacts</code></td>
+<td class="text-left">Keep prompt/ledger files beside a successful draft</td>
+</tr>
+</tbody>
+</table></div></div>
+<h3 id="modes-and-info">Modes and info</h3>
+<div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 7, scrollable horizontally" tabindex="0"><table class="table">
+<thead>
+<tr>
+<th scope="col">Flag</th>
+<th scope="col">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><code>--print</code></td>
+<td class="text-left">Run without the UI; print draft paths to stdout</td>
+</tr>
+<tr>
+<td class="text-left"><code>--json</code></td>
+<td class="text-left">Run without the UI; one JSON object per job on stdout</td>
 </tr>
 <tr>
 <td class="text-left"><code>--dry-run</code></td>
@@ -400,12 +671,8 @@ built in on macOS (<code>textutil</code>) or anywhere with <code>--reader doclin
 <td class="text-left">Check that this machine can run draft, and exit</td>
 </tr>
 <tr>
-<td class="text-left"><code>--print</code></td>
-<td class="text-left">Run without the TUI; print draft paths to stdout</td>
-</tr>
-<tr>
-<td class="text-left"><code>--json</code></td>
-<td class="text-left">Run without the TUI; one JSON object per job on stdout</td>
+<td class="text-left"><code>--completion &lt;sh&gt;</code></td>
+<td class="text-left">Print a completion script: <code>bash</code>, <code>zsh</code>, or <code>fish</code></td>
 </tr>
 <tr>
 <td class="text-left"><code>--version</code></td>
@@ -417,44 +684,82 @@ built in on macOS (<code>textutil</code>) or anywhere with <code>--reader doclin
 </tr>
 </tbody>
 </table></div></div>
-<p>The <a href="https://github.com/sebastienrousseau/draft#usage">README</a> lists every
-flag, including cache and Ollama-tuning options.</p>
-<h2>Engines</h2>
-<p>draft never asks for an API key. In <code>auto</code> mode it walks a list of supported
-agent CLIs and uses the first one you are logged into, driving that tool's own
-session. Supported engines include Claude, Copilot, Codex, Cursor, Grok and
-Gemini; offline, it uses a local Ollama model. Force one with <code>--engine &lt;name&gt;</code>.</p>
-<h2>Article sets</h2>
-<p>Each run writes one article as three files that stay in sync, plus two a reader
-can check:</p>
-<pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">2026-07-29/
-├── source/…-body.md              # the article — edit this
-├── yaml/…-frontmatter.yaml       # adjacent frontmatter
-├── final/…-final.md              # combined, ready to publish
-└── provenance/
-    ├── …-attribution.json        # which claim backs each sentence
-    └── …-c2pa.json               # C2PA manifest definition
-</span></code></pre>
-<p>Edit the body, then regenerate the other two in place with
-<code>draft --frontmatter &lt;body.md&gt;</code>. Your curated fields are preserved; only
-missing ones are rebuilt.</p>
-<h2>Provenance</h2>
+<h3 id="examples">Examples</h3>
+<pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span>                  <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> one paper</span><span class="comment line number-sign shell">
+</span></span><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> a.pdf b.pdf c.pdf                 <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> three drafts, queued</span><span class="comment line number-sign shell">
+</span></span><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>merge</span> notes.md paper.pdf        <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> combine into a single draft</span><span class="comment line number-sign shell">
+</span></span><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>engine</span> ollama paper.pdf         <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> force the local model</span><span class="comment line number-sign shell">
+</span></span><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>review</span> draft.md paper.pdf       <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> enhance an existing draft</span><span class="comment line number-sign shell">
+</span></span><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>frontmatter</span> source/x-body.md    <span class="comment line number-sign shell"><span class="punctuation definition comment begin shell">#</span></span><span class="comment line number-sign shell"> regenerate the yaml + final set</span><span class="comment line number-sign shell">
+</span></span></span></code></pre>
+<h2 id="the-article-set">The article set</h2>
+<p><strong>One article. Three files. Always in sync.</strong> Plus two a reader can check. Edit
+the body, then run <code>draft --frontmatter &lt;body.md&gt;</code> to regenerate the frontmatter
+and combined document. Three rules make that safe to run at any time:</p>
+<ol>
+<li><strong>The filename is the article's identity.</strong> Its date and slug drive every URL
+in the frontmatter. Retitle the article and the permalink holds.</li>
+<li><strong>Your edits always win.</strong> Curated fields are preserved verbatim; only missing
+ones are generated. Delete a field to have it rebuilt.</li>
+<li><strong>Unchanged input is a no-op.</strong> Reprocessing a set that has not changed
+rewrites every file byte for byte identically.</li>
+</ol>
+<p>The provenance pair is written once, by the run that produced the article, and
+is not regenerated — it describes the article the ledger was verified against.</p>
+<h2 id="provenance-and-verification">Provenance and verification</h2>
 <p>Every set ships a per-sentence attribution file and a C2PA manifest.
 <code>draft --verify &lt;final.md&gt;</code> recomputes the digests and reports whether the
-article still matches the ledger it was written from.</p>
-<h2>Troubleshooting</h2>
-<ul>
-<li><strong>No text in the PDF.</strong> A scanned PDF has no text layer; extraction returns
-nothing. Use a source with selectable text.</li>
-<li><strong>No engine found.</strong> Run <code>draft --doctor</code>. Log into an agent CLI, or install
-Ollama for offline runs.</li>
-<li><strong>A thin ledger.</strong> A source with few checkable claims yields a short draft by
-design — draft never pads.</li>
-</ul>
-<p>Full library API is on
-<a href="https://pkg.go.dev/github.com/sebastienrousseau/draft">pkg.go.dev</a>.</p>
+article, the ledger and the sources are all unchanged. It is the reader's check,
+not just yours — anyone with the files can run it.</p>
+<p>See <a href="/compliance/">provenance &amp; compliance</a> for what the manifest contains,
+how it maps to AI-disclosure rules, and a real set you can download and verify.</p>
+<h2 id="house-style">House style</h2>
+<p><code>--style &lt;file&gt;</code> points draft at a JSON house-style file: a word band, a banned
+vocabulary, and a language variant. Style is <strong>enforced</strong> on the finished draft,
+not merely requested — a draft that breaks a rule is corrected, not shipped.</p>
+<h2 id="configuration-and-environment">Configuration and environment</h2>
+<p>Most flags have an environment-variable equivalent, useful for CI or a shared
+default:</p>
+<pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">DRAFT_ENGINE, DRAFT_MODEL_SESSION, DRAFT_MODEL, DRAFT_WRITE_MODEL,
+DRAFT_EXTRACT_MODEL, DRAFT_NUM_CTX, DRAFT_NUM_PREDICT, DRAFT_STRICT_NUMBERS,
+DRAFT_DRAFTS_DIR, DRAFT_SOURCES_DIR, DRAFT_CACHE_DIR, DRAFT_NO_CACHE,
+OLLAMA_HOST
+</span></code></pre>
+<p>Set <code>DRAFT_SHOW_LOGO=0</code> to suppress the nib mark in <code>--help</code>. Publisher identity
+for the C2PA manifest is configured with the <code>DRAFT_SITE_*</code> variables.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="callout callout-warning">
+<span class="callout-label">No text in the PDF</span>
+A scanned PDF has no text layer, so extraction returns nothing and the run
+fails. Use a source with selectable text, or convert it with OCR first. Native
+OCR is on the <a href="/roadmap/">roadmap</a>.
 </div>
+<p><strong>No backend found.</strong> Run <code>draft --doctor</code>. Log into one supported agent CLI, or
+install Ollama and start it for offline runs. You need exactly one.</p>
+<p><strong>A thin ledger.</strong> A source with few checkable claims yields a short draft by
+design. draft never pads; a short draft means the paper offered little the gate
+could verify.</p>
+<p><strong>Offline model not pulled.</strong> <code>--engine ollama</code> needs the model downloaded
+beforehand and the Ollama server running. <code>draft --doctor</code> reports whether it is
+reachable.</p>
+<p><strong>A run failed partway.</strong> The verified ledger is left on disk. Re-run with
+<code>--resume</code> to skip straight to writing rather than re-paying for extraction.</p>
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li><a href="/grounding/">How grounding works</a> — the nine-check gate, in detail.</li>
+<li><a href="/examples/">Examples</a> — a sentence, its source span, and the attribution that binds them.</li>
+<li><a href="/compliance/">Provenance &amp; compliance</a> — a real set you can download and verify.</li>
+<li><a href="/library/">Go packages</a> — every capability as an importable Go package.</li>
+<li><a href="/roadmap/">Roadmap</a> — what draft does not yet do.</li>
+</ul>
+</div>
+    </div>
+    <aside class="doc-toc" aria-labelledby="toc-title">
+      <p class="toc-title" id="toc-title">On this page</p>
+      <nav aria-label="On this page"><ol class="toc-list"><li><a href="#overview">Overview</a></li><li><a href="#install">Install</a></li><li><a href="#quickstart">Quickstart</a></li><li><a href="#the-run-phase-by-phase">The run, phase by phase</a></li><li><a href="#choosing-an-engine">Choosing an engine</a></li><li><a href="#readers">Readers</a></li><li><a href="#command-reference">Command reference</a></li><li><a href="#the-article-set">The article set</a></li><li><a href="#provenance-and-verification">Provenance and verification</a></li><li><a href="#house-style">House style</a></li><li><a href="#configuration-and-environment">Configuration and environment</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#next-steps">Next steps</a></li></ol></nav>
+    </aside>
   </div>
+  
 </article>
 
     </main>

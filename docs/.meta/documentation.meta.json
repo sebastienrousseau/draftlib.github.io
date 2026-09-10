@@ -4,18 +4,19 @@
   "banner_alt": "A printed research paper on a desk",
   "breadcrumb": true,
   "date": "2026-09-01",
-  "description": "Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.",
+  "description": "Install draft, run your first paper-to-post in a minute, understand the four-phase run, and read the full command-line reference — with real terminal output at every step.",
   "eyebrow": "Docs",
   "headline": "Documentation",
   "language": "en-GB",
   "layout": "page",
-  "lead": "Install, quickstart, and the full command-line reference for draft.",
+  "lead": "Install draft, run your first paper in a minute, and read the full command-line reference — with real terminal output at every step.",
   "logo": "https://cloudcdn.pro/cmn/v1/logos/cmn.svg",
   "name": "draft",
   "og_card": "documentation",
   "permalink": "https://draftlib.com/documentation/",
-  "reading_time": 3,
+  "reading_time": 12,
   "short_name": "draft",
   "title": "Documentation — draft",
-  "word_count": 731
+  "toc": true,
+  "word_count": 2429
 }

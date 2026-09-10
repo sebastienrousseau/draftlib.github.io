@@ -265,8 +265,9 @@
 </section>
 
 <article class="section">
+  
   <div class="container prose stack">
-    <div lang="en"><h2>See the gate work</h2>
+    <div lang="en"><h2 id="see-the-gate-work">See the gate work</h2>
 <p>Grounding is easier to trust when you can see it. Here is one sentence draft
 wrote, the verbatim source span that let it survive the gate, and the
 attribution entry that binds them.</p>
@@ -295,7 +296,7 @@ changes: the gate checks quotes and numbers, so faithful wording is on the
 writer, and this is what faithful wording looks like. A sentence without an
 attribution entry cannot exist in the article, and <code>draft --verify</code> recomputes
 the manifest digests against exactly this.</p>
-<h2>One paper, start to finish</h2>
+<h2 id="one-paper-start-to-finish">One paper, start to finish</h2>
 <pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"> <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>2603.23420.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
 </span></code></pre>
 <p>draft reads the paper, builds a verified claim ledger, writes the article from
@@ -311,15 +312,15 @@ it, and saves a dated set:</p>
 <p>The attribution file maps each sentence in the article to the claim, and the
 verbatim source quote, that backs it. Nothing in the body exists without a line
 in that file.</p>
-<h2>Verify it</h2>
+<h2 id="verify-it">Verify it</h2>
 <pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>verify</span> 2026-07-29/final/2026-07-29-attention-routing-final.md</span>
 </span></code></pre>
 <p>The manifest digests are recomputed and checked. Edit a sentence the ledger did
 not support and verification fails — that is the guarantee.</p>
-<h2>A batch, merged into one draft</h2>
+<h2 id="a-batch-merged-into-one-draft">A batch, merged into one draft</h2>
 <pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>merge</span> a.pdf b.pdf c.pdf</span>
 </span></code></pre>
-<h2>Offline, on a plane</h2>
+<h2 id="offline-on-a-plane">Offline, on a plane</h2>
 <pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>engine</span> ollama <span class="string quoted double shell"><span class="punctuation definition string begin shell">&quot;</span>my-paper.pdf<span class="punctuation definition string end shell">&quot;</span></span></span>
 </span></code></pre>
 <p>No network, no API key. The same gate runs; only the writer changes.</p>
@@ -329,6 +330,7 @@ page. More runnable examples live in the
 <a href="https://github.com/sebastienrousseau/draft/tree/main/examples">repository</a>.</p>
 </div>
   </div>
+  
 </article>
 
     </main>

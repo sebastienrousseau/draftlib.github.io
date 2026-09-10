@@ -81,7 +81,7 @@
     <item>
       <title>Documentation — draft</title>
       <link>http://127.0.0.1:8000/documentation/</link>
-      <description>Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.</description>
+      <description>Install draft, run your first paper-to-post in a minute, understand the four-phase run, and read the full command-line reference — with real terminal output at every step.</description>
       <guid isPermaLink="true">http://127.0.0.1:8000/documentation/</guid>
       <pubDate></pubDate>
       <author>Sebastien Rousseau</author>

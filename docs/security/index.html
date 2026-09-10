@@ -264,8 +264,9 @@
 </section>
 
 <article class="section">
+  
   <div class="container prose stack">
-    <div lang="en"><h2>Posture</h2>
+    <div lang="en"><h2 id="posture">Posture</h2>
 <ul>
 <li><strong>Local-first.</strong> The reader, claim gate, house-style checks and provenance
 are deterministic Go and never touch the network. Run fully offline with
@@ -276,17 +277,18 @@ sessions. It stores no credentials and asks for none.</li>
 <li><strong>Provenance you can verify.</strong> Every article ships a C2PA manifest and a
 per-sentence attribution file; <code>draft --verify</code> recomputes the digests.</li>
 </ul>
-<h2>Data flow</h2>
+<h2 id="data-flow">Data flow</h2>
 <p>With a local model, nothing leaves your machine. With a cloud agent CLI, the
 source excerpts draft needs to extract and write pass through that tool under
 your own session — the same data you would send by using that CLI directly.</p>
 <p>For how draft's provenance maps to AI-disclosure rules, see <a href="/compliance/">provenance &amp; compliance</a>.</p>
-<h2>Reporting a vulnerability</h2>
+<h2 id="reporting-a-vulnerability">Reporting a vulnerability</h2>
 <p>Please report security issues privately through the
 <a href="https://github.com/sebastienrousseau/draft/security/advisories">GitHub security advisories</a>
 page rather than a public issue.</p>
 </div>
   </div>
+  
 </article>
 
     </main>

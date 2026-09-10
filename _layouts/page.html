@@ -29,8 +29,20 @@
 </section>
 
 <article class="section">
+  {{#if toc}}
+  <div class="container doc-layout">
+    <div class="prose stack doc-main">
+      {{!content}}
+    </div>
+    <aside class="doc-toc" aria-labelledby="toc-title">
+      <p class="toc-title" id="toc-title">On this page</p>
+      <nav aria-label="On this page"><!--TOC--></nav>
+    </aside>
+  </div>
+  {{else}}
   <div class="container prose stack">
     {{!content}}
   </div>
+  {{/if}}
 </article>
 {{/block}}

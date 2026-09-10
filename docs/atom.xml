@@ -101,7 +101,7 @@
     <id>http://127.0.0.1:8000/documentation/</id>
     <updated></updated>
     <published></published>
-    <summary>Install draft, run your first paper-to-post in under a minute, and read the full command-line reference.</summary>
+    <summary>Install draft, run your first paper-to-post in a minute, understand the four-phase run, and read the full command-line reference — with real terminal output at every step.</summary>
     <author><name>Sebastien Rousseau</name></author>
   </entry>
   <entry>

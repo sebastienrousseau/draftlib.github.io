@@ -264,11 +264,12 @@
 </section>
 
 <article class="section">
+  
   <div class="container prose stack">
-    <div lang="en"><h2>How grounding works</h2>
+    <div lang="en"><h2 id="how-grounding-works">How grounding works</h2>
 <p>The claim ledger is the only factual substrate the writer is given. Everything
 else in <code>draft</code> exists to make that ledger trustworthy.</p>
-<h3>What the gate does and does not check</h3>
+<h3 id="what-the-gate-does-and-does-not-check">What the gate does and does not check</h3>
 <p>The gate is precise about its own scope. It guarantees that every claim's quote
 appears <strong>verbatim</strong> in the source and that every number in the claim appears in
 that quote. It does <strong>not</strong> judge whether the claim <em>interprets</em> the quote
@@ -277,7 +278,7 @@ reading is faithful. Those are the writer's responsibility, and the
 per-sentence attribution file is what lets a reader check them against the
 source. &quot;Grounded&quot; here means source-linked and quote-and-number-checked, not
 semantically guaranteed.</p>
-<h3>The gate</h3>
+<h3 id="the-gate">The gate</h3>
 <p>Each source section is mined for claims. A claim is a short factual statement
 plus the span of source text that supports it. <code>Verify</code> applies nine checks in
 order and returns the first failure as its reason:</p>
@@ -294,7 +295,7 @@ order and returns the first failure as its reason:</p>
 </ol>
 <p>Anything else is dropped and counted. A thin source visibly yields a thin
 ledger rather than a padded one.</p>
-<h3>Rendering tolerance, not word tolerance</h3>
+<h3 id="rendering-tolerance-not-word-tolerance">Rendering tolerance, not word tolerance</h3>
 <p>Quote matching normalises both sides before comparing, so the same words
 verify however the model and the PDF extractor rendered the characters
 between them: lower-cased, whitespace collapsed, smart quotes folded, a
@@ -307,14 +308,14 @@ paper. Measured over 3,217 extraction blocks from real papers, it cut the
 rate of dropped claims from 29.6% to 8.5%.</p>
 <p>A quote that changes, adds, drops or reorders a <em>word</em> still fails. The
 tolerance is over rendering, never over meaning.</p>
-<h3>Repairing a cut quote</h3>
+<h3 id="repairing-a-cut-quote">Repairing a cut quote</h3>
 <p>A model sometimes copies a supporting span but stops mid-clause, or copies one
 too short to cite. Rather than drop it, <code>draft</code> extends the quote to its
 sentence boundary using the <strong>source's own words</strong> — never the model's — so
 the repaired quote is verbatim by construction and the same gate judges it exactly as it would any other. The extension stops at the first sentence end,
 so a fabricated number living in the next sentence can never be pulled in. A
 quote the source does not contain word for word is left alone and dropped.</p>
-<h3>Why checks 3 and 4 exist</h3>
+<h3 id="why-checks-3-and-4-exist">Why checks 3 and 4 exist</h3>
 <p>The same normalisation is lossy in one dangerous way. <code>strings.ToLower</code> maps every
 invalid UTF-8 byte to the replacement character, so two <em>different</em> invalid
 byte sequences normalise to the same text — and a fabricated quote could match
@@ -323,7 +324,7 @@ valid UTF-8 and free of replacement characters closes it, because normalisation
 can only ever <em>introduce</em> that character, never any other.</p>
 <p>Whitespace collapsing carries no equivalent risk: a run of spaces collapses to
 one, never to none, so <code>a b</code> can never match <code>ab</code>.</p>
-<h3>After the writing</h3>
+<h3 id="after-the-writing">After the writing</h3>
 <p>A finished draft is checked twice more. The house rules cover structure, the
 word band, banned vocabulary and emoji. The faithfulness pass cross-checks the
 article against the ledger that grounded it — flagging a metric term no claim
@@ -331,13 +332,14 @@ supports, an ending that does not close a sentence, and near-duplicate
 paragraphs, with ungrounded numbers and over-stated hedges reported as
 warnings.</p>
 <p>A violation triggers a targeted rewrite, not a shrug.</p>
-<h3>Resume cannot weaken this</h3>
+<h3 id="resume-cannot-weaken-this">Resume cannot weaken this</h3>
 <p><code>--resume</code> reuses a ledger from an earlier attempt, but it re-verifies every
 record against the freshly re-read sources first. A resumed ledger is trusted
 because it still passes the same gate, not because <code>draft</code> wrote it. Edit a
 source underneath and the records it no longer supports are dropped.</p>
 </div>
   </div>
+  
 </article>
 
     </main>

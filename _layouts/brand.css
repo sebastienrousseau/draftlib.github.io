@@ -2616,3 +2616,105 @@ pre.highlight:focus-visible {
 @media (min-width: 62rem) {
   .lineup { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ======================================================================
+   Documentation: two-column layout with a sticky "on this page" rail,
+   callouts, terminal figures with captions, and a static TUI view.
+   ====================================================================== */
+
+.doc-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+@media (max-width: 60rem) {
+  .doc-layout { grid-template-columns: 1fr; }
+  .doc-toc { display: none; }
+}
+
+.doc-toc {
+  position: sticky;
+  top: 5.5rem;
+  align-self: start;
+  font-size: 0.85rem;
+  border-left: 1px solid var(--line-soft);
+  padding-left: 1.1rem;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+}
+
+.toc-title {
+  margin: 0 0 0.7rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  font-weight: 700;
+}
+
+.toc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+.toc-list a { color: var(--ink-muted); text-decoration: none; line-height: 1.35; display: block; }
+.toc-list a:hover, .toc-list a:focus-visible { color: var(--accent); text-decoration: underline; }
+
+/* Deep-link anchors clear the sticky header when jumped to. */
+.doc-main :is(h2, h3, h4)[id] { scroll-margin-top: 5.5rem; }
+
+/* ---------- callouts ---------- */
+.callout {
+  margin-block: 1.6rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  background: var(--surface-soft);
+}
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+.callout-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.35rem;
+  color: var(--accent);
+}
+.callout-note { border-left-color: #6b8cc9; }
+.callout-note .callout-label { color: #2c5aa0; }
+.callout-warning { border-left-color: #d9a441; }
+.callout-warning .callout-label { color: #8a5a00; }
+
+/* ---------- terminal figure + caption ---------- */
+.figure { margin-block: 1.75rem; }
+.figure .terminal { margin-block: 0; }
+.figure figcaption, .term-caption {
+  margin: 0.55rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+/* ---------- static TUI view ---------- */
+.tui-head { color: #9fb4bd; margin: 0 0 0.5rem; }
+.tui-phase { margin: 0.12rem 0; white-space: nowrap; }
+.tui-marker { display: inline-block; width: 1.3em; }
+.tui-done .tui-marker { color: #4ade80; }
+.tui-run { color: #d6e4ea; }
+.tui-run .tui-marker { color: var(--accent-bright); }
+.tui-pending { color: #7c94a0; }
+.tui-note { color: #9fb4bd; }
+.tui-out { color: #9fb4bd; margin: 0.5rem 0 0; }
+.tui-bar { color: #7c94a0; margin: 0.7rem 0 0; border-top: 1px solid #22333c; padding-top: 0.5rem; }
+
+/* Second and later section heads inside a terminal screen get breathing room. */
+.terminal-screen .tui-head ~ .tui-head { margin-top: 0.75rem; }
+
+/* Callout labels keep their hue but must clear AA on both themes' surfaces. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .callout-note .callout-label { color: #8fb3e8; }
+  :root:not([data-theme="light"]) .callout-warning .callout-label { color: #e0b45f; }
+}
+:root[data-theme="dark"] .callout-note .callout-label { color: #8fb3e8; }
+:root[data-theme="dark"] .callout-warning .callout-label { color: #e0b45f; }
