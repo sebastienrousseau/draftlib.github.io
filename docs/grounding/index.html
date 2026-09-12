@@ -315,6 +315,27 @@ sentence boundary using the <strong>source's own words</strong> — never the mo
 the repaired quote is verbatim by construction and the same gate judges it exactly as it would any other. The extension stops at the first sentence end,
 so a fabricated number living in the next sentence can never be pulled in. A
 quote the source does not contain word for word is left alone and dropped.</p>
+<h3 id="claims-from-tables-not-just-prose">Claims from tables, not just prose</h3>
+<p>Plain-text extraction flattens a table into an unquotable jumble, so its
+numbers — often the paper's actual results — never became claims. With
+<code>--reader docling</code> a table is preserved as Markdown, and draft mines each
+numeric cell directly: the value, named by its row and column headers, becomes
+a claim quoted by the verbatim data row it sits in. The value is read straight
+from the parsed cell, so the association is grounded by construction, and every
+candidate still passes the same <code>Verify</code> gate as a model-extracted claim. A
+cell with no number is not a claim.</p>
+<h3 id="the-optional-semantic-second-gate">The optional semantic second gate</h3>
+<p>The verbatim gate is deliberate about its limit: it checks that the words are
+there, not that the claim reads them correctly. <code>--second-gate</code> closes that gap
+on request. After the verbatim gate, a local model is asked, for each surviving
+claim, whether its quote actually <strong>supports</strong> it — same subject, same
+direction, no borrowed certainty — and a claim the model marks unsupported is
+dropped before writing.</p>
+<p>It is strictly additive and cannot weaken a run. It is off by default; the
+verbatim gate is always the primary check; and it is <strong>fail-open</strong> — a model
+error, a cancelled run, or an unreadable verdict keeps the claim, so the pass
+can only ever tighten the ledger, never thin it on a transient failure. It runs
+locally like everything else.</p>
 <h3 id="why-checks-3-and-4-exist">Why checks 3 and 4 exist</h3>
 <p>The same normalisation is lossy in one dangerous way. <code>strings.ToLower</code> maps every
 invalid UTF-8 byte to the replacement character, so two <em>different</em> invalid

@@ -78,6 +78,32 @@ the repaired quote is verbatim by construction and the same gate judges it exact
 so a fabricated number living in the next sentence can never be pulled in. A
 quote the source does not contain word for word is left alone and dropped.
 
+### Claims from tables, not just prose
+
+Plain-text extraction flattens a table into an unquotable jumble, so its
+numbers — often the paper's actual results — never became claims. With
+`--reader docling` a table is preserved as Markdown, and draft mines each
+numeric cell directly: the value, named by its row and column headers, becomes
+a claim quoted by the verbatim data row it sits in. The value is read straight
+from the parsed cell, so the association is grounded by construction, and every
+candidate still passes the same `Verify` gate as a model-extracted claim. A
+cell with no number is not a claim.
+
+### The optional semantic second gate
+
+The verbatim gate is deliberate about its limit: it checks that the words are
+there, not that the claim reads them correctly. `--second-gate` closes that gap
+on request. After the verbatim gate, a local model is asked, for each surviving
+claim, whether its quote actually **supports** it — same subject, same
+direction, no borrowed certainty — and a claim the model marks unsupported is
+dropped before writing.
+
+It is strictly additive and cannot weaken a run. It is off by default; the
+verbatim gate is always the primary check; and it is **fail-open** — a model
+error, a cancelled run, or an unreadable verdict keeps the claim, so the pass
+can only ever tighten the ledger, never thin it on a transient failure. It runs
+locally like everything else.
+
 ### Why checks 3 and 4 exist
 
 The same normalisation is lossy in one dangerous way. `strings.ToLower` maps every

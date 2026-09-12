@@ -62,6 +62,9 @@ draft --verify 2026-07-29/final/2026-07-29-my-paper-final.md
 ```
 
 This recomputes the digests and confirms the article still matches its ledger.
+Add `--json` for a portable `draft.verification-record/v1` receipt a script can
+consume. PDFs are not the only input — Markdown, plain text, DOCX and LaTeX
+(`.tex`) work too.
 
 Next: the [documentation](/documentation/) for the full flag reference, or
 [how grounding works](/grounding/) for the verification gate in detail.

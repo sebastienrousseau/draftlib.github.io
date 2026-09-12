@@ -519,6 +519,10 @@ A session backend uses that tool's own logged-in session — the same credential
 you already use with the CLI directly. draft stores no keys and adds no network
 calls of its own.
 </div>
+<p><strong>Escape hatch (opt-in):</strong> on a machine with no agent CLI, <code>--engine api:anthropic</code> or <code>--engine api:openai</code> calls a hosted API directly, reading
+your own key from <code>ANTHROPIC_API_KEY</code> or <code>OPENAI_API_KEY</code>. It is never chosen by
+<code>auto</code> mode — the keyless agent-session path stays the default — and it fails
+over to Ollama like any other backend.</p>
 <h2 id="readers">Readers</h2>
 <div class="table-responsive"><div class="table-wrap ssg-table-scroll" role="region" aria-label="Table 3, scrollable horizontally" tabindex="0"><table class="table">
 <thead>
@@ -536,11 +540,14 @@ calls of its own.
 </tr>
 <tr>
 <td class="text-left"><code>--reader docling</code></td>
-<td class="text-left">Papers where tables and structure matter; reads PDF and DOCX on every platform.</td>
+<td class="text-left">Papers where tables and structure matter; reads PDF and DOCX on every platform. Mines table cells into claims.</td>
 <td class="text-left">Slower</td>
 </tr>
 </tbody>
 </table></div></div>
+<p>PDF, Markdown, plain text and DOCX are all accepted, and so is <strong>LaTeX
+(<code>.tex</code>)</strong> — read directly with no external tool, keeping a formula as exact
+text where <code>pdftotext</code> would scramble it.</p>
 <h2 id="command-reference">Command reference</h2>
 <pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">draft [flags] &lt;source&gt; [more-sources...]
 </span></code></pre>
@@ -557,7 +564,7 @@ own draft, processed as a queue.</p>
 <tbody>
 <tr>
 <td class="text-left"><code>--engine &lt;mode&gt;</code></td>
-<td class="text-left"><code>auto</code> (default), <code>ollama</code>, or a provider name</td>
+<td class="text-left"><code>auto</code> (default), <code>ollama</code>, a provider name, or <code>api:&lt;provider&gt;</code></td>
 </tr>
 <tr>
 <td class="text-left"><code>--extract-engine &lt;m&gt;</code></td>
@@ -605,6 +612,10 @@ own draft, processed as a queue.</p>
 <tr>
 <td class="text-left"><code>--strict-numbers</code></td>
 <td class="text-left">Fail on a number found in no verified claim</td>
+</tr>
+<tr>
+<td class="text-left"><code>--second-gate</code></td>
+<td class="text-left">Opt-in semantic pass: drop verified claims a local model finds unsupported by their quote</td>
 </tr>
 <tr>
 <td class="text-left"><code>--no-cache</code></td>
@@ -678,7 +689,7 @@ own draft, processed as a queue.</p>
 </tr>
 <tr>
 <td class="text-left"><code>--json</code></td>
-<td class="text-left">Run without the UI; one JSON object per job on stdout</td>
+<td class="text-left">Machine-readable output: one JSON object per job, or a verification record with <code>--verify</code></td>
 </tr>
 <tr>
 <td class="text-left"><code>--dry-run</code></td>
@@ -729,6 +740,15 @@ is not regenerated — it describes the article the ledger was verified against.
 <code>draft --verify &lt;final.md&gt;</code> recomputes the digests and reports whether the
 article, the ledger and the sources are all unchanged. It is the reader's check,
 not just yours — anyone with the files can run it.</p>
+<p><strong>Signed credentials (opt-in).</strong> Configure a signing certificate chain and key
+(<code>DRAFT_C2PA_CERT</code> / <code>DRAFT_C2PA_KEY</code>, with <code>c2patool</code> installed) and draft also
+writes a signed, detached <code>.c2pa</code> credential bound to the article; <code>draft --verify</code> then validates its signature and trust chain as well as the digests.
+Without a certificate the manifest stays an unsigned definition, exactly as
+before.</p>
+<p><strong>A portable record.</strong> <code>draft --verify --json</code> prints a self-contained
+<code>draft.verification-record/v1</code> — the article digest and whether it matches, the
+grounding summary, the signature state, and the overall verdict — that a script
+or another tool can consume and re-check without the CLI.</p>
 <p>See <a href="/compliance/">provenance &amp; compliance</a> for what the manifest contains,
 how it maps to AI-disclosure rules, and a real set you can download and verify.</p>
 <h2 id="house-style">House style</h2>
@@ -738,13 +758,32 @@ not merely requested — a draft that breaks a rule is corrected, not shipped.</
 <h2 id="configuration-and-environment">Configuration and environment</h2>
 <p>Most flags have an environment-variable equivalent, useful for CI or a shared
 default:</p>
-<pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">DRAFT_ENGINE, DRAFT_MODEL_SESSION, DRAFT_MODEL, DRAFT_WRITE_MODEL,
-DRAFT_EXTRACT_MODEL, DRAFT_NUM_CTX, DRAFT_NUM_PREDICT, DRAFT_STRICT_NUMBERS,
-DRAFT_DRAFTS_DIR, DRAFT_SOURCES_DIR, DRAFT_CACHE_DIR, DRAFT_NO_CACHE,
-OLLAMA_HOST
+<pre tabindex="0" class="highlight language-text"><code class="language-text" data-lang="text"><span class="text plain">DRAFT_ENGINE, DRAFT_EXTRACT_ENGINE, DRAFT_WRITE_ENGINE, DRAFT_EDIT_ENGINE,
+DRAFT_MODEL_SESSION, DRAFT_MODEL, DRAFT_WRITE_MODEL, DRAFT_EXTRACT_MODEL,
+DRAFT_EDIT_MODEL, DRAFT_NUM_CTX, DRAFT_NUM_PREDICT, DRAFT_STRICT_NUMBERS,
+DRAFT_SECOND_GATE, DRAFT_READER, DRAFT_DRAFTS_DIR, DRAFT_SOURCES_DIR,
+DRAFT_CACHE_DIR, DRAFT_NO_CACHE, DRAFT_C2PA_CERT, DRAFT_C2PA_KEY,
+DRAFT_C2PA_ALG, OLLAMA_HOST
 </span></code></pre>
 <p>Set <code>DRAFT_SHOW_LOGO=0</code> to suppress the nib mark in <code>--help</code>. Publisher identity
 for the C2PA manifest is configured with the <code>DRAFT_SITE_*</code> variables.</p>
+<h3 id="config-files">Config files</h3>
+<p>For defaults you would otherwise repeat, draft reads a project <code>draft.toml</code> in
+the working directory and a user <code>~/.config/draft/config.toml</code> (honouring
+<code>XDG_CONFIG_HOME</code>). They set the same settings as the flags — <code>engine</code>,
+<code>extract-engine</code>, <code>write-engine</code>, <code>edit-engine</code>, <code>reader</code>, <code>model</code>, the Ollama
+models, <code>out</code>, <code>sources-dir</code>, <code>style</code>, and the <code>c2pa-cert</code> / <code>c2pa-key</code> /
+<code>c2pa-alg</code> signing keys.</p>
+<p>Precedence is <strong>flags &gt; environment &gt; project file &gt; user file &gt;
+built-in default</strong>, so adding a config file never changes what an existing
+command already does. <code>DRAFT_CONFIG</code> names an explicit file; <code>DRAFT_NO_CONFIG</code>
+disables the layer. The parser is a dependency-free flat <code>key = value</code> reader —
+no new module.</p>
+<pre tabindex="0" class="highlight language-toml"><code class="language-toml" data-lang="toml"><span class="text plain"># draft.toml
+engine = &quot;claude&quot;
+reader = &quot;docling&quot;
+out    = &quot;~/Drafts&quot;
+</span></code></pre>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <div class="callout callout-warning">
 <span class="callout-label">No text in the PDF</span>
