@@ -291,7 +291,10 @@ saves it with a per-sentence attribution file and a C2PA manifest.</p>
 <h2 id="4-check-the-result">4. Check the result</h2>
 <pre tabindex="0" class="highlight language-sh"><code class="language-sh" data-lang="sh"><span class="source shell bash"><span class="meta function-call shell"><span class="variable function shell">draft</span></span><span class="meta function-call arguments shell"><span class="variable parameter option shell"><span class="punctuation definition parameter shell"> --</span>verify</span> 2026-07-29/final/2026-07-29-my-paper-final.md</span>
 </span></code></pre>
-<p>This recomputes the digests and confirms the article still matches its ledger.</p>
+<p>This recomputes the digests and confirms the article still matches its ledger.
+Add <code>--json</code> for a portable <code>draft.verification-record/v1</code> receipt a script can
+consume. PDFs are not the only input — Markdown, plain text, DOCX and LaTeX
+(<code>.tex</code>) work too.</p>
 <p>Next: the <a href="/documentation/">documentation</a> for the full flag reference, or
 <a href="/grounding/">how grounding works</a> for the verification gate in detail.</p>
 </div>

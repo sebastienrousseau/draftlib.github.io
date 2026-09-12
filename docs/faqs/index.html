@@ -292,9 +292,20 @@ sentence with no backing claim cannot be written. See
 each claim <em>before</em> writing and drops anything unverifiable, then attributes
 every sentence to the claim that backs it. The check is structural, not a prompt.</p>
 <h2 id="which-agent-clis-does-it-use-and-does-it-need-an-api-key">Which agent CLIs does it use, and does it need an API key?</h2>
-<p>No API key. In <code>auto</code> mode draft drives whichever supported agent CLI you are
-already logged into — Claude, Copilot, Codex, Cursor, Grok, Gemini and more —
-through that tool's own session. Offline, it uses a local Ollama model.</p>
+<p>No API key by default. In <code>auto</code> mode draft drives whichever supported agent CLI
+you are already logged into — Claude, Copilot, Codex, Cursor, Grok, Gemini and
+more — through that tool's own session. Offline, it uses a local Ollama model.</p>
+<p>If you have no agent CLI at all, <code>--engine api:anthropic</code> (or <code>api:openai</code>) is
+an opt-in escape hatch that calls a hosted API directly with your own key from
+the environment. It is never chosen automatically — the keyless path stays the
+default — and exists only so a machine without an agent CLI still has an online
+option.</p>
+<h2 id="can-i-set-defaults-so-i-don-t-repeat-flags">Can I set defaults so I don't repeat flags?</h2>
+<p>Yes. Put them in a project <code>draft.toml</code> or a user <code>~/.config/draft/config.toml</code>
+(engine, reader, models, output directory, style, signing key). Precedence is
+flags &gt; environment &gt; project file &gt; user file &gt; built-in default, so
+a config file never changes what a command already does. <code>DRAFT_CONFIG</code> names an
+explicit file; <code>DRAFT_NO_CONFIG</code> disables the layer.</p>
 <h2 id="does-my-paper-leave-my-machine">Does my paper leave my machine?</h2>
 <p>It depends on the engine. With a local Ollama model, nothing leaves your
 machine. With a cloud agent CLI, the source excerpts draft needs to extract and
@@ -309,13 +320,25 @@ never touch the network.</p>
 <p>Every article ships a per-sentence attribution file and a C2PA manifest.
 <code>draft --verify</code> recomputes the digests and reports whether the article still
 matches the ledger it was written from. Editing an unsupported sentence makes
-it fail.</p>
+it fail. Configure a signing certificate (<code>DRAFT_C2PA_CERT</code> / <code>DRAFT_C2PA_KEY</code>,
+with <code>c2patool</code> installed) and draft also writes a <strong>signed</strong> <code>.c2pa</code> credential
+bound to the article, whose signature and trust chain <code>--verify</code> checks too.
+<code>draft --verify --json</code> prints a portable <code>draft.verification-record/v1</code> receipt
+that any other tool can re-check.</p>
+<h2 id="can-draft-check-that-a-claim-is-used-correctly-not-just-quoted">Can draft check that a claim is used <em>correctly</em>, not just quoted?</h2>
+<p>The verbatim gate deliberately checks wording, not meaning. <code>--second-gate</code>
+closes that gap on request: a local model judges whether each verified quote
+actually <em>supports</em> its claim and drops the ones it does not. It is opt-in,
+strictly additive, and fail-open, so it can only tighten the ledger — see
+<a href="/grounding/#the-optional-semantic-second-gate">how grounding works</a>.</p>
 <h2 id="what-inputs-are-supported">What inputs are supported?</h2>
-<p>PDF, Markdown and plain text work everywhere. <code>.docx</code> works too — built in on
-macOS via <code>textutil</code>, and on any platform with <code>--reader docling</code>. PDFs are read
-by <code>pdftotext</code> by default, or by <code>--reader docling</code> when tables and structure
-matter. Scanned PDFs with no text layer, table values and LaTeX-heavy math are
-current limits — see the <a href="/roadmap/">roadmap</a>.</p>
+<p>PDF, Markdown, plain text, DOCX and <strong>LaTeX (<code>.tex</code>)</strong> are all read directly.
+<code>.docx</code> is built in on macOS via <code>textutil</code>, and works on any platform with
+<code>--reader docling</code>; <code>.tex</code> needs no external tool and keeps a formula as exact
+text. PDFs are read by <code>pdftotext</code> by default, or by <code>--reader docling</code> when
+tables and structure matter — which also <strong>mines table cells into claims</strong>. The
+one remaining input limit is a scanned PDF with no text layer; OCR is on the
+<a href="/roadmap/">roadmap</a>.</p>
 <h2 id="does-it-work-with-non-english-papers">Does it work with non-English papers?</h2>
 <p>The verification gate is largely language-agnostic: UTF-8 handling,
 normalisation and verbatim quote matching do not assume English. The

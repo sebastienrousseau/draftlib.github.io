@@ -272,10 +272,19 @@
 are deterministic Go and never touch the network. Run fully offline with
 <code>--engine ollama</code>.</li>
 <li><strong>No API keys.</strong> draft drives agent CLIs through their own logged-in
-sessions. It stores no credentials and asks for none.</li>
+sessions. It stores no credentials and asks for none. (An opt-in
+<code>--engine api:&lt;provider&gt;</code> escape hatch reads your own key from the
+environment for machines with no agent CLI; it is never the default.)</li>
 <li><strong>No telemetry.</strong> draft has no servers and phones nothing home.</li>
-<li><strong>Provenance you can verify.</strong> Every article ships a C2PA manifest and a
-per-sentence attribution file; <code>draft --verify</code> recomputes the digests.</li>
+<li><strong>Provenance you can verify — and sign.</strong> Every article ships a C2PA manifest
+and a per-sentence attribution file; <code>draft --verify</code> recomputes the digests.
+With a signing certificate configured (<code>DRAFT_C2PA_CERT</code> / <code>DRAFT_C2PA_KEY</code>,
+<code>c2patool</code> installed) draft also emits a signed, detached <code>.c2pa</code> credential
+bound to the article, and <code>--verify</code> validates its signature and trust chain.</li>
+<li><strong>A verification record you can carry.</strong> <code>draft --verify --json</code> emits a
+portable <code>draft.verification-record/v1</code> — the article digest and whether it
+matches, the grounding summary, the signature state, and the verdict — so any
+tool or pipeline can re-check an article's provenance without the CLI.</li>
 </ul>
 <h2 id="data-flow">Data flow</h2>
 <p>With a local model, nothing leaves your machine. With a cloud agent CLI, the
