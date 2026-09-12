@@ -78,12 +78,86 @@ in that file.
 
 ## Verify it
 
+`draft --verify` recomputes the digests written beside the article and checks
+them. Point it at any file of the set. When a signed `.c2pa` credential is
+present and `c2patool` is installed, it validates the signature and trust chain
+too.
+
 ```sh
 draft --verify 2026-07-29/final/2026-07-29-attention-routing-final.md
 ```
 
-The manifest digests are recomputed and checked. Edit a sentence the ledger did
-not support and verification fails — that is the guarantee.
+<div class="terminal">
+  <div class="terminal-bar" aria-hidden="true"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">draft --verify</span></div>
+  <div class="terminal-screen" tabindex="0" role="group" aria-label="draft --verify output for a signed article set">
+<p class="tui-head">PROVENANCE</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>made by              draft 0.0.36</p>
+<p class="tui-phase"><span class="tui-marker">·</span>written with         claude sonnet</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>article              unchanged since it was written (7254c2c8d463)</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>claim ledger         matches the verified claims</p>
+<p class="tui-head">GROUNDING</p>
+<p class="tui-phase"><span class="tui-marker">·</span>claims               6 verified</p>
+<p class="tui-phase"><span class="tui-marker">·</span>attribution          22 of 24 sentences rest on a claim</p>
+<p class="tui-head">SOURCES</p>
+<p class="tui-phase tui-done"><span class="tui-marker">✓</span>2603.23420.pdf       unchanged since it was read</p>
+<p class="tui-head">SIGNATURE</p>
+<p class="tui-phase"><span class="tui-marker">·</span>signature            valid; signing certificate not in a known trust list (e.g. a development certificate)</p>
+<p class="tui-out">Verified. The article matches the provenance written beside it.</p>
+  </div>
+</div>
+
+Edit a sentence the ledger did not support and verification fails — that is the
+guarantee. It exits non-zero when the article, the ledger, a source, or the
+signature no longer matches.
+
+### A receipt a machine can check
+
+Add `--json` and `--verify` emits a portable `draft.verification-record/v1`
+instead of the human report — the digest and whether it matches, the grounding
+summary, the source and signature state, and the verdict. The schema lives in
+the importable `provenance` package, so a CI gate or an independent verifier
+can consume it without the CLI. *Bring your own artifact, verify anywhere.*
+
+```json
+{
+  "kind": "draft.verification-record/v1",
+  "verified": true,
+  "generator": { "name": "draft", "version": "0.0.36" },
+  "article": { "sha256": "7254c2c8d463106f…071254b6", "matches": true },
+  "grounding": { "claims": 6, "sentences": 24, "attributed": 22, "ungrounded_number_sentences": 0 },
+  "sources": [ { "path": "2603.23420.pdf", "found": true, "matches": true } ],
+  "signature": { "present": true, "checked": true, "valid": true, "trusted": true, "state": "Valid" }
+}
+```
+
+Signing is opt-in: set `DRAFT_C2PA_CERT` and `DRAFT_C2PA_KEY` to a certificate
+chain and key. With no certificate, the manifest stays an unsigned definition,
+and the record simply omits the signature — everything else still verifies.
+
+## Tighten it further: the semantic second gate
+
+The verbatim gate proves a claim's quote is in the source. It does not judge
+whether the quote *supports* the claim — a different subject, or a hedge stated
+as settled. `--second-gate` adds that pass on request: a local model checks each
+verified claim, and unsupported ones are dropped before writing.
+
+```sh
+draft --second-gate "my-paper.pdf"
+```
+
+<div class="terminal">
+  <div class="terminal-bar" aria-hidden="true"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title">draft --second-gate</span></div>
+  <div class="terminal-screen" tabindex="0" role="group" aria-label="draft log showing the second gate dropping a claim">
+<p class="tui-log">· read 5 section(s)</p>
+<p class="tui-log">· 8 claim(s) verified, 5 dropped</p>
+<p class="tui-log">· second gate dropped 1 claim(s) a model found unsupported by their quote</p>
+<p class="tui-log">· writing…</p>
+  </div>
+</div>
+
+It is strictly additive and off by default: the verbatim gate stays the primary
+check, and a model error keeps the claim rather than dropping it — the pass can
+only ever tighten the ledger.
 
 ## A batch, merged into one draft
 
